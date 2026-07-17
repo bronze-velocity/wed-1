@@ -30,6 +30,18 @@ What no competitor offers simultaneously:
 
 ---
 
+## The Five Rules
+
+Every Wepho app respects these five rules. They are the UVP in practical form.
+
+1. **Phone in, phone out in under 60 seconds.** No scrolling, no feeds, no lingering. Guests interact, then look up.
+2. **The magic happens in the room, not on the screen.** Screens are triggers for real-world moments — a toast, a hug, a burst of laughter across the table.
+3. **The couple curates.** Nothing goes public without their approval (or a trusted friend's). No moderation panic, no awkward surprises.
+4. **The app is built for one couple, one night.** Nothing off-the-shelf. The couple brainstorms with us and can come up with any idea — however weird, however specific, however tied to their private history. If it fits their story, we build it.
+5. **They bring the idea (or pick one of ours) — we build it beautifully.** The couple doesn't touch code, wireframes, or config. We take the concept and ship it with a seamless user experience, design that matches their wedding's visual language, and rock-solid live-night reliability.
+
+---
+
 ## The 20 App Types
 
 Each app is a distinct interactive experience. Couples pick one (or a combination). All share four features: couple-authored content, a live display wall, no app install for guests, and a keepsake output.
