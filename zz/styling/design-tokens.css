@@ -1,0 +1,223 @@
+/**
+ * Wepho Design Tokens
+ * Inspired by pitch.com — import this in app/globals.css
+ */
+
+:root {
+  /* ─── Typography ─── */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --text-display-xl: 5rem;       /* 80px */
+  --text-display:    4rem;       /* 64px */
+  --text-h1:         3rem;       /* 48px */
+  --text-h2:         2.25rem;    /* 36px */
+  --text-h3:         1.625rem;   /* 26px */
+  --text-h4:         1.25rem;    /* 20px */
+  --text-body-lg:    1.125rem;   /* 18px */
+  --text-body:       1rem;       /* 16px */
+  --text-body-sm:    0.875rem;   /* 14px */
+  --text-label:      0.8125rem;  /* 13px */
+  --text-tiny:       0.75rem;    /* 12px */
+
+  /* ─── Colors — Background ─── */
+  --color-bg:             #FFFFFF;
+  --color-bg-subtle:      #F7F6F3;
+  --color-bg-dark:        #111111;
+  --color-bg-dark-subtle: #1A1A1A;
+
+  /* ─── Colors — Text ─── */
+  --color-text-primary:            #111111;
+  --color-text-secondary:          #6B6B6B;
+  --color-text-muted:              #AAAAAA;
+  --color-text-inverse:            #FFFFFF;
+  --color-text-inverse-secondary:  rgba(255, 255, 255, 0.6);
+
+  /* ─── Colors — Accent (Purple) ─── */
+  --color-accent:       #6B5CE7;
+  --color-accent-hover: #5649D6;
+  --color-accent-light: #EDE9FF;
+  --color-accent-dark:  #3D2DB5;
+
+  /* ─── Colors — Secondary ─── */
+  --color-rose:   #F24E78;
+  --color-amber:  #F8A324;
+  --color-teal:   #36C5F0;
+  --color-green:  #2EB67D;
+  --color-coral:  #F87162;
+
+  /* ─── Colors — Borders ─── */
+  --color-border:       #E8E8E8;
+  --color-border-strong: #D0D0D0;
+  --color-border-dark:  rgba(255, 255, 255, 0.12);
+
+  /* ─── Spacing (4px base) ─── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --space-40: 160px;
+
+  /* ─── Border Radius ─── */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-2xl:  24px;
+  --radius-full: 9999px;
+
+  /* ─── Shadows ─── */
+  --shadow-xs:          0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-sm:          0 1px 3px rgba(0, 0, 0, 0.10), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md:          0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-lg:          0 10px 24px rgba(0, 0, 0, 0.10), 0 4px 8px rgba(0, 0, 0, 0.06);
+  --shadow-xl:          0 24px 48px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.08);
+  --shadow-glow:        0 0 0 3px var(--color-accent-light);
+  --shadow-glow-accent: 0 8px 32px rgba(107, 92, 231, 0.25);
+
+  /* ─── Gradients ─── */
+  --gradient-hero:       linear-gradient(160deg, #F7F4FF 0%, #FFFFFF 50%, #F0F9FF 100%);
+  --gradient-hero-dark:  linear-gradient(160deg, #1A1228 0%, #111111 60%);
+  --gradient-accent:     linear-gradient(135deg, #7B68EE 0%, #6B5CE7 100%);
+  --gradient-card-tint:  linear-gradient(180deg, rgba(107, 92, 231, 0.04) 0%, transparent 100%);
+  --gradient-rainbow:    linear-gradient(135deg, #F24E78, #F8A324, #36C5F0, #6B5CE7);
+
+  /* ─── Animation — Easing ─── */
+  --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:  cubic-bezier(0.45, 0, 0.55, 1);
+  --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ─── Animation — Duration ─── */
+  --duration-instant: 80ms;
+  --duration-fast:    150ms;
+  --duration-normal:  250ms;
+  --duration-slow:    400ms;
+  --duration-slower:  600ms;
+  --duration-slowest: 900ms;
+
+  /* ─── Layout ─── */
+  --container-max:  1200px;
+  --nav-height:     64px;
+}
+
+/* ─── Responsive type scale ─── */
+@media (max-width: 768px) {
+  :root {
+    --text-display-xl: 3.25rem; /* 52px */
+    --text-display:    2.75rem; /* 44px */
+    --text-h1:         2.25rem; /* 36px */
+    --text-h2:         1.75rem; /* 28px */
+  }
+}
+
+/* ─── Base resets & defaults ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ─── Scroll reveal animations ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+}
+
+.reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0ms;   opacity: 1; transform: none; }
+.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 80ms;  opacity: 1; transform: none; }
+.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 160ms; opacity: 1; transform: none; }
+.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 240ms; opacity: 1; transform: none; }
+.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 320ms; opacity: 1; transform: none; }
+.reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 400ms; opacity: 1; transform: none; }
+
+/* ─── Hover utilities ─── */
+.hover-lift {
+  transition:
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
+}
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hover-scale {
+  transition: transform var(--duration-fast) var(--ease-spring);
+}
+.hover-scale:hover {
+  transform: scale(1.04);
+}
+
+/* ─── Underline draw (nav links) ─── */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: currentColor;
+  transition: width var(--duration-normal) var(--ease-out);
+}
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* ─── Focus ring ─── */
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-accent-light), 0 0 0 5px var(--color-accent);
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-stagger > *,
+  .hover-lift,
+  .hover-scale,
+  .link-underline::after {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

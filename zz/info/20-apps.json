@@ -1,0 +1,230 @@
+{
+  "_meta": {
+    "alt1_vibes": [
+      "Make them laugh",
+      "Make them cry",
+      "Get them talking",
+      "Create a keepsake",
+      "Stop the room"
+    ],
+    "alt2_moments": [
+      "Arrival",
+      "Ceremony",
+      "Cocktail Hour",
+      "Dinner",
+      "Speeches",
+      "Dancing",
+      "All Day"
+    ],
+    "alt4_feelings": [
+      "Funny",
+      "Emotional",
+      "Social",
+      "Romantic"
+    ],
+    "notes": "alt1_vibe arrays are ordered primary-first (max 2). alt2_moment is used as both the timeline axis (Alt 2) and the 'when' filter (Alt 4). alt4_feeling is the second filter axis for Alt 4."
+  },
+  "apps": [
+    {
+      "id": 1,
+      "slug": "couple-trivia",
+      "title": "Live \"How Well Do You Know Us?\" Trivia",
+      "description": "A live multiplayer quiz where every question is about the couple's real relationship, played on guests' phones with a leaderboard projected on the reception screen.",
+      "why": "Guests learn surprising things about the couple they didn't know, and the winner earns the right to give an actual toast — the game has stakes built in.",
+      "alt1_vibe": ["Stop the room", "Make them laugh"],
+      "alt2_moment": ["Dinner", "Dancing"],
+      "alt4_feeling": ["Funny", "Social"]
+    },
+    {
+      "id": 2,
+      "slug": "venue-scavenger-hunt",
+      "title": "Venue Scavenger Hunt with Their Love Story",
+      "description": "QR codes hidden around the venue each unlock a chapter of the couple's love story — cocktail hour becomes a treasure hunt through their actual lives.",
+      "why": "Every stop has a personal reason for being there, shy guests have something to do, and completing all chapters reveals a secret message from the couple.",
+      "alt1_vibe": ["Get them talking", "Stop the room"],
+      "alt2_moment": ["Cocktail Hour"],
+      "alt4_feeling": ["Social", "Romantic"]
+    },
+    {
+      "id": 3,
+      "slug": "anniversary-time-capsule",
+      "title": "Anniversary Time Capsule",
+      "description": "Guests record short video messages sealed until the 1st, 5th, or 10th anniversary — the app locks them and delivers them automatically on the right date.",
+      "why": "A grandparent can leave a message for the couple to open when they might no longer be around; that possibility transforms how every guest records.",
+      "alt1_vibe": ["Make them cry", "Create a keepsake"],
+      "alt2_moment": ["Cocktail Hour", "Dinner"],
+      "alt4_feeling": ["Emotional"]
+    },
+    {
+      "id": 4,
+      "slug": "bucket-list-builder",
+      "title": "Guest Bucket List Builder",
+      "description": "Guests add items to the couple's shared life bucket list live on their phones, growing on a display wall before becoming a formatted keepsake PDF.",
+      "why": "Instead of generic advice, guests are asked to imagine the couple's future — participatory, forward-looking, and the output is something the couple actually uses.",
+      "alt1_vibe": ["Create a keepsake", "Get them talking"],
+      "alt2_moment": ["Dinner"],
+      "alt4_feeling": ["Romantic", "Social"]
+    },
+    {
+      "id": 5,
+      "slug": "conversation-starters",
+      "title": "Table-Specific Conversation Starter Cards",
+      "description": "Each table scans a unique QR code that serves conversation prompts tailored to that table's guest mix, shared history with the couple, and context notes.",
+      "why": "Guests feel like the couple thought of them specifically — the prompts reference their table's actual stories, not generic icebreakers.",
+      "alt1_vibe": ["Get them talking"],
+      "alt2_moment": ["Dinner"],
+      "alt4_feeling": ["Social"]
+    },
+    {
+      "id": 6,
+      "slug": "prediction-vault",
+      "title": "The Prediction Vault",
+      "description": "Guests submit sealed predictions about the couple's future grouped by year (1, 5, 10, 25 years out), unlocked on each anniversary when the couple scores them.",
+      "why": "It creates a recurring anniversary ritual — opening predictions with friends and scoring who was right becomes a party game that spans decades.",
+      "alt1_vibe": ["Create a keepsake", "Make them laugh"],
+      "alt2_moment": ["Dinner"],
+      "alt4_feeling": ["Funny", "Romantic"]
+    },
+    {
+      "id": 7,
+      "slug": "guest-memory-map",
+      "title": "Guest Memory Map",
+      "description": "Guests pin where they were in the world on the day of key couple milestones, adding a short note, building a live globe of the couple's people on the reception screen.",
+      "why": "Seeing pins appear in Tokyo, Berlin, and São Paulo in real time makes the global reach of someone's life genuinely visible — and unexpectedly moving.",
+      "alt1_vibe": ["Make them cry", "Create a keepsake"],
+      "alt2_moment": ["Cocktail Hour", "Dinner"],
+      "alt4_feeling": ["Emotional", "Romantic"]
+    },
+    {
+      "id": 8,
+      "slug": "live-roast-board",
+      "title": "The Live Roast Board",
+      "description": "Guests submit anonymous roast jokes and funny memories; the MC approves them before they hit the display wall, where the crowd votes on the funniest one.",
+      "why": "It gives the funny friend a channel without the chaos of an open mic — structured, moderated, and the whole room laughs together without anyone having to stand up uninvited.",
+      "alt1_vibe": ["Make them laugh", "Stop the room"],
+      "alt2_moment": ["Dinner", "Speeches"],
+      "alt4_feeling": ["Funny"]
+    },
+    {
+      "id": 9,
+      "slug": "unpopular-opinions",
+      "title": "The Couple's Unpopular Opinions Icebreaker",
+      "description": "The couple pre-loads their real unpopular opinions and guests vote agree/disagree in real time, revealing whether the room sides with the bride or groom on each take.",
+      "why": "Guests who don't know each other start debating 'pineapple on pizza' before they've finished their welcome drink — instant conversations, no awkwardness.",
+      "alt1_vibe": ["Make them laugh", "Get them talking"],
+      "alt2_moment": ["Cocktail Hour"],
+      "alt4_feeling": ["Funny", "Social"]
+    },
+    {
+      "id": 10,
+      "slug": "first-dance-ballot",
+      "title": "The First Dance Reveal Ballot",
+      "description": "Guests vote on which of three first dances the couple will actually perform, with a live countdown clock ticking down before the winner is announced on screen.",
+      "why": "The whole room is invested in the outcome before the dance even starts — the anticipation does what choreography alone can't.",
+      "alt1_vibe": ["Stop the room"],
+      "alt2_moment": ["Dinner", "Dancing"],
+      "alt4_feeling": ["Funny", "Romantic"]
+    },
+    {
+      "id": 11,
+      "slug": "wedding-bingo",
+      "title": "Custom Wedding Bingo",
+      "description": "Every guest gets a unique bingo card with custom squares the couple wrote — 'best man trips on his speech,' 'DJ plays ABBA' — and taps them as they happen in real time.",
+      "why": "The squares are hilarious because the couple wrote them knowing exactly who will cry and what the DJ will play — and it makes every guest pay attention to everything, all night.",
+      "alt1_vibe": ["Make them laugh", "Stop the room"],
+      "alt2_moment": ["All Day"],
+      "alt4_feeling": ["Funny"]
+    },
+    {
+      "id": 12,
+      "slug": "advice-oracle",
+      "title": "The Guest Advice Oracle",
+      "description": "Guests respond to structured prompts — best marriage advice, a mistake to avoid, something you wish someone had told you — displayed as a live scrolling oracle wall.",
+      "why": "The output is genuinely useful (real wisdom from people who know you), and the couple can post a live question mid-reception and watch the room respond in real time.",
+      "alt1_vibe": ["Create a keepsake", "Make them cry"],
+      "alt2_moment": ["Dinner"],
+      "alt4_feeling": ["Emotional", "Social"]
+    },
+    {
+      "id": 13,
+      "slug": "relationship-exhibit",
+      "title": "The Relationship Origin Story Exhibit",
+      "description": "A beautifully designed digital exhibit of the couple's story — photos, maps, milestones, voice notes — that guests explore on their phones like a mini-museum during cocktail hour.",
+      "why": "Guests who don't know the full story get genuinely drawn in — it's the 'how did you two meet?' story told properly, with the couple's own voice and photos.",
+      "alt1_vibe": ["Make them cry", "Get them talking"],
+      "alt2_moment": ["Cocktail Hour"],
+      "alt4_feeling": ["Romantic", "Emotional"]
+    },
+    {
+      "id": 14,
+      "slug": "future-home-map",
+      "title": "Design Our Future Home Map",
+      "description": "Guests pin places on an interactive map — the couple's meaningful spots, neighborhoods they should move to, places they must visit — filling live on the reception display.",
+      "why": "It becomes a living map the couple actually uses after: part artifact, part conversation piece, part shared life plan.",
+      "alt1_vibe": ["Create a keepsake", "Get them talking"],
+      "alt2_moment": ["Dinner"],
+      "alt4_feeling": ["Romantic", "Social"]
+    },
+    {
+      "id": 15,
+      "slug": "collaborative-soundtrack",
+      "title": "The Collaborative Soundtrack",
+      "description": "Guests submit a song request paired with the memory it represents, votes shape the queue, and as each song plays its story appears on the display wall for everyone to read.",
+      "why": "The moment 'Dancing Queen' plays and a guest's lake-house memory appears on screen, everyone at that table loses it — the stories are what the music actually means.",
+      "alt1_vibe": ["Stop the room", "Make them cry"],
+      "alt2_moment": ["Dinner", "Dancing"],
+      "alt4_feeling": ["Emotional", "Social"]
+    },
+    {
+      "id": 16,
+      "slug": "love-letter-machine",
+      "isDemo": true,
+      "title": "The Unprompted Love Letter Machine",
+      "description": "Guests submit secret messages or memories addressed to the bride, groom, or both; at a chosen moment the couple reads them live on screen for the first time, in front of everyone.",
+      "why": "The raw authenticity of a couple reading unscripted messages from people they love, in real time, is the moment guests most want to witness.",
+      "alt1_vibe": ["Make them cry"],
+      "alt2_moment": ["Speeches"],
+      "alt4_feeling": ["Emotional"]
+    },
+    {
+      "id": 17,
+      "slug": "emotion-pulse",
+      "title": "Wedding Day Emotion Pulse",
+      "description": "Guests are prompted 5–6 times during the day to log how they're feeling, and the aggregate emotion is visualized live on the reception screen as a real-time pulse.",
+      "why": "Seeing the emotion spike during the vows and first dance — captured as a graph the couple keeps forever — is unexpectedly moving to look at years later.",
+      "alt1_vibe": ["Create a keepsake", "Make them cry"],
+      "alt2_moment": ["All Day"],
+      "alt4_feeling": ["Emotional"]
+    },
+    {
+      "id": 18,
+      "slug": "secret-relay",
+      "title": "Table-to-Table Secret Relay",
+      "description": "Each table writes a secret message or dare for the next table, who must complete it and photograph the result before passing a new one on — a chain of challenges across the room.",
+      "why": "By the end of cocktail hour, tables that started as strangers have a shared photo and a story — the dare creates the connection no seating chart could engineer.",
+      "alt1_vibe": ["Get them talking", "Make them laugh"],
+      "alt2_moment": ["Cocktail Hour", "Dinner"],
+      "alt4_feeling": ["Funny", "Social"]
+    },
+    {
+      "id": 19,
+      "slug": "cocktail-quiz",
+      "title": "The Personalized Cocktail Quiz",
+      "description": "Guests take a short personality quiz and are matched to a personalized cocktail from the wedding's custom menu, where every drink is named after a moment in the couple's story.",
+      "why": "It's a conversation starter at the bar, a way to share the couple's story through the drinks menu, and gives the bartender a live dashboard of what's trending.",
+      "alt1_vibe": ["Make them laugh", "Get them talking"],
+      "alt2_moment": ["Arrival", "Cocktail Hour"],
+      "alt4_feeling": ["Funny", "Social"]
+    },
+    {
+      "id": 20,
+      "slug": "parallel-universe",
+      "title": "The Parallel Universe Game",
+      "description": "Guests submit what would have happened to the couple if they'd never met; the best entries are read aloud at dinner before the couple reveals their real 'almost didn't meet' story.",
+      "why": "It asks guests to think deeply about the couple's story, produces genuinely funny and touching entries, and the couple's real story is usually more dramatic than anyone guesses.",
+      "alt1_vibe": ["Make them laugh", "Make them cry"],
+      "alt2_moment": ["Dinner", "Speeches"],
+      "alt4_feeling": ["Funny", "Emotional"]
+    }
+  ]
+}

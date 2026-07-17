@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2EB67D" />
+      <stop offset="100%" stop-color="#111111" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)" />
+  <rect width="800" height="600" fill="black" opacity="0.12" />
+  <text x="50%" y="214.2" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="700" font-size="19" letter-spacing="2" fill="rgba(255,255,255,0.85)">POST-WEDDING — DEMO STRIP 3 OF 3</text>
+    <text x="50%" y="267" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" fill="rgba(255,255,255,0.92)">The couple at their table, heads together, visibly</text>
+    <text x="50%" y="300" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" fill="rgba(255,255,255,0.92)">emotional, reading something on a screen or</text>
+    <text x="50%" y="333" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" fill="rgba(255,255,255,0.92)">printed page.</text>
+  <text x="50%" y="570" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="rgba(255,255,255,0.55)">PLACEHOLDER — replace with real photography</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8A324" />
+      <stop offset="100%" stop-color="#F24E78" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#g)" />
+  <rect width="800" height="450" fill="black" opacity="0.12" />
+  <text x="50%" y="172.5" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="700" font-size="14" letter-spacing="2" fill="rgba(255,255,255,0.85)">VIBE: MAKE THEM LAUGH</text>
+    <text x="50%" y="212.5" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="rgba(255,255,255,0.92)">Candid mid-laugh guest group shot, bright</text>
+    <text x="50%" y="237.5" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="rgba(255,255,255,0.92)">high-energy lighting, not posed.</text>
+  <text x="50%" y="427" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="rgba(255,255,255,0.55)">PLACEHOLDER — replace with real photography</text>
+</svg>

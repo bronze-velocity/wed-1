@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1350" viewBox="0 0 2400 1350">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3D2DB5" />
+      <stop offset="100%" stop-color="#1A1228" />
+    </linearGradient>
+  </defs>
+  <rect width="2400" height="1350" fill="url(#g)" />
+  <rect width="2400" height="1350" fill="black" opacity="0.12" />
+  <text x="50%" y="556.6" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="700" font-size="43" letter-spacing="2" fill="rgba(255,255,255,0.85)">DANCING / COCKTAIL HOUR — HERO BACKGROUND</text>
+    <text x="50%" y="675" text-anchor="middle" font-family="system-ui, sans-serif" font-size="54" fill="rgba(255,255,255,0.92)">Wide reception shot, string lights, guests mid-motion, warm and overexposed. Left third stays low-contrast for hero copy.</text>
+  <text x="50%" y="1282" text-anchor="middle" font-family="system-ui, sans-serif" font-size="35" fill="rgba(255,255,255,0.55)">PLACEHOLDER — replace with real photography</text>
+</svg>

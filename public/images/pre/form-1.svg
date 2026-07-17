@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F24E78" />
+      <stop offset="100%" stop-color="#EDE9FF" />
+    </linearGradient>
+  </defs>
+  <rect width="900" height="900" fill="url(#g)" />
+  <rect width="900" height="900" fill="black" opacity="0.12" />
+  <text x="50%" y="345" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="700" font-size="29" letter-spacing="2" fill="rgba(255,255,255,0.85)">PRE-WEDDING — HOWITWORKS STEP 2</text>
+    <text x="50%" y="425" text-anchor="middle" font-family="system-ui, sans-serif" font-size="36" fill="rgba(255,255,255,0.92)">Close detail of hands writing or typing, photos spread</text>
+    <text x="50%" y="475" text-anchor="middle" font-family="system-ui, sans-serif" font-size="36" fill="rgba(255,255,255,0.92)">on a table nearby, domestic setting.</text>
+  <text x="50%" y="855" text-anchor="middle" font-family="system-ui, sans-serif" font-size="23" fill="rgba(255,255,255,0.55)">PLACEHOLDER — replace with real photography</text>
+</svg>

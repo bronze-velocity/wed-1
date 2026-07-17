@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1400" viewBox="0 0 2000 1400">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111111" />
+      <stop offset="100%" stop-color="#3D2DB5" />
+    </linearGradient>
+  </defs>
+  <rect width="2000" height="1400" fill="url(#g)" />
+  <rect width="2000" height="1400" fill="black" opacity="0.12" />
+  <text x="50%" y="576.8" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="700" font-size="45" letter-spacing="2" fill="rgba(255,255,255,0.85)">LEGACY / POST-WEDDING — STORYBEAT2 BACKGROUND</text>
+    <text x="50%" y="700" text-anchor="middle" font-family="system-ui, sans-serif" font-size="56" fill="rgba(255,255,255,0.92)">Grandparent-aged guest mid-toast, emotional, recording on a phone — or a sealed envelope still-life, softly lit.</text>
+  <text x="50%" y="1330" text-anchor="middle" font-family="system-ui, sans-serif" font-size="36" fill="rgba(255,255,255,0.55)">PLACEHOLDER — replace with real photography</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#36C5F0" />
+      <stop offset="100%" stop-color="#3D2DB5" />
+    </linearGradient>
+  </defs>
+  <rect width="900" height="900" fill="url(#g)" />
+  <rect width="900" height="900" fill="black" opacity="0.12" />
+  <text x="50%" y="320" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="700" font-size="29" letter-spacing="2" fill="rgba(255,255,255,0.85)">COCKTAIL HOUR — HOWITWORKS STEP 3</text>
+    <text x="50%" y="400" text-anchor="middle" font-family="system-ui, sans-serif" font-size="36" fill="rgba(255,255,255,0.92)">Guest's hand holding a phone up to a table QR card,</text>
+    <text x="50%" y="450" text-anchor="middle" font-family="system-ui, sans-serif" font-size="36" fill="rgba(255,255,255,0.92)">reception table setting visible, warm reception</text>
+    <text x="50%" y="500" text-anchor="middle" font-family="system-ui, sans-serif" font-size="36" fill="rgba(255,255,255,0.92)">lighting.</text>
+  <text x="50%" y="855" text-anchor="middle" font-family="system-ui, sans-serif" font-size="23" fill="rgba(255,255,255,0.55)">PLACEHOLDER — replace with real photography</text>
+</svg>
