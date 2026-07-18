@@ -66,3 +66,15 @@ I really don't like this section on the lp:
 He tapped out one line — a jab about your dad’s dance moves — and it hit the big screen. Now he’s watching table three read what your college roommate wrote.
 Live Roast Board — App #8"
 
+###
+we want to do some pinterest marketing as per the below. create a plan for how to 1) research how pinterest usually works, 2) how to understand what real people are on there, 3) how to plan our content and interactions (what are best practices on pinterest), 4) how we can understand how best to understand analytics, 5) what different post formats there are. 6) what accounts to follow and interact with to increase exposure.
+
+###
+how are ways in which an LLM (claude code) can help with strategizing, planning, executing this kind of thing:
+3. **Reddit r/weddingplanning, r/weddingsunder10k, r/weddingsover10k, r/EngagementRings** — high-trust, low-BS, allergic to marketing. But *the exact place* where "our wedding is going to feel generic" panic lives. We do not advertise here. We show up as ourselves when the thread is relevant (an existing couple posts "how do we make our reception feel less standard?" and Wepho is one legitimate answer). See §5 on organic seeding.
+
+###
+do web research to find 20 different marketplaces for wedding apps - for before/during/after the wedding. output into a new .md file with sources. 
+
+### 
+can you find 5 sources each with recent (2026) and popular wedding content for real wedding couples in the US - like podcasts, forums, blog posts, social media stuff etc. output into a new .md file

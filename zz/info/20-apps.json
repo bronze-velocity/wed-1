@@ -33,7 +33,20 @@
       "why": "Guests learn surprising things about the couple they didn't know, and the winner earns the right to give an actual toast — the game has stakes built in.",
       "alt1_vibe": ["Stop the room", "Make them laugh"],
       "alt2_moment": ["Dinner", "Dancing"],
-      "alt4_feeling": ["Funny", "Social"]
+      "alt4_feeling": ["Funny", "Social"],
+      "cool_features": [
+        "15 questions, 20 seconds each — the whole game takes 8 minutes and never drags",
+        "Live leaderboard on the big screen with guests' real names, not usernames",
+        "Table-level scoring on top of individual scoring — head table vs. college friends becomes a subplot",
+        "Couple pre-records 5-second video reactions for each reveal (\"nope, that was actually a Bumble opener from October 2020\")",
+        "Winner gets an unscheduled 60-second toast at the mic"
+      ],
+      "why_it_respects_the_irl_wedding": "Trivia forces the whole room to focus on the same thing at the same time. Nobody's scrolling — they're screaming at their tablemates. It's 8 minutes bounded, not 80.",
+      "non_app_version": {
+        "description": "Printed trivia sheets at each table, host reads questions from a mic, tables score themselves on paper.",
+        "needed": "No — pub-quiz style works.",
+        "adds_to_the_experience": "Yes — live leaderboards, video reactions, and per-guest scoring turn it from a party game into a spectacle."
+      }
     },
     {
       "id": 2,
@@ -43,7 +56,20 @@
       "why": "Every stop has a personal reason for being there, shy guests have something to do, and completing all chapters reveals a secret message from the couple.",
       "alt1_vibe": ["Get them talking", "Stop the room"],
       "alt2_moment": ["Cocktail Hour"],
-      "alt4_feeling": ["Social", "Romantic"]
+      "alt4_feeling": ["Social", "Romantic"],
+      "cool_features": [
+        "Each QR code lives at a spot with real meaning (bar = where they had their first drink together, garden = where he proposed)",
+        "Chapters unlock in order — you can't skip ahead, so guests physically move through the venue",
+        "Photo challenges at some stops: \"take a selfie here and it appears in the couple's album\"",
+        "Completing all chapters unlocks a private thank-you video from the couple",
+        "Leaderboard of \"first to finish\" earns a small prize at the bar"
+      ],
+      "why_it_respects_the_irl_wedding": "The hunt sends guests walking, talking, and exploring instead of clustering by the bar. Phone use is brief at each stop — the reward is the chapter, then heads back up.",
+      "non_app_version": {
+        "description": "Printed clue cards handed out at arrival, physical envelopes taped to venue landmarks with the next clue inside.",
+        "needed": "No — paper hunts are a wedding classic.",
+        "adds_to_the_experience": "Yes — QR chapters can carry video, voice notes, and photos in the couple's own words that a printed card physically cannot."
+      }
     },
     {
       "id": 3,
@@ -53,7 +79,20 @@
       "why": "A grandparent can leave a message for the couple to open when they might no longer be around; that possibility transforms how every guest records.",
       "alt1_vibe": ["Make them cry", "Create a keepsake"],
       "alt2_moment": ["Cocktail Hour", "Dinner"],
-      "alt4_feeling": ["Emotional"]
+      "alt4_feeling": ["Emotional"],
+      "cool_features": [
+        "Guests pick the delivery year — 1, 5, 10, 25, even 50 — and the app schedules the email for the actual anniversary date",
+        "Guests can attach a photo of themselves from tonight, so future-them sees present-them",
+        "Special \"for the kids\" tier — messages delivered when the couple's future children turn 18",
+        "Discreet re-record button — no bad takes get sent",
+        "The couple can also write messages to themselves on the same schedule"
+      ],
+      "why_it_respects_the_irl_wedding": "It's a quiet, thoughtful submission — guests do it when they have a natural moment. No screen presence, no interruptions. It's a gift the wedding gives the couple for decades.",
+      "non_app_version": {
+        "description": "Envelopes labelled \"Open in 1 year / 5 / 10 / 25\" at each table; couple stores them in a keepsake box.",
+        "needed": "No — dated envelopes are a beautiful, tactile tradition.",
+        "adds_to_the_experience": "Yes for the 25- and 50-year tiers where paper reliably gets lost. Scheduled delivery is the actual moat here."
+      }
     },
     {
       "id": 4,
@@ -63,7 +102,21 @@
       "why": "Instead of generic advice, guests are asked to imagine the couple's future — participatory, forward-looking, and the output is something the couple actually uses.",
       "alt1_vibe": ["Create a keepsake", "Get them talking"],
       "alt2_moment": ["Dinner"],
-      "alt4_feeling": ["Romantic", "Social"]
+      "alt4_feeling": ["Romantic", "Social"],
+      "skip": true,
+      "cool_features": [
+        "Categorized suggestions — \"places,\" \"experiences,\" \"skills to learn,\" \"scary things,\" \"nights in\" — keeps entries specific",
+        "Upvoting lets the room boost the wildest ideas to the top of the list",
+        "Guests can attach a personal offer alongside the item (\"I'll teach you both to sail — Uncle Pete\")",
+        "Final list gets typeset into a printed hardcover book delivered to the couple two weeks later",
+        "Each item stays checkable in the couple's app for years — they log completions as they go"
+      ],
+      "why_it_respects_the_irl_wedding": "Submission is short and ambient — guests add one or two items between courses. The display wall grows visibly through dinner, giving the room a shared thing to glance at without demanding attention.",
+      "non_app_version": {
+        "description": "Cards on each table asking guests to write one bucket-list item; MOH collects them in a jar for the couple.",
+        "needed": "No — cards in a jar cover the sentiment.",
+        "adds_to_the_experience": "Marginally — upvoting and the live-growing wall add spectacle, but the core idea works fine on paper."
+      }
     },
     {
       "id": 5,
@@ -73,7 +126,20 @@
       "why": "Guests feel like the couple thought of them specifically — the prompts reference their table's actual stories, not generic icebreakers.",
       "alt1_vibe": ["Get them talking"],
       "alt2_moment": ["Dinner"],
-      "alt4_feeling": ["Social"]
+      "alt4_feeling": ["Social"],
+      "cool_features": [
+        "Each guest gets a 30-second profile before the wedding — where they know the couple from, one thing they'd want a stranger to ask them",
+        "Prompts pull from those profiles: \"You and Marcus both spent time in Antigua — ask him about the year he lived there\"",
+        "\"Surprise me\" button auto-suggests a stranger at your table you'd probably click with",
+        "Optional anonymous prompt-to-the-table (\"ask table 4 who's the loudest snorer\")",
+        "Post-wedding, every guest gets a booklet of the people they met, with the profiles shared"
+      ],
+      "why_it_respects_the_irl_wedding": "The app causes IRL conversation. Guests use it once during cocktail hour or when they sit down, then have a reason to talk to the stranger across the table for the rest of the night.",
+      "non_app_version": {
+        "description": "Printed prompt cards at each table with a set of icebreakers, plus a \"how I know the couple\" line on each escort card.",
+        "needed": "No — printed cards are charming and effective.",
+        "adds_to_the_experience": "Yes — \"surprise me\" matching and a searchable directory create introductions printed cards can't broker mid-conversation."
+      },"skip": true
     },
     {
       "id": 6,
@@ -83,7 +149,20 @@
       "why": "It creates a recurring anniversary ritual — opening predictions with friends and scoring who was right becomes a party game that spans decades.",
       "alt1_vibe": ["Create a keepsake", "Make them laugh"],
       "alt2_moment": ["Dinner"],
-      "alt4_feeling": ["Funny", "Romantic"]
+      "alt4_feeling": ["Funny", "Romantic"],
+      "cool_features": [
+        "Weighted questions — some worth more points if you get them right (\"how many kids\" outscores \"what city\")",
+        "Live histogram on screen during dinner: \"73% of you think they'll have kids within 3 years. The bride would like the room to know she disagrees.\"",
+        "5-, 10-, and 25-year tiers — guest picks when their prediction unlocks",
+        "Every guest gets a personalized \"prediction receipt\" texted to them so they remember what they bet on",
+        "Anniversary emails auto-deliver the year's predictions with a scoring interface for the couple"
+      ],
+      "why_it_respects_the_irl_wedding": "It's not a live entertainment loop — it's a 3-minute submission during cocktail hour, then it disappears. But it keeps giving back to the couple for decades.",
+      "non_app_version": {
+        "description": "Prediction cards at each table, sealed in a jar labelled \"Open in 5 years.\"",
+        "needed": "No — a jar of predictions is a lovely low-tech classic.",
+        "adds_to_the_experience": "Yes — the live histogram, scheduled anniversary emails, and multi-decade tiers are things a jar cannot do."
+      },"skip": true
     },
     {
       "id": 7,
@@ -93,7 +172,20 @@
       "why": "Seeing pins appear in Tokyo, Berlin, and São Paulo in real time makes the global reach of someone's life genuinely visible — and unexpectedly moving.",
       "alt1_vibe": ["Make them cry", "Create a keepsake"],
       "alt2_moment": ["Cocktail Hour", "Dinner"],
-      "alt4_feeling": ["Emotional", "Romantic"]
+      "alt4_feeling": ["Emotional", "Romantic"],
+      "cool_features": [
+        "Live 3D globe on the big screen — pins pulse as new ones drop in real time",
+        "Each pin can carry a photo of the guest from that day (grandma's polaroid from 1974, dad's college dorm)",
+        "Milestone selector — \"the day they met,\" \"the day he proposed,\" \"tonight\" — same map, different layers",
+        "The finished map exports as a large-format print the couple can frame",
+        "Optional \"who was near who\" reveal: which guests were coincidentally in the same city on the same milestone"
+      ],
+      "why_it_respects_the_irl_wedding": "The pinning takes 30 seconds. The payoff is on the wall — the room watches the globe fill up together and half of it involuntarily says \"aww\" when a new continent lights up.",
+      "non_app_version": {
+        "description": "A large printed world map on an easel with pushpins; guests pin their location and write on a sticky note.",
+        "needed": "No — a physical pin map is a charming keepsake.",
+        "adds_to_the_experience": "Yes — the live-updating globe, photo-per-pin, and coincidence reveals turn a passive artifact into an active room moment."
+      },"skip": true
     },
     {
       "id": 8,
@@ -103,7 +195,20 @@
       "why": "It gives the funny friend a channel without the chaos of an open mic — structured, moderated, and the whole room laughs together without anyone having to stand up uninvited.",
       "alt1_vibe": ["Make them laugh", "Stop the room"],
       "alt2_moment": ["Dinner", "Speeches"],
-      "alt4_feeling": ["Funny"]
+      "alt4_feeling": ["Funny"],
+      "cool_features": [
+        "Best-man moderator dashboard — approve, reject, or edit for length before it hits the wall",
+        "Live upvoting — top-voted roast gets read aloud at speeches with credit to the anonymous author",
+        "\"Tag a target\" — roasts can be directed at the bride, groom, or a specific friend at a specific table",
+        "Category tiers: \"gentle,\" \"medium,\" \"unhinged\" — the couple picks which tiers are live",
+        "Winning roast gets a printed \"Roast Champion\" certificate handed out at the end of the night"
+      ],
+      "why_it_respects_the_irl_wedding": "Instead of one drunk uncle at an open mic derailing the night, the whole room contributes and the funniest lines float up naturally. Guests write in 20 seconds, then look up to watch the wall.",
+      "non_app_version": {
+        "description": "Open-mic segment during speeches where anyone can grab the mic and tell their best story.",
+        "needed": "No — open mics happen at weddings all the time.",
+        "adds_to_the_experience": "Yes — moderation prevents disasters, upvoting surfaces the actual funniest bits, and shy funny people finally get a channel.","skip": true
+      }
     },
     {
       "id": 9,
@@ -113,7 +218,20 @@
       "why": "Guests who don't know each other start debating 'pineapple on pizza' before they've finished their welcome drink — instant conversations, no awkwardness.",
       "alt1_vibe": ["Make them laugh", "Get them talking"],
       "alt2_moment": ["Cocktail Hour"],
-      "alt4_feeling": ["Funny", "Social"]
+      "alt4_feeling": ["Funny", "Social"],
+      "cool_features": [
+        "Live \"his side / her side\" bar that fills in real time as votes come in",
+        "Reveal moment: after voting closes, the screen shows which of the couple actually holds the opinion — and the room finds out they're outnumbered",
+        "20 opinions total, dropped one at a time across cocktail hour",
+        "Table-level minority tag: \"Table 6 is the only table in the room that agreed with the groom on ranch dressing\"",
+        "The couple gets a printed report of which of their takes the world actually endorses"
+      ],
+      "why_it_respects_the_irl_wedding": "It's a 5-second tap between conversations, and the real value is what happens next — tablemates arguing about mayonnaise while the results fill in behind them.",
+      "non_app_version": {
+        "description": "Printed ballot at cocktail hour with 20 opinions and a check-box for agree/disagree, results tallied by hand and announced later.",
+        "needed": "No — a paper ballot works technically.",
+        "adds_to_the_experience": "Yes — live bars filling in real time, per-table breakdowns, and the \"who actually said this\" reveal are the entire show. Paper ballots kill the pacing."
+      }
     },
     {
       "id": 10,
@@ -123,7 +241,20 @@
       "why": "The whole room is invested in the outcome before the dance even starts — the anticipation does what choreography alone can't.",
       "alt1_vibe": ["Stop the room"],
       "alt2_moment": ["Dinner", "Dancing"],
-      "alt4_feeling": ["Funny", "Romantic"]
+      "alt4_feeling": ["Funny", "Romantic"],
+      "cool_features": [
+        "Each option shown as a stylized card — song, mood, brief description (\"the slow ballad,\" \"the choreographed disco number,\" \"the surprise TikTok dance\")",
+        "Voting window is exactly 90 seconds with a countdown clock on the big screen for pure suspense",
+        "Live bar chart updates as votes come in — the leader flips twice before the buzzer",
+        "Loser dances get teased in a montage after: \"here's what you would have seen\"",
+        "The couple pre-rehearsed all three, so whichever wins, they're ready"
+      ],
+      "why_it_respects_the_irl_wedding": "It takes 90 seconds of phone use and pays back with the entire room roaring when the winning song drops. The dance itself is a room moment — no phones out, everyone watching.",
+      "non_app_version": {
+        "description": "DJ holds a mic and asks the room to cheer loudest for their favorite of three options; loudest wins.",
+        "needed": "No — the cheer method works.",
+        "adds_to_the_experience": "Yes — the countdown, live vote chart, and per-guest ballot give the room a genuine cliffhanger a cheer contest can't."
+      },"skip": true
     },
     {
       "id": 11,
@@ -133,7 +264,20 @@
       "why": "The squares are hilarious because the couple wrote them knowing exactly who will cry and what the DJ will play — and it makes every guest pay attention to everything, all night.",
       "alt1_vibe": ["Make them laugh", "Stop the room"],
       "alt2_moment": ["All Day"],
-      "alt4_feeling": ["Funny"]
+      "alt4_feeling": ["Funny"],
+      "cool_features": [
+        "Every card is uniquely shuffled — no two guests have the same bingo",
+        "Some squares are ultra-specific inside jokes only certain tables will get (\"Aunt Linda mentions her book club\")",
+        "Bingo triggers a small celebratory sound on the winner's phone and a subtle notification to the MC to call it out",
+        "Progressive difficulty — 1-line bingo pays a small prize, full-card blackout wins the grand prize",
+        "Post-wedding, the couple sees which squares got tapped most (what actually happened) vs. never (what they predicted wrong)"
+      ],
+      "why_it_respects_the_irl_wedding": "It makes guests hyper-observant — instead of scrolling social feeds, they're watching every corner of the room for the next square to hit. Phone use is a single tap per event.",
+      "non_app_version": {
+        "description": "Printed bingo cards handed out at arrival, guests mark with a pen and shout \"BINGO\" when they win.",
+        "needed": "No — paper bingo is a decades-old party staple.",
+        "adds_to_the_experience": "Yes — unique shuffled cards per guest, real-time win detection, and the \"what actually happened\" post-wedding data are things paper can't do."
+      }
     },
     {
       "id": 12,
@@ -143,7 +287,20 @@
       "why": "The output is genuinely useful (real wisdom from people who know you), and the couple can post a live question mid-reception and watch the room respond in real time.",
       "alt1_vibe": ["Create a keepsake", "Make them cry"],
       "alt2_moment": ["Dinner"],
-      "alt4_feeling": ["Emotional", "Social"]
+      "alt4_feeling": ["Emotional", "Social"],
+      "cool_features": [
+        "Anonymous mode toggle — some advice is more honest when it's not signed",
+        "Long-form allowed (up to 500 characters) because this crowd has things to say",
+        "Prompts tagged by \"years married\" — the app asks 5-year-marrieds different questions than 40-year-marrieds",
+        "The couple can drop a live question mid-reception (\"first fight we're going to have?\") and watch the wall fill in",
+        "Two printed hardcovers delivered post-wedding — one signed advice, one anonymous"
+      ],
+      "why_it_respects_the_irl_wedding": "It's ambient — guests fill it out when they naturally reach for their phone (waiting for dinner, in line for the bar). Nobody has to do it. The screen presence is subtle.",
+      "non_app_version": {
+        "description": "Prompt cards on every table with an advice book to write in — a well-established wedding tradition.",
+        "needed": "No — the advice book is a genre standard.",
+        "adds_to_the_experience": "Marginally — anonymous mode and years-married tagging pull more honest wisdom, but a book already does 90% of the job well."
+      },"skip": true
     },
     {
       "id": 13,
@@ -153,7 +310,20 @@
       "why": "Guests who don't know the full story get genuinely drawn in — it's the 'how did you two meet?' story told properly, with the couple's own voice and photos.",
       "alt1_vibe": ["Make them cry", "Get them talking"],
       "alt2_moment": ["Cocktail Hour"],
-      "alt4_feeling": ["Romantic", "Emotional"]
+      "alt4_feeling": ["Romantic", "Emotional"],
+      "cool_features": [
+        "Chronological \"scroll through the years\" mode with photos, texts, and voice notes at each milestone",
+        "Voice notes from the couple narrating specific moments (\"this is the night I knew\")",
+        "Interactive map layer showing every place they've lived, every trip that mattered, the exact restaurant of the first date",
+        "\"Guest annotations\" — anyone who was present at a moment can add their own memory to the timeline",
+        "Post-wedding, the exhibit stays live at a private URL the couple can share with future family"
+      ],
+      "why_it_respects_the_irl_wedding": "Cocktail hour is exactly when guests want to know the story — they read for 5 minutes, then have things to actually talk about at dinner. It replaces awkward small-talk with informed conversation.",
+      "non_app_version": {
+        "description": "Printed timeline boards on easels around the venue with photos and captions guests can walk past.",
+        "needed": "No — photo timelines are a classic wedding display.",
+        "adds_to_the_experience": "Yes — voice narration, interactive maps, and live guest annotations bring the story to life in ways a printed board cannot."
+      },"skip": true
     },
     {
       "id": 14,
@@ -163,7 +333,20 @@
       "why": "It becomes a living map the couple actually uses after: part artifact, part conversation piece, part shared life plan.",
       "alt1_vibe": ["Create a keepsake", "Get them talking"],
       "alt2_moment": ["Dinner"],
-      "alt4_feeling": ["Romantic", "Social"]
+      "alt4_feeling": ["Romantic", "Social"],
+      "cool_features": [
+        "Layered pins: \"places we've been together,\" \"places to visit,\" \"where we should retire,\" each in a different color",
+        "Guests can attach a one-sentence reason to their pin (\"you must eat at this specific ramen shop\")",
+        "The couple can save any pin into their real Google Maps as a starred location after the wedding",
+        "Live \"trending city\" callouts on the big screen as pins cluster (\"Lisbon has 12 pins — the room clearly has opinions\")",
+        "Final map printed as a framed poster the couple can hang at home"
+      ],
+      "why_it_respects_the_irl_wedding": "Each guest drops one or two pins between courses — 30 seconds of phone use. The map grows live on the wall and gives tables something to point at and argue about.",
+      "non_app_version": {
+        "description": "Framed cork map on an easel with colored pins and small note cards guests write on and tack up.",
+        "needed": "No — a physical pin map is charming and tactile.",
+        "adds_to_the_experience": "Yes — importable-to-Google-Maps pins, layer filtering, and live cluster callouts turn the map from an artifact into a usable tool."
+      }
     },
     {
       "id": 15,
@@ -173,7 +356,20 @@
       "why": "The moment 'Dancing Queen' plays and a guest's lake-house memory appears on screen, everyone at that table loses it — the stories are what the music actually means.",
       "alt1_vibe": ["Stop the room", "Make them cry"],
       "alt2_moment": ["Dinner", "Dancing"],
-      "alt4_feeling": ["Emotional", "Social"]
+      "alt4_feeling": ["Emotional", "Social"],
+      "cool_features": [
+        "Pre-loaded with the couple's \"must play\" and \"do not play\" lists — guests see instantly if their song is unavailable",
+        "DJ has a curator view that lets them accept/reject requests and reorder them",
+        "Each song's \"story\" is timestamped and saved to a keepsake playlist the couple can replay on any anniversary",
+        "Special \"first dance dedication\" slot — guests can submit a dedication read before the first dance, couple picks one anonymously",
+        "The on-screen story appears for the length of the song's intro, then fades so the dancing takes over"
+      ],
+      "why_it_respects_the_irl_wedding": "Guests are motivated to actually dance to their song when it plays, because their sentence is on the screen. The dance floor stays full, not empty because everyone's requesting songs and then not dancing.",
+      "non_app_version": {
+        "description": "Request slips at the DJ booth with a \"why?\" line; DJ reads the reason on the mic before dropping the song.",
+        "needed": "No — slips + mic covers it.",
+        "adds_to_the_experience": "Yes — the on-screen sentence during the intro, the keepsake playlist, and the do-not-play filter are meaningfully better than paper."
+      },"skip": true
     },
     {
       "id": 16,
@@ -184,7 +380,20 @@
       "why": "The raw authenticity of a couple reading unscripted messages from people they love, in real time, is the moment guests most want to witness.",
       "alt1_vibe": ["Make them cry"],
       "alt2_moment": ["Speeches"],
-      "alt4_feeling": ["Emotional"]
+      "alt4_feeling": ["Emotional"],
+      "cool_features": [
+        "Guest chooses one of three \"stationery\" styles (bride's handwriting, groom's handwriting, or a shared typewriter font)",
+        "One-tap prompts if the guest freezes: \"Tell them about the first time you met one of them\" / \"What did you think when you met the other?\"",
+        "At end of night, all 100+ letters compiled into a real hardbound book, mailed to the couple two weeks later",
+        "The maid of honor's tablet lets her pin 3 letters as \"read at the anniversary\" — the couple gets those emailed on their 1-year anniversary",
+        "Letters appear on the big screen typed out one word at a time in the chosen handwriting, like they're being written live"
+      ],
+      "why_it_respects_the_irl_wedding": "Guests spend 90 seconds on their phone once. The rest of the night they're watching the screen with everyone else — and every time a new letter appears, half the room stops talking to read it. It creates group hush moments, not individual scroll moments.",
+      "non_app_version": {
+        "description": "Stack of cream cards and pens on every table, a decorated wooden box to drop them in, MOH reads a handful aloud between courses.",
+        "needed": "No — cards work.",
+        "adds_to_the_experience": "Yes — the live handwritten-reveal on screen is a genuinely new emotional beat cards can't produce."
+      }
     },
     {
       "id": 17,
@@ -194,7 +403,20 @@
       "why": "Seeing the emotion spike during the vows and first dance — captured as a graph the couple keeps forever — is unexpectedly moving to look at years later.",
       "alt1_vibe": ["Create a keepsake", "Make them cry"],
       "alt2_moment": ["All Day"],
-      "alt4_feeling": ["Emotional"]
+      "alt4_feeling": ["Emotional"],
+      "cool_features": [
+        "Prompts are timed to moments — one before the ceremony, one after the vows, one at first dance, one at the last song",
+        "One-tap emotion slider (from \"content\" to \"actively weeping\") — takes 3 seconds per prompt",
+        "Live pulse graph on the wall during dinner shows the day's arc as it happens",
+        "Final visualization exports as a framed print — a literal emotional profile of the wedding",
+        "Optional per-guest heatmap: the couple can see which moments hit hardest for their parents vs. their college friends"
+      ],
+      "why_it_respects_the_irl_wedding": "The prompts arrive at natural pauses (right after big moments), not during them. Each interaction is 3 seconds. The graph is the artifact — everything else is invisible.",
+      "non_app_version": {
+        "description": "Nothing directly comparable — you could hand out emotion cards with sliders to fill in and tally them by hand, but the real-time aggregation is the point.",
+        "needed": "No paper version really captures this.",
+        "adds_to_the_experience": "Yes — the live graph and per-moment aggregation are the entire idea; without them there's nothing to visualize."
+      }
     },
     {
       "id": 18,
@@ -204,7 +426,20 @@
       "why": "By the end of cocktail hour, tables that started as strangers have a shared photo and a story — the dare creates the connection no seating chart could engineer.",
       "alt1_vibe": ["Get them talking", "Make them laugh"],
       "alt2_moment": ["Cocktail Hour", "Dinner"],
-      "alt4_feeling": ["Funny", "Social"]
+      "alt4_feeling": ["Funny", "Social"],
+      "cool_features": [
+        "Pre-loaded dare templates (\"convince the next table to do a synchronized toast\") for tables who need a starter",
+        "Photo proof required — every completed dare uploads a picture to a shared feed",
+        "Live \"chain progress\" on the wall — visualize the relay hopping from table 2 → 5 → 8 → 1 in real time",
+        "MC moderator dashboard to approve dares before they're passed on (blocks anything genuinely off-side)",
+        "Final chain compiled into a photo booklet the couple keeps — one dare, one photo, per page"
+      ],
+      "why_it_respects_the_irl_wedding": "It literally forces tables to interact with each other. Phones are only used to receive/send the dare and photograph the result — the challenge itself is entirely IRL.",
+      "non_app_version": {
+        "description": "Sealed envelopes hand-delivered by servers from one table to the next, with dares written inside and Polaroids for photo proof.",
+        "needed": "No — servers with envelopes could carry the concept.",
+        "adds_to_the_experience": "Yes — live chain tracking on screen, real-time photo uploads, and MC moderation are much cleaner than the envelope logistics."
+      }
     },
     {
       "id": 19,
@@ -214,7 +449,20 @@
       "why": "It's a conversation starter at the bar, a way to share the couple's story through the drinks menu, and gives the bartender a live dashboard of what's trending.",
       "alt1_vibe": ["Make them laugh", "Get them talking"],
       "alt2_moment": ["Arrival", "Cocktail Hour"],
-      "alt4_feeling": ["Funny", "Social"]
+      "alt4_feeling": ["Funny", "Social"],
+      "cool_features": [
+        "5-question quiz — mood, preferred flavor, risk tolerance, favorite past decade, one weirdly personal question the couple picked",
+        "Each cocktail card includes the story behind the name (\"The 3 AM Kensington: made with gin because that's what they were drinking the night they first said 'I love you'\")",
+        "Bartender dashboard shows most-ordered drinks live, so they can prep in bulk",
+        "Guests can share their match to the group feed with a personalized caption",
+        "Post-wedding, the couple gets a printed cocktail menu keepsake with story cards"
+      ],
+      "why_it_respects_the_irl_wedding": "The whole point is to get people to the bar and talking to strangers about their weird cocktail matches. Phone use is a 90-second quiz, then it's cocktail chatter for the rest of the hour.",
+      "non_app_version": {
+        "description": "Printed cocktail menu with story cards for each drink; bartender asks guests a couple of quiz-style questions and recommends a drink.",
+        "needed": "No — a well-designed menu covers a lot of it.",
+        "adds_to_the_experience": "Yes — the personality-match reveal, the shareable card, and the bartender's live trending dashboard turn ordering a drink into a small event."
+      }
     },
     {
       "id": 20,
@@ -224,7 +472,20 @@
       "why": "It asks guests to think deeply about the couple's story, produces genuinely funny and touching entries, and the couple's real story is usually more dramatic than anyone guesses.",
       "alt1_vibe": ["Make them laugh", "Make them cry"],
       "alt2_moment": ["Dinner", "Speeches"],
-      "alt4_feeling": ["Funny", "Emotional"]
+      "alt4_feeling": ["Funny", "Emotional"],
+      "cool_features": [
+        "Structured prompts: \"where would the bride be right now?\" / \"what would the groom's job be?\" / \"who would they have married instead?\"",
+        "Guests upvote the funniest and most-touching submissions — top 5 of each get read at speeches",
+        "The couple's real \"we almost didn't meet\" story is teased on screen throughout dinner (\"if the flight had been on time...\")",
+        "Final reveal is a short couple-narrated video played after the guest entries are read",
+        "All submissions compiled into a printed \"alternate lives\" chapbook the couple keeps"
+      ],
+      "why_it_respects_the_irl_wedding": "Submissions are asynchronous over dinner — guests write between courses. The screen event is a bounded 10-minute segment before the couple's reveal, then it's done.",
+      "non_app_version": {
+        "description": "Prompt cards at each table asking guests to write down their \"alternate universe\" scenario; MOH reads a few aloud during speeches.",
+        "needed": "No — cards can carry the concept.",
+        "adds_to_the_experience": "Yes — live upvoting surfaces the actually-good entries, on-screen teasers build to the reveal, and the video payoff needs the app to land."
+      }
     },
     {
       "id": 21,
@@ -235,7 +496,20 @@
       "why": "Guests learn the couple through the couple's own voice — chronologically — and the family-vs-family scoreboard turns 'who knows them best' into a room-wide sport with actual stakes.",
       "alt1_vibe": ["Make them laugh", "Stop the room"],
       "alt2_moment": ["Dinner"],
-      "alt4_feeling": ["Funny", "Social"]
+      "alt4_feeling": ["Funny", "Social"],
+      "cool_features": [
+        "20 texts across the relationship, chronologically ordered so guests watch the couple's voice change over time",
+        "Bonus rounds: \"guess the year\" for extra points",
+        "Optional \"spicy round\" that requires a special code shared at the friends' tables",
+        "Running \"who knows them better\" scoreboard split between his family, her family, and mutual friends",
+        "Reveal card shows the full context around each text (what the couple were arguing about, where they were)"
+      ],
+      "why_it_respects_the_irl_wedding": "Everyone's looking at the same screen and laughing at the same time. Phone use is one tap per round, then look up. It's 10 minutes of collective \"how did they end up together, honestly.\"",
+      "non_app_version": {
+        "description": "Print the texts on giant cards, MOH reveals one at a time, tables shout \"his!\" or \"hers!\" and self-score.",
+        "needed": "No — a card-based reveal is close to as fun.",
+        "adds_to_the_experience": "Marginally — real-time voting and family-vs-family scoring are neat, but the core comedy is in the texts themselves, not the tech."
+      }
     }
   ]
 }
