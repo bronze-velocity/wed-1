@@ -1,5 +1,6 @@
 import ContactForm from '../ui/ContactForm.js'
 import PhotoBackdrop from '@/components/ui/PhotoBackdrop'
+import Container from '@/components/layout/Container'
 
 export default function FinalCta() {
   return (
@@ -9,7 +10,8 @@ export default function FinalCta() {
         position: 'relative',
         overflow: 'hidden',
         background: 'var(--color-bg-dark)',
-        padding: 'var(--space-32) var(--space-8)',
+        paddingTop: 'var(--space-32)',
+        paddingBottom: 'var(--space-32)',
       }}
     >
       <PhotoBackdrop
@@ -18,10 +20,9 @@ export default function FinalCta() {
         strength="heavy"
       />
 
-      <div
+      <Container
         style={{
           maxWidth: '640px',
-          margin: '0 auto',
           textAlign: 'center',
           position: 'relative',
           zIndex: 1,
@@ -36,7 +37,7 @@ export default function FinalCta() {
             lineHeight: 1.1,
           }}
         >
-          Ready to make this yours?
+          Tell us about your wedding.
         </h2>
         <p
           style={{
@@ -46,13 +47,14 @@ export default function FinalCta() {
             lineHeight: 1.6,
           }}
         >
-          We take 4 weddings per month. That&apos;s the number where we can build
-          something worth $2,000.
+          We take 4 weddings a month — because building something that feels like yours
+          takes time. Bring an idea, or bring us your story and we&rsquo;ll suggest one.
+          Either way, you don&rsquo;t lift a technical finger.
         </p>
         <div style={{ textAlign: 'left' }}>
           <ContactForm />
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

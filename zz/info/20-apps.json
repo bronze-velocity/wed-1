@@ -225,6 +225,17 @@
       "alt1_vibe": ["Make them laugh", "Make them cry"],
       "alt2_moment": ["Dinner", "Speeches"],
       "alt4_feeling": ["Funny", "Emotional"]
+    },
+    {
+      "id": 21,
+      "slug": "who-said-it",
+      "title": "Who Said It?",
+      "tagline": "Guess the sender. Loser buys the next round.",
+      "description": "A live guessing game: real texts and photos from your relationship, blurred sender, guests vote his side vs her side vs mutual friends.",
+      "why": "Guests learn the couple through the couple's own voice — chronologically — and the family-vs-family scoreboard turns 'who knows them best' into a room-wide sport with actual stakes.",
+      "alt1_vibe": ["Make them laugh", "Stop the room"],
+      "alt2_moment": ["Dinner"],
+      "alt4_feeling": ["Funny", "Social"]
     }
   ]
 }

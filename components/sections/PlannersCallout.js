@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Container from '@/components/layout/Container'
 
 export default function PlannersCallout() {
   return (
@@ -7,13 +8,12 @@ export default function PlannersCallout() {
         background: 'var(--color-bg-subtle)',
         borderTop: '1px solid var(--color-border)',
         borderBottom: '1px solid var(--color-border)',
-        padding: 'var(--space-6) var(--space-8)',
+        paddingTop: 'var(--space-6)',
+        paddingBottom: 'var(--space-6)',
       }}
     >
-      <div
+      <Container
         style={{
-          maxWidth: 'var(--container-max)',
-          margin: '0 auto',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -46,7 +46,7 @@ export default function PlannersCallout() {
         >
           See how Wepho works for planners →
         </Link>
-      </div>
+      </Container>
     </section>
   )
 }

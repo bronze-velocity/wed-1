@@ -2,12 +2,13 @@
 
 import { useRef, useEffect } from 'react'
 import Image from 'next/image'
+import Container from '@/components/layout/Container'
 
 const steps = [
   {
     number: '01',
-    heading: 'You pick your app',
-    body: 'Browse 20 distinct experiences — from a trivia game where every question is about how you actually met, to a time capsule your grandmother records for your 10th anniversary. Filter by vibe or wedding moment. One will feel exactly right.',
+    heading: 'Bring an idea, or pick one of ours',
+    body: "Twenty apps we've built are on this site — pick one and we'll make it about you. Or bring us something no one has ever done at a wedding before. Weird, specific, tied to a private inside joke — if it fits your story, we'll build it.",
     image: {
       src: '/images/pre/planning-1.jpg',
       alt: 'A couple browsing on a phone together at home, planning',
@@ -15,8 +16,8 @@ const steps = [
   },
   {
     number: '02',
-    heading: 'You fill in the form (~30 min)',
-    body: "You write the trivia questions, share the real stories, upload the photos. Every detail comes from you — your inside jokes, your actual timeline, the moment you knew. The form isn't the homework before the fun. The form is the fun.",
+    heading: 'We design and build it (2–4 weeks)',
+    body: "You tell us the stories, share the photos, name the moments. We bring the craft — five years of wedding-app pattern-matching, live-night reliability engineering, and a designer whose only job is making sure it feels like part of your wedding, not a bolt-on tool. We push back when an idea won't land in the room. We suggest mechanics you'd never have thought of. You get the version that actually works on the night, not the version you first described.",
     image: {
       src: '/images/pre/form-1.jpg',
       alt: 'Close detail of hands writing, photos spread on a table nearby',
@@ -24,8 +25,8 @@ const steps = [
   },
   {
     number: '03',
-    heading: 'Guests scan the QR on the night',
-    body: 'A QR code on every table opens directly in their browser. No download, no login, no app store. Your grandmother can do it. Your most technophobic uncle can do it. Everyone is in from the first scan.',
+    heading: 'QR on every table. That’s it.',
+    body: "Guests scan. No download, no login, no app store. Grandma's in within seconds — we'll test it against every generation before your wedding day. We're on call during the reception if anything wobbles.",
     image: {
       src: '/images/cocktail/qr-scan-1.jpg',
       alt: "A guest's hand scanning a QR code on a reception table card",
@@ -59,10 +60,7 @@ export default function HowItWorks() {
       className="py-16 md:py-20 lg:py-32"
       style={{ background: 'var(--color-bg-subtle)' }}
     >
-      <div
-        className="w-full mx-auto px-6 md:px-10"
-        style={{ maxWidth: 'var(--container-max)' }}
-      >
+      <Container>
         <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
           <p
             style={{
@@ -85,7 +83,7 @@ export default function HowItWorks() {
               color: 'var(--color-text-primary)',
             }}
           >
-            Three steps. One extraordinary night.
+            Three steps. Zero templates.
           </h2>
         </div>
 
@@ -170,7 +168,7 @@ export default function HowItWorks() {
             </div>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

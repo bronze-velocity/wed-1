@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
+import Container from '@/components/layout/Container'
 
 const VIBES = [
   {
@@ -10,7 +11,7 @@ const VIBES = [
     tagline: 'Games, chaos, everyone in on the joke',
     color: 'var(--color-amber)',
     colorLight: 'var(--color-amber-light)',
-    appIds: [1, 8, 9, 11, 19, 20],
+    appIds: [1, 8, 9, 11, 19, 20, 21],
     image: { src: '/images/apps/vibe-laugh.jpg', alt: 'Guests mid-laugh in a candid group shot' },
   },
   {
@@ -42,7 +43,7 @@ const VIBES = [
     tagline: 'Every head turns. Nobody checks their phone.',
     color: 'var(--color-accent)',
     colorLight: 'var(--color-accent-light)',
-    appIds: [1, 2, 8, 10, 11, 15],
+    appIds: [1, 2, 8, 10, 11, 15, 21],
     image: { src: '/images/apps/vibe-stop-room.jpg', alt: 'A wide shot of the room turned toward the display wall' },
   },
 ]
@@ -63,28 +64,42 @@ export default function AppGalleryTeaser({ apps }) {
 
   return (
     <section style={{ background: 'var(--color-bg-subtle)', padding: 'var(--space-24) 0' }}>
-      <div style={{ maxWidth: 'var(--container-max)', margin: '0 auto', padding: '0 var(--space-6)' }}>
+      <Container>
 
         <h2
           style={{
             fontSize: 'var(--text-h2)',
             fontWeight: 700,
             textAlign: 'center',
-            marginBottom: 'var(--space-10)',
+            marginBottom: 'var(--space-3)',
             color: 'var(--color-text-primary)',
           }}
         >
           What kind of wedding do you want?
         </h2>
 
-        {/* Vibe tiles */}
+        <p
+          style={{
+            textAlign: 'center',
+            fontSize: 'var(--text-body-lg)',
+            lineHeight: 1.6,
+            color: 'var(--color-text-secondary)',
+            marginBottom: 'var(--space-10)',
+            maxWidth: '620px',
+            margin: '0 auto var(--space-10)',
+          }}
+        >
+          Five vibes. Twenty apps we&rsquo;ve built. Zero of them off-the-shelf.
+        </p>
+
+        {/* Vibe pills */}
         <div
           style={{
             display: 'flex',
             flexWrap: 'wrap',
-            gap: 'var(--space-3)',
+            gap: 'var(--space-2)',
             justifyContent: 'center',
-            marginBottom: 'var(--space-10)',
+            marginBottom: 'var(--space-4)',
           }}
         >
           {VIBES.map((vibe) => {
@@ -94,38 +109,40 @@ export default function AppGalleryTeaser({ apps }) {
                 key={vibe.label}
                 onClick={() => selectVibe(vibe)}
                 style={{
-                  background: isActive ? vibe.color : vibe.colorLight,
-                  color: isActive ? 'var(--color-text-inverse)' : vibe.color,
-                  borderWidth: '2px',
-                  borderStyle: 'solid',
-                  borderColor: vibe.color,
-                  borderRadius: 'var(--radius-xl)',
-                  padding: 'var(--space-4) var(--space-5)',
-                  minWidth: '180px',
+                  background: isActive ? 'var(--color-text-primary)' : 'var(--color-bg)',
+                  color: isActive ? 'var(--color-text-inverse)' : 'var(--color-text-primary)',
+                  border: '1.5px solid',
+                  borderColor: isActive ? 'var(--color-text-primary)' : 'var(--color-border-strong)',
+                  borderRadius: 'var(--radius-full)',
+                  padding: '10px 18px',
                   cursor: 'pointer',
                   fontFamily: 'inherit',
-                  textAlign: 'left',
+                  fontWeight: 600,
+                  fontSize: 'var(--text-body-sm)',
+                  lineHeight: 1,
                   transition: 'all var(--duration-fast) var(--ease-out)',
                 }}
               >
-                <div style={{ fontWeight: 700, fontSize: 'var(--text-body)', lineHeight: 1.3 }}>
-                  {vibe.label}
-                </div>
-                <div
-                  style={{
-                    fontSize: 'var(--text-tiny)',
-                    fontWeight: 400,
-                    marginTop: '3px',
-                    opacity: isActive ? 0.85 : 0.7,
-                    lineHeight: 1.4,
-                  }}
-                >
-                  {vibe.tagline}
-                </div>
+                {vibe.label}
               </button>
             )
           })}
         </div>
+
+        <p
+          key={`tagline-${activeVibe.label}`}
+          className="card-enter"
+          style={{
+            '--stagger-i': 0,
+            textAlign: 'center',
+            fontSize: 'var(--text-body)',
+            color: 'var(--color-text-secondary)',
+            marginBottom: 'var(--space-10)',
+            fontStyle: 'italic',
+          }}
+        >
+          {activeVibe.tagline}
+        </p>
 
         {/* App cards — key per card includes animKey so all cards remount on vibe switch */}
         <div
@@ -203,6 +220,35 @@ export default function AppGalleryTeaser({ apps }) {
           ))}
         </div>
 
+        {/* None-of-these tail — invites the "bring your own idea" path */}
+        <div
+          style={{
+            textAlign: 'center',
+            marginBottom: 'var(--space-8)',
+            maxWidth: '620px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+          }}
+        >
+          <p
+            style={{
+              fontSize: 'var(--text-body-lg)',
+              lineHeight: 1.6,
+              color: 'var(--color-text-secondary)',
+              marginBottom: 'var(--space-3)',
+            }}
+          >
+            None of these feel like yours? Good.{' '}
+            <Link
+              href="/#contact"
+              className="link-underline"
+              style={{ color: 'var(--color-accent)', fontWeight: 600 }}
+            >
+              Tell us what would.
+            </Link>
+          </p>
+        </div>
+
         {/* See all link */}
         <div style={{ textAlign: 'center' }}>
           <Link
@@ -224,7 +270,7 @@ export default function AppGalleryTeaser({ apps }) {
           </Link>
         </div>
 
-      </div>
+      </Container>
     </section>
   )
 }

@@ -1,14 +1,13 @@
 import ContactForm from '../ui/ContactForm.js'
+import Container from '@/components/layout/Container'
 
 export default function AppBookIt({ app }) {
   return (
     <section
-      style={{
-        background: 'var(--color-bg-dark)',
-        padding: 'var(--space-32) var(--space-8)',
-      }}
+      className="py-24 md:py-32"
+      style={{ background: 'var(--color-bg-dark)' }}
     >
-      <div style={{ maxWidth: '640px', margin: '0 auto' }}>
+      <Container style={{ maxWidth: '640px' }}>
         <h2
           style={{
             fontSize: 'var(--text-h1)',
@@ -32,7 +31,7 @@ export default function AppBookIt({ app }) {
           something worth $2,000.
         </p>
         <ContactForm appName={app?.title} />
-      </div>
+      </Container>
     </section>
   )
 }

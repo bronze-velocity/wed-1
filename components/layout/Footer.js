@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Container from './Container'
 
 export default function Footer() {
   return (
@@ -6,14 +7,12 @@ export default function Footer() {
       style={{
         background: 'var(--color-bg-dark)',
         color: 'var(--color-text-inverse)',
-        padding: 'var(--space-16) 0 var(--space-10)',
+        paddingTop: 'var(--space-16)',
+        paddingBottom: 'var(--space-10)',
       }}
     >
-      <div
+      <Container
         style={{
-          maxWidth: 'var(--container-max)',
-          margin: '0 auto',
-          padding: '0 var(--space-6)',
           display: 'flex',
           flexDirection: 'column',
           gap: 'var(--space-10)',
@@ -103,7 +102,7 @@ export default function Footer() {
         >
           © 2026 Wepho. All rights reserved.
         </p>
-      </div>
+      </Container>
     </footer>
   )
 }

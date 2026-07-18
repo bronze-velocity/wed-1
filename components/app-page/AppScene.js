@@ -1,9 +1,11 @@
+import Container from '@/components/layout/Container'
+
 export default function AppScene({ app }) {
   if (!app.scene) return null
 
   return (
     <section className="bg-bg-subtle py-20 md:py-28">
-      <div className="mx-auto max-w-3xl px-6">
+      <Container narrow>
         <p
           className="mb-6 text-sm font-semibold uppercase tracking-widest text-accent"
           aria-hidden="true"
@@ -20,7 +22,7 @@ export default function AppScene({ app }) {
         >
           {app.scene}
         </p>
-      </div>
+      </Container>
     </section>
   )
 }

@@ -6,6 +6,26 @@ module.exports = {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        container: 'var(--container-max)',
+      },
+      borderRadius: {
+        sm: 'var(--radius-sm)',
+        md: 'var(--radius-md)',
+        lg: 'var(--radius-lg)',
+        xl: 'var(--radius-xl)',
+        '2xl': 'var(--radius-2xl)',
+        pill: 'var(--radius-full)',
+      },
+      boxShadow: {
+        xs: 'var(--shadow-xs)',
+        sm: 'var(--shadow-sm)',
+        md: 'var(--shadow-md)',
+        lg: 'var(--shadow-lg)',
+        xl: 'var(--shadow-xl)',
+        glow: 'var(--shadow-glow)',
+        'glow-accent': 'var(--shadow-glow-accent)',
+      },
       colors: {
         accent:           'var(--color-accent)',
         'accent-hover':   'var(--color-accent-hover)',

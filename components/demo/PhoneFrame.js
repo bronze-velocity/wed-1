@@ -74,7 +74,7 @@ export default function PhoneFrame({ onSubmit }) {
           width: 88,
           height: 22,
           background: '#111',
-          borderRadius: 12,
+          borderRadius: 'var(--radius-lg)',
         }} />
       </div>
 
@@ -349,7 +349,7 @@ export default function PhoneFrame({ onSubmit }) {
           width: 100,
           height: 4,
           background: '#3A3A3A',
-          borderRadius: 4,
+          borderRadius: 'var(--radius-sm)',
         }} />
       </div>
     </div>

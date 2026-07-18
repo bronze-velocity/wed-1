@@ -1,10 +1,12 @@
+import Container from '@/components/layout/Container'
+
 export default function AppIsThisYou({ app }) {
   const bullets = app.extended?.isThisYou
   if (!bullets || bullets.length === 0) return null
 
   return (
     <section className="py-20 md:py-28" style={{ background: 'var(--color-bg-subtle)' }}>
-      <div className="mx-auto max-w-3xl px-6">
+      <Container narrow>
         <h2
           className="mb-10 font-bold text-text-primary text-center"
           style={{
@@ -40,7 +42,7 @@ export default function AppIsThisYou({ app }) {
             </li>
           ))}
         </ul>
-      </div>
+      </Container>
     </section>
   )
 }

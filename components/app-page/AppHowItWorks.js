@@ -1,3 +1,5 @@
+import Container from '@/components/layout/Container'
+
 export default function AppHowItWorks({ app }) {
   const hiw = app.extended?.howItWorks
   if (!hiw || (!hiw.setup?.detail && !hiw.guests?.detail && !hiw.keepsake?.detail)) return null
@@ -25,7 +27,7 @@ export default function AppHowItWorks({ app }) {
 
   return (
     <section className="py-20 md:py-28" style={{ background: 'var(--color-bg)' }}>
-      <div className="mx-auto max-w-[1200px] px-6 md:px-10">
+      <Container>
         <p
           className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent"
           aria-hidden="true"
@@ -100,7 +102,7 @@ export default function AppHowItWorks({ app }) {
             </div>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

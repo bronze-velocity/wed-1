@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Container from '@/components/layout/Container'
 
 const vibeConfig = {
   'Make them laugh':   { textClass: 'text-amber',  bg: 'color-mix(in srgb, var(--color-amber)  14%, transparent)' },
@@ -19,7 +20,7 @@ export default function AppHero({ app }) {
       className="pt-24 pb-16 md:pt-32 md:pb-20 lg:pb-28"
       style={{ background: 'var(--gradient-hero)' }}
     >
-      <div className="mx-auto max-w-[1200px] px-6 md:px-10 xl:px-16">
+      <Container>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Copy */}
@@ -111,7 +112,7 @@ export default function AppHero({ app }) {
           </div>
 
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

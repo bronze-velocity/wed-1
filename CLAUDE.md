@@ -60,6 +60,19 @@ The **Wepho marketing website** — not the actual wedding apps. The site sells 
 
 ---
 
+## Design System Rules
+
+- Every section wraps its content in `<Container>` (`components/layout/Container.js`) — never re-implement `max-width` + horizontal padding. Use `<Container narrow>` for prose-heavy 768px-wide sections.
+- Border-radius rule (no hardcoded pixel radii except real phone/hardware bezels):
+  - Buttons → `var(--radius-md)`
+  - Filter/toggle pills, badges → `var(--radius-full)`
+  - Cards, panels → `var(--radius-lg)` or `var(--radius-xl)`
+  - Media/photo frames → `var(--radius-2xl)`
+- Colors, spacing, radii, shadows must reference tokens from `app/globals.css`. No hex literals in components.
+- Prefer Tailwind utilities backed by tokens (via `tailwind.config.js`) over inline style objects for anything the design system covers.
+- Section vertical rhythm: `py-20 md:py-28` for standard sections; hero uses more.
+- The full token set is documented in `zz/styling/design-system.md`; source of truth is `app/globals.css`.
+
 ## Coding Conventions
 
 - **Server components by default** — add `'use client'` only for hooks, browser events, interactive UI

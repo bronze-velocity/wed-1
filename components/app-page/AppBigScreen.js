@@ -1,3 +1,5 @@
+import Container from '@/components/layout/Container'
+
 export default function AppBigScreen({ app }) {
   const description = app.extended?.bigScreen
   if (!description) return null
@@ -6,7 +8,7 @@ export default function AppBigScreen({ app }) {
 
   return (
     <section className="py-20 md:py-28" style={{ background: 'var(--color-bg)' }}>
-      <div className="mx-auto max-w-3xl px-6 text-center">
+      <Container narrow className="text-center">
         <p
           className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent"
           aria-hidden="true"
@@ -29,9 +31,7 @@ export default function AppBigScreen({ app }) {
         >
           {description}
         </p>
-      </div>
 
-      <div className="mx-auto max-w-3xl px-6">
         <div
           className="relative flex items-center justify-center overflow-hidden rounded-2xl px-8"
           style={{
@@ -73,7 +73,7 @@ export default function AppBigScreen({ app }) {
             Wepho
           </span>
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

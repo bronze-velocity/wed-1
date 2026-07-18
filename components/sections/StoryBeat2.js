@@ -3,6 +3,7 @@
 import { useRef, useEffect } from 'react'
 import Link from 'next/link'
 import PhotoBackdrop from '@/components/ui/PhotoBackdrop'
+import Container from '@/components/layout/Container'
 
 export default function StoryBeat2() {
   const sceneRef = useRef(null)
@@ -27,7 +28,7 @@ export default function StoryBeat2() {
 
   return (
     <section
-      className="py-16 md:py-24 lg:py-32 px-6 md:px-10"
+      className="py-16 md:py-24 lg:py-32"
       style={{ position: 'relative', overflow: 'hidden', background: 'var(--color-bg-dark)' }}
     >
       <PhotoBackdrop
@@ -36,9 +37,9 @@ export default function StoryBeat2() {
         strength="heavy"
       />
 
-      <div
+      <Container
         ref={sceneRef}
-        className="reveal w-full mx-auto"
+        className="reveal"
         style={{ maxWidth: '840px', textAlign: 'center', position: 'relative', zIndex: 1 }}
       >
         <p
@@ -50,9 +51,9 @@ export default function StoryBeat2() {
             color: 'var(--color-text-inverse)',
           }}
         >
-          Your grandmother records a 45-second video message. Sealed until
-          your 10th anniversary. You&rsquo;ll open it together — she might not
-          be there when you do.
+          Your sister records a 45-second video of your grandmother giving
+          her advice. Sealed until your 10th anniversary. You&rsquo;ll open it
+          together — grandma might not be there when you do.
         </p>
 
         <Link
@@ -70,7 +71,7 @@ export default function StoryBeat2() {
         >
           Anniversary Time Capsule — App #3
         </Link>
-      </div>
+      </Container>
     </section>
   )
 }

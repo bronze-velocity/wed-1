@@ -1,10 +1,10 @@
 import Link from 'next/link'
-import ParallaxHeroBackdrop from '@/components/ui/ParallaxHeroBackdrop'
+import Image from 'next/image'
+import Container from '@/components/layout/Container'
 
 export default function HomeHero() {
   return (
     <section
-      className="px-6 md:px-10"
       style={{
         position: 'relative',
         overflow: 'hidden',
@@ -13,15 +13,9 @@ export default function HomeHero() {
         paddingBottom: 'var(--space-24)',
       }}
     >
-      <ParallaxHeroBackdrop
-        src="/images/dancing/hero-bg-1.jpg"
-        alt="Guests dancing under string lights during the reception"
-        strength="wash"
-      />
-
-      <div
-        className="w-full mx-auto grid grid-cols-1 lg:grid-cols-2 items-center"
-        style={{ maxWidth: 'var(--container-max)', gap: 'var(--space-16)', position: 'relative', zIndex: 1 }}
+      <Container
+        className="grid grid-cols-1 lg:grid-cols-2 items-center"
+        style={{ gap: 'var(--space-16)', position: 'relative', zIndex: 1 }}
       >
         <div>
           <p
@@ -51,7 +45,7 @@ export default function HomeHero() {
               marginBottom: 'var(--space-6)',
             }}
           >
-            A wedding app built around who you actually are.
+            A wedding app built for one couple. Yours.
           </h1>
 
           <p
@@ -62,10 +56,13 @@ export default function HomeHero() {
               lineHeight: 1.6,
               color: 'var(--color-text-secondary)',
               marginBottom: 'var(--space-10)',
-              maxWidth: '480px',
+              maxWidth: '520px',
             }}
           >
-            Not a template. Not Kahoot. Built for your wedding, from scratch. Price $1,000-2,000
+            Bring us an idea, or pick one of ours. We build it from scratch — designed for your
+            wedding, simple enough that grandma is in on it in seconds, and short enough that
+            guests are back in the room before their drink gets warm. ~$2,000 for something
+            entirely unique.
           </p>
 
           <div
@@ -73,30 +70,59 @@ export default function HomeHero() {
             style={{ '--stagger-i': 3, display: 'flex', flexWrap: 'wrap', gap: 'var(--space-4)' }}
           >
             <Link href="/apps" className="btn btn-lg btn-primary">
-              Explore 20 example apps →
+              See 20 things we&rsquo;ve built →
             </Link>
             <Link href="/#contact" className="btn btn-lg btn-secondary">
-              Book your app
+              Talk to us about yours
             </Link>
           </div>
         </div>
 
         <div
           className="card-enter"
-          style={{ '--stagger-i': 4, display: 'flex', justifyContent: 'center' }}
+          style={{
+            '--stagger-i': 4,
+            position: 'relative',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            minHeight: 520,
+          }}
         >
           <div
             style={{
+              position: 'absolute',
+              inset: 0,
+              borderRadius: 'var(--radius-2xl)',
+              overflow: 'hidden',
+              boxShadow: 'var(--shadow-xl)',
+              transform: 'rotate(-2deg)',
+            }}
+          >
+            <Image
+              src="/images/dancing/hero-bg-1.jpg"
+              alt="Guests dancing under string lights during the reception"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 600px"
+              style={{ objectFit: 'cover' }}
+            />
+          </div>
+
+          <div
+            style={{
+              position: 'relative',
               width: 280,
               background: '#1A1A1A',
-              borderRadius: 44,
+              borderRadius: 'var(--radius-2xl)',
               border: '2px solid #2E2E2E',
               boxShadow: 'var(--shadow-xl)',
               userSelect: 'none',
+              transform: 'rotate(2deg)',
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'center', paddingTop: 14, paddingBottom: 10 }}>
-              <div style={{ width: 88, height: 22, background: '#111', borderRadius: 12 }} />
+              <div style={{ width: 88, height: 22, background: '#111', borderRadius: 'var(--radius-lg)' }} />
             </div>
 
             <div
@@ -177,11 +203,11 @@ export default function HomeHero() {
             </div>
 
             <div style={{ display: 'flex', justifyContent: 'center', padding: '10px 0 14px' }}>
-              <div style={{ width: 100, height: 4, background: '#3A3A3A', borderRadius: 4 }} />
+              <div style={{ width: 100, height: 4, background: '#3A3A3A', borderRadius: 'var(--radius-sm)' }} />
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

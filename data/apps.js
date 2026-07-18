@@ -825,6 +825,147 @@ const extendedContent = {
       },
     ],
   },
+
+  'who-said-it': {
+    hero: {
+      headline: 'The room votes. The couple squirms. Grandma wins.',
+      subhead:
+        '20 real texts and photos from your relationship. Blurred sender. Your guests guess — his side vs her side vs the people who introduced you.',
+    },
+    scene:
+      "Dinner plates are cleared, the MC picks up the mic, and the big screen lights up with a single text bubble — sender blurred. Every phone in the room turns into a two-button buzzer: his side, her side. Cousins argue at table three. Your college roommate is quietly pulling ahead. The screen reveals it was you at 2 a.m. in 2021, and Aunt Denise loses her mind because she called it. Nobody looks at their phone for more than five seconds at a time. Everyone looks at everyone else.",
+    howItWorks: {
+      setup: {
+        time: '~90 minutes',
+        detail:
+          "You send us the material — screenshots, photos, memorable one-liners you've said out loud, plus a rough date on each. Ideally over a shared bottle of wine. We handle the layout, the chronology, the blur.",
+      },
+      guests: {
+        detail:
+          "Guests scan the QR at their seat, enter their name, tap his side / her side / mutual, and pick their relationship from a preset list — bridesmaid, groom's coworker, aunt. Done in 20 seconds. Two taps per message from then on.",
+      },
+      keepsake: {
+        artifact: 'A private archive + a printed A5 card',
+        detail:
+          "A private URL of every message, every vote, every score — yours forever — plus a printed A5 card with the family-vs-family final tally and the 'who knew you best' award, mailed with your thank-you notes. Full chapbook available as a paid add-on.",
+      },
+    },
+    bigScreen:
+      "The current message with the sender blurred. Live vote tally bars filling in real time. Corner leaderboard: His Side 34 · Her Side 31 · Mutual 28. A streak callout when someone catches fire — 'Aunt Denise: 5 in a row.' The screen is the show. Phones are just the buzzer.",
+    isThisYou: [
+      'You have a group chat, a screenshot habit, and at least one legendary text neither of you will ever live down.',
+      'Half the room would say "honestly, how are you two together" — affectionately.',
+      "The idea of your uncle reading your text messages doesn't make you flinch. (If it does — see the spicy round setting.)",
+    ],
+    questionTypes: [
+      {
+        title: 'Texts',
+        description:
+          'The 20 messages that got you here. Blurred sender. Two taps to guess.',
+      },
+      {
+        title: 'Photos',
+        description:
+          'A blurry photo of a genuinely terrible lasagna. Whose kitchen? Vote.',
+      },
+      {
+        title: 'Spoken quotes',
+        description:
+          'The line your dad said the first time he met her. Was it him — or was it her dad?',
+      },
+      {
+        title: 'Bonus layers',
+        description:
+          "After each vote, an optional 'guess the year' slider. Or the room votes on the context. Extra points for the brave.",
+      },
+      {
+        title: 'The spicy round',
+        locked: true,
+        description:
+          "Six messages the parents don't get to see. Passkey shared at the friends' tables only. Fully skippable.",
+      },
+    ],
+    scoreboard: {
+      threeWay: [
+        { label: 'His Side', score: 34 },
+        { label: 'Her Side', score: 31 },
+        { label: 'Mutual', score: 28 },
+      ],
+      individualNote:
+        'Individual leaderboard runs alongside — top 5 on the big screen, full list on every phone. Streak callouts light up when someone catches fire.',
+      subLeaderboardsNote:
+        'Sub-leaderboards for any group you name — the college crew, the coworkers, the neighbours who watched you fall in love from across the hall.',
+      copy:
+        'We built this app because "who knows the couple best" is the funniest ongoing question at every wedding. Now it has a scoreboard.',
+    },
+    chronology: {
+      headline: 'First-week flirty to last-week grocery list.',
+      description:
+        'Chronological order matters. Guests hear your voice change across 4 years in 10 minutes. Nobody plans that arc — it just happens when you line the messages up.',
+    },
+    whyNotPaper: {
+      paper:
+        "A card-based reveal is very close to as fun. The MOH holds up a printed screenshot, the room shouts a guess, someone keeps score on a napkin. It works — and if that's your vibe, we'll tell you and send you to a good stationer.",
+      app: "The family-vs-family leaderboard updating live. The 'room agrees' stat that tells you the crowd converged on the wrong answer. Streak callouts. A private digital archive of every message, every vote, every score — yours forever. Sub-leaderboards by group. A passkey-gated spicy round the parents structurally can't see.",
+      verdict:
+        "Worth the app if you want the live scoreboard and the family-vs-family bragging rights. Otherwise a good MOH with a deck of cards gets you 80% of the way.",
+    },
+    makeItYours: {
+      intro:
+        "Everything on this page is a starting point, not a spec. Because we build every Wepho app from scratch for one couple, every element is negotiable.",
+      swaps: [
+        {
+          title: 'Content',
+          detail:
+            "Don't like text screenshots? We can build the whole thing around voicemails, handwritten notes, or 20 photos of the same broken kitchen appliance you keep sending each other.",
+        },
+        {
+          title: 'Flow',
+          detail:
+            "Don't want three-way scoring? Do individual only, or bride's-team vs groom's-team, or 'everyone vs the couple.' Don't want a spicy round? We remove it entirely.",
+        },
+        {
+          title: 'Reveal',
+          detail:
+            "The two-tap vote can become a slider, a ranking, or a 'confidence bet' where points scale with how sure you were.",
+        },
+        {
+          title: 'Big screen',
+          detail:
+            'We design the display to match your venue — dark room with the screen as centerpiece, ambient side-screens, or a projection on the dance floor.',
+        },
+      ],
+      examples: [
+        "One couple replaced texts with lines from their favorite sitcom that either of them had quoted at each other in the wild.",
+        "Another used only messages from their group chat with the wedding party — team-guess-team.",
+      ],
+      tagline:
+        "This app template exists because it works. Yours won't look exactly like it. That's the point.",
+    },
+    setupEffort: {
+      timeFromYou:
+        '~90 minutes curating messages, plus 15 minutes per bonus round you want.',
+      weHandle:
+        'Blurring sender bubbles, iMessage/Android styling consistency, chronology, spicy-round separation, the passkey UX, and a pre-wedding review dashboard so nothing shows up on the big screen you haven\'t seen first.',
+      optional:
+        'A 10-minute call with your MC to draft the inter-round commentary so between-round patter is actually funny, not filler.',
+    },
+    faq: [
+      { q: 'Do guests need to download anything?', a: NO_DOWNLOAD_A },
+      {
+        q: "What if a guest gets a message wrong that's obviously their own text?",
+        a: 'We flag it for you in the review dashboard before the night. You can pull it or leave it in — comedy gold either way.',
+      },
+      {
+        q: 'Can we skip the spicy round entirely?',
+        a: 'Yes. One setting, no code exists, nobody knows it was ever an option.',
+      },
+      {
+        q: 'Do we get the raw vote data?',
+        a: 'Yes. Every message, every vote, every score lives at a private URL that stays yours forever — part of the default keepsake.',
+      },
+    ],
+  },
 }
 
 const emptyExtended = {
@@ -834,6 +975,12 @@ const emptyExtended = {
   bigScreen: '',
   isThisYou: [],
   faq: [],
+  questionTypes: [],
+  scoreboard: null,
+  chronology: null,
+  setupEffort: null,
+  makeItYours: null,
+  whyNotPaper: null,
 }
 
 export const apps = rawApps.apps.map((app) => ({

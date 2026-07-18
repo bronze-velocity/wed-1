@@ -107,7 +107,7 @@ export default function BigScreenFrame({ message, senderName, to, photo, onReset
                 height: 96,
                 background: '#fff',
                 padding: 6,
-                borderRadius: 4,
+                borderRadius: 'var(--radius-sm)',
                 boxShadow: '0 10px 24px rgba(0,0,0,0.4)',
                 transform: 'rotate(-3deg)',
               }}

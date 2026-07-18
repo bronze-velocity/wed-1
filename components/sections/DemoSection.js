@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import useScrollReveal from '../../hooks/useScrollReveal'
 import LoveLetterDemo from '../demo/LoveLetterDemo'
+import Container from '@/components/layout/Container'
 
 const STRIP_PHOTOS = [
   {
@@ -33,13 +34,7 @@ export default function DemoSection() {
         padding: 'var(--space-24) 0',
       }}
     >
-      <div
-        style={{
-          maxWidth: 'var(--container-max)',
-          margin: '0 auto',
-          padding: '0 var(--space-6)',
-        }}
-      >
+      <Container>
         <div
           ref={headingRef}
           className="reveal"
@@ -79,10 +74,43 @@ export default function DemoSection() {
             }}
           >
             During cocktail hour, your guests write you a secret message — a memory, a wish,
-            something they&apos;ve never said out loud. At dinner, you read them together for
-            the first time, live on screen, one by one. Try it below — write a message, approve
-            it, watch it reveal.
+            something they&apos;ve never said out loud. Your MOH (that&rsquo;s your maid of
+            honor, and yes she&rsquo;ll have a tablet) approves each one before it hits the
+            big screen. At dinner, you read them together for the first time, live, one by
+            one. Try it below. You&rsquo;re both the guest and the couple — write, approve,
+            reveal.
           </p>
+
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: 'var(--space-2)',
+              justifyContent: 'center',
+              marginTop: 'var(--space-8)',
+            }}
+          >
+            {[
+              'Tap, submit, back to your drink',
+              'You approve every message',
+              'Yours to keep forever',
+            ].map((label) => (
+              <span
+                key={label}
+                style={{
+                  padding: '6px 14px',
+                  borderRadius: 'var(--radius-full)',
+                  border: '1.5px solid var(--color-border-strong)',
+                  background: 'var(--color-bg)',
+                  fontSize: 'var(--text-body-sm)',
+                  fontWeight: 600,
+                  color: 'var(--color-text-secondary)',
+                }}
+              >
+                {label}
+              </span>
+            ))}
+          </div>
         </div>
 
         <LoveLetterDemo />
@@ -147,6 +175,18 @@ export default function DemoSection() {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: 'var(--space-10)' }}>
+          <p
+            style={{
+              fontSize: 'var(--text-body)',
+              lineHeight: 1.6,
+              color: 'var(--color-text-secondary)',
+              marginBottom: 'var(--space-4)',
+              maxWidth: '580px',
+              margin: '0 auto var(--space-4)',
+            }}
+          >
+            This is one of 20 apps we&rsquo;ve built. Or bring us an idea we haven&rsquo;t.
+          </p>
           <Link
             href="/apps"
             style={{
@@ -159,7 +199,7 @@ export default function DemoSection() {
             This is App #16 — The Unprompted Love Letter Machine → See all 20 apps
           </Link>
         </div>
-      </div>
+      </Container>
     </section>
   )
 }
