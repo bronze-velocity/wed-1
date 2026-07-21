@@ -59,11 +59,11 @@ export default function SixRules() {
 
   return (
     <section
-      className="py-16 md:py-20 lg:py-32"
+      className="section-py"
       style={{ background: 'var(--color-bg)' }}
     >
       <Container>
-        <div style={{ textAlign: 'center', marginBottom: 'var(--space-14)' }}>
+        <div style={{ textAlign: 'center', marginBottom: 'var(--space-10)' }}>
           <p
             style={{
               fontSize: 'var(--text-label)',

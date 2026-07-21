@@ -85,7 +85,7 @@ export default function AdminFrame({ queue = [], pending, onApprove, onSkip, act
           textTransform: 'uppercase',
           background: 'var(--color-gold-light)',
           color: 'var(--color-gold)',
-          borderRadius: 'var(--radius-full)',
+          borderRadius: 'var(--radius-md)',
           padding: '3px 10px',
           whiteSpace: 'nowrap',
         }}>

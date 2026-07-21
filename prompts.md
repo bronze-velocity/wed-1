@@ -39,15 +39,15 @@ Live Roast Board — App #8
 - a footnote is not the way to go to describe an MC. 
 - is this really something people want (isn't it too far in the future?) let's improve. — like emailing you your guests’ predictions on your 25th anniversary.
 
-### 
+###  done
 please suggest 15 different names and domain names for our wedding app studio (criteria: easy to find when googling, obvious in what we do, joyous) as well as 10 alternative simplistic logos that can be made as svgs in a foolproof way by a LLM. output as a .md into zz/biz.
 
-###
+### done
 please update http://localhost:3000/apps so that:
 the styling and layout is correct, please check the design system and/or some issues with css wiring?
 please update the intro of the section to be more in-line with our thoughts in the one-pager as well as in /home/zxc/Documents/code/win-repos/wed-1/zz/lp-v3-suggestions.md
 
-###
+### done
 for the apps in /home/zxc/Documents/code/win-repos/wed-1/zz/info/20-apps.json (an older version), for each of the entries, add brief details about each of these areas as new key/value pairs:
 - ### Cool features
 - ### Why it respects the IRL wedding
@@ -55,26 +55,30 @@ for the apps in /home/zxc/Documents/code/win-repos/wed-1/zz/info/20-apps.json (a
 (fyi, this is the same kind of info that we have for the newer apps in /home/zxc/Documents/code/win-repos/wed-1/zz/info/20-apps-reimagined.md)
 
 
-###
+### done
 let's update the apps that we're describing and highlighting.
-do we have the selected ones from here in the current list of 20?
-/home/zxc/Documents/code/win-repos/wed-1/zz/info/apps-chosen.md
-
 I really don't like this section on the lp:
 "The room laughs before your uncle even looks up from his phone.
 
 He tapped out one line — a jab about your dad’s dance moves — and it hit the big screen. Now he’s watching table three read what your college roommate wrote.
 Live Roast Board — App #8"
+please suggest other alternatives for all of the brief highlights on the lp
 
-###
+### done
 we want to do some pinterest marketing as per the below. create a plan for how to 1) research how pinterest usually works, 2) how to understand what real people are on there, 3) how to plan our content and interactions (what are best practices on pinterest), 4) how we can understand how best to understand analytics, 5) what different post formats there are. 6) what accounts to follow and interact with to increase exposure.
 
-###
+### done
 how are ways in which an LLM (claude code) can help with strategizing, planning, executing this kind of thing:
 3. **Reddit r/weddingplanning, r/weddingsunder10k, r/weddingsover10k, r/EngagementRings** — high-trust, low-BS, allergic to marketing. But *the exact place* where "our wedding is going to feel generic" panic lives. We do not advertise here. We show up as ourselves when the thread is relevant (an existing couple posts "how do we make our reception feel less standard?" and Wepho is one legitimate answer). See §5 on organic seeding.
+output into a .md
 
-###
+### done
 do web research to find 20 different marketplaces for wedding apps - for before/during/after the wedding. output into a new .md file with sources. 
 
-### 
+### done
 can you find 5 sources each with recent (2026) and popular wedding content for real wedding couples in the US - like podcasts, forums, blog posts, social media stuff etc. output into a new .md file
+
+###
+any phones that are being displayed need to be iphone size, define this somewhere and 
+  implement. also, the UI for the MC is terrible. please create a plan for doing a      
+  nice looking UI.   

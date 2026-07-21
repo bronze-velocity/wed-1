@@ -11,7 +11,7 @@ const VIBES = [
     tagline: 'Games, chaos, everyone in on the joke',
     color: 'var(--color-amber)',
     colorLight: 'var(--color-amber-light)',
-    appIds: [1, 8, 9, 11, 19, 20, 21],
+    appIds: [1, 8, 9, 11, 19, 20, 21, 22, 23],
     image: { src: '/images/apps/vibe-laugh.jpg', alt: 'Guests mid-laugh in a candid group shot' },
   },
   {
@@ -19,7 +19,7 @@ const VIBES = [
     tagline: 'The moment nobody saw coming',
     color: 'var(--color-rose)',
     colorLight: 'var(--color-rose-light)',
-    appIds: [3, 7, 12, 13, 16, 17],
+    appIds: [3, 7, 12, 13, 16, 17, 24],
     image: { src: '/images/apps/vibe-cry.jpg', alt: 'A quiet, emotional moment between two guests' },
   },
   {
@@ -27,7 +27,7 @@ const VIBES = [
     tagline: 'Strangers leave as friends',
     color: 'var(--color-teal)',
     colorLight: 'var(--color-teal-light)',
-    appIds: [2, 4, 5, 14, 18],
+    appIds: [2, 4, 5, 14, 18, 23],
     image: { src: '/images/apps/vibe-talk.jpg', alt: 'A cluster of guests deep in conversation at cocktail hour' },
   },
   {
@@ -35,7 +35,7 @@ const VIBES = [
     tagline: 'Something you still open in twenty years',
     color: 'var(--color-green)',
     colorLight: 'var(--color-green-light)',
-    appIds: [3, 4, 6, 7, 12, 14, 15, 17],
+    appIds: [3, 4, 6, 7, 12, 14, 15, 17, 22, 24],
     image: { src: '/images/apps/vibe-keepsake.jpg', alt: 'A still-life of a keepsake object, softly lit' },
   },
   {
@@ -43,7 +43,7 @@ const VIBES = [
     tagline: 'Every head turns. Nobody checks their phone.',
     color: 'var(--color-accent)',
     colorLight: 'var(--color-accent-light)',
-    appIds: [1, 2, 8, 10, 11, 15, 21],
+    appIds: [1, 2, 8, 10, 11, 15, 21, 23],
     image: { src: '/images/apps/vibe-stop-room.jpg', alt: 'A wide shot of the room turned toward the display wall' },
   },
 ]
@@ -63,7 +63,7 @@ export default function AppGalleryTeaser({ apps }) {
     .slice(0, 5)
 
   return (
-    <section style={{ background: 'var(--color-bg-subtle)', padding: 'var(--space-24) 0' }}>
+    <section className="section-py" style={{ background: 'var(--color-bg-subtle)' }}>
       <Container>
 
         <h2
@@ -89,7 +89,7 @@ export default function AppGalleryTeaser({ apps }) {
             margin: '0 auto var(--space-10)',
           }}
         >
-          Five vibes. Twenty apps we&rsquo;ve built. Zero of them off-the-shelf.
+          Five vibes. Twelve apps we&rsquo;ve built. Zero of them off-the-shelf.
         </p>
 
         {/* Vibe pills */}
@@ -113,7 +113,7 @@ export default function AppGalleryTeaser({ apps }) {
                   color: isActive ? 'var(--color-text-inverse)' : 'var(--color-text-primary)',
                   border: '1.5px solid',
                   borderColor: isActive ? 'var(--color-text-primary)' : 'var(--color-border-strong)',
-                  borderRadius: 'var(--radius-full)',
+                  borderRadius: 'var(--radius-md)',
                   padding: '10px 18px',
                   cursor: 'pointer',
                   fontFamily: 'inherit',
@@ -266,7 +266,7 @@ export default function AppGalleryTeaser({ apps }) {
               transition: 'border-color var(--duration-fast) var(--ease-out)',
             }}
           >
-            See all 20 app examples →
+            See all 12 app examples →
           </Link>
         </div>
 

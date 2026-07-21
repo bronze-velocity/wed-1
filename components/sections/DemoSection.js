@@ -29,9 +29,9 @@ export default function DemoSection() {
 
   return (
     <section
+      className="section-py"
       style={{
         background: 'var(--gradient-hero)',
-        padding: 'var(--space-24) 0',
       }}
     >
       <Container>
@@ -99,7 +99,7 @@ export default function DemoSection() {
                 key={label}
                 style={{
                   padding: '6px 14px',
-                  borderRadius: 'var(--radius-full)',
+                  borderRadius: 'var(--radius-md)',
                   border: '1.5px solid var(--color-border-strong)',
                   background: 'var(--color-bg)',
                   fontSize: 'var(--text-body-sm)',
@@ -185,7 +185,7 @@ export default function DemoSection() {
               margin: '0 auto var(--space-4)',
             }}
           >
-            This is one of 20 apps we&rsquo;ve built. Or bring us an idea we haven&rsquo;t.
+            This is one of 12 apps we&rsquo;ve built. Or bring us an idea we haven&rsquo;t.
           </p>
           <Link
             href="/apps"
@@ -196,7 +196,7 @@ export default function DemoSection() {
               textDecoration: 'none',
             }}
           >
-            This is App #16 — The Unprompted Love Letter Machine → See all 20 apps
+            This is the Unprompted Love Letter Machine → See all 12 apps
           </Link>
         </div>
       </Container>

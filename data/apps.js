@@ -1,4 +1,4 @@
-import rawApps from '../zz/info/20-apps.json' assert { type: 'json' }
+import rawApps from '../zz/wed-apps/20-apps.json' with { type: 'json' }
 
 const NO_DOWNLOAD_A =
   "No. Guests scan a QR code and everything happens in their phone's browser — nothing to install, nothing to log into."
@@ -11,19 +11,19 @@ const extendedContent = {
     hero: {
       headline: 'How well do your guests actually know you?',
       subhead:
-        "A live trivia game where every question is real — your first date, who said 'I love you' first, what he said when he proposed. Winner gives a toast.",
+        "One live game, played by the whole room at once. A host reads each question aloud on the mic, the same question hits every phone at the same moment, and the leaderboard on the big screen moves together — your first date, who said 'I love you' first, what he said when he proposed. Winner gives a toast.",
     },
     scene:
-      "Dinner is winding down. Someone taps a water glass, but instead of a toast, a countdown appears on the big screen. Fifteen questions, all about you two — where you had your first kiss, what she said when he proposed, which one of you cried at the vow rehearsal. Guests grab their phones, competitive immediately. Table six is convinced they know everything. They're wrong about question four. By the leaderboard's final flip, the whole room is arguing about who actually knows you best — and the winner is heading to the mic.",
+      "Dinner is winding down. Someone taps a water glass, but instead of a toast, a countdown fills the big screen and a host lifts the mic. Question one — the same one on every phone in the room at the same second. Fifteen questions, all about you two, everyone answering together against one shared clock: where you had your first kiss, what she said when he proposed, which one of you cried at the vow rehearsal. The whole room locks in, groans, and laughs on the same beat. Table six is convinced they know everything. They're wrong about question four. By the final leaderboard flip, the entire room is arguing about who actually knows you best — and the winner is walking to the mic.",
     howItWorks: {
       setup: {
         time: '~20 minutes',
         detail:
-          'You write 15–20 questions and answers — the real ones, plus a few funny wrong options. Add photos if you want. We build the rest.',
+          'You write 15–20 questions and answers — the real ones, plus a few funny wrong options. Add photos if you want, and pick who hosts: your MC, or one of you on the mic. We build the rest.',
       },
       guests: {
         detail:
-          'Guests scan a QR code at their table, no app to download. Questions appear live as the host reads them aloud; answers lock in on their phones.',
+          'Everyone scans a QR code once, no app to download, then plays together in sync. The host reads each question aloud, it appears on every phone at the same moment, and a shared countdown moves the whole room from one question to the next — nobody races ahead or falls behind.',
       },
       keepsake: {
         artifact: 'The full leaderboard + every answer, saved',
@@ -32,14 +32,19 @@ const extendedContent = {
       },
     },
     bigScreen:
-      'A live leaderboard climbs and swaps in real time as answers come in, question by question, with your photos woven between rounds — built for a projector or TV, so the whole room watches the standings shift together.',
+      "The big screen runs the show: the current question and its countdown for the whole room, then the live leaderboard climbing and swapping between rounds, with your photos woven in. Everyone watches the same screen and moves together — it's the shared centerpiece, not something each table follows on its own.",
     isThisYou: [
       "You have specific, funny, or surprising stories you want guests to guess at — not just 'how did we meet.'",
       'You want a moment with real stakes — a winner, a toast, a leaderboard everyone can see.',
+      'You want the whole room doing one thing together, on the same question at the same time — not a game each table plays at its own pace.',
       'Your guest list mixes people who know you at different depths — college friends, work colleagues, family — and you want them all competing on equal footing.',
     ],
     faq: [
       { q: 'Do guests need to download anything?', a: NO_DOWNLOAD_A },
+      {
+        q: 'Does everyone play at the same time?',
+        a: "Yes — that's the whole point. It's one synchronized game hosted from the mic, not a quiz each table does at its own pace. The host reads every question aloud, the same question hits every phone at once, and a shared countdown keeps the entire room on the same beat.",
+      },
       {
         q: 'How long does setup take?',
         a: 'About 20 minutes to write your questions and answers. We handle the build, the branding, and the live leaderboard.',
@@ -47,7 +52,7 @@ const extendedContent = {
       { q: 'What if something breaks on the day?', a: FAILS_A },
       {
         q: 'What can we customize?',
-        a: 'Every question, every photo, the colors, and whether you two answer live alongside your guests.',
+        a: 'Every question, every photo, the colors, who hosts on the mic, and whether you two answer live alongside your guests.',
       },
     ],
   },
@@ -966,6 +971,141 @@ const extendedContent = {
       },
     ],
   },
+
+  'story-chain': {
+    hero: {
+      headline: 'Your guests are about to write your love story. One sentence each.',
+      subhead:
+        'It starts with a single line on the big screen. Everyone adds one sentence. The whole room watches the story grow — and go off the rails.',
+    },
+    scene:
+      "One sentence sits on the big screen: 'Their love story actually began when…' Then someone at table four adds a line, and it appears. Then someone else. The story lurches from sweet to absurd and back — your college friends are clearly trying to sabotage it, the DJ reads the best lines aloud, and by the time dessert lands you have a two-page origin myth that is almost entirely untrue and completely yours. It's printed and in your hands a week later.",
+    howItWorks: {
+      setup: {
+        time: '~10 minutes',
+        detail:
+          'You write the opening sentence (or pick one of ours) and, if you want, name a friend to moderate. Guests write everything after that.',
+      },
+      guests: {
+        detail:
+          'Guests add one sentence at a time from their phones — no download — with a short cooldown so nobody hijacks the plot. Each line appears live on the wall.',
+      },
+      keepsake: {
+        artifact: 'A printed chapbook of the finished story',
+        detail:
+          "The whole chain, typeset into a small hardbound book and delivered the week after — your wedding's official, wildly inaccurate origin story.",
+      },
+    },
+    bigScreen:
+      'The story builds live on the display wall, one sentence at a time, with the newest line highlighted as it lands — the room reads along and reacts together.',
+    isThisYou: [
+      'You have a friend group that will absolutely try to sabotage a shared doc, and you want to give them a stage for it.',
+      "You want a keepsake with your people's fingerprints all over it, not just your own.",
+      'You like a little structured chaos as your dinner entertainment.',
+    ],
+    faq: [
+      { q: 'Do guests need to download anything?', a: NO_DOWNLOAD_A },
+      { q: 'How long does setup take?', a: 'About 10 minutes — you just write the opening line and pick a moderator.' },
+      {
+        q: 'What if it goes off the rails?',
+        a: "That's half the fun, but your moderator can redirect or remove any line before it sticks, so it never goes truly off-side.",
+      },
+      {
+        q: 'What can we customize?',
+        a: 'The opening sentence, whether you run one story or parallel wholesome-and-unhinged chapters, and the design of the printed chapbook.',
+      },
+    ],
+  },
+
+  'ask-us-anything': {
+    hero: {
+      headline: 'The room asks. You answer. Live.',
+      subhead:
+        'Guests submit questions during dinner and upvote the ones they actually want answered — you take the mic over dessert and answer the top ten.',
+    },
+    scene:
+      "The questions start rolling in during dinner — some silly ('which of you would survive longer in a zombie apocalypse'), some that make you pause ('what changed your mind about kids'). The room upvotes, and the best ones climb while the safe ones sink. By dessert there's a clear top ten, and you're at the mic answering questions your guests genuinely wanted asked — not the ones a host guessed at. Some land as jokes. One or two land somewhere quieter.",
+    howItWorks: {
+      setup: {
+        time: '~5 minutes',
+        detail:
+          "Almost nothing on your end — just decide who moderates and roughly when during dessert you'll take the mic. Guests supply the questions.",
+      },
+      guests: {
+        detail:
+          'Guests submit questions anonymously or credited from their phones — no download — and upvote others. Voting closes 15 minutes before dessert.',
+      },
+      keepsake: {
+        artifact: 'Every question, ranked, saved',
+        detail:
+          "You keep the full ranked list — the ones you answered and the ones you didn't — as a snapshot of what your people were curious about.",
+      },
+    },
+    bigScreen:
+      'The top questions display on the wall with their vote counts once voting closes, so the room sees exactly what it chose before you start answering.',
+    isThisYou: [
+      'You two are comfortable on the spot and actually enjoy a good Q&A.',
+      'You want a dinner moment with real spontaneity, not a rehearsed bit.',
+      'Your guests are curious enough — and funny enough — to make the question list worth reading.',
+    ],
+    faq: [
+      { q: 'Do guests need to download anything?', a: NO_DOWNLOAD_A },
+      { q: 'How long does setup take?', a: 'About 5 minutes — you just pick a moderator and a rough time to take the mic.' },
+      {
+        q: 'What if a question is inappropriate?',
+        a: 'Your moderator gets a view to hide anything actively bad before it ever reaches the screen or the ranking.',
+      },
+      {
+        q: 'What can we customize?',
+        a: 'The question categories, whether submissions can be anonymous, and how many top questions you answer live.',
+      },
+    ],
+  },
+
+  'video-guestbook': {
+    hero: {
+      headline: "A guestbook you'll actually watch. For the rest of your life.",
+      subhead:
+        'Instead of signing a book, guests record a short video from their seat — every clip curated into a film delivered the week after.',
+    },
+    scene:
+      "There's no line, no booth, no attendant. Sometime during the night, each guest opens a prompt on their phone — 'What do you want them to remember?' — and records sixty seconds from wherever they're sitting. Some are laughing. Some go quiet halfway through and mean every word. Grandparents get their grandkids to hold the phone. A week later a film arrives, and every individual clip is saved on its own too — so decades from now, every voice is still there, one by one.",
+    howItWorks: {
+      setup: {
+        time: '~10 minutes',
+        detail:
+          'You choose the prompt (or a few) and name whoever curates the final film. Guests record the rest across the day.',
+      },
+      guests: {
+        detail:
+          "Guests record a short message directly in their phone's browser — no app, no queue — with a discreet re-record button so nobody submits a bad take.",
+      },
+      keepsake: {
+        artifact: 'A curated film + every clip archived separately',
+        detail:
+          'A highlight film delivered the week after, plus every individual clip saved on its own — so each message is preserved even decades from now.',
+      },
+    },
+    bigScreen:
+      "None during the night — this one stays private and personal, recorded from each guest's seat rather than performed for the room.",
+    isThisYou: [
+      "You know the value of a well-preserved video — a voice you'd give anything to hear again.",
+      "You want a guestbook you'll revisit, not one that goes in a drawer after the honeymoon.",
+      'You have older relatives whose message you want captured while you can.',
+    ],
+    faq: [
+      { q: 'Do guests need to download anything?', a: NO_DOWNLOAD_A },
+      { q: 'How long does setup take?', a: 'About 10 minutes to choose your prompts and pick who curates the film.' },
+      {
+        q: 'What if something breaks on the day?',
+        a: "Videos upload and are stored securely the moment they're recorded, and we test the whole flow before the wedding so nothing is lost.",
+      },
+      {
+        q: 'What can we customize?',
+        a: 'The prompts guests see, whether older guests get assisted mode, and the edit and length of the final film.',
+      },
+    ],
+  },
 }
 
 const emptyExtended = {
@@ -983,7 +1123,9 @@ const emptyExtended = {
   whyNotPaper: null,
 }
 
-export const apps = rawApps.apps.map((app) => ({
-  ...app,
-  extended: { ...emptyExtended, ...extendedContent[app.slug] },
-}))
+export const apps = rawApps.apps
+  .filter((app) => !app.skip)
+  .map((app) => ({
+    ...app,
+    extended: { ...emptyExtended, ...extendedContent[app.slug] },
+  }))

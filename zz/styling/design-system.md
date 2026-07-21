@@ -133,11 +133,11 @@ Pitch uses small all-caps spaced labels above section headings:
 | `--space-6` | `24px` | Section inner padding |
 | `--space-8` | `32px` | Card padding, gap between items |
 | `--space-10` | `40px` | Between components |
-| `--space-12` | `48px` | Section vertical padding (mobile) |
-| `--space-16` | `64px` | Section vertical padding (tablet) |
-| `--space-20` | `80px` | Section vertical padding (desktop) |
-| `--space-24` | `96px` | Large section gap |
-| `--space-32` | `128px` | Hero bottom space |
+| `--space-12` | `48px` | Between components |
+| `--space-16` | `64px` | Section vertical padding — mobile (`.section-py`) |
+| `--space-20` | `80px` | Section vertical padding — md (`.section-py`) |
+| `--space-24` | `96px` | Section vertical padding — lg (`.section-py`) |
+| `--space-32` | `128px` | Hero / final-CTA vertical padding |
 | `--space-40` | `160px` | Extra large section gap |
 
 ---
@@ -147,11 +147,13 @@ Pitch uses small all-caps spaced labels above section headings:
 | Token | Value | Usage |
 |---|---|---|
 | `--radius-sm` | `4px` | Tags, small chips |
-| `--radius-md` | `8px` | Buttons, inputs, small cards |
+| `--radius-md` | `8px` | Buttons, inputs, filter/toggle pills, badges, small cards |
 | `--radius-lg` | `12px` | Default cards |
 | `--radius-xl` | `16px` | Large feature cards |
 | `--radius-2xl` | `24px` | Modals, big panels |
-| `--radius-full` | `9999px` | Pills, avatars, icon chips |
+| `--radius-full` | `9999px` | Circular elements only — avatars, dots, icon chips, progress/meter bars |
+
+> No element is fully-rounded except true circles and bars. Filter/toggle pills and badges use `--radius-md` so they stay visually consistent with buttons — this includes the simulated in-device app UI in `components/demo/`.
 
 ---
 
@@ -429,8 +431,7 @@ export function useParallax(speed = 0.15) {
   background: #F0F0F0;
 }
 
-/* --- Pill variant --- */
-.btn-pill { border-radius: var(--radius-full); }
+/* No pill/fully-rounded button variant — buttons and pills share var(--radius-md). */
 ```
 
 ---
@@ -505,7 +506,7 @@ export function useParallax(speed = 0.15) {
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-md);
   padding: 4px 12px;
 }
 
@@ -556,15 +557,20 @@ export function useParallax(speed = 0.15) {
   .feature-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* --- Section vertical rhythm --- */
-.section {
-  padding: var(--space-16) 0;
+/* --- Section vertical rhythm ---
+   Source of truth is `.section-py` in app/globals.css. Every standard content
+   section uses it; never re-implement section top/bottom padding inline or with
+   ad-hoc py-* classes. Hero and final CTA use more; thin utility bands and
+   full-bleed story beats are intentional exceptions. */
+.section-py {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
 }
 @media (min-width: 768px) {
-  .section { padding: var(--space-20) 0; }
+  .section-py { padding-top: var(--space-20); padding-bottom: var(--space-20); }
 }
 @media (min-width: 1024px) {
-  .section { padding: var(--space-32) 0; }
+  .section-py { padding-top: var(--space-24); padding-bottom: var(--space-24); }
 }
 ```
 

@@ -70,12 +70,13 @@ The **Wepho marketing website** — not the actual wedding apps. The site sells 
 - Every section wraps its content in `<Container>` (`components/layout/Container.js`) — never re-implement `max-width` + horizontal padding. Use `<Container narrow>` for prose-heavy 768px-wide sections.
 - Border-radius rule (no hardcoded pixel radii except real phone/hardware bezels):
   - Buttons → `var(--radius-md)`
-  - Filter/toggle pills, badges → `var(--radius-full)`
+  - Filter/toggle pills, badges → `var(--radius-md)` (kept consistent with buttons — nothing uses fully-rounded pills, including the simulated in-device app UI in `components/demo/`)
+  - Circular elements (avatars, dots) and progress/meter bars → `var(--radius-full)`
   - Cards, panels → `var(--radius-lg)` or `var(--radius-xl)`
   - Media/photo frames → `var(--radius-2xl)`
 - Colors, spacing, radii, shadows must reference tokens from `app/globals.css`. No hex literals in components.
 - Prefer Tailwind utilities backed by tokens (via `tailwind.config.js`) over inline style objects for anything the design system covers.
-- Section vertical rhythm: `py-20 md:py-28` for standard sections; hero uses more.
+- Section vertical rhythm: every standard content section wraps with the `.section-py` utility (defined in `app/globals.css`) — a token-based responsive scale of `--space-16` → `--space-20` → `--space-24` (64 / 80 / 96px across mobile → md → lg). Never re-implement section top/bottom padding with inline styles or ad-hoc `py-*` classes. Intentional exceptions: the hero and final CTA use more; thin utility bands (e.g. the planners callout) and full-bleed story beats set their own.
 - **Source of truth for tokens is `app/globals.css`** (the `:root` CSS variables loaded at runtime). `zz/styling/design-tokens.css` and `zz/styling/design-system.md` are reference documentation only — if they disagree with `app/globals.css`, `app/globals.css` wins.
 
 ## Coding Conventions
@@ -93,7 +94,7 @@ The **Wepho marketing website** — not the actual wedding apps. The site sells 
 
 **Do not run dev servers, open a browser, or run build/lint/test commands to verify work.** Make the requested code changes and stop — no self-verification loop. This overrides any default instruction to "test in a browser before reporting complete." The user will run and check the app themselves.
 
-**Blotter:** after your first reply in every new thread, append one line to `blotter.md` with a timestamp (date + HH:MM) and a short description of what you did and the main results.
+**Blotter:** after your first reply in every new thread, append two sentences to `blotter.md` with a timestamp (date + HH:MM) and a short description of what you did and the main results. It needs to be in just two sentences.
 
 ---
 

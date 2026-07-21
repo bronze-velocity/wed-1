@@ -28,12 +28,12 @@ export default function StoryBeat2() {
 
   return (
     <section
-      className="py-16 md:py-24 lg:py-32"
+      className="section-py"
       style={{ position: 'relative', overflow: 'hidden', background: 'var(--color-bg-dark)' }}
     >
       <PhotoBackdrop
-        src="/images/post/legacy-1.jpg"
-        alt="A grandparent-aged guest, emotional, recording a message on a phone"
+        src="/images/cocktail/qr-scan-1.jpg"
+        alt="A guest scanning a QR code tucked into the venue during cocktail hour"
         strength="heavy"
       />
 
@@ -44,6 +44,19 @@ export default function StoryBeat2() {
       >
         <p
           style={{
+            fontSize: 'var(--text-label)',
+            fontWeight: 600,
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            color: 'var(--color-accent-light)',
+            marginBottom: 'var(--space-4)',
+          }}
+        >
+          A hidden-QR hunt · roam the venue at cocktail hour
+        </p>
+
+        <p
+          style={{
             fontSize: 'var(--text-h1)',
             fontWeight: 700,
             letterSpacing: '-0.02em',
@@ -51,17 +64,32 @@ export default function StoryBeat2() {
             color: 'var(--color-text-inverse)',
           }}
         >
-          Your sister records a 45-second video of your grandmother giving
-          her advice. Sealed until your 10th anniversary. You&rsquo;ll open it
-          together — grandma might not be there when you do.
+          The QR code behind the photo wall just told your cousin how you actually met.
+        </p>
+
+        <p
+          style={{
+            marginTop: 'var(--space-6)',
+            fontSize: 'var(--text-body)',
+            lineHeight: 1.6,
+            color: 'var(--color-text-inverse-secondary)',
+            maxWidth: '620px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+          }}
+        >
+          Hidden codes around the venue each unlock a chapter of your love story — the first
+          date, the trip where it got serious, the proposal — in your own words and photos.
+          Guests roam and scan at their own pace, piecing it together in little groups, and
+          the hardest-to-find last code reveals a private message from the two of you.
         </p>
 
         <Link
-          href="/apps/anniversary-time-capsule"
+          href="/apps/venue-scavenger-hunt"
           className="link-underline"
           style={{
             display: 'inline-block',
-            marginTop: 'var(--space-10)',
+            marginTop: 'var(--space-8)',
             fontSize: 'var(--text-label)',
             fontWeight: 600,
             letterSpacing: '0.06em',
@@ -69,7 +97,7 @@ export default function StoryBeat2() {
             color: 'var(--color-text-inverse-secondary)',
           }}
         >
-          Anniversary Time Capsule — App #3
+          Venue Scavenger Hunt — App #2
         </Link>
       </Container>
     </section>

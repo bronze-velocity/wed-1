@@ -70,7 +70,7 @@ export default function HomeHero() {
             style={{ '--stagger-i': 3, display: 'flex', flexWrap: 'wrap', gap: 'var(--space-4)' }}
           >
             <Link href="/apps" className="btn btn-lg btn-primary">
-              See 20 things we&rsquo;ve built →
+              See 12 things we&rsquo;ve built →
             </Link>
             <Link href="/#contact" className="btn btn-lg btn-secondary">
               Talk to us about yours
@@ -156,7 +156,7 @@ export default function HomeHero() {
                       key={label}
                       style={{
                         padding: '5px 13px',
-                        borderRadius: 'var(--radius-full)',
+                        borderRadius: 'var(--radius-md)',
                         border: '1.5px solid',
                         borderColor: i === 0 ? 'var(--color-accent)' : 'var(--color-border-strong)',
                         background: i === 0 ? 'var(--color-accent)' : 'transparent',

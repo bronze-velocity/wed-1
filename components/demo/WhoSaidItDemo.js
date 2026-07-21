@@ -1,52 +1,82 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import WhoSaidItPhone from './WhoSaidItPhone'
+import WhoSaidItHost from './WhoSaidItHost'
+import WhoSaidItBigScreen from './WhoSaidItBigScreen'
 
-const TEXTS = [
+const ROOM_SIZE = 48
+const HOST_LABEL = 'Host'
+
+const QUESTIONS = [
   {
     id: 1,
     text: 'i cannot believe you made me watch a two-hour documentary about the history of paperclips',
     sender: 'Simone',
+    votes: { Jack: 78, Simone: 22 },
+    roomAccuracy: 22,
     context: '78% of the room got this one wrong.',
+    standings: { his: 6, her: 8 },
+    streak: null,
+    hostNote: 'Simone picked the documentary. Ask the room who else has been trapped by one of her “quick 20-minute” watches.',
   },
   {
     id: 2,
     text: 'babe the cat threw up on the keyboard again please come home',
     sender: 'Jack',
+    votes: { Jack: 50, Simone: 50 },
+    roomAccuracy: 50,
     context: 'Split down the middle. Simone denies ownership of the cat.',
+    standings: { his: 13, her: 15 },
+    streak: null,
+    hostNote: 'The cat is named Gerald. Simone still insists Gerald is “technically Jack’s cat.” Let that land.',
   },
   {
     id: 3,
     text: 'you were right about the shoes. i’m sorry. i love you. don’t gloat.',
     sender: 'Jack',
+    votes: { Jack: 34, Simone: 66 },
+    roomAccuracy: 34,
     context: 'Only 34% guessed this one. The gloat is very much in progress.',
+    standings: { his: 20, her: 21 },
+    streak: 'Table 4 is on a 3-question streak.',
+    hostNote: 'This is the only recorded time Jack admitted he was wrong. Pause for effect before you reveal it.',
   },
   {
     id: 4,
     text: 'if you eat the last piece of leftover thai i will actually leave you',
     sender: 'Simone',
+    votes: { Jack: 8, Simone: 92 },
+    roomAccuracy: 92,
     context: '92% got it right. Simone has receipts.',
+    standings: { his: 27, her: 29 },
+    streak: null,
+    hostNote: 'There is a real labeled note in their fridge about these leftovers. A photo exists — ask Simone to confirm.',
   },
   {
     id: 5,
     text: 'just so you know: i’ve been humming that song from our first dance all day and now everyone at work thinks i’m losing it',
     sender: 'Jack',
+    votes: { Jack: 100, Simone: 0 },
+    roomAccuracy: 100,
     context: 'A rare 100%. Everyone knew.',
+    standings: { his: 34, her: 31 },
+    streak: 'Aunt Denise: 5 in a row.',
+    hostNote: 'Cue the first-dance song the second you reveal this — the DJ is watching for your nod.',
   },
 ]
 
 export default function WhoSaidItDemo() {
   const [index, setIndex] = useState(0)
   const [guess, setGuess] = useState(null)
+  const [revealed, setRevealed] = useState(false)
   const [score, setScore] = useState({ correct: 0, total: 0 })
   const [done, setDone] = useState(false)
 
-  const current = TEXTS[index]
-  const isRevealed = guess !== null
-  const isCorrect = guess === current.sender
+  const current = QUESTIONS[index]
 
   function submitGuess(name) {
-    if (isRevealed) return
+    if (guess !== null) return
     setGuess(name)
     setScore((s) => ({
       correct: s.correct + (name === current.sender ? 1 : 0),
@@ -54,448 +84,124 @@ export default function WhoSaidItDemo() {
     }))
   }
 
+  function reveal() {
+    setRevealed(true)
+  }
+
   function next() {
-    if (index + 1 >= TEXTS.length) {
-      setDone(true)
-      return
-    }
     setIndex((i) => i + 1)
     setGuess(null)
+    setRevealed(false)
+  }
+
+  function finish() {
+    setDone(true)
   }
 
   function reset() {
     setIndex(0)
     setGuess(null)
+    setRevealed(false)
     setScore({ correct: 0, total: 0 })
     setDone(false)
   }
 
-  if (done) {
-    return <DoneCard score={score} onReset={reset} />
-  }
+  const phone = (
+    <WhoSaidItPhone
+      question={current}
+      index={index}
+      total={QUESTIONS.length}
+      guess={guess}
+      revealed={revealed}
+      score={score}
+      onGuess={submitGuess}
+      done={done}
+      finalScore={score}
+      onReset={reset}
+      hostLabel={HOST_LABEL}
+    />
+  )
+
+  const host = (
+    <WhoSaidItHost
+      question={current}
+      index={index}
+      total={QUESTIONS.length}
+      isRevealed={revealed}
+      done={done}
+      roomSize={ROOM_SIZE}
+      onReveal={reveal}
+      onNext={next}
+      onFinish={finish}
+      hostLabel={HOST_LABEL}
+    />
+  )
+
+  const bigScreen = (
+    <WhoSaidItBigScreen
+      question={current}
+      isRevealed={revealed}
+      index={index}
+      total={QUESTIONS.length}
+      done={done}
+    />
+  )
 
   return (
-    <div style={{ maxWidth: 520, margin: '0 auto' }}>
-      {/* Score strip */}
+    <div style={{ width: '100%' }}>
+      {/* Desktop: three panels side by side */}
       <div
+        className="hidden lg:flex"
         style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          marginBottom: 'var(--space-3)',
-          padding: '0 var(--space-1)',
+          gap: 24,
+          alignItems: 'flex-start',
+          justifyContent: 'center',
+          overflowX: 'auto',
+          padding: '4px 0',
         }}
       >
-        <span
-          style={{
-            fontSize: 'var(--text-label)',
-            fontWeight: 600,
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
-            color: 'var(--color-text-muted)',
-          }}
-        >
-          Text {index + 1} of {TEXTS.length}
-        </span>
-        <span
-          style={{
-            fontSize: 'var(--text-body-sm)',
-            fontWeight: 700,
-            color: 'var(--color-text-primary)',
-          }}
-        >
-          Score: {score.correct} / {score.total}
-        </span>
+        <Panel label="What your guest taps" width={280}>{phone}</Panel>
+        <Panel label="What the host sees" width={280}>{host}</Panel>
+        <Panel label="What the whole room sees" width={460}>{bigScreen}</Panel>
       </div>
 
-      {/* Phone-ish card */}
-      <div
-        style={{
-          background: '#1A1A1A',
-          borderRadius: 'var(--radius-xl)',
-          border: '2px solid #2E2E2E',
-          padding: 'var(--space-3)',
-          boxShadow: 'var(--shadow-xl)',
-        }}
-      >
-        <div
-          style={{
-            background: 'var(--color-bg)',
-            borderRadius: 'var(--radius-lg)',
-            padding: 'var(--space-6)',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 'var(--space-5)',
-            minHeight: 320,
-          }}
-        >
-          {/* Sender line */}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 'var(--space-3)',
-            }}
-          >
-            <div
-              style={{
-                width: 40,
-                height: 40,
-                borderRadius: 'var(--radius-full)',
-                background: isRevealed
-                  ? 'var(--color-accent)'
-                  : 'var(--color-bg-subtle)',
-                border: '1.5px solid var(--color-border-strong)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontWeight: 800,
-                fontSize: 'var(--text-body)',
-                color: isRevealed ? '#fff' : 'var(--color-text-muted)',
-                transition: 'background var(--duration-fast) var(--ease-out)',
-              }}
-            >
-              {isRevealed ? current.sender.charAt(0) : '?'}
-            </div>
-            <div style={{ flex: 1 }}>
-              <p
-                style={{
-                  fontSize: 'var(--text-body-sm)',
-                  fontWeight: 700,
-                  color: 'var(--color-text-primary)',
-                  margin: 0,
-                  letterSpacing: isRevealed ? '0' : '0.15em',
-                  filter: isRevealed ? 'none' : 'blur(4px)',
-                  transition: 'filter var(--duration-fast) var(--ease-out)',
-                  userSelect: isRevealed ? 'auto' : 'none',
-                }}
-              >
-                {isRevealed ? current.sender : 'Simone or Jack'}
-              </p>
-              <p
-                style={{
-                  fontSize: 'var(--text-tiny)',
-                  color: 'var(--color-text-muted)',
-                  margin: 0,
-                }}
-              >
-                Messages
-              </p>
-            </div>
-          </div>
-
-          {/* The text bubble */}
-          <div
-            style={{
-              alignSelf: 'flex-start',
-              maxWidth: '90%',
-              padding: '12px 16px',
-              borderRadius: '18px 18px 18px 4px',
-              background: 'var(--color-bg-subtle)',
-              border: '1px solid var(--color-border)',
-              fontSize: 'var(--text-body)',
-              lineHeight: 1.5,
-              color: 'var(--color-text-primary)',
-            }}
-          >
-            {current.text}
-          </div>
-
-          {/* Reveal explanation */}
-          {isRevealed && (
-            <div
-              style={{
-                padding: 'var(--space-4)',
-                borderRadius: 'var(--radius-md)',
-                background: isCorrect
-                  ? 'var(--color-green-light, #ECFDF5)'
-                  : 'var(--color-rose-light, #FEF2F2)',
-                border: `1.5px solid ${
-                  isCorrect
-                    ? 'var(--color-green, #10B981)'
-                    : 'var(--color-rose, #E11D48)'
-                }`,
-              }}
-            >
-              <p
-                style={{
-                  fontSize: 'var(--text-body-sm)',
-                  fontWeight: 700,
-                  color: isCorrect
-                    ? 'var(--color-green, #047857)'
-                    : 'var(--color-rose, #B91C1C)',
-                  margin: '0 0 4px',
-                }}
-              >
-                {isCorrect ? 'You got it.' : `It was ${current.sender}.`}
-              </p>
-              <p
-                style={{
-                  fontSize: 'var(--text-body-sm)',
-                  color: 'var(--color-text-secondary)',
-                  lineHeight: 1.5,
-                  margin: 0,
-                }}
-              >
-                {current.context}
-              </p>
-            </div>
-          )}
-        </div>
+      {/* Mobile: stacked, labelled */}
+      <div className="lg:hidden" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--space-8)' }}>
+        <Panel label="What your guest taps">{phone}</Panel>
+        <Panel label="What the host sees">{host}</Panel>
+        <Panel label="What the whole room sees" fullWidth>{bigScreen}</Panel>
       </div>
-
-      {/* Guess buttons or Next */}
-      {!isRevealed ? (
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: 'var(--space-3)',
-            marginTop: 'var(--space-4)',
-          }}
-        >
-          {['Jack', 'Simone'].map((name) => (
-            <button
-              key={name}
-              type="button"
-              onClick={() => submitGuess(name)}
-              style={{
-                padding: '14px 12px',
-                borderRadius: 'var(--radius-lg)',
-                border: '2px solid var(--color-border-strong)',
-                background: 'var(--color-bg)',
-                fontSize: 'var(--text-body-lg)',
-                fontWeight: 700,
-                color: 'var(--color-text-primary)',
-                cursor: 'pointer',
-                fontFamily: 'inherit',
-                transition: 'all var(--duration-fast) var(--ease-out)',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'var(--color-accent)'
-                e.currentTarget.style.background = 'var(--color-accent)'
-                e.currentTarget.style.color = '#fff'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'var(--color-border-strong)'
-                e.currentTarget.style.background = 'var(--color-bg)'
-                e.currentTarget.style.color = 'var(--color-text-primary)'
-              }}
-            >
-              {name}
-            </button>
-          ))}
-        </div>
-      ) : (
-        <div style={{ marginTop: 'var(--space-4)', textAlign: 'center' }}>
-          <button
-            type="button"
-            onClick={next}
-            className="btn btn-primary btn-lg"
-            style={{ fontFamily: 'inherit' }}
-          >
-            {index + 1 >= TEXTS.length ? 'See your score →' : 'Next text →'}
-          </button>
-        </div>
-      )}
     </div>
   )
 }
 
-const LEADERBOARD = [
-  { label: 'His Side', score: 34 },
-  { label: 'Her Side', score: 31 },
-  { label: 'Mutual', score: 28 },
-]
-
-function DoneCard({ score, onReset }) {
-  const [animated, setAnimated] = useState(false)
-  const maxScore = Math.max(...LEADERBOARD.map((r) => r.score))
-
-  useEffect(() => {
-    const t = setTimeout(() => setAnimated(true), 60)
-    return () => clearTimeout(t)
-  }, [])
-
+function Panel({ label, width, fullWidth, children }) {
   return (
     <div
       style={{
-        maxWidth: 520,
-        margin: '0 auto',
-        background: 'var(--color-bg)',
-        border: '1px solid var(--color-border)',
-        borderRadius: 'var(--radius-xl)',
-        padding: 'var(--space-10)',
-        textAlign: 'center',
+        flexShrink: 0,
+        width: width ?? undefined,
+        maxWidth: fullWidth ? 520 : undefined,
+        ...(fullWidth ? { width: '100%' } : {}),
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
       }}
     >
       <p
         style={{
-          fontSize: 'var(--text-label)',
-          fontWeight: 700,
+          fontSize: 'var(--text-tiny)',
+          fontWeight: 600,
           letterSpacing: '0.08em',
           textTransform: 'uppercase',
-          color: 'var(--color-accent)',
-          marginBottom: 'var(--space-4)',
+          color: 'var(--color-text-muted)',
+          textAlign: 'center',
+          margin: '0 0 var(--space-3)',
         }}
       >
-        You&rsquo;re done
+        {label}
       </p>
-      <p
-        style={{
-          fontSize: 'var(--text-h3)',
-          fontWeight: 700,
-          letterSpacing: '-0.015em',
-          color: 'var(--color-text-primary)',
-          marginBottom: 'var(--space-6)',
-        }}
-      >
-        {score.correct} / {score.total} correct
-      </p>
-
-      <div
-        style={{
-          background: '#0F1115',
-          borderRadius: 'var(--radius-lg)',
-          padding: 'var(--space-5) var(--space-5) var(--space-4)',
-          marginBottom: 'var(--space-6)',
-          textAlign: 'left',
-          border: '1px solid #1F2430',
-        }}
-      >
-        <p
-          style={{
-            fontSize: 'var(--text-body-sm)',
-            fontStyle: 'italic',
-            color: 'rgba(255,255,255,0.65)',
-            margin: '0 0 var(--space-4)',
-            textAlign: 'center',
-          }}
-        >
-          …and this is what your wedding guests would see:
-        </p>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-          {LEADERBOARD.map((row, i) => (
-            <div key={row.label} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-              <span
-                style={{
-                  width: 72,
-                  fontSize: 'var(--text-body-sm)',
-                  fontWeight: 700,
-                  color: '#fff',
-                }}
-              >
-                {row.label}
-              </span>
-              <div
-                style={{
-                  flex: 1,
-                  height: 14,
-                  borderRadius: 'var(--radius-full)',
-                  background: 'rgba(255,255,255,0.08)',
-                  overflow: 'hidden',
-                }}
-              >
-                <div
-                  style={{
-                    height: '100%',
-                    width: animated ? `${(row.score / maxScore) * 100}%` : '0%',
-                    background:
-                      i === 0
-                        ? 'var(--color-accent)'
-                        : i === 1
-                        ? '#EC4899'
-                        : '#F59E0B',
-                    borderRadius: 'var(--radius-full)',
-                    transition: 'width 600ms var(--ease-out, ease-out)',
-                  }}
-                />
-              </div>
-              <span
-                style={{
-                  width: 32,
-                  textAlign: 'right',
-                  fontSize: 'var(--text-body-sm)',
-                  fontWeight: 700,
-                  color: '#fff',
-                  fontVariantNumeric: 'tabular-nums',
-                }}
-              >
-                {row.score}
-              </span>
-            </div>
-          ))}
-        </div>
-        <p
-          style={{
-            fontSize: 'var(--text-body-sm)',
-            color: 'rgba(255,255,255,0.7)',
-            margin: 'var(--space-4) 0 0',
-            textAlign: 'center',
-          }}
-        >
-          🔥 Aunt Denise: 5 in a row
-        </p>
-      </div>
-
-      <p
-        style={{
-          fontSize: 'var(--text-body-lg)',
-          lineHeight: 1.6,
-          color: 'var(--color-text-secondary)',
-          marginBottom: 'var(--space-8)',
-        }}
-      >
-        You just used the app for about 22 seconds and laughed twice. That&rsquo;s
-        the entire pitch.
-      </p>
-      <button
-        type="button"
-        onClick={onReset}
-        className="btn btn-secondary"
-        style={{ fontFamily: 'inherit' }}
-      >
-        Play again
-      </button>
-
-      <div
-        style={{
-          marginTop: 'var(--space-6)',
-          padding: 'var(--space-4) var(--space-5)',
-          borderRadius: 'var(--radius-lg)',
-          border: '1.5px dashed var(--color-border-strong)',
-          background: 'var(--color-bg-subtle)',
-          textAlign: 'left',
-          display: 'flex',
-          alignItems: 'center',
-          gap: 'var(--space-4)',
-        }}
-      >
-        <span style={{ fontSize: 24, lineHeight: 1 }} aria-hidden="true">
-          🔒
-        </span>
-        <div>
-          <p
-            style={{
-              fontSize: 'var(--text-body-sm)',
-              fontWeight: 700,
-              color: 'var(--color-text-primary)',
-              margin: 0,
-            }}
-          >
-            Spicy round · code required
-          </p>
-          <p
-            style={{
-              fontSize: 'var(--text-body-sm)',
-              color: 'var(--color-text-muted)',
-              margin: '2px 0 0',
-            }}
-          >
-            On the night, only the friends&rsquo; tables get the code.
-          </p>
-        </div>
-      </div>
+      {children}
     </div>
   )
 }

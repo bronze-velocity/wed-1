@@ -189,7 +189,7 @@ export default function BigScreenFrame({ message, senderName, to, photo, onReset
           style={{
             background: 'transparent',
             border: '1px solid var(--color-border-strong)',
-            borderRadius: 'var(--radius-full)',
+            borderRadius: 'var(--radius-md)',
             padding: 'var(--space-2) var(--space-6)',
             fontSize: 'var(--text-body-sm)',
             color: 'var(--color-text-secondary)',

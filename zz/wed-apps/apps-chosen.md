@@ -10,3 +10,4 @@ The best ones
 
 From here:
 /home/zxc/Documents/code/win-repos/wed-1/zz/info/20-apps.json
+- those that don't say skip: true

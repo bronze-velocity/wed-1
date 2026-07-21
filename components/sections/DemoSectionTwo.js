@@ -9,9 +9,9 @@ export default function DemoSectionTwo() {
 
   return (
     <section
+      className="section-py"
       style={{
         background: 'var(--color-bg)',
-        padding: 'var(--space-24) 0',
       }}
     >
       <Container>
@@ -54,8 +54,9 @@ export default function DemoSectionTwo() {
             }}
           >
             A real text from a real relationship. Blurred sender. You&rsquo;ve got two guesses.
-            This is one of the moments your wedding could actually be built around — the whole
-            room voting at the same time, laughing at the same wrong answers.
+            Tap your answer, then the host reveals it &mdash; the big screen lights up with how the
+            whole room voted, the same moment your guests would share at the reception, laughing at
+            the same wrong answers.
           </p>
 
           <div
@@ -70,13 +71,13 @@ export default function DemoSectionTwo() {
             {[
               'One tap per round',
               'Family vs. family scoring',
-              'Zero typing required',
+              'Runs from the host’s phone',
             ].map((label) => (
               <span
                 key={label}
                 style={{
                   padding: '6px 14px',
-                  borderRadius: 'var(--radius-full)',
+                  borderRadius: 'var(--radius-md)',
                   border: '1.5px solid var(--color-border-strong)',
                   background: 'var(--color-bg-subtle)',
                   fontSize: 'var(--text-body-sm)',

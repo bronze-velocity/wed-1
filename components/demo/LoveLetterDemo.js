@@ -94,7 +94,7 @@ export default function LoveLetterDemo() {
                 alignItems: 'center',
                 gap: 6,
                 padding: '8px 18px',
-                borderRadius: 'var(--radius-full)',
+                borderRadius: 'var(--radius-md)',
                 border: `1.5px solid ${isActive ? 'var(--color-accent)' : 'var(--color-border-strong)'}`,
                 background: isActive ? 'var(--color-accent)' : 'transparent',
                 color: isActive ? '#fff' : 'var(--color-text-secondary)',

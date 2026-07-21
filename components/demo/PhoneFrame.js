@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import PhoneShell from './PhoneShell'
 
 const MAX_CHARS = 280
 
@@ -53,35 +54,8 @@ export default function PhoneFrame({ onSubmit }) {
   const charCount = message.length
 
   return (
-    <div style={{
-      width: 280,
-      background: '#1A1A1A',
-      borderRadius: 44,
-      border: '2px solid #2E2E2E',
-      boxShadow: 'var(--shadow-xl)',
-      display: 'flex',
-      flexDirection: 'column',
-      userSelect: 'none',
-    }}>
-      {/* Notch */}
+    <PhoneShell>
       <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        paddingTop: 14,
-        paddingBottom: 10,
-      }}>
-        <div style={{
-          width: 88,
-          height: 22,
-          background: '#111',
-          borderRadius: 'var(--radius-lg)',
-        }} />
-      </div>
-
-      {/* Screen */}
-      <div style={{
-        background: 'var(--color-bg)',
-        margin: '0 4px',
         padding: '0 16px 20px',
         display: 'flex',
         flexDirection: 'column',
@@ -153,7 +127,7 @@ export default function PhoneFrame({ onSubmit }) {
                 onClick={() => setTo(value)}
                 style={{
                   padding: '5px 13px',
-                  borderRadius: 'var(--radius-full)',
+                  borderRadius: 'var(--radius-md)',
                   border: '1.5px solid',
                   borderColor: to === value ? 'var(--color-accent)' : 'var(--color-border-strong)',
                   background: to === value ? 'var(--color-accent)' : 'transparent',
@@ -338,20 +312,6 @@ export default function PhoneFrame({ onSubmit }) {
           Send it →
         </button>
       </div>
-
-      {/* Home indicator */}
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        padding: '10px 0 14px',
-      }}>
-        <div style={{
-          width: 100,
-          height: 4,
-          background: '#3A3A3A',
-          borderRadius: 'var(--radius-sm)',
-        }} />
-      </div>
-    </div>
+    </PhoneShell>
   )
 }

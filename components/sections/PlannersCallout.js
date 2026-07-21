@@ -8,31 +8,59 @@ export default function PlannersCallout() {
         background: 'var(--color-bg-subtle)',
         borderTop: '1px solid var(--color-border)',
         borderBottom: '1px solid var(--color-border)',
-        paddingTop: 'var(--space-6)',
-        paddingBottom: 'var(--space-6)',
+        paddingTop: 'var(--space-8)',
+        paddingBottom: 'var(--space-8)',
       }}
     >
       <Container
         style={{
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center',
+          justifyContent: 'space-between',
           flexWrap: 'wrap',
-          gap: 'var(--space-4)',
-          textAlign: 'center',
+          gap: 'var(--space-5)',
         }}
       >
-        <p
+        <div
           style={{
-            fontSize: 'var(--text-body)',
-            color: 'var(--color-text-secondary)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 'var(--space-4)',
+            flex: '1 1 380px',
           }}
         >
-          <strong style={{ color: 'var(--color-text-primary)' }}>
-            Are you a wedding planner?
-          </strong>{' '}
-          Recommend something extraordinary — we handle everything, your couples credit you.
-        </p>
+          <span
+            aria-hidden="true"
+            style={{
+              flexShrink: 0,
+              alignSelf: 'stretch',
+              width: '3px',
+              borderRadius: 'var(--radius-full)',
+              background: 'var(--color-accent)',
+            }}
+          />
+          <p
+            style={{
+              fontSize: 'var(--text-body)',
+              lineHeight: 1.5,
+              color: 'var(--color-text-secondary)',
+            }}
+          >
+            <strong
+              style={{
+                display: 'block',
+                fontSize: 'var(--text-h4)',
+                fontWeight: 700,
+                letterSpacing: '-0.015em',
+                color: 'var(--color-text-primary)',
+                marginBottom: 'var(--space-1)',
+              }}
+            >
+              Are you a wedding planner?
+            </strong>
+            Recommend something extraordinary — we handle everything, your couples credit you.
+          </p>
+        </div>
         <Link
           href="/planners"
           style={{
@@ -40,7 +68,7 @@ export default function PlannersCallout() {
             color: 'var(--color-accent)',
             textDecoration: 'none',
             whiteSpace: 'nowrap',
-            fontWeight: 500,
+            fontWeight: 600,
           }}
           className="link-underline"
         >

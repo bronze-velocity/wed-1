@@ -4,6 +4,7 @@ import DemoSection from '@/components/sections/DemoSection'
 import DemoSectionTwo from '@/components/sections/DemoSectionTwo'
 import AppGalleryTeaser from '@/components/sections/AppGalleryTeaser'
 import StoryBeat2 from '@/components/sections/StoryBeat2'
+import StoryBeat3 from '@/components/sections/StoryBeat3'
 import HowItWorks from '@/components/sections/HowItWorks'
 import SixRules from '@/components/sections/SixRules'
 import PaperReframe from '@/components/sections/PaperReframe'
@@ -34,6 +35,7 @@ export default function HomePage() {
       <AppGalleryTeaser apps={apps} />
       <StoryBeat2 />
       <HowItWorks />
+      <StoryBeat3 />
       <SixRules />
       <PaperReframe />
       {/* PriceReframe goes here — T24 */}

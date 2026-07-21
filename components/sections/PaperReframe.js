@@ -3,10 +3,9 @@ import Container from '@/components/layout/Container'
 export default function PaperReframe() {
   return (
     <section
+      className="section-py"
       style={{
         background: 'var(--color-bg-subtle)',
-        paddingTop: 'var(--space-20)',
-        paddingBottom: 'var(--space-20)',
         borderTop: '1px solid var(--color-border)',
         borderBottom: '1px solid var(--color-border)',
       }}

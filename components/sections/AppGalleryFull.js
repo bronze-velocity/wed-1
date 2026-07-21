@@ -28,7 +28,7 @@ function pillStyle(isActive, activeBg) {
     color: isActive ? 'var(--color-text-inverse)' : 'var(--color-text-secondary)',
     border: '1.5px solid',
     borderColor: isActive ? activeBg : 'var(--color-border-strong)',
-    borderRadius: 'var(--radius-full)',
+    borderRadius: 'var(--radius-md)',
     padding: '8px 16px',
     cursor: 'pointer',
     fontFamily: 'inherit',

@@ -3,9 +3,9 @@ import AppGalleryFull from '../../components/sections/AppGalleryFull'
 import { getApps } from '../../lib/getApps'
 
 export const metadata = {
-  title: 'Explore 20 Wedding Apps — Wepho',
+  title: 'Explore 12 Wedding Apps — Wepho',
   description:
-    'Browse all 20 custom wedding experience apps — from live trivia about your relationship to a Love Letter Machine that reads messages aloud in front of the whole room. Filter by vibe or wedding moment to find yours.',
+    'Browse all 12 custom wedding experience apps — from live trivia about your relationship to a Love Letter Machine that reads messages aloud in front of the whole room. Filter by vibe or wedding moment to find yours.',
 }
 
 export default function AppsPage() {
@@ -45,7 +45,7 @@ export default function AppsPage() {
               maxWidth: '820px',
             }}
           >
-            Twenty apps we&rsquo;ve built. Zero off the shelf.
+            Twelve apps we&rsquo;ve built. Zero off the shelf.
           </h1>
 
           <p

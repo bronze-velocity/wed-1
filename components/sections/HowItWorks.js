@@ -8,7 +8,7 @@ const steps = [
   {
     number: '01',
     heading: 'Bring an idea, or pick one of ours',
-    body: "Twenty apps we've built are on this site — pick one and we'll make it about you. Or bring us something no one has ever done at a wedding before. Weird, specific, tied to a private inside joke — if it fits your story, we'll build it.",
+    body: "Twelve apps we've built are on this site — pick one and we'll make it about you. Or bring us something no one has ever done at a wedding before. Weird, specific, tied to a private inside joke — if it fits your story, we'll build it.",
     image: {
       src: '/images/pre/planning-1.jpg',
       alt: 'A couple browsing on a phone together at home, planning',
@@ -57,7 +57,7 @@ export default function HowItWorks() {
 
   return (
     <section
-      className="py-16 md:py-20 lg:py-32"
+      className="section-py"
       style={{ background: 'var(--color-bg-subtle)' }}
     >
       <Container>

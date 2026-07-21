@@ -38,7 +38,7 @@ export default function NotFound() {
             marginBottom: 'var(--space-8)',
           }}
         >
-          But 20 wedding apps do.
+          But 12 wedding apps do.
         </p>
         <div
           style={{
@@ -54,13 +54,13 @@ export default function NotFound() {
               background: 'var(--color-accent)',
               color: 'var(--color-text-inverse)',
               padding: '12px 28px',
-              borderRadius: 'var(--radius-full)',
+              borderRadius: 'var(--radius-md)',
               textDecoration: 'none',
               fontWeight: 600,
               fontSize: 'var(--text-body)',
             }}
           >
-            Explore all 20 apps →
+            Explore all 12 apps →
           </Link>
           <Link
             href="/"
@@ -68,7 +68,7 @@ export default function NotFound() {
               border: '1px solid var(--color-border-strong)',
               color: 'var(--color-text-primary)',
               padding: '12px 28px',
-              borderRadius: 'var(--radius-full)',
+              borderRadius: 'var(--radius-md)',
               textDecoration: 'none',
               fontWeight: 600,
               fontSize: 'var(--text-body)',

@@ -1,3 +1,40 @@
+# Switching between Windows and Linux — do this every time
+
+**Every time you open this project on a different OS than you last used, reinstall dependencies first:**
+
+```
+git pull
+pnpm install
+```
+
+If `pnpm install` alone doesn't fix a broken `next`/`pnpm run dev` (e.g. `'next' is not recognized`), wipe and reinstall:
+
+```
+# Windows (PowerShell)
+Remove-Item -Recurse -Force node_modules
+pnpm install
+
+# Linux / macOS
+rm -rf node_modules
+pnpm install
+```
+
+### Why
+
+`node_modules` is **not portable across operating systems**. It holds:
+- **Command shims** in `node_modules/.bin/` — Windows needs `next.cmd` / `next.ps1`; Linux/macOS need a Unix `next` script. The other OS's shims don't work, so `next` "isn't recognized."
+- **Native binaries** compiled for one OS that won't run on the other.
+
+So don't sync/copy `node_modules` between machines and don't commit it (it's gitignored). Only the source + `pnpm-lock.yaml` travel through git; `pnpm install` rebuilds `node_modules` correctly for whatever OS you're on. Because the lockfile is committed, the reinstall gives you the exact same package versions — just built for the right platform.
+
+### Rules of thumb (cross-OS)
+
+- Reinstall with **pnpm**, never npm (npm corrupts the lockfile for this project).
+- If dev/build acts strange right after switching OS → delete `node_modules`, `pnpm install`, retry.
+- Never `git add node_modules`. If it ever shows up in `git status`, something's wrong with `.gitignore`.
+
+---
+
 # Git basics — for moving between machines
 
 Repo: https://github.com/bronze-velocity/wed-1

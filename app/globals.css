@@ -147,6 +147,20 @@ html {
   .wepho-container { padding-left: 64px; padding-right: 64px; }
 }
 
+/* Standard section vertical rhythm — responsive, token-based.
+   Every standard content section uses this. Hero and final CTA deliberately use
+   more; thin utility bands and full-bleed story beats are intentional exceptions. */
+.section-py {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+}
+@media (min-width: 768px) {
+  .section-py { padding-top: var(--space-20); padding-bottom: var(--space-20); }
+}
+@media (min-width: 1024px) {
+  .section-py { padding-top: var(--space-24); padding-bottom: var(--space-24); }
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -282,6 +296,68 @@ html {
   pointer-events: none;
 }
 
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.35; transform: scale(0.8); }
+}
+
+.pulse-dot {
+  animation: pulseDot 1.4s var(--ease-out) infinite;
+}
+
+.contact-field {
+  width: 100%;
+  min-height: 52px;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-dark);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text-inverse);
+  font-family: inherit;
+  font-size: var(--text-body);
+  line-height: 1.4;
+  outline: none;
+  color-scheme: dark;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    background var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
+}
+.contact-field::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+.contact-field:hover {
+  border-color: rgba(255, 255, 255, 0.28);
+}
+.contact-field:focus {
+  border-color: var(--color-accent);
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 0 0 3px rgba(107, 92, 231, 0.25);
+}
+.contact-field--error {
+  border-color: var(--color-rose);
+}
+.contact-field--error:focus {
+  border-color: var(--color-rose);
+  box-shadow: 0 0 0 3px var(--color-rose-light);
+}
+textarea.contact-field {
+  min-height: 120px;
+  resize: vertical;
+}
+select.contact-field {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: var(--space-10);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-4) center;
+}
+select.contact-field option {
+  color: var(--color-text-primary);
+  background: var(--color-bg);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .reveal-stagger > *,
@@ -297,5 +373,9 @@ html {
 
   .petal {
     display: none;
+  }
+
+  .pulse-dot {
+    animation: none !important;
   }
 }

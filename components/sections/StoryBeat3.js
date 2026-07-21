@@ -5,7 +5,7 @@ import Link from 'next/link'
 import PhotoBackdrop from '@/components/ui/PhotoBackdrop'
 import Container from '@/components/layout/Container'
 
-export default function StoryBeat1() {
+export default function StoryBeat3() {
   const sceneRef = useRef(null)
 
   useEffect(() => {
@@ -28,19 +28,13 @@ export default function StoryBeat1() {
 
   return (
     <section
-      style={{
-        position: 'relative',
-        overflow: 'hidden',
-        minHeight: '80vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
+      className="section-py"
+      style={{ position: 'relative', overflow: 'hidden', background: 'var(--color-bg-dark)' }}
     >
       <PhotoBackdrop
-        src="/images/cocktail/reaction-1.jpg"
-        alt="Guests reacting mid-laugh, lit by the display wall during cocktail hour"
-        strength="medium"
+        src="/images/dinner/bigscreen-1.jpg"
+        alt="Guests' advice scrolling on the big screen during dinner"
+        strength="heavy"
       />
 
       <Container
@@ -58,7 +52,7 @@ export default function StoryBeat1() {
             marginBottom: 'var(--space-4)',
           }}
         >
-          Live trivia · the whole room plays at once
+          A live advice wall · answers scroll up in real time
         </p>
 
         <p
@@ -70,8 +64,8 @@ export default function StoryBeat1() {
             color: 'var(--color-text-inverse)',
           }}
         >
-          Fifteen questions in, the whole room is shouting at the same answer — and grandma
-          is beating the college roommates.
+          You post &ldquo;we can&rsquo;t agree on where to live — help,&rdquo; and a hundred
+          people answer at once.
         </p>
 
         <p
@@ -85,15 +79,14 @@ export default function StoryBeat1() {
             marginRight: 'auto',
           }}
         >
-          One live game, hosted from the mic: the same question hits every phone at the same
-          moment, a shared countdown moves the whole room together, and the leaderboard climbs
-          on the big screen between rounds — how you actually met, who said &ldquo;I love
-          you&rdquo; first, what she said when he proposed. The winner heads to the mic for a
-          toast.
+          Structured prompts land on guests&rsquo; phones — best advice for a long marriage, a
+          mistake to avoid, something they wish they&rsquo;d known — and the answers stream onto
+          the big screen in real time, some funny, some hard-won. Every one is saved into a
+          &ldquo;Book of Advice&rdquo; you&rsquo;ll actually reread.
         </p>
 
         <Link
-          href="/apps/couple-trivia"
+          href="/apps/advice-oracle"
           className="link-underline"
           style={{
             display: 'inline-block',
@@ -105,7 +98,7 @@ export default function StoryBeat1() {
             color: 'var(--color-text-inverse-secondary)',
           }}
         >
-          Live &ldquo;How Well Do You Know Us?&rdquo; Trivia — App #1
+          The Advice Oracle — App #12
         </Link>
       </Container>
     </section>

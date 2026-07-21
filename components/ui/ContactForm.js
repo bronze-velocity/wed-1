@@ -114,8 +114,16 @@ export default function ContactForm({ appName }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <form
+      onSubmit={handleSubmit}
+      noValidate
+      className="flex flex-col"
+      style={{ gap: 'var(--space-5)' }}
+    >
+      <div
+        className="grid grid-cols-1 sm:grid-cols-2"
+        style={{ gap: 'var(--space-5)' }}
+      >
         <FormField label="Name" error={errors.name}>
           <input
             id="name"
@@ -140,7 +148,10 @@ export default function ContactForm({ appName }) {
         </FormField>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+      <div
+        className="grid grid-cols-1 sm:grid-cols-2"
+        style={{ gap: 'var(--space-5)' }}
+      >
         <FormField label="Wedding date" optional>
           <input
             id="weddingDate"
@@ -170,37 +181,33 @@ export default function ContactForm({ appName }) {
       </div>
 
       {formData.appInterest === CUSTOM_OPTION && (
-        <div className="mt-4">
-          <FormField label="Your idea" error={errors.customIdea}>
-            <input
-              id="customIdea"
-              name="customIdea"
-              type="text"
-              value={formData.customIdea}
-              onChange={handleChange}
-              placeholder="Describe the app you're imagining"
-              className={fieldInputClass(!!errors.customIdea)}
-            />
-          </FormField>
-        </div>
-      )}
-
-      <div className="mt-4">
-        <FormField label="Message" error={errors.message}>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
+        <FormField label="Your idea" error={errors.customIdea}>
+          <input
+            id="customIdea"
+            name="customIdea"
+            type="text"
+            value={formData.customIdea}
             onChange={handleChange}
-            placeholder="Tell us about your wedding — date, venue, what you're imagining."
-            rows={4}
-            className={`${fieldInputClass(!!errors.message)} resize-y`}
+            placeholder="Describe the app you're imagining"
+            className={fieldInputClass(!!errors.customIdea)}
           />
         </FormField>
-      </div>
+      )}
+
+      <FormField label="Message" error={errors.message}>
+        <textarea
+          id="message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          placeholder="Tell us about your wedding — date, venue, what you're imagining."
+          rows={4}
+          className={fieldInputClass(!!errors.message)}
+        />
+      </FormField>
 
       {status === 'error' && (
-        <p className="mt-3 text-rose" style={{ fontSize: 'var(--text-body-sm)' }}>
+        <p className="text-rose" style={{ fontSize: 'var(--text-body-sm)' }}>
           Something went wrong. Try again or{' '}
           <a href="mailto:hello@wepho.com" className="underline">
             email us directly
@@ -212,10 +219,11 @@ export default function ContactForm({ appName }) {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="mt-6 w-full flex items-center justify-center gap-3 rounded-full font-semibold text-white transition-colors duration-150 disabled:opacity-70 disabled:cursor-not-allowed"
+        className="mt-2 w-full flex items-center justify-center gap-3 font-semibold text-white transition-colors duration-150 disabled:opacity-70 disabled:cursor-not-allowed"
         style={{
           background: 'var(--color-accent)',
           padding: 'var(--space-4) var(--space-6)',
+          borderRadius: 'var(--radius-md)',
           fontSize: 'var(--text-body-lg)',
         }}
       >
@@ -260,9 +268,5 @@ function FormField({ label, children, error, optional }) {
 }
 
 function fieldInputClass(hasError) {
-  return [
-    'w-full px-4 py-3 rounded-lg text-white text-base outline-none transition-colors duration-150',
-    'bg-white/[0.08] placeholder:text-white/30',
-    hasError ? 'border border-rose' : 'border border-white/[0.18] focus:border-white/40',
-  ].join(' ')
+  return hasError ? 'contact-field contact-field--error' : 'contact-field'
 }
