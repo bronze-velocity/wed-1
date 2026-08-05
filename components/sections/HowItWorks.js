@@ -16,8 +16,8 @@ const steps = [
   },
   {
     number: '02',
-    heading: 'We design and build it (2–4 weeks)',
-    body: "You tell us the stories, share the photos, name the moments. We bring the craft — five years of wedding-app pattern-matching, live-night reliability engineering, and a designer whose only job is making sure it feels like part of your wedding, not a bolt-on tool. We push back when an idea won't land in the room. We suggest mechanics you'd never have thought of. You get the version that actually works on the night, not the version you first described.",
+    heading: 'We design and build it (1–3 weeks)',
+    body: "You tell us the stories, share the photos, name the moments. We bring the craft — deep experience making these work in real rooms, and dedicated design that makes it feel like part of your wedding, not a bolt-on tool. We push back when an idea won't land. You get the version that actually works on the night.",
     image: {
       src: '/images/pre/form-1.jpg',
       alt: 'Close detail of hands writing, photos spread on a table nearby',
@@ -26,7 +26,7 @@ const steps = [
   {
     number: '03',
     heading: 'QR on every table. That’s it.',
-    body: "Guests scan. No download, no login, no app store. Grandma's in within seconds — we'll test it against every generation before your wedding day. We're on call during the reception if anything wobbles.",
+    body: "Guests scan. No download, no login, no app store. Grandma's in within seconds — we'll test it against every generation before your wedding day. ",
     image: {
       src: '/images/cocktail/qr-scan-1.jpg',
       alt: "A guest's hand scanning a QR code on a reception table card",

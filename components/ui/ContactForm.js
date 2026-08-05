@@ -245,7 +245,7 @@ function FormField({ label, children, error, optional }) {
     <div>
       <label
         className="block mb-2 uppercase tracking-wide font-medium"
-        style={{ fontSize: 'var(--text-label)', color: 'var(--color-text-inverse-secondary)' }}
+        style={{ fontSize: 'var(--text-label)', color: 'var(--color-text-inverse)' }}
       >
         {label}
         {optional && (

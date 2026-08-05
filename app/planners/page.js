@@ -4,6 +4,12 @@ export const metadata = {
   title: 'For Wedding Planners — Wepho',
   description:
     'Add a custom interactive wedding app to your couples’ day. Zero extra coordination for you — Wepho handles everything.',
+  openGraph: {
+    title: 'For Wedding Planners — Wepho',
+    description:
+      'Add a custom interactive wedding app to your couples’ day. Zero extra coordination for you — Wepho handles everything.',
+    type: 'website',
+  },
 }
 
 export default function PlannersPage() {
@@ -41,8 +47,7 @@ export default function PlannersPage() {
               marginBottom: 'var(--space-10)',
             }}
           >
-            Tell us about a couple you&apos;re working with and we&apos;ll reach out within 48
-            hours. You mention it — we handle everything else.
+            Tell us about a couple you&apos;re working with. We respond fast and we come prepared.
           </p>
           <ContactForm />
         </div>

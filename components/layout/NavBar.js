@@ -3,11 +3,11 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Container from './Container'
+import ContactLink from '../ui/ContactLink'
 
 const LINKS = [
   { href: '/apps', label: 'Apps' },
   { href: '/planners', label: 'Planners' },
-  { href: '/#contact', label: 'Contact' },
 ]
 
 export default function NavBar() {
@@ -86,13 +86,23 @@ export default function NavBar() {
               {l.label}
             </Link>
           ))}
-          <Link
-            href="/#contact"
+          <ContactLink
+            style={{
+              fontSize: 'var(--text-body-sm)',
+              fontWeight: 600,
+              color: 'var(--color-text-primary)',
+              textDecoration: 'none',
+            }}
+            className="link-underline"
+          >
+            Contact
+          </ContactLink>
+          <ContactLink
             className="btn btn-primary"
             style={{ padding: '8px 16px', fontSize: 'var(--text-body-sm)' }}
           >
             Book your app
-          </Link>
+          </ContactLink>
         </nav>
 
         <button
@@ -151,14 +161,24 @@ export default function NavBar() {
               {l.label}
             </Link>
           ))}
-          <Link
-            href="/#contact"
+          <ContactLink
+            onClick={() => setOpen(false)}
+            style={{
+              fontSize: 'var(--text-body-lg)',
+              fontWeight: 600,
+              color: 'var(--color-text-primary)',
+              textDecoration: 'none',
+            }}
+          >
+            Contact
+          </ContactLink>
+          <ContactLink
             onClick={() => setOpen(false)}
             className="btn btn-primary"
             style={{ marginTop: 'var(--space-2)', textAlign: 'center' }}
           >
             Book your app
-          </Link>
+          </ContactLink>
         </div>
       )}
     </header>

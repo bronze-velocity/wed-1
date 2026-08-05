@@ -20,9 +20,8 @@ const clampStyle = (lines) => ({
 
 export default function AppCard({ app }) {
   const [hover, setHover] = useState(false)
-  const primaryVibe = app.alt1_vibe?.[0]
-  const primaryMoment = app.alt2_moment?.[0]
-  const vibe = vibeConfig[primaryVibe]
+  const vibes = app.alt1_vibe ?? []
+  const moments = app.alt2_moment ?? []
 
   return (
     <Link
@@ -54,25 +53,31 @@ export default function AppCard({ app }) {
           marginBottom: 'var(--space-4)',
         }}
       >
-        {primaryVibe && vibe && (
+        {vibes.map((v) => {
+          const vibe = vibeConfig[v]
+          if (!vibe) return null
+          return (
+            <span
+              key={`vibe-${v}`}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                background: vibe.bg,
+                color: vibe.color,
+                borderRadius: 'var(--radius-md)',
+                padding: '3px 10px',
+                fontSize: 'var(--text-tiny)',
+                fontWeight: 600,
+                lineHeight: 1.4,
+              }}
+            >
+              {v}
+            </span>
+          )
+        })}
+        {moments.map((m) => (
           <span
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              background: vibe.bg,
-              color: vibe.color,
-              borderRadius: 'var(--radius-md)',
-              padding: '3px 10px',
-              fontSize: 'var(--text-tiny)',
-              fontWeight: 600,
-              lineHeight: 1.4,
-            }}
-          >
-            {primaryVibe}
-          </span>
-        )}
-        {primaryMoment && (
-          <span
+            key={`moment-${m}`}
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -85,9 +90,9 @@ export default function AppCard({ app }) {
               lineHeight: 1.4,
             }}
           >
-            {primaryMoment}
+            {m}
           </span>
-        )}
+        ))}
         {app.isDemo && (
           <span
             style={{

@@ -37,7 +37,7 @@ export default function FinalCta() {
             lineHeight: 1.1,
           }}
         >
-          Tell us about your wedding.
+          Tell us about your wedding.      
         </h2>
         <p
           style={{
@@ -47,9 +47,7 @@ export default function FinalCta() {
             lineHeight: 1.6,
           }}
         >
-          We take 4 weddings a month — because building something that feels like yours
-          takes time. Bring an idea, or bring us your story and we&rsquo;ll suggest one.
-          Either way, you don&rsquo;t lift a technical finger.
+          Come with an idea or come with nothing but your story. Either way, we'll figure it out together — and handle every technical bit ourselves.
         </p>
         <div style={{ textAlign: 'left' }}>
           <ContactForm />

@@ -5,11 +5,9 @@ export default function PlannersCallout() {
   return (
     <section
       style={{
-        background: 'var(--color-bg-subtle)',
-        borderTop: '1px solid var(--color-border)',
-        borderBottom: '1px solid var(--color-border)',
-        paddingTop: 'var(--space-8)',
-        paddingBottom: 'var(--space-8)',
+        background: 'var(--color-accent-light)',
+        paddingTop: 'var(--space-6)',
+        paddingBottom: 'var(--space-6)',
       }}
     >
       <Container
@@ -18,61 +16,44 @@ export default function PlannersCallout() {
           alignItems: 'center',
           justifyContent: 'space-between',
           flexWrap: 'wrap',
-          gap: 'var(--space-5)',
+          gap: 'var(--space-4)',
         }}
       >
-        <div
+        <p
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 'var(--space-4)',
-            flex: '1 1 380px',
+            fontSize: 'var(--text-body)',
+            lineHeight: 1.5,
+            color: 'var(--color-text-secondary)',
           }}
         >
-          <span
-            aria-hidden="true"
+          <strong
             style={{
-              flexShrink: 0,
-              alignSelf: 'stretch',
-              width: '3px',
-              borderRadius: 'var(--radius-full)',
-              background: 'var(--color-accent)',
-            }}
-          />
-          <p
-            style={{
+              display: 'block',
               fontSize: 'var(--text-body)',
-              lineHeight: 1.5,
-              color: 'var(--color-text-secondary)',
+              fontWeight: 700,
+              color: 'var(--color-text-primary)',
+              marginBottom: 'var(--space-1)',
             }}
           >
-            <strong
-              style={{
-                display: 'block',
-                fontSize: 'var(--text-h4)',
-                fontWeight: 700,
-                letterSpacing: '-0.015em',
-                color: 'var(--color-text-primary)',
-                marginBottom: 'var(--space-1)',
-              }}
-            >
-              Are you a wedding planner?
-            </strong>
-            Recommend something extraordinary — we handle everything, your couples credit you.
-          </p>
-        </div>
+            Are you a wedding planner?
+          </strong>
+          Recommend something extraordinary — we handle everything, your couples credit you.
+        </p>
         <Link
           href="/planners"
           style={{
-            fontSize: 'var(--text-body)',
-            color: 'var(--color-accent)',
+            display: 'inline-block',
+            background: 'var(--color-accent)',
+            color: 'var(--color-text-inverse)',
+            fontSize: 'var(--text-body-sm)',
+            fontWeight: 600,
             textDecoration: 'none',
             whiteSpace: 'nowrap',
-            fontWeight: 600,
+            padding: 'var(--space-2) var(--space-5)',
+            borderRadius: 'var(--radius-md)',
           }}
-          className="link-underline"
         >
-          See how Wepho works for planners →
+          How it works for planners →
         </Link>
       </Container>
     </section>

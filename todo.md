@@ -1,3 +1,11 @@
+# TBD 5-Aug
+- review all 12 apps
+- background images for all 12
+- mobile responsiveness review
+- SEO
+- /home/zxc/Documents/code/win-repos/wed-1/zz/wed-apps/app-hero-image-prompts.md
+- rename all Wepho
+
 # 19 Jul, 25% of weekly CC
 - design
 - app demo qs

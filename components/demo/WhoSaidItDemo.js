@@ -149,10 +149,10 @@ export default function WhoSaidItDemo() {
 
   return (
     <div style={{ width: '100%' }}>
-      {/* Desktop: three panels side by side */}
       <div
-        className="hidden lg:flex"
         style={{
+          display: 'flex',
+          flexWrap: 'wrap',
           gap: 24,
           alignItems: 'flex-start',
           justifyContent: 'center',
@@ -160,29 +160,24 @@ export default function WhoSaidItDemo() {
           padding: '4px 0',
         }}
       >
-        <Panel label="What your guest taps" width={280}>{phone}</Panel>
-        <Panel label="What the host sees" width={280}>{host}</Panel>
-        <Panel label="What the whole room sees" width={460}>{bigScreen}</Panel>
+        <Panel label="What your guest taps" width={260}>{phone}</Panel>
+        <Panel label="What the host sees" width={260}>{host}</Panel>
+        <Panel label="What the whole room sees" width={420}>{bigScreen}</Panel>
       </div>
 
-      {/* Mobile: stacked, labelled */}
-      <div className="lg:hidden" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--space-8)' }}>
-        <Panel label="What your guest taps">{phone}</Panel>
-        <Panel label="What the host sees">{host}</Panel>
-        <Panel label="What the whole room sees" fullWidth>{bigScreen}</Panel>
-      </div>
     </div>
   )
 }
 
-function Panel({ label, width, fullWidth, children }) {
+function Panel({ label, width, children }) {
   return (
     <div
       style={{
-        flexShrink: 0,
-        width: width ?? undefined,
-        maxWidth: fullWidth ? 520 : undefined,
-        ...(fullWidth ? { width: '100%' } : {}),
+        flexShrink: 1,
+        flexGrow: 0,
+        flexBasis: width ?? 'auto',
+        maxWidth: width ?? undefined,
+        width: '100%',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',

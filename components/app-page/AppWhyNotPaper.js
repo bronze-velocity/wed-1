@@ -1,4 +1,7 @@
+'use client'
+
 import Container from '@/components/layout/Container'
+import useScrollReveal from '@/hooks/useScrollReveal'
 
 const DEFAULT = {
   paper:
@@ -9,6 +12,7 @@ const DEFAULT = {
 }
 
 export default function AppWhyNotPaper({ app }) {
+  const ref = useScrollReveal()
   const custom = app?.extended?.whyNotPaper
   const paper = custom?.paper ?? DEFAULT.paper
   const appText = custom?.app ?? DEFAULT.app
@@ -16,7 +20,7 @@ export default function AppWhyNotPaper({ app }) {
 
   return (
     <section
-      className="py-20 md:py-28"
+      className="section-py"
       style={{ background: 'var(--color-bg)' }}
     >
       <Container>
@@ -54,12 +58,13 @@ export default function AppWhyNotPaper({ app }) {
             }}
           >
             There&rsquo;s an analog version of nearly every wedding tradition. Here&rsquo;s
-            what an app does for <em>{app?.title || 'this one'}</em> that a stack of cards can&rsquo;t.
+            what an app does for <em>{app?.title || 'this one'}</em>{' '}that a stack of cards can&rsquo;t.
           </p>
         </div>
 
         <div
-          className="grid grid-cols-1 md:grid-cols-3"
+          ref={ref}
+          className="reveal-stagger grid grid-cols-1 md:grid-cols-3"
           style={{ gap: 'var(--space-5)' }}
         >
           {[

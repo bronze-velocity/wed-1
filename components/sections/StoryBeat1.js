@@ -88,8 +88,7 @@ export default function StoryBeat1() {
           One live game, hosted from the mic: the same question hits every phone at the same
           moment, a shared countdown moves the whole room together, and the leaderboard climbs
           on the big screen between rounds — how you actually met, who said &ldquo;I love
-          you&rdquo; first, what she said when he proposed. The winner heads to the mic for a
-          toast.
+          you&rdquo; first, what she said when he proposed.
         </p>
 
         <Link

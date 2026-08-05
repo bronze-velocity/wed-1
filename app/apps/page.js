@@ -6,6 +6,12 @@ export const metadata = {
   title: 'Explore 12 Wedding Apps — Wepho',
   description:
     'Browse all 12 custom wedding experience apps — from live trivia about your relationship to a Love Letter Machine that reads messages aloud in front of the whole room. Filter by vibe or wedding moment to find yours.',
+  openGraph: {
+    title: 'Explore 12 Wedding Apps — Wepho',
+    description:
+      'Browse all 12 custom wedding experience apps — from live trivia about your relationship to a Love Letter Machine that reads messages aloud in front of the whole room. Filter by vibe or wedding moment to find yours.',
+    type: 'website',
+  },
 }
 
 export default function AppsPage() {
@@ -45,7 +51,7 @@ export default function AppsPage() {
               maxWidth: '820px',
             }}
           >
-            Twelve apps we&rsquo;ve built. Zero off the shelf.
+            Twelve apps in the catalog. None of them off the shelf.
           </h1>
 
           <p
@@ -57,10 +63,9 @@ export default function AppsPage() {
               marginBottom: 'var(--space-4)',
             }}
           >
-            Pick one and we&rsquo;ll rebuild it around your couple — every question, every prompt,
-            every reveal shaped by how you actually met, who proposed, and the joke your table
-            has been telling since 2019. Or bring us something no one has done at a wedding
-            before.
+            Pick one and we&rsquo;ll build it from scratch for your couple, written from your
+            story and your guest list. Or come to us with an idea no one has tried at a wedding
+            before, and we&rsquo;ll figure out if it can work.
           </p>
 
           <p
@@ -72,9 +77,10 @@ export default function AppsPage() {
               marginBottom: 'var(--space-8)',
             }}
           >
-            If a decorated jar or a good MC would do the job just as well, we&rsquo;ll tell you
-            and send you to a nice stationer. We only build the ones where the app is doing
-            something paper structurally can&rsquo;t.
+            We only build the ones where a phone earns its place. If a card box, a guestbook, or
+            a good MC would land the same moment, we&rsquo;ll say so. Weddings are about
+            presence, and we&rsquo;re not going to put a screen between your guests and the room
+            unless it makes the night more alive.
           </p>
 
           <p

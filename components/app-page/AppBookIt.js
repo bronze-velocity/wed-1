@@ -4,6 +4,7 @@ import Container from '@/components/layout/Container'
 export default function AppBookIt({ app }) {
   return (
     <section
+      id="book-it"
       className="py-24 md:py-32"
       style={{ background: 'var(--color-bg-dark)' }}
     >

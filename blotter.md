@@ -1,3 +1,23 @@
+2026-08-05 19:01 — Wrote `zz/apps-device-scenes-strategy.md`: a strategy for making the `/apps/[slug]` hero phone and "What the room sees" section unique per app without bespoke work — via a small shared wedding-UI kit (~10 primitives), two dispatchers (`PhoneScene`/`BigScreenScene`), a 7+6 layout catalog that covers all 20+ apps, per-app `deviceScenes` data blocks in `data/apps.js`, and a full app-by-app layout+content mapping. Estimated ~3 build days + 1 copy day for the whole rollout, with a fallback so nothing breaks during migration.
+
+2026-08-05 19:35 — Added a prev/next app navigation band to `/apps/[slug]` pages: new `getAdjacentApps(slug)` helper in `lib/getApps.js` (wraps around the filtered `apps` array), new `components/app-page/AppNextPrev.js` (two-card layout on bg-subtle with a vibe-color dot per neighbor, mirrored left/right alignment, hover-lift, and a "See all example apps" tail link), inserted between `AppSetupEffort` and `AppBookIt` so browsing stays available right before the final booking CTA.
+
+2026-08-05 19:20 — On `/apps/[slug]` hero: swapped the vibe pill for the app title, and pointed `AppHero`'s backdrop at a per-app image (`/images/apps/hero-<slug>.jpg`, overridable via `extended.hero.image`) instead of the shared vibe photo. Created `zz/wed-apps/app-hero-image-prompts.md` with distinct LLM image prompts for all 24 apps, plus a global style spec and the file-path convention.
+
+2026-08-05 18:15 — Redesigned `/apps/[slug]` sections to borrow the landing page's visual vocabulary: `AppHero` now uses a full-bleed vibe-mapped photo backdrop with heavy scrim, display-size white headline, and a rotated glowing phone; `AppScene` became a serif-quoted "Picture this" beat with ambient gradient blooms; `AppHowItWorks` mirrors the landing `HowItWorks` cards with real step photography + circular number badges; `AppBigScreen` puts the app title over the actual `bigscreen-1.jpg` photo instead of a flat dark box; `AppIsThisYou` moved from a plain checkmark list to a 2-column card grid with accent-light icon chips. Added `useScrollReveal` reveals and `.section-py` rhythm across the touched files.
+
+2026-08-05 18:10 — Fixed `/#contact#contact` bug when the "Book your app"/Contact links were clicked while already on the homepage: added a small client `ContactLink` (`components/ui/ContactLink.js`) that intercepts the click on `/`, scrolls to `#contact`, and uses `history.replaceState` so the hash doesn't stack. Swapped it into `NavBar`, `Footer`, `HomeHero`, and `AppGalleryTeaser` — all previous `<Link href="/#contact">` call sites for CTAs.
+
+2026-08-05 17:36 — Fixed broken `/apps/[slug]` page formatting: wrapped the `*` margin/padding reset in `app/globals.css` inside `@layer base` so Tailwind v4's layered utilities (`px-*`, `py-*`, `pt-*`, `mb-*`, `p-*`) can override it — this was zeroing out padding on the pill, hero button, "How it works" cards, and section spacing. Also pointed the hero "Book this app" button to a new `#book-it` anchor on `AppBookIt`, and made the `<em>{app.title}</em>` space in `AppWhyNotPaper` explicit with `{' '}` so "Oracle that" no longer collapses.
+
+2026-08-05 17:30 — Restyled `PlannersCallout.js`: replaced the thin bg-subtle strip (which blended into `PaperReframe` above it) with a white section containing a centered accent-light card, eyebrow label, proper h2, and solid accent button. Creates a clear visual beat before the dark `FinalCta`.
+
+2026-08-05 15:00 — Edited step 02 body copy in `HowItWorks.js`: removed "five years," "reliability engineering," and "designer whose only job" specifics, replacing with vaguer craft language; cut ~30% of the word count. No structural changes.
+
+2026-08-05 14:30 — Rewrote the /apps page hero copy in `app/apps/page.js`: replaced the em-dash-heavy "Twelve apps we've built. Zero off the shelf." intro with a simpler three-paragraph version that leads with the catalog framing, reframes the "we'll say no" paragraph around guest presence rather than saving money. Kept structure and styling intact.
+
+2026-08-05 — Removed Venue Scavenger Hunt (#2) and Custom Wedding Bingo (#11) from the "Stop the room" vibe's appIds in `components/sections/AppGalleryTeaser.js`. Rationale: scavenger hunt scatters guests across the venue (opposite of a room-wide focal moment), and bingo's stop-the-room beat is too brief compared to the other apps in that bucket.
+
 2026-07-19 19:20 — Fixed the oversized gap under the "What every Wepho app respects" title in SixRules (marginBottom --space-14 → --space-10) so the cards sit closer to the heading. Restyled the PlannersCallout band into a left-accent-bar layout with a promoted heading and space-between alignment between the pitch and the CTA link, and bumped its vertical padding.
 
 2026-07-19 19:02 — Fixed the poorly-styled contact form (FinalCta section): added a token-based `.contact-field` class in `app/globals.css` with proper 52px min-height, 12/16px padding, `--radius-md` corners, dark `color-scheme`, custom select chevron, hover/focus rings, and consistent error states, then swapped `ContactForm.js` to use it. Also fixed the submit button's stray `rounded-full` to the design-system `--radius-md`.
@@ -92,3 +112,14 @@
 **2026-07-19 19:20** — Diagnosed why the local contact-form submission failed: the form/API/Nodemailer chain is wired correctly but `.env.local` still holds placeholder SMTP values, so `sendMail` throws a 500. Added a dev-only console-log fallback in `lib/mailer.js` (logs submissions locally when SMTP is unset, disabled in prod), clarified `.env.local.example`, and wrote `pre-launch.md` with an OBS checklist for configuring real SMTP/env vars on Vercel before launch.
 
 **2026-07-19 19:20** — Implemented the host-control redesign for the "Who Said It?" demo: lifted the reveal into `WhoSaidItDemo` so the host now drives it, gave the guest phone a "Locked in / Waiting for the Host to reveal…" state, and renamed the "MC" label to the more universally-understood "Host" across the demo. Rebuilt `WhoSaidItHost` with a private answer cheat-sheet card, a restyled "say this out loud" note, muted-until-reveal tally bars, and a sticky footer whose primary button steps through Show the results → Next text → Show final tally.
+2026-08-05 16:55
+Removed the awkward 'the same moment your guests would share at the reception' clause from DemoSectionTwo copy. Replaced with 'everyone laughing at the same wrong answers' — tighter and self-evident.
+
+2026-08-05 17:00
+Added a next/link to the "Make them laugh" eyebrow label in DemoSectionTwo, linking to /apps/who-said-it. Inherits the accent color with a subtle underline offset.
+
+2026-08-05 18:38
+Fixed AppCard in the /apps grid to render all vibe and moment tags instead of only the first of each — most apps have two of each in the data, and they were being silently dropped. Now iterates over both arrays with color-coded vibe pills and neutral moment pills.
+
+2026-08-05 19:03
+Completed T72 metadata audit: verified titles/descriptions on `/`, `/planners`, `/apps`, and `/apps/[slug]`, then added the missing `openGraph` blocks to `/planners` and `/apps` and set `type: 'website'` on the homepage OG. Marked T72 done in tasks.md; OG images remain for T73.

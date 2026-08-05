@@ -428,11 +428,11 @@ Each app needs: `hero` (headline + subhead), `scene` (narrative), `howItWorks` (
 
 ---
 
-- [ ] **T72 — Metadata audit** — verify all routes export correct metadata
-  - [ ] `/` — homepage title, meta description, OG title/description/image
-  - [ ] `/planners` — planner-specific title + description
-  - [ ] `/apps` — gallery title + description
-  - [ ] `/apps/[slug]` — unique title (`${app.title} — Wepho`), description from `app.description`, OG image
+- [x] **T72 — Metadata audit** — verify all routes export correct metadata
+  - [x] `/` — homepage title, meta description, OG title/description/image
+  - [x] `/planners` — planner-specific title + description
+  - [x] `/apps` — gallery title + description
+  - [x] `/apps/[slug]` — unique title (`${app.title} — Wepho`), description from `app.description`, OG image
 
 - [ ] **T73 — OG images** (`app/apps/[slug]/opengraph-image.js`)
   - [ ] Use Next.js `ImageResponse` to dynamically generate OG images

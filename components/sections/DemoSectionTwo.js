@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import useScrollReveal from '../../hooks/useScrollReveal'
 import WhoSaidItDemo from '../demo/WhoSaidItDemo'
 import Container from '@/components/layout/Container'
@@ -30,7 +31,13 @@ export default function DemoSectionTwo() {
               marginBottom: 'var(--space-4)',
             }}
           >
-            Second demo · Make them laugh
+              Second demo ·{' '}
+            <Link
+              href="/apps/who-said-it"
+              style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '3px' }}
+            >
+              Make them laugh
+            </Link>
           </p>
           <h2
             style={{
@@ -42,7 +49,7 @@ export default function DemoSectionTwo() {
               marginBottom: 'var(--space-5)',
             }}
           >
-            Guess the sender. Loser buys the next round.
+            Guess the sender. The whole room is about to be wrong.
           </h2>
           <p
             style={{
@@ -55,8 +62,7 @@ export default function DemoSectionTwo() {
           >
             A real text from a real relationship. Blurred sender. You&rsquo;ve got two guesses.
             Tap your answer, then the host reveals it &mdash; the big screen lights up with how the
-            whole room voted, the same moment your guests would share at the reception, laughing at
-            the same wrong answers.
+            whole room voted, everyone laughing at the same wrong answers.
           </p>
 
           <div

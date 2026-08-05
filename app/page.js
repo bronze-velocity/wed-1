@@ -20,6 +20,7 @@ export const metadata = {
     title: 'Wepho — Custom Wedding Experience Studio',
     description:
       'Bring us an idea, or pick one of ours. Built from scratch for your wedding. We only build when the app beats paper. ~$2,000.',
+    type: 'website',
   },
 }
 

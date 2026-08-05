@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Container from './Container'
+import ContactLink from '../ui/ContactLink'
 
 export default function Footer() {
   return (
@@ -78,8 +79,7 @@ export default function Footer() {
           >
             For planners
           </Link>
-          <Link
-            href="/#contact"
+          <ContactLink
             className="link-underline"
             style={{
               fontSize: 'var(--text-body-sm)',
@@ -88,7 +88,7 @@ export default function Footer() {
             }}
           >
             Book your app
-          </Link>
+          </ContactLink>
         </nav>
 
         <p

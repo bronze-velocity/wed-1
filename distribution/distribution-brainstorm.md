@@ -329,10 +329,3 @@ Everything else in this doc is downstream of that.
 
 *End of brainstorm. To revise as we learn what works.*
 
-
-# fyi
-Done. Added a "Non-app version" section to each of the 20 ideas with a brief description of the analog alternative and two verdicts (Needed?/Adds to the experience?). Verdicts land in three buckets:
-
-- **Genuine app-value:** Love Letters, Songs With Stories, Predictions, Toasts From Everywhere, Story Chain, Scavenger Hunt, Mad Libs, Playlist Committee, AMA, Video Guestbook, Letters to the Future
-- **Marginal — paper does most of it:** Guess the Year, Advice, Who Said It?, Dedications, Slow Reveal
-- **Weakest:** Reaction Layer (substitutes taps for the room's real reactions), Recipe Box (paper cards feel more heirloom)

@@ -13,6 +13,7 @@ import AppMakeItYours from '../../../components/app-page/AppMakeItYours.js'
 import AppSetupEffort from '../../../components/app-page/AppSetupEffort.js'
 import AppBookIt from '../../../components/app-page/AppBookIt.js'
 import AppFaq from '../../../components/app-page/AppFaq.js'
+import AppNextPrev from '../../../components/app-page/AppNextPrev.js'
 
 export function generateStaticParams() {
   return getAppSlugs().map((slug) => ({ slug }))
@@ -51,6 +52,7 @@ export default async function AppPage({ params }) {
       <AppWhyNotPaper app={app} />
       <AppMakeItYours app={app} />
       <AppSetupEffort app={app} />
+      <AppNextPrev app={app} />
       <AppBookIt app={app} />
       <AppFaq app={app} />
     </main>

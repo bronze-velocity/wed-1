@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import Container from '@/components/layout/Container'
+import ContactLink from '@/components/ui/ContactLink'
 
 export default function HomeHero() {
   return (
@@ -61,7 +62,7 @@ export default function HomeHero() {
           >
             Bring us an idea, or pick one of ours. We build it from scratch — designed for your
             wedding, simple enough that grandma is in on it in seconds, and short enough that
-            guests are back in the room before their drink gets warm. ~$2,000 for something
+            guests are back in the room before their drink gets warm. ~$1,000-2,000 for something
             entirely unique.
           </p>
 
@@ -72,9 +73,9 @@ export default function HomeHero() {
             <Link href="/apps" className="btn btn-lg btn-primary">
               See 12 things we&rsquo;ve built →
             </Link>
-            <Link href="/#contact" className="btn btn-lg btn-secondary">
+            <ContactLink className="btn btn-lg btn-secondary">
               Talk to us about yours
-            </Link>
+            </ContactLink>
           </div>
         </div>
 

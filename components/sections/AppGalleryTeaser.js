@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
 import Container from '@/components/layout/Container'
+import ContactLink from '@/components/ui/ContactLink'
 
 const VIBES = [
   {
@@ -43,7 +44,7 @@ const VIBES = [
     tagline: 'Every head turns. Nobody checks their phone.',
     color: 'var(--color-accent)',
     colorLight: 'var(--color-accent-light)',
-    appIds: [1, 2, 8, 10, 11, 15, 21, 23],
+    appIds: [1, 8, 10, 15, 21, 23],
     image: { src: '/images/apps/vibe-stop-room.jpg', alt: 'A wide shot of the room turned toward the display wall' },
   },
 ]
@@ -239,13 +240,12 @@ export default function AppGalleryTeaser({ apps }) {
             }}
           >
             None of these feel like yours? Good.{' '}
-            <Link
-              href="/#contact"
+            <ContactLink
               className="link-underline"
               style={{ color: 'var(--color-accent)', fontWeight: 600 }}
             >
               Tell us what would.
-            </Link>
+            </ContactLink>
           </p>
         </div>
 
