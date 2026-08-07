@@ -88,7 +88,7 @@ demoed: **#1, #2, #3, #9, #11, #14.**
 >
 > *Design Our Future Home Map — App #14*
 
-- `href`: `/apps/future-home-map`
+- `href`: `/apps/where-next-map`
 - label: `Design Our Future Home Map — App #14`
 
 ### Option F — Venue Scavenger Hunt (#2) — *romantic / story*

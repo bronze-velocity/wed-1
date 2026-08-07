@@ -55,7 +55,7 @@ export default function BigScreenFrame({ message, senderName, to, photo, onReset
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: 'var(--space-10)',
+          padding: 'clamp(var(--space-4), 5%, var(--space-10))',
           overflow: 'hidden',
           transition: 'box-shadow var(--duration-slow) var(--ease-out)',
         }}
@@ -141,7 +141,7 @@ export default function BigScreenFrame({ message, senderName, to, photo, onReset
             style={{
               fontFamily: 'var(--font-serif-accent)',
               fontStyle: 'italic',
-              fontSize: 'var(--text-h2)',
+              fontSize: 'clamp(0.95rem, 3.5vw, var(--text-h2))',
               lineHeight: 1.3,
               color: 'var(--color-text-inverse)',
               margin: 0,

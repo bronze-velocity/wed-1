@@ -28,8 +28,8 @@ export default function AppBookIt({ app }) {
             lineHeight: 1.6,
           }}
         >
-          We take 4 weddings per month. That&apos;s the number where we can build
-          something worth $2,000.
+          Tell us your date and your story. We&apos;ll design something only your
+          wedding could have.
         </p>
         <ContactForm appName={app?.title} />
       </Container>

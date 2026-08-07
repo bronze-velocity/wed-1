@@ -327,9 +327,9 @@
     },
     {
       "id": 14,
-      "slug": "future-home-map",
-      "title": "Design Our Future Home Map",
-      "description": "Guests pin places on an interactive map — the couple's meaningful spots, neighborhoods they should move to, places they must visit — filling live on the reception display.",
+      "slug": "where-next-map",
+      "title": "Where To Next",
+      "description": "Guests pin places on an interactive world map — the couple's meaningful spots, neighborhoods they should move to, restaurants they must try, cities they should retire in — filling live on the reception display.",
       "why": "It becomes a living map the couple actually uses after: part artifact, part conversation piece, part shared life plan.",
       "alt1_vibe": ["Create a keepsake", "Get them talking"],
       "alt2_moment": ["Dinner"],
@@ -578,6 +578,29 @@
         "description": "A rented video-guestbook booth — there's a whole industry of them — parked in a corner with an attendant.",
         "needed": "Sort of — the concept exists as a booth rental, but a booth means a queue and a fixed spot.",
         "adds_to_the_experience": "Yes — no bottleneck, custom prompts, assisted mode for elders, and per-clip archival for future decades make the bespoke version a real upgrade over a rental booth."
+      }
+    },
+    {
+      "id": 25,
+      "slug": "home-the-room-built",
+      "title": "The Home Your Room Built",
+      "description": "Guests fill your someday home from their phones — a dog, a big table, a herb garden, a record player, one silly rule — and a composite illustration of the house draws itself live on the reception screen. You leave with a framed poster of the home your people imagined for you.",
+      "why": "Every guest already has an opinion about how the couple should live. Making them commit those opinions to something the couple keeps forever turns opinions into a keepsake, and turns a keepsake into a running inside joke.",
+      "alt1_vibe": ["Create a keepsake", "Get them talking"],
+      "alt2_moment": ["Dinner"],
+      "alt4_feeling": ["Romantic", "Social"],
+      "cool_features": [
+        "Guests tap up to three — pets, furniture, features, quirky details — with a one-line 'why' attached to each",
+        "A composite illustration of a house fills in live on the big screen as votes cluster: the porch appears once ten people vote for it, the dog shows up as soon as the room agrees",
+        "Categories keep it playful: 'inside things,' 'outside things,' 'creatures,' 'silly rules of the house' (nobody wears shoes past the kitchen)",
+        "A running 'strong opinions' ticker: 'Twelve people insist you need a record player. Only one voted for a hot tub — but they wrote three paragraphs about it.'",
+        "The final illustrated poster ships as a framed print after the honeymoon, signed by the room in the corner"
+      ],
+      "why_it_respects_the_irl_wedding": "Guests tap between courses — 30 seconds each. The house fills in on the wall and gives tables something to argue about ('who wrote in the hot tub?') without pulling anyone away from dinner.",
+      "non_app_version": {
+        "description": "A big blank house diagram on a wall with sticky notes guests write on and stick to the right room (kitchen, garden, living room, roof).",
+        "needed": "No — a wall-of-stickies house diagram is a lovely low-tech version.",
+        "adds_to_the_experience": "Yes — a live illustration that draws itself as votes come in, category clustering, a strong-opinions ticker, and a professionally illustrated printed poster all move it from craft project to keepsake."
       }
     }
   ]

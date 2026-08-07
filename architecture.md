@@ -156,13 +156,14 @@ Working data: `data/apps.js` — a JS module that imports the JSON and extends e
 | 11 | `wedding-bingo` |
 | 12 | `advice-oracle` |
 | 13 | `relationship-exhibit` |
-| 14 | `future-home-map` |
+| 14 | `where-next-map` |
 | 15 | `collaborative-soundtrack` |
 | 16 | `love-letter-machine` ← demo app |
 | 17 | `emotion-pulse` |
 | 18 | `secret-relay` |
 | 19 | `cocktail-quiz` |
 | 20 | `parallel-universe` |
+| 25 | `home-the-room-built` |
 
 ---
 

@@ -6,12 +6,11 @@ export default function FinalCta() {
   return (
     <section
       id="contact"
+      className="py-24 md:py-28 lg:py-32"
       style={{
         position: 'relative',
         overflow: 'hidden',
         background: 'var(--color-bg-dark)',
-        paddingTop: 'var(--space-32)',
-        paddingBottom: 'var(--space-32)',
       }}
     >
       <PhotoBackdrop

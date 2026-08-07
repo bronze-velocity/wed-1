@@ -1,4 +1,5 @@
 import ContactForm from '../../components/ui/ContactForm.js'
+import Container from '@/components/layout/Container'
 
 export const metadata = {
   title: 'For Wedding Planners — Wepho',
@@ -16,12 +17,13 @@ export default function PlannersPage() {
   return (
     <main>
       <section
+        className="section-py"
         style={{
           background: 'var(--color-bg-dark)',
-          padding: 'var(--space-32) var(--space-8)',
+          paddingTop: 'calc(var(--nav-height) + var(--space-16))',
         }}
       >
-        <div style={{ maxWidth: '640px', margin: '0 auto' }}>
+        <Container style={{ maxWidth: '640px' }}>
           <p
             className="uppercase tracking-widest font-medium mb-4"
             style={{ fontSize: 'var(--text-label)', color: 'var(--color-accent)' }}
@@ -50,7 +52,7 @@ export default function PlannersPage() {
             Tell us about a couple you&apos;re working with. We respond fast and we come prepared.
           </p>
           <ContactForm />
-        </div>
+        </Container>
       </section>
     </main>
   )

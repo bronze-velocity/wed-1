@@ -85,8 +85,8 @@ A grandmother in a soft-focus foreground, hands folded over a phone in her lap, 
 
 Cocktail hour in a candlelit lounge area: two guests, phones lit under their faces, standing shoulder-to-shoulder engrossed as one scrolls through what looks like a photo timeline. A third guest leans in over their shoulder. All three faces softly awash in phone glow. Behind them, dim bar lights and floating candles. Museum-in-your-pocket mood. Compose right, left in ambient bokeh.
 
-## 14. future-home-map — Design Our Future Home Map
-`hero-future-home-map.jpg`
+## 14. where-next-map — Where To Next
+`hero-where-next-map.jpg`
 
 Wide reception shot with a large projected world map on the back wall — soft focus, glowing amber pin-clusters over Europe and Southeast Asia. In the mid-ground, guests turned toward the wall, one gesturing broadly at a specific region while others at the same table laugh. Head-tilt-and-argue energy. Anchor action right, keep left in candlelit table-edge blur.
 
@@ -139,3 +139,8 @@ The couple standing together at the mic during dessert, laughing awkwardly-in-lo
 `hero-video-guestbook.jpg`
 
 An older guest at his dinner table holding a phone at arm's length, mid-recording, speaking sincerely into the camera. His face is warmly lit by the phone screen and candlelight; his eyes are soft, remembering. A grandson beside him steadying his arm and encouraging him. Other tables in gentle background blur. Anchor subject right, left in candlelit shadow.
+
+## 25. home-the-room-built — The Home Your Room Built
+`hero-home-the-room-built.jpg`
+
+Wide reception shot with a large projected illustrated house on the back wall — a cross-section drawing filling itself in with warm watercolor details (a porch swing, a herb garden, a curled-up dog, a record player), soft glowing outlines where new items are appearing. In the mid-ground, a table of guests laughing and pointing at the wall, one holding a phone as she taps a new suggestion, another leaning across the table gesturing at a specific room in the illustration. Warm-hearted, collaborative, building-something-together energy. Anchor action right-of-center, left in candlelit table-edge blur.

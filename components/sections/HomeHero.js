@@ -2,8 +2,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Container from '@/components/layout/Container'
 import ContactLink from '@/components/ui/ContactLink'
+import { apps } from '@/data/apps'
 
 export default function HomeHero() {
+  const appCount = apps.length
   return (
     <section
       style={{
@@ -71,7 +73,7 @@ export default function HomeHero() {
             style={{ '--stagger-i': 3, display: 'flex', flexWrap: 'wrap', gap: 'var(--space-4)' }}
           >
             <Link href="/apps" className="btn btn-lg btn-primary">
-              See 12 things we&rsquo;ve built →
+              See {appCount} things we&rsquo;ve built →
             </Link>
             <ContactLink className="btn btn-lg btn-secondary">
               Talk to us about yours

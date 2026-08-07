@@ -24,12 +24,12 @@ const MOMENTS = [
 
 function pillStyle(isActive, activeBg) {
   return {
-    background: isActive ? activeBg : 'var(--color-bg)',
+    background: isActive ? activeBg : 'transparent',
     color: isActive ? 'var(--color-text-inverse)' : 'var(--color-text-secondary)',
-    border: '1.5px solid',
+    border: '1px solid',
     borderColor: isActive ? activeBg : 'var(--color-border-strong)',
     borderRadius: 'var(--radius-md)',
-    padding: '8px 16px',
+    padding: '7px 14px',
     cursor: 'pointer',
     fontFamily: 'inherit',
     fontWeight: 600,
@@ -113,7 +113,7 @@ export default function AppGalleryFull({ apps }) {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(min(280px, 100%), 1fr))',
           gap: 'var(--space-6)',
         }}
       >

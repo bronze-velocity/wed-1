@@ -152,7 +152,7 @@ Every app in the catalog fits one of these. If a new app ever needs an 8th, add 
 | `vote` | Prompt card + 2–4 tap buttons + countdown ring | couple-trivia, first-dance-ballot, who-said-it, cocktail-quiz, unpopular-opinions, parallel-universe |
 | `submit` | Textarea + optional "to" selector + send | love-letter-machine, advice-oracle, live-roast-board, bucket-list-builder, ask-us-anything, story-chain, anniversary-time-capsule, prediction-vault |
 | `chapter` | Big photo + title + body paragraph + "Next chapter →" | venue-scavenger-hunt, relationship-exhibit, conversation-starters |
-| `picker` | Grid of tappable tiles (photos or labels) with selection state | wedding-bingo, future-home-map, collaborative-soundtrack |
+| `picker` | Grid of tappable tiles (photos or labels) with selection state | wedding-bingo, where-next-map, home-the-room-built, collaborative-soundtrack |
 | `pulse` | Emoji options + horizontal slider or single big tap | emotion-pulse |
 | `feed` | Scroll of received items with reply button (guest sees others' contributions) | secret-relay, guest-memory-map (submission view is `submit`, browse view is `feed`) |
 | `record` | Big circular record button + timer + framing rectangle | video-guestbook |
@@ -164,7 +164,7 @@ Every app in the catalog fits one of these. If a new app ever needs an 8th, add 
 | `leaderboard` | Ranked rows, top row highlighted, table subplot | couple-trivia, first-dance-ballot, cocktail-quiz, who-said-it, wedding-bingo |
 | `feed` | Rotating attributed quote with couple photo behind | love-letter-machine, advice-oracle, live-roast-board, ask-us-anything, story-chain |
 | `aggregator` | Big number, sentiment bars, breakdowns ("62% think you'll have 2 kids") | unpopular-opinions, emotion-pulse, parallel-universe, prediction-vault, anniversary-time-capsule |
-| `map` | Venue floorplan or relationship-graph with pins/lines lighting up | venue-scavenger-hunt, guest-memory-map, secret-relay, future-home-map |
+| `map` | Venue floorplan or relationship-graph with pins/lines lighting up | venue-scavenger-hunt, guest-memory-map, secret-relay, where-next-map, home-the-room-built |
 | `gallery` | 3×3 photo grid or slow slideshow of contributions | relationship-exhibit, bucket-list-builder, collaborative-soundtrack (now-playing tile) |
 | `moment` | One quiet focal element — a phrase, a "recording…" indicator, a QR | video-guestbook, conversation-starters (used sparingly / optional) |
 
@@ -189,7 +189,8 @@ The full mapping, ready to seed `data/apps.js`.
 | wedding-bingo | `picker` | `leaderboard` | Bingo grid w/ some tapped / "BINGO — Aunt Rae, Table 6" |
 | advice-oracle | `submit` | `feed` | "Best advice for the first year" / rotating gold-framed quotes |
 | relationship-exhibit | `chapter` | `gallery` | "Room 2 · The Lisbon trip" / photo grid slideshow |
-| future-home-map | `picker` | `map` | Tap the couch/dog/plants you'd add / composite house filling in |
+| where-next-map | `picker` | `map` | Tap a place they should go / world map filling with pins |
+| home-the-room-built | `picker` | `map` | Tap the couch/dog/plants you'd add / composite house illustration filling in |
 | collaborative-soundtrack | `picker` | `gallery` | Song grid w/ heart taps / now-playing tile + queue |
 | love-letter-machine | `submit` | `feed` | Write + approve / letter revealed with gold frame (already built) |
 | emotion-pulse | `pulse` | `aggregator` | Emoji slider "how are you feeling right now" / heat graph over the night |

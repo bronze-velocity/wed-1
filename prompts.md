@@ -82,3 +82,9 @@ can you find 5 sources each with recent (2026) and popular wedding content for r
 any phones that are being displayed need to be iphone size, define this somewhere and 
   implement. also, the UI for the MC is terrible. please create a plan for doing a      
   nice looking UI.   
+
+### done
+please do a review of the mobile responsiveness for all the different pages.
+
+### done
+for each of the apps' hero section UI visualizations, please suggest 2 alternative ones that are even better and clearer and more nicely looking visually. output into a new .md file. also, please include a new suggestion for a more modern and sleek (maybe black/white mostly instead of with the website's buttons) design system for the UI that looks more wedding-like.

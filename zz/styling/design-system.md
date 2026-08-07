@@ -522,7 +522,82 @@ export function useParallax(speed = 0.15) {
   background: rgba(255,255,255,0.12);
   color: rgba(255,255,255,0.8);
 }
+
+/* --- Dot badge (Option B pattern) ---
+   Category badge where the taxonomy color moves into a 6px filled dot so
+   chip shape stays monochrome. Used for vibe chips on AppCard, the
+   app-name eyebrow on /apps/[slug] hero, and any "signal color inside
+   neutral shell" badge. Pair with .badge-outline-dashed for a
+   secondary axis (e.g. wedding moment vs. vibe). */
+.badge-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  padding: 3px 10px 3px 8px;
+  font-size: var(--text-tiny);
+  font-weight: 600;
+  line-height: 1.4;
+}
+.badge-dot::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--dot, var(--color-accent)); /* set --dot inline per instance */
+  display: inline-block;
+}
+
+.badge-outline-dashed {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-md);
+  padding: 3px 10px;
+  font-size: var(--text-tiny);
+  font-weight: 600;
+  line-height: 1.4;
+}
 ```
+
+---
+
+## Filter chips
+
+Outline-first toggle pills for filter rows (e.g. the vibe/moment filters on
+`/apps`). Inactive state is a transparent chip with a strong-border ring;
+active state is a solid ink or accent fill. Shape stays consistent with
+buttons via `--radius-md`.
+
+```css
+.chip-filter {
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  padding: 7px 14px;
+  font-weight: 600;
+  font-size: var(--text-body-sm);
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+.chip-filter[aria-pressed="true"] {
+  background: var(--color-text-primary); /* or var(--color-accent) for the secondary axis */
+  border-color: var(--color-text-primary);
+  color: var(--color-text-inverse);
+}
+```
+
+Guidance:
+- Two coexisting filter rows use two different active fills (ink vs. accent) so guests can tell axes apart at a glance.
+- Never fill the inactive state — keep it transparent so the row reads as a set of options, not a bar of buttons.
 
 ---
 

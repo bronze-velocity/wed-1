@@ -6,9 +6,9 @@ import useScrollReveal from '@/hooks/useScrollReveal'
 const DEFAULT = {
   paper:
     'A stack of pre-printed cards, a decorated jar, or a good MC with a microphone. The traditions this app draws from are older than any of us and they mostly still work.',
-  app: 'This app leans on things paper structurally cannot do — live big-screen reveals, real-time voting or aggregation, scheduled delivery years into the future, automatic curation into a keepsake, or bridging distance to guests who couldn’t fly in. The specific capabilities this one uses appear on the app’s scene above.',
+  app: 'This app leans on things paper structurally cannot do: live big-screen reveals, real-time voting or aggregation, scheduled delivery years into the future, automatic curation into a keepsake, or bridging distance to guests who couldn’t fly in. The specific capabilities this one uses appear on the app’s scene above.',
   verdict:
-    'If your idea is already served well by paper, we’ll tell you and send you to a good stationer. We only build the app when there’s a mechanic the analog version genuinely cannot copy — usually because the payoff needs to reach you decades after the wedding is over.',
+    'If your idea is already served well by paper, we’ll tell you and send you to a good stationer. We only build the app when there’s a mechanic the analog version genuinely cannot copy, usually because the payoff needs to reach you decades after the wedding is over.',
 }
 
 export default function AppWhyNotPaper({ app }) {

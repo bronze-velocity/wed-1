@@ -1,6 +1,8 @@
 import Link from 'next/link'
+import { getApps } from '../lib/getApps'
 
 export default function NotFound() {
+  const count = getApps().length
   return (
     <main
       style={{
@@ -38,7 +40,7 @@ export default function NotFound() {
             marginBottom: 'var(--space-8)',
           }}
         >
-          But 12 wedding apps do.
+          But {count} wedding apps do.
         </p>
         <div
           style={{
@@ -60,7 +62,7 @@ export default function NotFound() {
               fontSize: 'var(--text-body)',
             }}
           >
-            Explore all 12 apps →
+            Explore all {count} apps →
           </Link>
           <Link
             href="/"

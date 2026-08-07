@@ -2,16 +2,15 @@ import Container from '@/components/layout/Container'
 import AppGalleryFull from '../../components/sections/AppGalleryFull'
 import { getApps } from '../../lib/getApps'
 
-export const metadata = {
-  title: 'Explore 12 Wedding Apps — Wepho',
-  description:
-    'Browse all 12 custom wedding experience apps — from live trivia about your relationship to a Love Letter Machine that reads messages aloud in front of the whole room. Filter by vibe or wedding moment to find yours.',
-  openGraph: {
-    title: 'Explore 12 Wedding Apps — Wepho',
-    description:
-      'Browse all 12 custom wedding experience apps — from live trivia about your relationship to a Love Letter Machine that reads messages aloud in front of the whole room. Filter by vibe or wedding moment to find yours.',
-    type: 'website',
-  },
+export function generateMetadata() {
+  const count = getApps().length
+  const title = `Explore ${count} Wedding Apps — Wepho`
+  const description = `Browse all ${count} custom wedding experience apps — from live trivia about your relationship to a Love Letter Machine that reads messages aloud in front of the whole room. Filter by vibe or wedding moment to find yours.`
+  return {
+    title,
+    description,
+    openGraph: { title, description, type: 'website' },
+  }
 }
 
 export default function AppsPage() {
@@ -51,7 +50,7 @@ export default function AppsPage() {
               maxWidth: '820px',
             }}
           >
-            Twelve apps in the catalog. None of them off the shelf.
+            {apps.length} apps in the catalog. None of them off the shelf.
           </h1>
 
           <p

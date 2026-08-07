@@ -5,6 +5,7 @@ import Image from 'next/image'
 import useScrollReveal from '../../hooks/useScrollReveal'
 import LoveLetterDemo from '../demo/LoveLetterDemo'
 import Container from '@/components/layout/Container'
+import { apps } from '@/data/apps'
 
 const STRIP_PHOTOS = [
   {
@@ -26,6 +27,7 @@ const STRIP_PHOTOS = [
 
 export default function DemoSection() {
   const headingRef = useScrollReveal()
+  const appCount = apps.length
 
   return (
     <section
@@ -185,7 +187,7 @@ export default function DemoSection() {
               margin: '0 auto var(--space-4)',
             }}
           >
-            This is one of 12 apps we&rsquo;ve built. Or bring us an idea we haven&rsquo;t.
+            This is one of {appCount} apps we&rsquo;ve built. Or bring us an idea we haven&rsquo;t.
           </p>
           <Link
             href="/apps"
@@ -196,7 +198,7 @@ export default function DemoSection() {
               textDecoration: 'none',
             }}
           >
-            This is the Unprompted Love Letter Machine → See all 12 apps
+            This is the Unprompted Love Letter Machine → See all {appCount} apps
           </Link>
         </div>
       </Container>

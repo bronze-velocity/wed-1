@@ -4,11 +4,11 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 const vibeConfig = {
-  'Make them laugh':   { color: 'var(--color-amber)',  bg: 'var(--color-amber-light)' },
-  'Make them cry':     { color: 'var(--color-rose)',   bg: 'var(--color-rose-light)' },
-  'Get them talking':  { color: 'var(--color-teal)',   bg: 'var(--color-teal-light)' },
-  'Create a keepsake': { color: 'var(--color-green)',  bg: 'var(--color-green-light)' },
-  'Stop the room':     { color: 'var(--color-accent)', bg: 'var(--color-accent-light)' },
+  'Make them laugh':   { color: 'var(--color-amber)' },
+  'Make them cry':     { color: 'var(--color-rose)' },
+  'Get them talking':  { color: 'var(--color-teal)' },
+  'Create a keepsake': { color: 'var(--color-green)' },
+  'Stop the room':     { color: 'var(--color-accent)' },
 }
 
 const clampStyle = (lines) => ({
@@ -62,15 +62,26 @@ export default function AppCard({ app }) {
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                background: vibe.bg,
-                color: vibe.color,
+                gap: '6px',
+                background: 'var(--color-bg)',
+                color: 'var(--color-text-primary)',
+                border: '1px solid var(--color-border-strong)',
                 borderRadius: 'var(--radius-md)',
-                padding: '3px 10px',
+                padding: '3px 10px 3px 8px',
                 fontSize: 'var(--text-tiny)',
                 fontWeight: 600,
                 lineHeight: 1.4,
               }}
             >
+              <span
+                style={{
+                  width: 6,
+                  height: 6,
+                  borderRadius: 'var(--radius-full)',
+                  background: vibe.color,
+                  display: 'inline-block',
+                }}
+              />
               {v}
             </span>
           )
@@ -81,8 +92,9 @@ export default function AppCard({ app }) {
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              background: 'var(--color-bg-subtle)',
-              color: 'var(--color-text-secondary)',
+              background: 'var(--color-bg)',
+              color: 'var(--color-text-muted)',
+              border: '1px dashed var(--color-border-strong)',
               borderRadius: 'var(--radius-md)',
               padding: '3px 10px',
               fontSize: 'var(--text-tiny)',
@@ -98,15 +110,26 @@ export default function AppCard({ app }) {
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              background: 'var(--color-accent-light)',
-              color: 'var(--color-accent)',
+              gap: '6px',
+              background: 'var(--color-bg)',
+              color: 'var(--color-accent-dark)',
+              border: '1px solid var(--color-accent)',
               borderRadius: 'var(--radius-md)',
-              padding: '3px 10px',
+              padding: '3px 10px 3px 8px',
               fontSize: 'var(--text-tiny)',
               fontWeight: 600,
               lineHeight: 1.4,
             }}
           >
+            <span
+              style={{
+                width: 6,
+                height: 6,
+                borderRadius: 'var(--radius-full)',
+                background: 'var(--color-accent)',
+                display: 'inline-block',
+              }}
+            />
             Featured demo
           </span>
         )}

@@ -99,7 +99,7 @@ is the honest label; don't write a self-paced app as if the room moves together.
 ## Option 6 — Future Home Map (#14) · vibe: get-them-talking / live map
 
 - **format:** whole-room, ambient — one live map on the big screen that everyone feeds all night
-- **slug:** `future-home-map`
+- **slug:** `where-next-map`
 - **eyebrow:** `A live map on the big screen · fills up with guest pins all through dinner`
 - **headline:** **Lisbon has twelve pins now, and two tables are arguing about whether you should actually move there.**
 - **description:** The map starts with a few pins you dropped — your apartment, the spot of your first date, where he proposed — and fills up live on the big screen as guests add their own from their phones (no download): a restaurant a friend swears by, the neighborhood your roommate insists you'd love, a park for the kids nobody's mentioned yet. By the end of the night your future is a dense, opinionated map — and half of it ends up starred in your real one by morning. Yours to keep as a printed poster.

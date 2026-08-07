@@ -90,7 +90,7 @@ export default function AppGalleryTeaser({ apps }) {
             margin: '0 auto var(--space-10)',
           }}
         >
-          Five vibes. Twelve apps we&rsquo;ve built. Zero of them off-the-shelf.
+          Five vibes. {apps.length} apps we&rsquo;ve built. Zero of them off-the-shelf.
         </p>
 
         {/* Vibe pills */}
@@ -149,7 +149,7 @@ export default function AppGalleryTeaser({ apps }) {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(260px, 100%), 1fr))',
             gap: 'var(--space-4)',
             marginBottom: 'var(--space-8)',
           }}

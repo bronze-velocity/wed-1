@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Container from '@/components/layout/Container'
 import useScrollReveal from '@/hooks/useScrollReveal'
+import BigScreenScene from '@/components/appui/BigScreenScene'
 
 export default function AppBigScreen({ app }) {
   const ref = useScrollReveal()
@@ -10,6 +11,7 @@ export default function AppBigScreen({ app }) {
   if (!description) return null
 
   const primaryVibe = app.alt1_vibe?.[0]
+  const bigScreenScene = app.extended?.deviceScenes?.bigScreen
 
   return (
     <section
@@ -75,79 +77,83 @@ export default function AppBigScreen({ app }) {
           </p>
         </div>
 
-        <div
-          ref={ref}
-          className="reveal"
-          style={{
-            position: 'relative',
-            borderRadius: 'var(--radius-2xl)',
-            overflow: 'hidden',
-            aspectRatio: '16 / 9',
-            boxShadow: '0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06)',
-          }}
-        >
-          <Image
-            src="/images/dinner/bigscreen-1.jpg"
-            alt="A wedding reception big screen glowing above a full dance floor"
-            fill
-            sizes="(max-width: 1024px) 100vw, 800px"
-            style={{ objectFit: 'cover' }}
-          />
-          <div style={{ position: 'absolute', inset: 0, background: 'var(--scrim-heavy)' }} />
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: 'var(--space-4)',
-              padding: 'var(--space-8)',
-              textAlign: 'center',
-            }}
-          >
-            {primaryVibe && (
-              <p
-                style={{
-                  fontSize: 'var(--text-label)',
-                  fontWeight: 600,
-                  letterSpacing: '0.12em',
-                  textTransform: 'uppercase',
-                  color: 'var(--color-accent-light)',
-                }}
-              >
-                {primaryVibe}
-              </p>
-            )}
-            <p
-              style={{
-                fontSize: 'var(--text-h2)',
-                fontWeight: 700,
-                letterSpacing: '-0.02em',
-                lineHeight: 1.15,
-                color: 'var(--color-text-inverse)',
-                textShadow: '0 2px 20px rgba(0,0,0,0.4)',
-              }}
-            >
-              {app.title}
-            </p>
-          </div>
-          <span
-            style={{
-              position: 'absolute',
-              bottom: 'var(--space-4)',
-              right: 'var(--space-5)',
-              fontSize: 'var(--text-tiny)',
-              fontWeight: 700,
-              letterSpacing: '0.04em',
-              color: 'rgba(255,255,255,0.35)',
-            }}
-          >
-            Wepho
-          </span>
+        <div ref={ref} className="reveal">
+          {bigScreenScene ? (
+            <BigScreenScene scene={bigScreenScene} />
+          ) : (
+            <FallbackBigScreen title={app.title} primaryVibe={primaryVibe} />
+          )}
         </div>
       </Container>
     </section>
+  )
+}
+
+function FallbackBigScreen({ title, primaryVibe }) {
+  return (
+    <div
+      style={{
+        position: 'relative',
+        borderRadius: 'var(--radius-2xl)',
+        overflow: 'hidden',
+        aspectRatio: '16 / 9',
+        boxShadow: '0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06)',
+      }}
+    >
+      <Image
+        src="/images/dinner/bigscreen-1.jpg"
+        alt="A wedding reception big screen glowing above a full dance floor"
+        fill
+        sizes="(max-width: 1024px) 100vw, 800px"
+        style={{ objectFit: 'cover' }}
+      />
+      <div style={{ position: 'absolute', inset: 0, background: 'var(--scrim-heavy)' }} />
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 'var(--space-4)',
+          padding: 'var(--space-8)',
+          textAlign: 'center',
+        }}
+      >
+        {primaryVibe && (
+          <p style={{
+            fontSize: 'var(--text-label)',
+            fontWeight: 600,
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+            color: 'var(--color-accent-light)',
+          }}>
+            {primaryVibe}
+          </p>
+        )}
+        <p style={{
+          fontSize: 'var(--text-h2)',
+          fontWeight: 700,
+          letterSpacing: '-0.02em',
+          lineHeight: 1.15,
+          color: 'var(--color-text-inverse)',
+          textShadow: '0 2px 20px rgba(0,0,0,0.4)',
+        }}>
+          {title}
+        </p>
+      </div>
+      <span style={{
+        position: 'absolute',
+        bottom: 'var(--space-4)',
+        right: 'var(--space-5)',
+        fontSize: 'var(--text-tiny)',
+        fontWeight: 700,
+        letterSpacing: '0.04em',
+        color: 'rgba(255,255,255,0.35)',
+      }}>
+        Wepho
+      </span>
+    </div>
   )
 }
