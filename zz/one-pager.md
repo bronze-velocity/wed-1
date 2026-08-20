@@ -1,5 +1,17 @@
 # Wepho — One-Pager
 
+# short description of the service:
+- Interactive wedding reception experience
+- Custom wedding reception app 
+- Bespoke wedding experience app
+- Live wedding party app
+# Example apps:
+- **Live Trivia** — 15 questions, all about you two, whole room plays at once
+- **The Live Roast Board** — guests submit gentle burns, best ones hit the big screen
+- **Unpopular Opinions Icebreaker** — guests vote on hot takes, room erupts
+- **Who Said It?** — guess which partner said each quote; guests always get one wrong
+- **Relationship Origin Story Exhibit** — guests explore your story like a museum at cocktail hour
+
 ## What It Is
 
 Wepho is a **Custom Wedding Experience Studio**. We build one-night-only interactive web apps for individual couples — used by guests on their phones during the reception. Every app is built from scratch for one couple and never reused. Price: **~$2,000 per app**.

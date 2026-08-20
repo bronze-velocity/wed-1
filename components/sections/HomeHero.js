@@ -73,7 +73,7 @@ export default function HomeHero() {
             style={{ '--stagger-i': 3, display: 'flex', flexWrap: 'wrap', gap: 'var(--space-4)' }}
           >
             <Link href="/apps" className="btn btn-lg btn-primary">
-              See {appCount} things we&rsquo;ve built →
+              See {appCount}{' '}things we&rsquo;ve built →
             </Link>
             <ContactLink className="btn btn-lg btn-secondary">
               Talk to us about yours
