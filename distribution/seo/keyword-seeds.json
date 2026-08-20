@@ -1,0 +1,1182 @@
+[
+  {
+    "keyword": "wedding reception games",
+    "category": "reception_entertainment",
+    "tail": "head",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "wedding reception entertainment ideas",
+    "category": "reception_entertainment",
+    "tail": "head",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "unique wedding entertainment",
+    "category": "reception_entertainment",
+    "tail": "head",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "fun wedding reception ideas",
+    "category": "reception_entertainment",
+    "tail": "head",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "interactive wedding reception",
+    "category": "reception_entertainment",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "wedding guest entertainment",
+    "category": "reception_entertainment",
+    "tail": "head",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "cocktail hour activities wedding",
+    "category": "reception_entertainment",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "cocktail hour games wedding",
+    "category": "reception_entertainment",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "photo booth alternative wedding",
+    "category": "reception_entertainment",
+    "tail": "mid",
+    "intent": "commercial",
+    "seed": true
+  },
+  {
+    "keyword": "wedding reception activities for guests",
+    "category": "reception_entertainment",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding entertainment besides dancing",
+    "category": "reception_entertainment",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding reception ideas to keep guests engaged",
+    "category": "reception_entertainment",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "how to entertain wedding guests at reception",
+    "category": "reception_entertainment",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding reception games for adults",
+    "category": "reception_entertainment",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding reception games adults will actually enjoy",
+    "category": "reception_entertainment",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding activities for guests who don't know each other",
+    "category": "reception_entertainment",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "how to make wedding guests interact",
+    "category": "reception_entertainment",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "how to make wedding reception more fun",
+    "category": "reception_entertainment",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding cocktail hour entertainment",
+    "category": "reception_entertainment",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "what to do at wedding cocktail hour besides drink",
+    "category": "reception_entertainment",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding reception activities during dinner",
+    "category": "reception_entertainment",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding entertainment for non dancers",
+    "category": "reception_entertainment",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "modern wedding entertainment ideas",
+    "category": "reception_entertainment",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "unique wedding reception ideas 2025",
+    "category": "reception_entertainment",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "photo booth alternatives for weddings",
+    "category": "reception_entertainment",
+    "tail": "mid",
+    "intent": "commercial",
+    "seed": false
+  },
+  {
+    "keyword": "wedding entertainment that isn't a dj",
+    "category": "reception_entertainment",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding reception ideas guests will remember",
+    "category": "reception_entertainment",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding trivia questions about the couple",
+    "category": "game_specific",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "how well do you know the couple game",
+    "category": "game_specific",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "wedding shoe game questions",
+    "category": "game_specific",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "wedding roast ideas",
+    "category": "game_specific",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "wedding icebreaker games for guests",
+    "category": "game_specific",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "wedding quiz ideas",
+    "category": "game_specific",
+    "tail": "head",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "couple trivia game wedding",
+    "category": "game_specific",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "wedding bingo cards for guests",
+    "category": "game_specific",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "newlywed game questions reception",
+    "category": "game_specific",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "wedding scavenger hunt ideas",
+    "category": "game_specific",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "wedding mad libs",
+    "category": "game_specific",
+    "tail": "head",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "funny wedding trivia questions about the couple",
+    "category": "game_specific",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding trivia questions bride and groom",
+    "category": "game_specific",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "how well do you know the couple questions printable",
+    "category": "game_specific",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "how well do you know the bride and groom game",
+    "category": "game_specific",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding shoe game alternative",
+    "category": "game_specific",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding icebreaker questions for tables",
+    "category": "game_specific",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding table activity ideas",
+    "category": "game_specific",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding table questions cards",
+    "category": "game_specific",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding reception games that aren't corny",
+    "category": "game_specific",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding games that aren't embarrassing",
+    "category": "game_specific",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "newlywed game questions list clean",
+    "category": "game_specific",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding roast questions for best man",
+    "category": "game_specific",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "advice for the couple wedding game",
+    "category": "game_specific",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding guest quiz about the couple",
+    "category": "game_specific",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "who said it wedding game",
+    "category": "game_specific",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "guess who said it wedding quiz",
+    "category": "game_specific",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding reception love letter idea",
+    "category": "game_specific",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding guest predictions for the couple",
+    "category": "game_specific",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding guest message wall ideas",
+    "category": "game_specific",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding memory lane activity",
+    "category": "game_specific",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "couple story game wedding",
+    "category": "game_specific",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "custom wedding game",
+    "category": "custom_personalized",
+    "tail": "head",
+    "intent": "commercial",
+    "seed": true
+  },
+  {
+    "keyword": "personalized wedding entertainment",
+    "category": "custom_personalized",
+    "tail": "mid",
+    "intent": "commercial",
+    "seed": true
+  },
+  {
+    "keyword": "bespoke wedding experience",
+    "category": "custom_personalized",
+    "tail": "mid",
+    "intent": "commercial",
+    "seed": true
+  },
+  {
+    "keyword": "unique wedding ideas for guests",
+    "category": "custom_personalized",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "wedding app for guests",
+    "category": "custom_personalized",
+    "tail": "mid",
+    "intent": "commercial",
+    "seed": true
+  },
+  {
+    "keyword": "interactive wedding app",
+    "category": "custom_personalized",
+    "tail": "mid",
+    "intent": "commercial",
+    "seed": true
+  },
+  {
+    "keyword": "digital wedding games",
+    "category": "custom_personalized",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "personalized wedding trivia game",
+    "category": "custom_personalized",
+    "tail": "mid",
+    "intent": "commercial",
+    "seed": false
+  },
+  {
+    "keyword": "custom couple trivia game",
+    "category": "custom_personalized",
+    "tail": "mid",
+    "intent": "commercial",
+    "seed": false
+  },
+  {
+    "keyword": "wedding experience app for phone",
+    "category": "custom_personalized",
+    "tail": "long",
+    "intent": "commercial",
+    "seed": false
+  },
+  {
+    "keyword": "wedding guest phone activity",
+    "category": "custom_personalized",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "interactive wedding game on phone",
+    "category": "custom_personalized",
+    "tail": "long",
+    "intent": "commercial",
+    "seed": false
+  },
+  {
+    "keyword": "wedding trivia app for guests",
+    "category": "custom_personalized",
+    "tail": "long",
+    "intent": "commercial",
+    "seed": false
+  },
+  {
+    "keyword": "custom wedding quiz app",
+    "category": "custom_personalized",
+    "tail": "mid",
+    "intent": "commercial",
+    "seed": false
+  },
+  {
+    "keyword": "wedding that feels like us ideas",
+    "category": "custom_personalized",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "non traditional wedding reception ideas",
+    "category": "custom_personalized",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding reception that feels personal",
+    "category": "custom_personalized",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "how to make your wedding feel like you",
+    "category": "custom_personalized",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "ways to personalize your wedding reception",
+    "category": "custom_personalized",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding guest experience ideas",
+    "category": "custom_personalized",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "elevated wedding guest experience",
+    "category": "custom_personalized",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "luxury wedding entertainment experience",
+    "category": "custom_personalized",
+    "tail": "mid",
+    "intent": "commercial",
+    "seed": false
+  },
+  {
+    "keyword": "wedding live wall display ideas",
+    "category": "custom_personalized",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding big screen display ideas",
+    "category": "custom_personalized",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding reception screen activity ideas",
+    "category": "custom_personalized",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding unique vendor ideas",
+    "category": "planner",
+    "tail": "mid",
+    "intent": "commercial",
+    "seed": true
+  },
+  {
+    "keyword": "wedding entertainment vendor",
+    "category": "planner",
+    "tail": "mid",
+    "intent": "commercial",
+    "seed": true
+  },
+  {
+    "keyword": "wedding planner entertainment ideas for clients",
+    "category": "planner",
+    "tail": "long",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "reception entertainment vendor wedding",
+    "category": "planner",
+    "tail": "mid",
+    "intent": "commercial",
+    "seed": true
+  },
+  {
+    "keyword": "unique wedding vendor for guest entertainment",
+    "category": "planner",
+    "tail": "long",
+    "intent": "commercial",
+    "seed": false
+  },
+  {
+    "keyword": "wedding entertainment beyond photo booth",
+    "category": "planner",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "what to offer wedding clients for reception entertainment",
+    "category": "planner",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding planner unique experience ideas",
+    "category": "planner",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "high end wedding entertainment options",
+    "category": "planner",
+    "tail": "mid",
+    "intent": "commercial",
+    "seed": false
+  },
+  {
+    "keyword": "interactive wedding vendor",
+    "category": "planner",
+    "tail": "mid",
+    "intent": "commercial",
+    "seed": false
+  },
+  {
+    "keyword": "Hochzeitsspiele modern",
+    "category": "german",
+    "tail": "head",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "interaktive Hochzeitsspiele",
+    "category": "german",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "moderne Hochzeitsunterhaltung",
+    "category": "german",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "Hochzeit Unterhaltung Gäste",
+    "category": "german",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "Cocktail Empfang Spiele Hochzeit",
+    "category": "german",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "Hochzeitsquiz Fragen Brautpaar",
+    "category": "german",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true
+  },
+  {
+    "keyword": "Hochzeitsempfang Ideen für Gäste",
+    "category": "german",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "Hochzeitsspiele die nicht peinlich sind",
+    "category": "german",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "Hochzeitsspiele für Erwachsene",
+    "category": "german",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "Wer kennt das Brautpaar besser Spiel",
+    "category": "german",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "digitale Hochzeitsspiele",
+    "category": "german",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "Hochzeitsquiz für Gäste App",
+    "category": "german",
+    "tail": "long",
+    "intent": "commercial",
+    "seed": false
+  },
+  {
+    "keyword": "interaktive Hochzeitsunterhaltung Gäste",
+    "category": "german",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "Hochzeit Gäste unterhalten Ideen",
+    "category": "german",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "Hochzeitsparty Spiele lustig",
+    "category": "german",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "Hochzeitsempfang Spiele Ideen",
+    "category": "german",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding guest asking why did you fall in love game",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false,
+    "note": "very specific but captures the 'couple story' intent"
+  },
+  {
+    "keyword": "wedding reception ideas for introverted guests",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "how to get guests off their phones at a wedding",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false,
+    "note": "counterintuitive — but the answer is 'give them something worth looking at on their phones'"
+  },
+  {
+    "keyword": "wedding ideas guests talk about for years",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding moment guests will remember",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "how to break the ice at a wedding reception",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding guests don't know each other ideas",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "small wedding reception entertainment ideas",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "intimate wedding entertainment ideas",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "backyard wedding entertainment ideas",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "outdoor wedding reception game ideas",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding ideas for guests who hate dancing",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "meaningful wedding reception activities",
+    "category": "long_tail_creative",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding reception activities that aren't dancing",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding entertainment for older guests",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding entertainment all ages",
+    "category": "long_tail_creative",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding reception games no supplies needed",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false,
+    "note": "captures the 'just phones' insight — Wepho needs zero physical setup"
+  },
+  {
+    "keyword": "wedding game on your phone",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "commercial",
+    "seed": false
+  },
+  {
+    "keyword": "qr code wedding game",
+    "category": "long_tail_creative",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "qr code wedding activity for guests",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "digital guestbook alternative wedding",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "commercial",
+    "seed": false
+  },
+  {
+    "keyword": "wedding guestbook alternatives ideas",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false,
+    "note": "guestbook alternatives is a real high-intent search; Wepho could win it"
+  },
+  {
+    "keyword": "interactive wedding guestbook",
+    "category": "long_tail_creative",
+    "tail": "mid",
+    "intent": "commercial",
+    "seed": false
+  },
+  {
+    "keyword": "wedding live feed wall display",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding reception live display ideas",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "what do wedding guests actually enjoy",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding ideas that get everyone involved",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "unique wedding keepsake ideas",
+    "category": "long_tail_creative",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "note": "Wepho apps produce a keepsake output — this maps to a real search cluster"
+  },
+  {
+    "keyword": "wedding experience guests won't forget",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "fun wedding reception program ideas",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+  {
+    "keyword": "wedding reception that doesn't feel like every other wedding",
+    "category": "long_tail_creative",
+    "tail": "long",
+    "intent": "informational",
+    "seed": false
+  },
+
+  { "keyword": "wedding games", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "wedding entertainment", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "wedding activities", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "wedding ideas", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "wedding reception ideas", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "fun wedding ideas", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "unique wedding ideas", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "creative wedding ideas", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "wedding party ideas", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "wedding party games", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "reception games", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "reception activities", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "reception entertainment", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "reception ideas", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "cocktail hour ideas", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "cocktail hour activities", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "wedding trivia", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "wedding quiz", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "wedding bingo", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "wedding icebreakers", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "wedding scavenger hunt", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "newlywed game", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "newlywed game questions", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding shoe game", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "shoe game questions", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding roast", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "couple trivia", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "bridal trivia", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "wedding trivia questions", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding quiz questions", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding bingo cards", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "bridal bingo", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "wedding icebreaker ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding app", "category": "high_volume", "tail": "head", "intent": "commercial", "seed": false },
+  { "keyword": "wedding apps", "category": "high_volume", "tail": "head", "intent": "commercial", "seed": false },
+  { "keyword": "wedding guest app", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "wedding photo booth", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "photo booth alternative", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "photo booth alternatives", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "wedding guestbook", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "guestbook alternatives", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding guestbook ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding keepsake ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding favor ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding memory ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding inspiration", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "wedding inspo", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "wedding trends 2025", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding trends 2026", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "modern wedding ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "non traditional wedding ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "unique reception ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "fun reception ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "memorable wedding ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding guest ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding guest games", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "games for wedding guests", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding games for guests", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "activities for wedding guests", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "bride and groom game", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "bride and groom trivia", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "about the couple game", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "couples quiz", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "couple quiz", "category": "high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "wedding quiz game", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding trivia game", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding party activity ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "outdoor wedding games", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "lawn games wedding", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding lawn games", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding yard games", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "interactive wedding ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding digital experience", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "wedding qr code ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding hashtag display", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding social wall", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding live display", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding message wall", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding wish ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding wishes ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding prediction game", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding reception program ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding reception tips", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding reception hacks", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding day tips", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding planning tips", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding entertainment company", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "wedding experience company", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "wedding tech ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding technology ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "digital wedding entertainment", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "online wedding games", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "virtual wedding games", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "party games for adults", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "adult party games", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "group games for adults", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "large group party games", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "party icebreakers", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "icebreaker games for groups", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "kahoot wedding", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false, "note": "people searching this want what Wepho actually is" },
+  { "keyword": "kahoot for weddings", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "kahoot wedding alternative", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "slido wedding", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "mentimeter wedding", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "quiz game for event", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "trivia game for party", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "interactive game for event", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "wedding trivia app", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "wedding quiz app", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "wedding game app", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "wedding entertainment app", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "wedding guest engagement app", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "interactive guestbook", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "digital guestbook wedding", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "wedding live photo wall", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "live photo wall wedding", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding selfie station", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "selfie station wedding", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "360 photo booth wedding", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "mirror photo booth wedding", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "open air photo booth wedding", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "wedding wow factor", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wow wedding ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "crowd pleaser wedding ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding crowd engagement", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding guest engagement", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "engaging wedding ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding ideas everyone loves", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding reception entertainment 2025", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding reception entertainment 2026", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding entertainment trends", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding experience ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding entertainment ideas vendor", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "wedding vendor ideas", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+  { "keyword": "wedding table games", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "table games wedding", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding dinner entertainment", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding dinner games", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding cocktail games", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding cocktail hour games", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "pre ceremony activities", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "pre ceremony wedding games", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding ceremony games", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding after party ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding party entertainment", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding party activities", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "outdoor wedding ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "garden wedding ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "boho wedding ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "luxury wedding ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "small wedding ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "intimate wedding ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "backyard wedding ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "rustic wedding ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding moments ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding speeches ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "best man speech ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding toast ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding night ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding reception program", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding reception timeline ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding day activities", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "fun wedding reception games", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "best wedding reception games", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "top wedding entertainment ideas", "category": "high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "wedding experience app", "category": "high_volume", "tail": "mid", "intent": "commercial", "seed": false },
+
+  { "keyword": "Hochzeitsspiele", "category": "german_high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "Hochzeitsquiz", "category": "german_high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "Hochzeit Spiele", "category": "german_high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "Hochzeitsfeier Spiele", "category": "german_high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "Hochzeit App", "category": "german_high_volume", "tail": "head", "intent": "commercial", "seed": false },
+  { "keyword": "Hochzeit Unterhaltung", "category": "german_high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "Brautpaar Quiz", "category": "german_high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "Hochzeitsempfang Spiele", "category": "german_high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "Hochzeitsideen", "category": "german_high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "Hochzeit Ideen", "category": "german_high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "Hochzeit Quiz", "category": "german_high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "Hochzeitsunterhaltung", "category": "german_high_volume", "tail": "head", "intent": "informational", "seed": false },
+  { "keyword": "Hochzeit Aktivitäten Gäste", "category": "german_high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "Hochzeitsspiele Erwachsene", "category": "german_high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "Hochzeit Spaß Ideen", "category": "german_high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "Hochzeitsgesellschaft unterhalten", "category": "german_high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "Hochzeit Programm Ideen", "category": "german_high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "Brautpaar Spiel", "category": "german_high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "Hochzeit Trinkspiel", "category": "german_high_volume", "tail": "mid", "intent": "informational", "seed": false },
+  { "keyword": "Hochzeit Quiz App", "category": "german_high_volume", "tail": "mid", "intent": "commercial", "seed": false }
+]

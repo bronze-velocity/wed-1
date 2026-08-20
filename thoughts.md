@@ -14,7 +14,29 @@
 - bilingual weddings. could be an entire new category.
 - in German, French etc. a bit later (maybe not, best to focus on English speaking large market to see if there is any traction)
 
+
 # Distribution:
+sequencing:
+- deploy website
+- create forum profiles and explore forum posts = 5 threads per forum
+> non-reddit ones don't seem to be active. reddit=tbd
+- understand competitors briefly (/home/zxc/Documents/code/win-repos/wed-1/zz/wed-apps/real-world-interactive-wedding-examples.md and
+  - zz/wed-apps/niche-custom-wedding-apps.md — niche/custom wedding app 
+  landscape ) 
+  > some good ones, see /home/zxc/Documents/code/win-repos/wed-1/distribution/res/manual-competitor-res.md
+  > custom pricing probably needs to be lowered to 1k since that's already 20x the avg cost of others' ($50)
+ - understand what real people say about having used e.g. myweddingtrivia.com
+> tbd where to find that. maybe wedding blogs.
+ - given that off-the-shelf apps cost $50, need to understand what people are missing from these.
+ - maybe use similar kind of content to complete our website.
+- maybe add some content pages
+ - probably a good idea for AI SEO which might be (really) important
+ - tech implementation + content strategy for AI SEO
+- interact with people on forums to understand if the idea is ok
+- create creatives for pins+ig (with photoai.com?)
+- set up pins+ig accounts
+
+
 ## Reddit:
 - maybe see reddit threads for something and create an app for just that as a standalone marketing page? -> new service "use software for marketing"
 - auto checking of new topics

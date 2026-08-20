@@ -1,3 +1,6 @@
+# 20 aug
+- content for AI SEO (see /home/zxc/Documents/code/win-repos/wed-1/distribution/ai-seo/content-strategy.md) but with modifications... maybe get content out of reddit threads.
+- run reddit subreddit extraction
 # 7 aug
 - 
  Per app:                                                                    

@@ -88,3 +88,6 @@ please do a review of the mobile responsiveness for all the different pages.
 
 ### done
 for each of the apps' hero section UI visualizations, please suggest 2 alternative ones that are even better and clearer and more nicely looking visually. output into a new .md file. also, please include a new suggestion for a more modern and sleek (maybe black/white mostly instead of with the website's buttons) design system for the UI that looks more wedding-like.
+
+###
+- change the pricing to always be $1,000
