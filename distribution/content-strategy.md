@@ -1,0 +1,3 @@
+- about personalization     /home/zxc/Documents/code/win-repos/wed-1/distribution/reddit/interesting-semirelated/personalization.md 
+- for those not using a planner https://www.reddit.com/r/weddingplanning/comments/1vr7z7f/we_didnt_have_a_wedding_planner_and_we_have_zero/
+- some about unplugged ceremony? Phones (it's an 'unplugged ceremony') 

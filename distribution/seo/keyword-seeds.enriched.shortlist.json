@@ -1,0 +1,7702 @@
+[
+  {
+    "keyword": "wedding guestbook",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 18100,
+    "cpc": 3.29,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.94,
+    "high_top_of_page_bid": 4.66,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 18100
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 18100
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 18100
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 22200
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 18100
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 18100
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 18100
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 9900
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 12100
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 14800
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 22200
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 27100
+      }
+    ]
+  },
+  {
+    "keyword": "wedding ideas",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 9900,
+    "cpc": 1.62,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.42,
+    "high_top_of_page_bid": 3.93,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 6600
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 8100
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 8100
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 6600
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 12100
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 9900
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 12100
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 8100
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 12100
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 27100
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 9900
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 8100
+      }
+    ]
+  },
+  {
+    "keyword": "newlywed game questions",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 8100,
+    "cpc": 0.08,
+    "competition": "MEDIUM",
+    "competition_index": 62,
+    "low_top_of_page_bid": 0.03,
+    "high_top_of_page_bid": 0.05,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 9900
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 8100
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 8100
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 6600
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 8100
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 12100
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 8100
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 9900
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 8100
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 6600
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 8100
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 9900
+      }
+    ]
+  },
+  {
+    "keyword": "wedding photo booth",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "commercial",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 8100,
+    "cpc": 7.1,
+    "competition": "HIGH",
+    "competition_index": 99,
+    "low_top_of_page_bid": 2.1,
+    "high_top_of_page_bid": 7,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 5400
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 5400
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 5400
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 6600
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 6600
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 8100
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 22200
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 5400
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 8100
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 12100
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 9900
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 9900
+      }
+    ]
+  },
+  {
+    "keyword": "wedding favor ideas",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 8100,
+    "cpc": 0.94,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.16,
+    "high_top_of_page_bid": 1.2,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 8100
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 6600
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 8100
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 8100
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 8100
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 8100
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 9900
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 4400
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 5400
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 6600
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 8100
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 9900
+      }
+    ]
+  },
+  {
+    "keyword": "party games for adults",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 8100,
+    "cpc": 0.31,
+    "competition": "HIGH",
+    "competition_index": 97,
+    "low_top_of_page_bid": 0.03,
+    "high_top_of_page_bid": 0.5,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 6600
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 5400
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 6600
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 12100
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 5400
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 5400
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 8100
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 18100
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 12100
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 8100
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 8100
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 8100
+      }
+    ]
+  },
+  {
+    "keyword": "adult party games",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 8100,
+    "cpc": 0.31,
+    "competition": "HIGH",
+    "competition_index": 97,
+    "low_top_of_page_bid": 0.03,
+    "high_top_of_page_bid": 0.5,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 6600
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 5400
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 6600
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 12100
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 5400
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 5400
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 8100
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 18100
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 12100
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 8100
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 8100
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 8100
+      }
+    ]
+  },
+  {
+    "keyword": "couples quiz",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 6600,
+    "cpc": 1.18,
+    "competition": "LOW",
+    "competition_index": 9,
+    "low_top_of_page_bid": 0.03,
+    "high_top_of_page_bid": 1.15,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 6600
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 6600
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 6600
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 5400
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 6600
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 6600
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 8100
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 6600
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 6600
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 6600
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 6600
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 8100
+      }
+    ]
+  },
+  {
+    "keyword": "couple quiz",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 6600,
+    "cpc": 1.18,
+    "competition": "LOW",
+    "competition_index": 9,
+    "low_top_of_page_bid": 0.03,
+    "high_top_of_page_bid": 1.15,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 6600
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 6600
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 6600
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 5400
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 6600
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 6600
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 8100
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 6600
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 6600
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 6600
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 6600
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 8100
+      }
+    ]
+  },
+  {
+    "keyword": "newlywed game",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 5400,
+    "cpc": 0.17,
+    "competition": "LOW",
+    "competition_index": 30,
+    "low_top_of_page_bid": 0.02,
+    "high_top_of_page_bid": 0.06,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 6600
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 4400
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 4400
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 4400
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 4400
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 5400
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 5400
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 5400
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 4400
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 4400
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 5400
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 6600
+      }
+    ]
+  },
+  {
+    "keyword": "wedding games",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 4400,
+    "cpc": 0.55,
+    "competition": "HIGH",
+    "competition_index": 99,
+    "low_top_of_page_bid": 0.03,
+    "high_top_of_page_bid": 0.62,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 4400
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 4400
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 4400
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 4400
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 4400
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 3600
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 4400
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 2900
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 3600
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 4400
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 5400
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 5400
+      }
+    ]
+  },
+  {
+    "keyword": "wedding shoe game questions",
+    "category": "game_specific",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 3600,
+    "cpc": 0.22,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.17,
+    "high_top_of_page_bid": 0.86,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 4400
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 5400
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 5400
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 4400
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 3600
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 2400
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 2400
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 2900
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 4400
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 5400
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 5400
+      }
+    ]
+  },
+  {
+    "keyword": "wedding shoe game",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 3600,
+    "cpc": 0.51,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.16,
+    "high_top_of_page_bid": 1.55,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 2900
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 3600
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 3600
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 4400
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 4400
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 2900
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 3600
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 2400
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 3600
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 5400
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 5400
+      }
+    ]
+  },
+  {
+    "keyword": "backyard wedding ideas",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 3600,
+    "cpc": 0.7,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.05,
+    "high_top_of_page_bid": 2.18,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 3600
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 3600
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 4400
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 4400
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 4400
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 3600
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 4400
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 2400
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 2900
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 3600
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 4400
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 5400
+      }
+    ]
+  },
+  {
+    "keyword": "group games for adults",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 2900,
+    "cpc": 0.51,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.03,
+    "high_top_of_page_bid": 1.06,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 2400
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 2400
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 2400
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 2900
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 5400
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 4400
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 2900
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 2400
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 2900
+      }
+    ]
+  },
+  {
+    "keyword": "trivia game for party",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 2900,
+    "cpc": 0.74,
+    "competition": "LOW",
+    "competition_index": 19,
+    "low_top_of_page_bid": 0.28,
+    "high_top_of_page_bid": 1.33,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 2400
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 2400
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 2900
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 2900
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 5400
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 9900
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 2400
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 2400
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 2400
+      }
+    ]
+  },
+  {
+    "keyword": "Hochzeitsspiele modern",
+    "category": "german",
+    "tail": "head",
+    "intent": "informational",
+    "seed": true,
+    "location": "Germany",
+    "language": "German",
+    "search_volume": 2900,
+    "cpc": 0.45,
+    "competition": "HIGH",
+    "competition_index": 84,
+    "low_top_of_page_bid": 0.02,
+    "high_top_of_page_bid": 0.77,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 4400
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 4400
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 2900
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1600
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1600
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 2400
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 3600
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 4400
+      },
+      {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 4400
+      }
+    ]
+  },
+  {
+    "keyword": "large group party games",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 2400,
+    "cpc": 0.3,
+    "competition": "HIGH",
+    "competition_index": 99,
+    "low_top_of_page_bid": 0.03,
+    "high_top_of_page_bid": 0.45,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 2400
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 4400
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 4400
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 2900
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1900
+      }
+    ]
+  },
+  {
+    "keyword": "shoe game questions",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 1900,
+    "cpc": 0.2,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.31,
+    "high_top_of_page_bid": 1.58,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 2400
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 2400
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1600
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 2400
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 2400
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 2900
+      }
+    ]
+  },
+  {
+    "keyword": "wedding inspiration",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 1900,
+    "cpc": 3.25,
+    "competition": "MEDIUM",
+    "competition_index": 48,
+    "low_top_of_page_bid": 1.1,
+    "high_top_of_page_bid": 4.84,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 2400
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1600
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1900
+      }
+    ]
+  },
+  {
+    "keyword": "wedding inspo",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 1900,
+    "cpc": 3.25,
+    "competition": "MEDIUM",
+    "competition_index": 48,
+    "low_top_of_page_bid": 1.1,
+    "high_top_of_page_bid": 4.84,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 2400
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1600
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1900
+      }
+    ]
+  },
+  {
+    "keyword": "small wedding ideas",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 1900,
+    "cpc": 1.52,
+    "competition": "MEDIUM",
+    "competition_index": 49,
+    "low_top_of_page_bid": 0.19,
+    "high_top_of_page_bid": 2.96,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1600
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1600
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 2400
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 2400
+      }
+    ]
+  },
+  {
+    "keyword": "wedding reception games",
+    "category": "reception_entertainment",
+    "tail": "head",
+    "intent": "informational",
+    "seed": true,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 1600,
+    "cpc": 0.41,
+    "competition": "HIGH",
+    "competition_index": 99,
+    "low_top_of_page_bid": 0.03,
+    "high_top_of_page_bid": 0.68,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 880
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1600
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1600
+      }
+    ]
+  },
+  {
+    "keyword": "wedding reception ideas",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 1600,
+    "cpc": 0.86,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.2,
+    "high_top_of_page_bid": 2.8,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1600
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1900
+      }
+    ]
+  },
+  {
+    "keyword": "unique wedding ideas",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 1600,
+    "cpc": 1.28,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.21,
+    "high_top_of_page_bid": 3,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 2400
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 2400
+      }
+    ]
+  },
+  {
+    "keyword": "creative wedding ideas",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 1600,
+    "cpc": 1.28,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.21,
+    "high_top_of_page_bid": 3,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 2400
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 2400
+      }
+    ]
+  },
+  {
+    "keyword": "reception games",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 1600,
+    "cpc": 0.41,
+    "competition": "HIGH",
+    "competition_index": 99,
+    "low_top_of_page_bid": 0.03,
+    "high_top_of_page_bid": 0.68,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 880
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1600
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1600
+      }
+    ]
+  },
+  {
+    "keyword": "outdoor wedding ideas",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 1600,
+    "cpc": 0.48,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.05,
+    "high_top_of_page_bid": 1.36,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1600
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 880
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1600
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1600
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1900
+      }
+    ]
+  },
+  {
+    "keyword": "wedding entertainment",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 1300,
+    "cpc": 4.71,
+    "competition": "LOW",
+    "competition_index": 26,
+    "low_top_of_page_bid": 1.35,
+    "high_top_of_page_bid": 5.15,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 880
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1600
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1600
+      }
+    ]
+  },
+  {
+    "keyword": "wedding app",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "commercial",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 1300,
+    "cpc": 3.63,
+    "competition": "MEDIUM",
+    "competition_index": 42,
+    "low_top_of_page_bid": 1.14,
+    "high_top_of_page_bid": 4.81,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1600
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1600
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1600
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1600
+      }
+    ]
+  },
+  {
+    "keyword": "wedding apps",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "commercial",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 1300,
+    "cpc": 3.63,
+    "competition": "MEDIUM",
+    "competition_index": 42,
+    "low_top_of_page_bid": 1.14,
+    "high_top_of_page_bid": 4.81,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1600
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1600
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1600
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1600
+      }
+    ]
+  },
+  {
+    "keyword": "couple trivia",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 1000,
+    "cpc": 0.27,
+    "competition": "MEDIUM",
+    "competition_index": 38,
+    "low_top_of_page_bid": 0.03,
+    "high_top_of_page_bid": 0.29,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1300
+      }
+    ]
+  },
+  {
+    "keyword": "bridal bingo",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 1000,
+    "cpc": 0.32,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": null,
+    "high_top_of_page_bid": null,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1600
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 880
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1300
+      }
+    ]
+  },
+  {
+    "keyword": "lawn games wedding",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 1000,
+    "cpc": 0.91,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.26,
+    "high_top_of_page_bid": 1.02,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1300
+      }
+    ]
+  },
+  {
+    "keyword": "wedding lawn games",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 1000,
+    "cpc": 0.91,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.26,
+    "high_top_of_page_bid": 1.02,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1300
+      }
+    ]
+  },
+  {
+    "keyword": "wedding yard games",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 1000,
+    "cpc": 0.91,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.26,
+    "high_top_of_page_bid": 1.02,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1300
+      }
+    ]
+  },
+  {
+    "keyword": "wedding planning tips",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 1000,
+    "cpc": 2.5,
+    "competition": "LOW",
+    "competition_index": 9,
+    "low_top_of_page_bid": 0.1,
+    "high_top_of_page_bid": 3.66,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1900
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 880
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 880
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 880
+      }
+    ]
+  },
+  {
+    "keyword": "wedding activities",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 880,
+    "cpc": 0.97,
+    "competition": "HIGH",
+    "competition_index": 93,
+    "low_top_of_page_bid": 0.03,
+    "high_top_of_page_bid": 1.85,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 880
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 880
+      }
+    ]
+  },
+  {
+    "keyword": "wedding bingo",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 880,
+    "cpc": 0.23,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": null,
+    "high_top_of_page_bid": null,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1000
+      }
+    ]
+  },
+  {
+    "keyword": "wedding bingo cards",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 880,
+    "cpc": 0.44,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": null,
+    "high_top_of_page_bid": null,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1300
+      }
+    ]
+  },
+  {
+    "keyword": "wedding trends 2026",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 880,
+    "cpc": 0.77,
+    "competition": "LOW",
+    "competition_index": 23,
+    "low_top_of_page_bid": 0.03,
+    "high_top_of_page_bid": 2.15,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1300
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1900
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 720
+      }
+    ]
+  },
+  {
+    "keyword": "wedding party activities",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 880,
+    "cpc": 0.97,
+    "competition": "HIGH",
+    "competition_index": 93,
+    "low_top_of_page_bid": 0.03,
+    "high_top_of_page_bid": 1.85,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 880
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 880
+      }
+    ]
+  },
+  {
+    "keyword": "rustic wedding ideas",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 880,
+    "cpc": 0.45,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.06,
+    "high_top_of_page_bid": 0.9,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 880
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 880
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 880
+      }
+    ]
+  },
+  {
+    "keyword": "wedding mad libs",
+    "category": "game_specific",
+    "tail": "head",
+    "intent": "informational",
+    "seed": true,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 720,
+    "cpc": 0.33,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.31,
+    "high_top_of_page_bid": 0.66,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1000
+      }
+    ]
+  },
+  {
+    "keyword": "fun wedding ideas",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 720,
+    "cpc": 0.84,
+    "competition": "HIGH",
+    "competition_index": 97,
+    "low_top_of_page_bid": 0.07,
+    "high_top_of_page_bid": 1.99,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 880
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 880
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 880
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 880
+      }
+    ]
+  },
+  {
+    "keyword": "wedding quiz",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 720,
+    "cpc": 4.4,
+    "competition": "MEDIUM",
+    "competition_index": 47,
+    "low_top_of_page_bid": 1.7,
+    "high_top_of_page_bid": 4.83,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1000
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 880
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 880
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 720
+      }
+    ]
+  },
+  {
+    "keyword": "wedding trivia questions",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 720,
+    "cpc": 0.14,
+    "competition": "MEDIUM",
+    "competition_index": 59,
+    "low_top_of_page_bid": null,
+    "high_top_of_page_bid": null,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1000
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 880
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1000
+      }
+    ]
+  },
+  {
+    "keyword": "non traditional wedding ideas",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 720,
+    "cpc": 1.56,
+    "competition": "LOW",
+    "competition_index": 21,
+    "low_top_of_page_bid": 0.21,
+    "high_top_of_page_bid": 3.5,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 880
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 720
+      }
+    ]
+  },
+  {
+    "keyword": "wedding speeches ideas",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 720,
+    "cpc": 0.48,
+    "competition": "LOW",
+    "competition_index": 30,
+    "low_top_of_page_bid": 0.03,
+    "high_top_of_page_bid": 0.6,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 880
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1300
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1000
+      }
+    ]
+  },
+  {
+    "keyword": "wedding trivia",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 590,
+    "cpc": 0.51,
+    "competition": "MEDIUM",
+    "competition_index": 45,
+    "low_top_of_page_bid": null,
+    "high_top_of_page_bid": null,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 880
+      }
+    ]
+  },
+  {
+    "keyword": "wedding guest games",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 590,
+    "cpc": 0.41,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.04,
+    "high_top_of_page_bid": 0.82,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 480
+      }
+    ]
+  },
+  {
+    "keyword": "games for wedding guests",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 590,
+    "cpc": 0.41,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.04,
+    "high_top_of_page_bid": 0.82,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 480
+      }
+    ]
+  },
+  {
+    "keyword": "wedding games for guests",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 590,
+    "cpc": 0.41,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.04,
+    "high_top_of_page_bid": 0.82,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 480
+      }
+    ]
+  },
+  {
+    "keyword": "wedding reception program",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 590,
+    "cpc": 0.66,
+    "competition": "HIGH",
+    "competition_index": 99,
+    "low_top_of_page_bid": 0.41,
+    "high_top_of_page_bid": 4.14,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 720
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 880
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 720
+      }
+    ]
+  },
+  {
+    "keyword": "fun wedding reception ideas",
+    "category": "reception_entertainment",
+    "tail": "head",
+    "intent": "informational",
+    "seed": true,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 480,
+    "cpc": 0.84,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.08,
+    "high_top_of_page_bid": 1.79,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 480
+      }
+    ]
+  },
+  {
+    "keyword": "reception entertainment",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 480,
+    "cpc": 3.93,
+    "competition": "LOW",
+    "competition_index": 13,
+    "low_top_of_page_bid": 0.96,
+    "high_top_of_page_bid": 4.49,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 880
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 390
+      }
+    ]
+  },
+  {
+    "keyword": "wedding scavenger hunt",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 480,
+    "cpc": 0.29,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.36,
+    "high_top_of_page_bid": 1.15,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 720
+      }
+    ]
+  },
+  {
+    "keyword": "wedding memory ideas",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 480,
+    "cpc": 0.67,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.2,
+    "high_top_of_page_bid": 0.75,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 590
+      }
+    ]
+  },
+  {
+    "keyword": "fun reception ideas",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 480,
+    "cpc": 0.84,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.08,
+    "high_top_of_page_bid": 1.79,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 480
+      }
+    ]
+  },
+  {
+    "keyword": "party icebreakers",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 480,
+    "cpc": 0.18,
+    "competition": "HIGH",
+    "competition_index": 68,
+    "low_top_of_page_bid": 0.02,
+    "high_top_of_page_bid": 0.14,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 880
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 390
+      }
+    ]
+  },
+  {
+    "keyword": "digital guestbook wedding",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "commercial",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 480,
+    "cpc": 2.74,
+    "competition": "HIGH",
+    "competition_index": 72,
+    "low_top_of_page_bid": 1.04,
+    "high_top_of_page_bid": 3.21,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 2900
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 260
+      }
+    ]
+  },
+  {
+    "keyword": "best man speech ideas",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 480,
+    "cpc": 0.84,
+    "competition": "MEDIUM",
+    "competition_index": 39,
+    "low_top_of_page_bid": 0.02,
+    "high_top_of_page_bid": 0.93,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 590
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 590
+      }
+    ]
+  },
+  {
+    "keyword": "reception activities",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 390,
+    "cpc": 0.46,
+    "competition": "HIGH",
+    "competition_index": 97,
+    "low_top_of_page_bid": 0.03,
+    "high_top_of_page_bid": 1.52,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 880
+      }
+    ]
+  },
+  {
+    "keyword": "unique reception ideas",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 390,
+    "cpc": 1.11,
+    "competition": "HIGH",
+    "competition_index": 98,
+    "low_top_of_page_bid": 0.15,
+    "high_top_of_page_bid": 2.65,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 390
+      }
+    ]
+  },
+  {
+    "keyword": "bridal trivia",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 320,
+    "cpc": 0.29,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.34,
+    "high_top_of_page_bid": 0.91,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 390
+      }
+    ]
+  },
+  {
+    "keyword": "activities for wedding guests",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 320,
+    "cpc": 0.81,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.04,
+    "high_top_of_page_bid": 1.4,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 170
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 260
+      }
+    ]
+  },
+  {
+    "keyword": "wedding quiz game",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 320,
+    "cpc": 0.3,
+    "competition": "HIGH",
+    "competition_index": 85,
+    "low_top_of_page_bid": 0.26,
+    "high_top_of_page_bid": 0.78,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 590
+      }
+    ]
+  },
+  {
+    "keyword": "wedding trivia game",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 320,
+    "cpc": 0.3,
+    "competition": "HIGH",
+    "competition_index": 85,
+    "low_top_of_page_bid": 0.26,
+    "high_top_of_page_bid": 0.78,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 590
+      }
+    ]
+  },
+  {
+    "keyword": "intimate wedding ideas",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 320,
+    "cpc": 1.22,
+    "competition": "MEDIUM",
+    "competition_index": 41,
+    "low_top_of_page_bid": 0.2,
+    "high_top_of_page_bid": 2.42,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 480
+      }
+    ]
+  },
+  {
+    "keyword": "wedding party ideas",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 260,
+    "cpc": 1.11,
+    "competition": "HIGH",
+    "competition_index": 87,
+    "low_top_of_page_bid": 0.19,
+    "high_top_of_page_bid": 3.18,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 320
+      }
+    ]
+  },
+  {
+    "keyword": "wedding party games",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 260,
+    "cpc": 0.26,
+    "competition": "HIGH",
+    "competition_index": 97,
+    "low_top_of_page_bid": 0.03,
+    "high_top_of_page_bid": 0.73,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 170
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 320
+      }
+    ]
+  },
+  {
+    "keyword": "wedding keepsake ideas",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 260,
+    "cpc": 1.16,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.29,
+    "high_top_of_page_bid": 1.53,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 170
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 320
+      }
+    ]
+  },
+  {
+    "keyword": "outdoor wedding games",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 260,
+    "cpc": 0.87,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.22,
+    "high_top_of_page_bid": 0.86,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 110
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 110
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 260
+      }
+    ]
+  },
+  {
+    "keyword": "online wedding games",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 260,
+    "cpc": 0.21,
+    "competition": "LOW",
+    "competition_index": 6,
+    "low_top_of_page_bid": 0.09,
+    "high_top_of_page_bid": 0.19,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 170
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 260
+      }
+    ]
+  },
+  {
+    "keyword": "wedding table games",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 260,
+    "cpc": 0.58,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.24,
+    "high_top_of_page_bid": 0.83,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 170
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 390
+      }
+    ]
+  },
+  {
+    "keyword": "table games wedding",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 260,
+    "cpc": 0.58,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.24,
+    "high_top_of_page_bid": 0.83,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 170
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 390
+      }
+    ]
+  },
+  {
+    "keyword": "wedding after party ideas",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 260,
+    "cpc": 0.51,
+    "competition": "MEDIUM",
+    "competition_index": 36,
+    "low_top_of_page_bid": null,
+    "high_top_of_page_bid": null,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 170
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 170
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 390
+      }
+    ]
+  },
+  {
+    "keyword": "boho wedding ideas",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 260,
+    "cpc": 0.51,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.17,
+    "high_top_of_page_bid": 0.75,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 390
+      }
+    ]
+  },
+  {
+    "keyword": "wedding guestbook ideas",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 210,
+    "cpc": 1.54,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.36,
+    "high_top_of_page_bid": 2.14,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 110
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 170
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 260
+      }
+    ]
+  },
+  {
+    "keyword": "wedding trends 2025",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 210,
+    "cpc": null,
+    "competition": "LOW",
+    "competition_index": 0,
+    "low_top_of_page_bid": null,
+    "high_top_of_page_bid": null,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 10
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 20
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 10
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 20
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 40
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 30
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 90
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 480
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 720
+      }
+    ]
+  },
+  {
+    "keyword": "bride and groom game",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 210,
+    "cpc": 0.35,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.03,
+    "high_top_of_page_bid": 0.83,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 260
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 110
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 170
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 320
+      }
+    ]
+  },
+  {
+    "keyword": "icebreaker games for groups",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 210,
+    "cpc": 0.53,
+    "competition": "LOW",
+    "competition_index": 31,
+    "low_top_of_page_bid": 0.02,
+    "high_top_of_page_bid": 1.15,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 320
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 90
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 110
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 210
+      }
+    ]
+  },
+  {
+    "keyword": "garden wedding ideas",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 210,
+    "cpc": 0.44,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.06,
+    "high_top_of_page_bid": 1.4,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 170
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 170
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 210
+      }
+    ]
+  },
+  {
+    "keyword": "wedding toast ideas",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 210,
+    "cpc": 0.17,
+    "competition": "LOW",
+    "competition_index": 19,
+    "low_top_of_page_bid": 0.02,
+    "high_top_of_page_bid": 0.21,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 110
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 110
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 170
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 390
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 210
+      }
+    ]
+  },
+  {
+    "keyword": "wedding reception entertainment ideas",
+    "category": "reception_entertainment",
+    "tail": "head",
+    "intent": "informational",
+    "seed": true,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 170,
+    "cpc": 2.07,
+    "competition": "MEDIUM",
+    "competition_index": 64,
+    "low_top_of_page_bid": 0.28,
+    "high_top_of_page_bid": 3.81,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 110
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 90
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 90
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 110
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 590
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 210
+      }
+    ]
+  },
+  {
+    "keyword": "reception ideas",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 170,
+    "cpc": 0.68,
+    "competition": "HIGH",
+    "competition_index": 73,
+    "low_top_of_page_bid": 0.16,
+    "high_top_of_page_bid": 1.7,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 170
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 110
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 210
+      }
+    ]
+  },
+  {
+    "keyword": "wedding cocktail hour entertainment",
+    "category": "reception_entertainment",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 140,
+    "cpc": 14.39,
+    "competition": "LOW",
+    "competition_index": 4,
+    "low_top_of_page_bid": 2.14,
+    "high_top_of_page_bid": 6.36,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 70
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 50
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 50
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 110
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 110
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 70
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 260
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 210
+      }
+    ]
+  },
+  {
+    "keyword": "wedding trivia questions about the couple",
+    "category": "game_specific",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 140,
+    "cpc": 0.27,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": null,
+    "high_top_of_page_bid": null,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 110
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 50
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 90
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 210
+      }
+    ]
+  },
+  {
+    "keyword": "wedding scavenger hunt ideas",
+    "category": "game_specific",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": true,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 140,
+    "cpc": 0.42,
+    "competition": "HIGH",
+    "competition_index": 99,
+    "low_top_of_page_bid": 0.53,
+    "high_top_of_page_bid": 3.1,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 110
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 90
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 90
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 70
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 110
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 170
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 170
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 210
+      }
+    ]
+  },
+  {
+    "keyword": "cocktail hour ideas",
+    "category": "high_volume",
+    "tail": "head",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 140,
+    "cpc": 0.96,
+    "competition": "LOW",
+    "competition_index": 24,
+    "low_top_of_page_bid": 0.04,
+    "high_top_of_page_bid": 0.64,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 110
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 70
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 90
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 110
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 110
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 140
+      }
+    ]
+  },
+  {
+    "keyword": "wedding guest ideas",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 140,
+    "cpc": 1.31,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.19,
+    "high_top_of_page_bid": 1.34,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 110
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 110
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 90
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 90
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 110
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 170
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 170
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 170
+      }
+    ]
+  },
+  {
+    "keyword": "wedding day tips",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 140,
+    "cpc": 1.59,
+    "competition": "LOW",
+    "competition_index": 13,
+    "low_top_of_page_bid": 0.03,
+    "high_top_of_page_bid": 0.4,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 110
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 70
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 70
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 90
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 90
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 170
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 320
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 210
+      }
+    ]
+  },
+  {
+    "keyword": "wedding entertainment company",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "commercial",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 140,
+    "cpc": 6.3,
+    "competition": "MEDIUM",
+    "competition_index": 34,
+    "low_top_of_page_bid": 2.21,
+    "high_top_of_page_bid": 5.76,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 30
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 210
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 480
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 110
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 110
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 170
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 90
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 90
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 70
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 170
+      }
+    ]
+  },
+  {
+    "keyword": "unique wedding entertainment",
+    "category": "reception_entertainment",
+    "tail": "head",
+    "intent": "informational",
+    "seed": true,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 110,
+    "cpc": 0.92,
+    "competition": "LOW",
+    "competition_index": 10,
+    "low_top_of_page_bid": 0.72,
+    "high_top_of_page_bid": 4.76,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 390
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 70
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 50
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 40
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 50
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 110
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 110
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 70
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 50
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 90
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 50
+      }
+    ]
+  },
+  {
+    "keyword": "non traditional wedding reception ideas",
+    "category": "custom_personalized",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 110,
+    "cpc": 2.5,
+    "competition": "LOW",
+    "competition_index": 10,
+    "low_top_of_page_bid": 0.46,
+    "high_top_of_page_bid": 4.05,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 90
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 90
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 110
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 90
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 90
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 110
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 90
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 70
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 140
+      }
+    ]
+  },
+  {
+    "keyword": "modern wedding ideas",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 110,
+    "cpc": 0.28,
+    "competition": "HIGH",
+    "competition_index": 92,
+    "low_top_of_page_bid": 0.41,
+    "high_top_of_page_bid": 2.78,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 40
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 50
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 50
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 70
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 90
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 70
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 90
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 40
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 90
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 720
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 50
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 70
+      }
+    ]
+  },
+  {
+    "keyword": "bride and groom trivia",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 110,
+    "cpc": 0.2,
+    "competition": "HIGH",
+    "competition_index": 100,
+    "low_top_of_page_bid": 0.42,
+    "high_top_of_page_bid": 1.6,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 170
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 140
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 110
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 90
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 90
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 50
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 70
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 110
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 170
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 210
+      }
+    ]
+  },
+  {
+    "keyword": "wedding selfie station",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "commercial",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 110,
+    "cpc": 5.03,
+    "competition": "HIGH",
+    "competition_index": 99,
+    "low_top_of_page_bid": 2.15,
+    "high_top_of_page_bid": 6.67,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 90
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 90
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 90
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 70
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 70
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 110
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 110
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 70
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 90
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 110
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 170
+      }
+    ]
+  },
+  {
+    "keyword": "selfie station wedding",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "commercial",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 110,
+    "cpc": 5.03,
+    "competition": "HIGH",
+    "competition_index": 99,
+    "low_top_of_page_bid": 2.15,
+    "high_top_of_page_bid": 6.67,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 90
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 90
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 90
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 70
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 70
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 110
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 110
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 70
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 90
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 110
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 170
+      }
+    ]
+  },
+  {
+    "keyword": "wedding night ideas",
+    "category": "high_volume",
+    "tail": "mid",
+    "intent": "informational",
+    "seed": false,
+    "location": "United States",
+    "language": "English",
+    "search_volume": 110,
+    "cpc": null,
+    "competition": "LOW",
+    "competition_index": 19,
+    "low_top_of_page_bid": null,
+    "high_top_of_page_bid": null,
+    "monthly_searches": [
+      {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 50
+      },
+      {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 50
+      },
+      {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 70
+      },
+      {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 70
+      },
+      {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 90
+      },
+      {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 110
+      },
+      {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 110
+      },
+      {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 140
+      },
+      {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 210
+      },
+      {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 140
+      }
+    ]
+  }
+]

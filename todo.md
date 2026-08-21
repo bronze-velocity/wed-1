@@ -1,6 +1,19 @@
 # 20 aug
 - content for AI SEO (see /home/zxc/Documents/code/win-repos/wed-1/distribution/ai-seo/content-strategy.md) but with modifications... maybe get content out of reddit threads.
 - run reddit subreddit extraction
+- continue /home/zxc/Documents/code/win-repos/wed-1/distribution/seo/keyword-research-plan.md
+- maybe some fun pages with bad things that can happen based on reddit threads? and/or other reddit stories. however, see /home/zxc/Documents/code/win-repos/wed-1/distribution/reddit/reddit-content-citation-rules.md. it's not allowed to be automated
+- free tool to mood board the app??!
+"
+hi-imhi
+•
+21d ago
+
+I’d reccomend looking on pinterest! It will allow you to put together a vision board like you have but likely with more options and as clickable links that can allow you to shop directly. "
+- ## Phase 6 — Final shortlist + page assignment
+
+### done
+- run enrich keywords with dataforseo api key 
 # 7 aug
 - 
  Per app:                                                                    
