@@ -1,0 +1,379 @@
+{
+  "version": "0.1.20260806",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "0.4975 sec.",
+  "cost": 0.0105,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "08220417-2341-0619-0000-be604b95469d",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "0.4388 sec.",
+      "cost": 0.0105,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "ai_keyword_data",
+        "keywords_search_volume",
+        "live"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "keywords_search_volume",
+        "keywords": [
+          "custom wedding app",
+          "interactive wedding games",
+          "wedding reception app",
+          "wedding guest app",
+          "wedding trivia game"
+        ],
+        "language_name": "English",
+        "location_name": "United States",
+        "tag": "ai-keyword-volume-us"
+      },
+      "result": [
+        {
+          "location_code": 2840,
+          "language_code": "en",
+          "items_count": 5,
+          "items": [
+            {
+              "keyword": "custom wedding app",
+              "ai_search_volume": 0,
+              "ai_monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 7,
+                  "ai_search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 6,
+                  "ai_search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 5,
+                  "ai_search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "ai_search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "ai_search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "ai_search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "ai_search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "ai_search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "ai_search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "ai_search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "ai_search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "ai_search_volume": 0
+                }
+              ]
+            },
+            {
+              "keyword": "interactive wedding games",
+              "ai_search_volume": 1,
+              "ai_monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 7,
+                  "ai_search_volume": 1
+                },
+                {
+                  "year": 2026,
+                  "month": 6,
+                  "ai_search_volume": 1
+                },
+                {
+                  "year": 2026,
+                  "month": 5,
+                  "ai_search_volume": 1
+                },
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "ai_search_volume": 13
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "ai_search_volume": 22
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "ai_search_volume": 39
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "ai_search_volume": 32
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "ai_search_volume": 20
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "ai_search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "ai_search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "ai_search_volume": 5
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "ai_search_volume": 5
+                }
+              ]
+            },
+            {
+              "keyword": "wedding reception app",
+              "ai_search_volume": 5,
+              "ai_monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 7,
+                  "ai_search_volume": 5
+                },
+                {
+                  "year": 2026,
+                  "month": 6,
+                  "ai_search_volume": 3
+                },
+                {
+                  "year": 2026,
+                  "month": 5,
+                  "ai_search_volume": 1
+                },
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "ai_search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "ai_search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "ai_search_volume": 9
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "ai_search_volume": 14
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "ai_search_volume": 14
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "ai_search_volume": 8
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "ai_search_volume": 7
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "ai_search_volume": 8
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "ai_search_volume": 8
+                }
+              ]
+            },
+            {
+              "keyword": "wedding guest app",
+              "ai_search_volume": 61,
+              "ai_monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 7,
+                  "ai_search_volume": 61
+                },
+                {
+                  "year": 2026,
+                  "month": 6,
+                  "ai_search_volume": 47
+                },
+                {
+                  "year": 2026,
+                  "month": 5,
+                  "ai_search_volume": 74
+                },
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "ai_search_volume": 79
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "ai_search_volume": 118
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "ai_search_volume": 139
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "ai_search_volume": 176
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "ai_search_volume": 203
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "ai_search_volume": 197
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "ai_search_volume": 225
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "ai_search_volume": 258
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "ai_search_volume": 262
+                }
+              ]
+            },
+            {
+              "keyword": "wedding trivia game",
+              "ai_search_volume": 0,
+              "ai_monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 7,
+                  "ai_search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 6,
+                  "ai_search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 5,
+                  "ai_search_volume": 3
+                },
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "ai_search_volume": 3
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "ai_search_volume": 3
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "ai_search_volume": 5
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "ai_search_volume": 5
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "ai_search_volume": 6
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "ai_search_volume": 1
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "ai_search_volume": 1
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "ai_search_volume": 7
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "ai_search_volume": 8
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,7 @@
+# 21 aug
+ node scripts/dataforseo-ai-probe.mjs --resume distribution/ai-seo/probes/2026-08-21T13-20-58-903Z 
 # 20 aug
+
 - content for AI SEO (see /home/zxc/Documents/code/win-repos/wed-1/distribution/ai-seo/content-strategy.md) but with modifications... maybe get content out of reddit threads.
 - run reddit subreddit extraction
 - continue /home/zxc/Documents/code/win-repos/wed-1/distribution/seo/keyword-research-plan.md

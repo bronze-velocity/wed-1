@@ -1,0 +1,43 @@
+# Wepho
+
+> Wepho is a Custom Wedding Experience Studio that designs and builds one-night-only interactive web apps for individual wedding couples. Guests use the app on their phones during the reception — trivia about how the couple met, live prediction vaults, video guestbooks, custom scavenger hunts, and more. Each app is bespoke to one wedding, hosted for that single night, and priced at roughly $2,000. Wepho serves couples directly and partners with wedding planners.
+
+Every app is built from scratch around a specific couple's story. Nothing is a template. The site sells the service and books consultations — the guest-facing apps themselves live only for the wedding night.
+
+## Core pages
+
+- [Homepage](https://wepho.com/): What Wepho is, two interactive demos (Love Letter Machine, Who Said It?), gallery of app types, contact CTA.
+- [App catalog](https://wepho.com/apps): Full gallery of every custom app type, filterable by wedding vibe and reception moment.
+- [For wedding planners](https://wepho.com/planners): How planners partner with Wepho to offer custom apps as an upsell or signature touch for their couples.
+- [Moodboard quiz](https://wepho.com/moodboard): Short guided quiz that recommends which custom app types fit a couple's vibe, guests, and story.
+
+## Custom app catalog (per-app marketing pages)
+
+- [Live "How Well Do You Know Us?" Trivia](https://wepho.com/apps/couple-trivia): Real-time trivia where every question is drawn from the couple's actual history — how they met, who proposed, inside jokes.
+- [Venue Scavenger Hunt with Their Love Story](https://wepho.com/apps/venue-scavenger-hunt): Guests explore the venue via prompts tied to milestones in the couple's relationship.
+- [Anniversary Time Capsule](https://wepho.com/apps/anniversary-time-capsule): Guests record messages, predictions, and photos that unlock for the couple on future anniversaries.
+- [The Prediction Vault](https://wepho.com/apps/prediction-vault): Guests submit predictions about the couple's future — sealed on the night, opened years later.
+- [The Couple's Unpopular Opinions Icebreaker](https://wepho.com/apps/unpopular-opinions): Guests vote on the couple's spiciest takes; live tally on the big screen.
+- [Custom Wedding Bingo](https://wepho.com/apps/wedding-bingo): Bingo cards generated from prompts specific to this wedding and this crowd.
+- [The Guest Advice Oracle](https://wepho.com/apps/advice-oracle): Guests submit advice; the room votes; the best rises to the top.
+- [Where To Next](https://wepho.com/apps/where-next-map): Guests pin honeymoon and future-travel suggestions on a shared map.
+- [Who Said It?](https://wepho.com/apps/who-said-it): Guess which half of the couple said each quote. Loser buys the next round.
+- [The Story Chain](https://wepho.com/apps/story-chain): Guests co-write the couple's love story, one sentence at a time, live during the reception.
+- [Ask Us Anything](https://wepho.com/apps/ask-us-anything): Guests submit questions for the couple; the room upvotes; top questions get answered on stage.
+- [The Two-Minute Video Guestbook](https://wepho.com/apps/video-guestbook): Guests record short video messages from their phones, stitched into a keepsake film.
+- [The Home Your Room Built](https://wepho.com/apps/home-the-room-built): Guests collectively design the couple's future home — room by room, choice by choice.
+
+## Positioning
+
+- Price: roughly $2,000 per custom app, single-night deployment.
+- Audience: engaged couples planning weddings, and the wedding planners who serve them.
+- Differentiator: bespoke. Off-the-shelf wedding apps ask guests to log photos to a shared feed. A Wepho app is a game or experience built around one specific couple's story, in-jokes, and guest list.
+- Model: contact form → discovery call → custom build → hosted live on the wedding night.
+
+## Contact
+
+- [Contact form](https://wepho.com/#contact): Primary booking channel. Couples and planners submit wedding date, venue, and what they're imagining. Wepho responds within 1–2 business days.
+
+## Optional
+
+- [Sitemap](https://wepho.com/sitemap.xml)

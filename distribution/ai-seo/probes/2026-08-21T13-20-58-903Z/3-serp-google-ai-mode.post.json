@@ -1,0 +1,207 @@
+{
+  "version": "0.1.20260806",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "0.0844 sec.",
+  "cost": 0.0084,
+  "tasks_count": 7,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "08211321-2341-0066-0000-3f9f5af8f9d9",
+      "status_code": 20100,
+      "status_message": "Task Created.",
+      "time": "0.0000 sec.",
+      "cost": 0.0012,
+      "result_count": 0,
+      "path": [
+        "v3",
+        "serp",
+        "google",
+        "ai_mode",
+        "task_post"
+      ],
+      "data": {
+        "api": "serp",
+        "function": "task_post",
+        "se": "google",
+        "se_type": "ai_mode",
+        "keyword": "custom wedding app built just for our reception",
+        "language_code": "en",
+        "location_code": 2840,
+        "tag": "ai-mode-us:custom wedding app built just for our reception",
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": null
+    },
+    {
+      "id": "08211321-2341-0066-0000-68710a8b74da",
+      "status_code": 20100,
+      "status_message": "Task Created.",
+      "time": "0.0000 sec.",
+      "cost": 0.0012,
+      "result_count": 0,
+      "path": [
+        "v3",
+        "serp",
+        "google",
+        "ai_mode",
+        "task_post"
+      ],
+      "data": {
+        "api": "serp",
+        "function": "task_post",
+        "se": "google",
+        "se_type": "ai_mode",
+        "keyword": "bespoke interactive web app for wedding guests to use on their phones",
+        "language_code": "en",
+        "location_code": 2840,
+        "tag": "ai-mode-us:bespoke interactive web app for wedding guests to use on their phones",
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": null
+    },
+    {
+      "id": "08211321-2341-0066-0000-ffe595866891",
+      "status_code": 20100,
+      "status_message": "Task Created.",
+      "time": "0.0000 sec.",
+      "cost": 0.0012,
+      "result_count": 0,
+      "path": [
+        "v3",
+        "serp",
+        "google",
+        "ai_mode",
+        "task_post"
+      ],
+      "data": {
+        "api": "serp",
+        "function": "task_post",
+        "se": "google",
+        "se_type": "ai_mode",
+        "keyword": "how much does a custom-built wedding reception app cost",
+        "language_code": "en",
+        "location_code": 2840,
+        "tag": "ai-mode-us:how much does a custom-built wedding reception app cost",
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": null
+    },
+    {
+      "id": "08211321-2341-0066-0000-2c9c53bd26d6",
+      "status_code": 20100,
+      "status_message": "Task Created.",
+      "time": "0.0000 sec.",
+      "cost": 0.0012,
+      "result_count": 0,
+      "path": [
+        "v3",
+        "serp",
+        "google",
+        "ai_mode",
+        "task_post"
+      ],
+      "data": {
+        "api": "serp",
+        "function": "task_post",
+        "se": "google",
+        "se_type": "ai_mode",
+        "keyword": "wedding guest messages displayed live on a big screen during reception",
+        "language_code": "en",
+        "location_code": 2840,
+        "tag": "ai-mode-us:wedding guest messages displayed live on a big screen during reception",
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": null
+    },
+    {
+      "id": "08211321-2341-0066-0000-54e404cfaf24",
+      "status_code": 20100,
+      "status_message": "Task Created.",
+      "time": "0.0000 sec.",
+      "cost": 0.0012,
+      "result_count": 0,
+      "path": [
+        "v3",
+        "serp",
+        "google",
+        "ai_mode",
+        "task_post"
+      ],
+      "data": {
+        "api": "serp",
+        "function": "task_post",
+        "se": "google",
+        "se_type": "ai_mode",
+        "keyword": "alternatives to The Knot and Joy — something personalised to our love story",
+        "language_code": "en",
+        "location_code": 2840,
+        "tag": "ai-mode-us:alternatives to The Knot and Joy — something personalised to our love story",
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": null
+    },
+    {
+      "id": "08211321-2341-0066-0000-92b44dcd45d2",
+      "status_code": 20100,
+      "status_message": "Task Created.",
+      "time": "0.0000 sec.",
+      "cost": 0.0012,
+      "result_count": 0,
+      "path": [
+        "v3",
+        "serp",
+        "google",
+        "ai_mode",
+        "task_post"
+      ],
+      "data": {
+        "api": "serp",
+        "function": "task_post",
+        "se": "google",
+        "se_type": "ai_mode",
+        "keyword": "unique interactive wedding reception entertainment beyond photo booth and DJ",
+        "language_code": "en",
+        "location_code": 2840,
+        "tag": "ai-mode-us:unique interactive wedding reception entertainment beyond photo booth and DJ",
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": null
+    },
+    {
+      "id": "08211321-2341-0066-0000-51282fdbd617",
+      "status_code": 20100,
+      "status_message": "Task Created.",
+      "time": "0.0094 sec.",
+      "cost": 0.0012,
+      "result_count": 0,
+      "path": [
+        "v3",
+        "serp",
+        "google",
+        "ai_mode",
+        "task_post"
+      ],
+      "data": {
+        "api": "serp",
+        "function": "task_post",
+        "se": "google",
+        "se_type": "ai_mode",
+        "keyword": "studio that designs one-night-only interactive experiences for weddings",
+        "language_code": "en",
+        "location_code": 2840,
+        "tag": "ai-mode-us:studio that designs one-night-only interactive experiences for weddings",
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": null
+    }
+  ]
+}

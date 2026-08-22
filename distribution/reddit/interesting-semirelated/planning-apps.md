@@ -24,3 +24,4 @@ Zola's guest manager and checklists are pretty good. We used them for our websit
 We also use Trello for task management, which isn't wedding-specific but it's a nice way to keep things all in one place.
 
 A Practical Wedding is a blog and a book, not app, but a lot of the getting started and planning posts were really helpful. Very sane advice no matter what type of wedding you're having.
+

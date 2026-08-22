@@ -8,6 +8,7 @@ import ContactLink from '../ui/ContactLink'
 const LINKS = [
   { href: '/apps', label: 'Apps' },
   { href: '/planners', label: 'Planners' },
+  { href: '/moodboard', label: 'Find your app' },
 ]
 
 export default function NavBar() {

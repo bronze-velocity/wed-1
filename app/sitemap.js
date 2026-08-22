@@ -11,10 +11,16 @@ export default function sitemap() {
     lastModified: now,
   }))
 
+  const moodboardRoute = {
+    url: `${BASE_URL}/moodboard`,
+    lastModified: now,
+    priority: 0.8,
+  }
+
   const appRoutes = appSlugs.map((slug) => ({
     url: `${BASE_URL}/apps/${slug}`,
     lastModified: now,
   }))
 
-  return [...staticRoutes, ...appRoutes]
+  return [...staticRoutes, moodboardRoute, ...appRoutes]
 }

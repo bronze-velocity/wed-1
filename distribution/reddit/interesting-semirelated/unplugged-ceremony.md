@@ -61,3 +61,36 @@ I DJed a stunning half million dollar destination wedding recently that had a bi
 
 I watched in horror as the bride walked down the aisle with her dad... and her aunt trailing just 10 feet behind her with a big fat ugly ass iPad, walking the entire length of the aisle shooting a video behind them as they walked. I didn't see it fast enough to stop her, nothing I could do about it. I'm almost certain she was in every pic of the bride walking down the aisle. Oh well!
 
+
+
+swallowbacca
+•
+2mo ago
+
+I think you have to be extra vigilant nowadays. My cousin had a sign AND officiant announcement and still people got their phones out :/
+
+
+SlimePrincess451
+•
+2mo ago
+
+Yep. Happened at mine as well, most were respectful of it but there is always an aunt or a grandma who “just wants one for their memories” 🙃
+
+Hope for the best, expect the worse cuz people are gonna people.
+
+
+Go to weddingplanning
+r/weddingplanning
+•
+4y ago
+squid-toes
+I made such a big effort to have an unplugged ceremony and people keep showing me the photos they took of me walking down the aisle
+
+I’m so angry, it was THE ONE THING I asked from my guests, if their stupid phones are in my official photos I’m going to lose my mind
+
+
+kappaklassy
+•
+4y ago
+
+I got married last year. I had a big sign stating that it was an unplugged ceremony, my officiant announced it before the ceremony started, and again before I walked down the aisle, and yet it looked like I was walking down between rows of paparazzi when my dad and I walked down the aisle. There are phones in most of the pictures and the video. My photographer did her best, but there is at least one phone in every shot. Ironically, no one has ever shared any of these pictures with me, so what did people even do with them?? At first I was annoyed, but now I just don’t care. It was still a wonderful day and I still love my pictures. I’m sorry it happened to you as well OP.

@@ -91,3 +91,20 @@ for each of the apps' hero section UI visualizations, please suggest 2 alternati
 
 ###
 - change the pricing to always be $1,000
+
+###
+- let's skip the SERP check
+- no need for 
+
+###
+- it needs to look great on mobile
+- we'll do the AI matching instead of keyword matching
+- answers to the questions: 1. wizard, 2. photos where that elevates it, otherwise illustrations, 3. claude, 4. many
+
+### 
+ai-seo
+- 
+
+###
+landing page comments:
+- 

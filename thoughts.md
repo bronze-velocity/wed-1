@@ -19,7 +19,8 @@
 sequencing:
 - deploy website
 - create forum profiles and explore forum posts = 5 threads per forum
-> non-reddit ones don't seem to be active. reddit=tbd
+> non-reddit ones don't seem to be active.
+> reddit doesn't seem to be easy per se, but it's worth it creating an account and trying to be helpful. (e.g. finding blog posts that can be paraphrased or switching between languages)
 - understand competitors briefly (/home/zxc/Documents/code/win-repos/wed-1/zz/wed-apps/real-world-interactive-wedding-examples.md and
   - zz/wed-apps/niche-custom-wedding-apps.md — niche/custom wedding app 
   landscape ) 
@@ -35,7 +36,9 @@ sequencing:
 - interact with people on forums to understand if the idea is ok
 - create creatives for pins+ig (with photoai.com?)
 - set up pins+ig accounts
-
+- marketing creative: probably go as crazy as possible since those are the yound people  that will be interested.
+- maybe instagram best for it, following people who do hashtags etc.
+- offer for free for the first one. and then maybe bump up price point. or have it as $5k before as well.
 
 ## Reddit:
 - maybe see reddit threads for something and create an app for just that as a standalone marketing page? -> new service "use software for marketing"
@@ -47,7 +50,7 @@ sequencing:
    so they ask AI open-ended discovery questions ("unique wedding       
   entertainment ideas", "how to make our wedding memorable", "cool tech 
   for weddings"). Being in those answer sets is how you get discovered.
-
+- 
 
 ## SEO - skip
 - SEO becomes mostly wrong. Nobody searches "custom app for my wedding
