@@ -82,7 +82,7 @@ export default function StepStory({ onNext, onBack, initialValues }) {
       subtitle="Tap any prompt that sparks something. Answer as many as you like — even one helps."
       cta={
         <div className="moodboard-cta">
-          <button onClick={onBack} className="btn" style={{ flex: '0 0 auto' }}>
+          <button onClick={onBack} aria-label="Back" className="btn moodboard-back" style={{ flex: "0 0 auto" }}>
             ←
           </button>
           <button onClick={submit} className="btn btn-primary" style={{ flex: 1 }}>

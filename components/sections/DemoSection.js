@@ -75,12 +75,7 @@ export default function DemoSection() {
               margin: '0 auto',
             }}
           >
-            During cocktail hour, your guests write you a secret message — a memory, a wish,
-            something they&apos;ve never said out loud. Your MOH (that&rsquo;s your maid of
-            honor, and yes she&rsquo;ll have a tablet) approves each one before it hits the
-            big screen. At dinner, you read them together for the first time, live, one by
-            one. Try it below. You&rsquo;re both the guest and the couple — write, approve,
-            reveal.
+            During cocktail hour, your guests write you a secret message: a memory, a wish, something they&rsquo;ve never said out loud. Your maid of honor (yes, she gets a tablet) approves each one before it hits the big screen. At dinner, you read them together for the first time, live, in front of everyone. Try it below: you play the guest, then the moderator, then the couple.
           </p>
 
           <div
@@ -187,7 +182,7 @@ export default function DemoSection() {
               margin: '0 auto var(--space-4)',
             }}
           >
-            This is one of {appCount} apps we&rsquo;ve built. Or bring us an idea we haven&rsquo;t.
+            That was the Unprompted Love Letter Machine, one of {appCount} apps we&rsquo;ve built. Or bring us one we haven&rsquo;t.
           </p>
           <Link
             href="/apps"
@@ -198,7 +193,7 @@ export default function DemoSection() {
               textDecoration: 'none',
             }}
           >
-            This is the Unprompted Love Letter Machine → See all {appCount} apps
+            See all {appCount} apps →
           </Link>
         </div>
       </Container>

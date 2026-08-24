@@ -15,11 +15,11 @@ import { getApps } from '@/lib/getApps'
 export const metadata = {
   title: 'Wepho — Custom Wedding Experience Studio',
   description:
-    'A wedding app built for one couple. Yours. Bring us an idea, or pick one of ours. We build it from scratch — grandma-friendly, phone-out in seconds, and only when the app beats paper.',
+    'A wedding app built for one couple. Yours. Bring us an idea, or pick one of ours. Built from scratch, grandma-friendly, and only when the app beats paper.',
   openGraph: {
     title: 'Wepho — Custom Wedding Experience Studio',
     description:
-      'Bring us an idea, or pick one of ours. Built from scratch for your wedding. We only build when the app beats paper. ~$2,000.',
+      'Bring us an idea, or pick one of ours. Built from scratch for your wedding. We only build when the app beats paper. Around $2,000.',
     type: 'website',
   },
 }
@@ -39,8 +39,6 @@ export default function HomePage() {
       <StoryBeat3 />
       <SixRules />
       <PaperReframe />
-      {/* PriceReframe goes here — T24 */}
-      {/* Testimonials goes here — T25 */}
       <PlannersCallout />
       <FinalCta />
     </main>

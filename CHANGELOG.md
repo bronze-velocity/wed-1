@@ -8,5 +8,7 @@
 - reviewing still 
 # 0.1.3
 - pre mood board 
-
+# 0.1.4
+- post ai-deslopify rewrite
+- pre new demo UX on /
 Test 

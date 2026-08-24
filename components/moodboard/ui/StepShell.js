@@ -3,8 +3,9 @@
 export default function StepShell({ stepLabel, title, subtitle, children, cta }) {
   return (
     <div
+      className="moodboard-shell"
       style={{
-        height: '100dvh',
+        minHeight: '100dvh',
         maxWidth: 540,
         margin: '0 auto',
         paddingTop: 'calc(var(--nav-height) + var(--space-8))',
@@ -45,12 +46,14 @@ export default function StepShell({ stepLabel, title, subtitle, children, cta })
       </div>
 
       <div
+        className="moodboard-shell-scroll"
         style={{
           minHeight: 0,
           overflowY: 'auto',
           marginInline: 'calc(var(--space-6) * -1)',
           paddingInline: 'var(--space-6)',
           paddingBottom: 'var(--space-2)',
+          WebkitOverflowScrolling: 'touch',
         }}
       >
         {children}

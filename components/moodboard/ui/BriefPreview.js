@@ -233,6 +233,7 @@ export default function BriefPreview({ answers, step }) {
   const [expanded, setExpanded] = useState(false)
   const hasAutoExpanded = useRef(false)
   const contentRef = useRef(null)
+  const triggerRef = useRef(null)
 
   useEffect(() => {
     if (step >= 3 && !hasAutoExpanded.current) {
@@ -241,7 +242,7 @@ export default function BriefPreview({ answers, step }) {
     }
   }, [step])
 
-  // Focus trap when drawer is expanded
+  // Focus trap + ESC-to-close when drawer is expanded; restore focus on close.
   useEffect(() => {
     if (!expanded) return
     const el = contentRef.current
@@ -252,6 +253,12 @@ export default function BriefPreview({ answers, step }) {
     const first = focusable[0]
     const last = focusable[focusable.length - 1]
     function trap(e) {
+      if (e.key === 'Escape') {
+        e.preventDefault()
+        setExpanded(false)
+        triggerRef.current?.focus()
+        return
+      }
       if (e.key !== 'Tab') return
       if (e.shiftKey) {
         if (document.activeElement === first) {
@@ -266,7 +273,11 @@ export default function BriefPreview({ answers, step }) {
       }
     }
     el.addEventListener('keydown', trap)
-    return () => el.removeEventListener('keydown', trap)
+    document.addEventListener('keydown', trap)
+    return () => {
+      el.removeEventListener('keydown', trap)
+      document.removeEventListener('keydown', trap)
+    }
   }, [expanded])
 
   const picks = countPicks(answers)
@@ -285,19 +296,29 @@ export default function BriefPreview({ answers, step }) {
           background: 'var(--color-bg)',
           borderTop: '1px solid var(--color-border)',
           boxShadow: '0 -4px 24px rgba(0,0,0,0.07)',
+          paddingBottom: 'env(safe-area-inset-bottom, 0px)',
         }}
       >
         <button
           type="button"
-          onClick={() => setExpanded((e) => !e)}
+          ref={triggerRef}
+          onClick={() => {
+            setExpanded((e) => {
+              const next = !e
+              if (!next) setTimeout(() => triggerRef.current?.focus(), 0)
+              return next
+            })
+          }}
           aria-expanded={expanded}
+          aria-controls="moodboard-brief-drawer"
           aria-label={expanded ? 'Collapse brief' : 'Expand brief'}
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
+            gap: 'var(--space-3)',
             width: '100%',
-            height: 48,
+            minHeight: 48,
             padding: '0 var(--space-6)',
             background: 'none',
             border: 'none',
@@ -312,6 +333,10 @@ export default function BriefPreview({ answers, step }) {
               fontSize: 'var(--text-body-sm)',
               fontWeight: 700,
               color: 'var(--color-text-primary)',
+              minWidth: 0,
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
             }}
           >
             Your brief
@@ -345,10 +370,16 @@ export default function BriefPreview({ answers, step }) {
 
         <div
           ref={contentRef}
+          id="moodboard-brief-drawer"
+          role={expanded ? 'dialog' : undefined}
+          aria-modal={expanded ? 'true' : undefined}
+          aria-label={expanded ? 'Your brief so far' : undefined}
           style={{
             maxHeight: expanded ? '55dvh' : 0,
             overflowY: expanded ? 'auto' : 'hidden',
             transition: 'max-height 350ms cubic-bezier(0.32, 0.72, 0, 1)',
+            WebkitOverflowScrolling: 'touch',
+            overscrollBehavior: 'contain',
           }}
         >
           <div style={{ padding: 'var(--space-4) var(--space-6) var(--space-8)' }}>

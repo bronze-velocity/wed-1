@@ -4,16 +4,7 @@ export default function ProgressPulse({ total, current }) {
   return (
     <div
       aria-label={`Step ${current + 1} of ${total}`}
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: 'var(--space-2)',
-        position: 'absolute',
-        top: 'calc(var(--nav-height) + var(--space-4))',
-        left: '50%',
-        transform: 'translateX(-50%)',
-      }}
-      className="lg:left-auto lg:right-[var(--space-8)] lg:transform-none"
+      className="moodboard-progress-pulse"
     >
       {Array.from({ length: total }, (_, i) => {
         const isVisited = i < current

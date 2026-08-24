@@ -118,9 +118,9 @@ export default function PrivacyPolicyPage() {
 
           <Section title="4. Analytics services">
             <p>
-              We may use privacy-focused analytics (for example Vercel Analytics, which is cookieless, and PostHog on
-              their EU-hosted cloud) to understand aggregate traffic patterns. These tools collect page views, referrers,
-              and anonymous event data — never names, email addresses, or the contents of your contact form.
+              We use PostHog (on their EU-hosted cloud) as our privacy-focused analytics provider, to understand
+              aggregate traffic patterns. It collects page views, referrers, and anonymous event data — never names,
+              email addresses, or the contents of your contact form.
             </p>
             <p>
               Analytics that use cookies are only loaded after you opt in through the cookie banner. We do not sell or

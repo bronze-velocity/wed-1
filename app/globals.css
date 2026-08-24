@@ -391,14 +391,100 @@ select.contact-field option {
   gap: var(--space-3);
 }
 
-/* Footer row of the moodboard step shell. Reserves space above the mobile brief drawer (48px). */
+/* Footer row of the moodboard step shell.
+   Sticky on mobile so the CTA stays above the on-screen keyboard;
+   reserves space above the mobile brief drawer (48px) via padding-bottom. */
 .moodboard-shell-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 20;
+  background: linear-gradient(
+    to bottom,
+    transparent 0,
+    var(--color-bg) var(--space-3)
+  );
+  padding-top: var(--space-3);
   padding-bottom: calc(env(safe-area-inset-bottom, 0px) + var(--space-4) + 48px);
 }
 @media (min-width: 1024px) {
   .moodboard-shell-footer {
+    position: static;
+    background: none;
+    padding-top: 0;
     padding-bottom: calc(env(safe-area-inset-bottom, 0px) + var(--space-4));
   }
+}
+
+/* Moodboard step scroll region — subtle top/bottom fade so users can see the area is scrollable */
+.moodboard-shell-scroll {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    black var(--space-3),
+    black calc(100% - var(--space-4)),
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    black var(--space-3),
+    black calc(100% - var(--space-4)),
+    transparent 100%
+  );
+}
+
+/* Moodboard progress pulse — top-left on mobile to avoid colliding with
+   the centered "Designing around · X" / "Planner brief" chip; top-right on desktop. */
+.moodboard-progress-pulse {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  position: fixed;
+  top: calc(var(--nav-height) + var(--space-4));
+  left: var(--space-6);
+  z-index: 44;
+}
+@media (min-width: 1024px) {
+  .moodboard-progress-pulse {
+    left: auto;
+    right: var(--space-8);
+  }
+}
+
+/* Moodboard back button — enforce 48×48 touch target */
+.moodboard-back {
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0 var(--space-3);
+}
+
+/* Moodboard primary CTA — full-height touch target */
+.moodboard-cta .btn-primary {
+  min-height: 48px;
+  padding: 0 var(--space-5);
+}
+
+/* Moodboard-scoped input — light background variant of contact-field (which is dark-mode-only) */
+.moodboard-input {
+  width: 100%;
+  min-height: 48px;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+.moodboard-input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+.moodboard-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
 }
 
 @keyframes slideInFromRight {

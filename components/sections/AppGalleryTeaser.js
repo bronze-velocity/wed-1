@@ -90,7 +90,7 @@ export default function AppGalleryTeaser({ apps }) {
             margin: '0 auto var(--space-10)',
           }}
         >
-          Five vibes. {apps.length} apps we&rsquo;ve built. Zero of them off-the-shelf.
+          Five vibes, {apps.length} apps we&rsquo;ve built, and not one of them off the shelf.
         </p>
 
         {/* Vibe pills */}
@@ -285,7 +285,7 @@ export default function AppGalleryTeaser({ apps }) {
               transition: 'border-color var(--duration-fast) var(--ease-out)',
             }}
           >
-            See all 12 app examples →
+            See all {apps.length} app examples →
           </Link>
         </div>
 

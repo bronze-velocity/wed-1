@@ -1,7 +1,7 @@
 const BASE_URL = 'https://wepho.com'
 
 export default function robots() {
-  const allowAll = { allow: '/', disallow: ['/api/', '/dev/'] }
+  const allowAll = { allow: '/', disallow: ['/api/', '/dev/', '/moodboard/'] }
 
   const aiBots = [
     'GPTBot',

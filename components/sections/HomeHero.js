@@ -62,10 +62,9 @@ export default function HomeHero() {
               maxWidth: '520px',
             }}
           >
-            Bring us an idea, or pick one of ours. We build it from scratch — designed for your
-            wedding, simple enough that grandma is in on it in seconds, and short enough that
-            guests are back in the room before their drink gets warm. ~$1,000-2,000 for something
-            entirely unique.
+            Bring us an idea, or pick one of ours. We build it from scratch for your wedding.
+            Grandma is in on it in seconds, and guests are back in the room before their drink
+            gets warm. Around $2,000 for something no one else has.
           </p>
 
           <div
@@ -80,7 +79,7 @@ export default function HomeHero() {
               Build your moodboard →
             </Link>
             <Link href="/apps" className="btn btn-lg btn-secondary">
-              See {appCount}{' '}we&rsquo;ve built
+              See the {appCount} we&rsquo;ve built
             </Link>
           </div>
           <p

@@ -1,8 +1,10 @@
+import { Suspense } from 'react'
 import './globals.css'
 import NavBar from '@/components/layout/NavBar'
 import Footer from '@/components/layout/Footer'
 import CookieBanner from '@/components/consent/CookieBanner'
 import MoodboardPill from '@/components/ui/MoodboardPill'
+import PostHogProvider from '@/components/analytics/PostHogProvider'
 
 export const metadata = {
   title: {
@@ -29,6 +31,9 @@ export default function RootLayout({ children }) {
         <Footer />
         <MoodboardPill />
         <CookieBanner />
+        <Suspense fallback={null}>
+          <PostHogProvider />
+        </Suspense>
       </body>
     </html>
   )

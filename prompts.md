@@ -110,18 +110,19 @@ landing page comments:
 - 
 
 # 24 aug
-### opus
+### done
 please review all of the text throughout the entire landing page and use the skill I copied to /home/zxc/Documents/code/win-repos/wed-1/distribution/skill-for-desloppifying-ai-written-text.md to rewrite all of the text in a better way. also, make sure that everything aligns very well with the one-pager.md
 
-### opus
+### done
 let's switch out all and every vercel analytics part and replace it with posthog instead.
 
-### opus
+### done
 for the moodboard, it would be nice if it was sharable, maybe even with a user-created slug in a seamless way, and otherwise a fallback to a short unique id. no need to double check availability, let's overwrite always. what is needed on the backend? how could this be done in a simplistic and seamless way? output into a concise .md in the moodboard folder.
 
-### 
+### done
 please do some edits based on improvement areas found in repo-snapshot-description-24aug.md:
 - remove these: - Homepage still has commented `PriceReframe` (T24) and `Testimonials` (T25) slots.
+
 for all edits, also make it reflected in the description file.
 
 
@@ -131,6 +132,9 @@ let's do these changes to /moodboard:
 - in "your brief", the pills for "moments" need to be the same style as for the other ones
 - in dev mode, we need some non-ai using mock result.
 - let's improve the results page (and also they way in which results are being created). please create a suggestion for the logic and for a really nicely looking one-screen output (with toggleable more info). output into a .md in the moodboard folder.
+
+### done
+please suggest how we can do the demos/visualizations of the apps on the home page better. a couple of suggestions. goal: simplicity, obviousness, amazing UX, clarity. output into zz/tasks/demo-improvements.md
 
 ###
 `/dev/phone/[slug]` (screenshot helper).

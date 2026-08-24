@@ -37,7 +37,7 @@ export default function PlannersCallout() {
           >
             Are you a wedding planner?
           </strong>
-          Recommend something extraordinary — we handle everything, your couples credit you.
+          Recommend something no other planner is offering. We build it, run it on the night, and your couples credit you for the find.
         </p>
         <Link
           href="/planners"

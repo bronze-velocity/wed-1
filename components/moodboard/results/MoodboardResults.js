@@ -1,9 +1,10 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import Container from '@/components/layout/Container'
 import ResultCard from './ResultCard'
+import { slugify } from '@/lib/moodboard/slug'
 
 // ── Section 1 ────────────────────────────────────────────────────────────────
 
@@ -215,11 +216,10 @@ const STORY_LABELS = {
   soUs:       '"That was so us"',
 }
 
-function BriefEmailGate({ results, answers, sectionRef, onBriefSent }) {
+function BriefEmailGate({ results, answers, sectionRef, onBriefSent, shared, lockedSlug }) {
   const [email, setEmail] = useState('')
   const [keepBrief, setKeepBrief] = useState(false)
   const [status, setStatus] = useState('idle') // idle | loading | success | error
-  const [copied, setCopied] = useState(false)
 
   const storyAnswers = Object.entries(answers?.story ?? {})
     .filter(([, v]) => v?.trim())
@@ -243,19 +243,6 @@ function BriefEmailGate({ results, answers, sectionRef, onBriefSent }) {
       }
     } catch {
       setStatus('error')
-    }
-  }
-
-  function copyLink() {
-    try {
-      const payload = btoa(JSON.stringify({ results, answers }))
-      const url = `${window.location.origin}/moodboard?brief=${payload}`
-      navigator.clipboard.writeText(url).then(() => {
-        setCopied(true)
-        setTimeout(() => setCopied(false), 2000)
-      })
-    } catch {
-      // silently fail
     }
   }
 
@@ -390,8 +377,8 @@ function BriefEmailGate({ results, answers, sectionRef, onBriefSent }) {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
-                className="contact-field"
-                style={{ flex: 1, minWidth: 220, fontSize: 16 }}
+                className="moodboard-input"
+                style={{ flex: 1, minWidth: 220 }}
               />
               <button
                 type="submit"
@@ -444,33 +431,240 @@ function BriefEmailGate({ results, answers, sectionRef, onBriefSent }) {
           </form>
         )}
 
-        {/* Copy link */}
-        <div style={{ marginTop: 'var(--space-8)', textAlign: 'center' }}>
-          <button
-            type="button"
-            onClick={copyLink}
-            style={{
-              background: 'none',
-              border: 'none',
-              fontSize: 'var(--text-body-sm)',
-              color: 'var(--color-text-muted)',
-              cursor: 'pointer',
-              fontFamily: 'inherit',
-              textDecoration: 'underline',
-              textDecorationColor: 'var(--color-border)',
-            }}
-          >
-            {copied ? 'Link copied ✓' : 'Or copy a link to share with your planner'}
-          </button>
-        </div>
+        {!shared && (
+          <div style={{ marginTop: 'var(--space-10)' }}>
+            <ShareableLink results={results} answers={answers} lockedSlug={lockedSlug} />
+          </div>
+        )}
       </Container>
     </section>
   )
 }
 
+// ── Shareable Link block ─────────────────────────────────────────────────────
+
+function ShareableLink({ results, answers, lockedSlug }) {
+  const isEdit = Boolean(lockedSlug)
+  const [desiredSlug, setDesiredSlug] = useState('')
+  const [password, setPassword] = useState('')
+  const [status, setStatus] = useState('idle') // idle | loading | ready | error
+  const [errorMsg, setErrorMsg] = useState('')
+  const [shareUrl, setShareUrl] = useState('')
+  const [copied, setCopied] = useState(false)
+
+  const origin = typeof window !== 'undefined' ? window.location.origin : 'https://wepho.com'
+  const previewSlug = useMemo(() => slugify(desiredSlug), [desiredSlug])
+  const displaySlug = previewSlug || 'auto-generated'
+
+  async function handleShare(e) {
+    e.preventDefault()
+    if (!isEdit && (!password || password.length < 4)) {
+      setStatus('error')
+      setErrorMsg('Password must be at least 4 characters.')
+      return
+    }
+    setStatus('loading')
+    setErrorMsg('')
+    setCopied(false)
+    try {
+      const body = isEdit
+        ? {
+            answers,
+            results,
+            lockedSlug,
+            meta: { role: answers?.role ?? 'couple' },
+          }
+        : {
+            answers,
+            results,
+            desiredSlug,
+            password,
+            meta: { coupleName: desiredSlug || null, role: answers?.role ?? 'couple' },
+          }
+      const res = await fetch('/api/moodboard/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      })
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}))
+        setStatus('error')
+        setErrorMsg(data.error || 'Couldn’t save. Try again.')
+        return
+      }
+      const data = await res.json()
+      setShareUrl(data.url)
+      setStatus('ready')
+    } catch {
+      setStatus('error')
+      setErrorMsg('Couldn’t save. Try again.')
+    }
+  }
+
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(shareUrl)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      // ignore
+    }
+  }
+
+  return (
+    <div
+      style={{
+        padding: 'var(--space-6)',
+        background: 'var(--color-bg-subtle)',
+        borderRadius: 'var(--radius-xl)',
+      }}
+    >
+      <p style={{ fontSize: 'var(--text-h4)', fontWeight: 800, marginBottom: 'var(--space-2)' }}>
+        {isEdit ? 'Save your changes' : 'Get a shareable link'}
+      </p>
+      <p
+        style={{
+          fontSize: 'var(--text-body-sm)',
+          color: 'var(--color-text-secondary)',
+          marginBottom: 'var(--space-5)',
+          lineHeight: 1.5,
+        }}
+      >
+        {isEdit
+          ? 'Overwrites the existing brief at the same link. Your password stays the same.'
+          : 'Anyone with the link and password can view it. Pick a password you’d feel comfortable sharing over WhatsApp. Sharing the same name again replaces the old one.'}
+      </p>
+
+      <form onSubmit={handleShare}>
+        {!isEdit && (
+          <>
+            <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
+              <input
+                type="text"
+                value={desiredSlug}
+                onChange={(e) => setDesiredSlug(e.target.value)}
+                placeholder="jack-and-simone (optional)"
+                className="moodboard-input"
+                style={{ flex: 1, minWidth: 220 }}
+              />
+            </div>
+            <p
+              style={{
+                marginTop: 'var(--space-3)',
+                fontSize: 'var(--text-tiny)',
+                color: 'var(--color-text-muted)',
+                fontFamily: 'var(--font-mono, monospace)',
+              }}
+            >
+              {origin.replace(/^https?:\/\//, '')}/moodboard/<strong>{displaySlug}</strong>
+            </p>
+            <div
+              style={{
+                display: 'flex',
+                gap: 'var(--space-3)',
+                flexWrap: 'wrap',
+                marginTop: 'var(--space-4)',
+              }}
+            >
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password (min 4 characters)"
+                className="moodboard-input"
+                style={{ flex: 1, minWidth: 220 }}
+                autoComplete="new-password"
+                required
+                minLength={4}
+              />
+            </div>
+          </>
+        )}
+
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'flex-end',
+            marginTop: isEdit ? 0 : 'var(--space-5)',
+          }}
+        >
+          <button
+            type="submit"
+            className="btn btn-primary"
+            disabled={status === 'loading'}
+          >
+            {status === 'loading'
+              ? 'Saving…'
+              : isEdit
+              ? 'Save changes →'
+              : 'Get my link →'}
+          </button>
+        </div>
+      </form>
+
+      {status === 'ready' && (
+        <div
+          style={{
+            marginTop: 'var(--space-5)',
+            padding: 'var(--space-4)',
+            background: 'var(--color-bg)',
+            borderRadius: 'var(--radius-md)',
+            display: 'flex',
+            gap: 'var(--space-3)',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+          }}
+        >
+          <a
+            href={shareUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              flex: 1,
+              minWidth: 200,
+              fontSize: 'var(--text-body-sm)',
+              color: 'var(--color-accent)',
+              wordBreak: 'break-all',
+              textDecoration: 'underline',
+            }}
+          >
+            {shareUrl}
+          </a>
+          <button
+            type="button"
+            onClick={copy}
+            className="btn btn-secondary"
+            style={{ padding: 'var(--space-2) var(--space-4)' }}
+          >
+            {copied ? 'Copied ✓' : 'Copy'}
+          </button>
+        </div>
+      )}
+
+      {status === 'error' && (
+        <p
+          style={{
+            marginTop: 'var(--space-3)',
+            fontSize: 'var(--text-body-sm)',
+            color: 'var(--color-accent)',
+          }}
+        >
+          {errorMsg || 'Couldn’t save the link — try again.'}
+        </p>
+      )}
+    </div>
+  )
+}
+
 // ── Root composition ──────────────────────────────────────────────────────────
 
-export default function MoodboardResults({ results, answers, onBriefSent }) {
+export default function MoodboardResults({
+  results,
+  answers,
+  onBriefSent,
+  shared = false,
+  lockedSlug = null,
+}) {
   const emailRef = useRef(null)
 
   function scrollToEmail() {
@@ -487,6 +681,8 @@ export default function MoodboardResults({ results, answers, onBriefSent }) {
         answers={answers}
         sectionRef={emailRef}
         onBriefSent={onBriefSent}
+        shared={shared}
+        lockedSlug={lockedSlug}
       />
     </div>
   )

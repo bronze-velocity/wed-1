@@ -40,7 +40,7 @@ export default function StepVibes({ onNext, onBack, initialValues }) {
       cta={
         <div className="moodboard-cta">
           {onBack && (
-            <button onClick={onBack} className="btn" style={{ flex: '0 0 auto' }}>
+            <button onClick={onBack} aria-label="Back" className="btn moodboard-back" style={{ flex: "0 0 auto" }}>
               ←
             </button>
           )}

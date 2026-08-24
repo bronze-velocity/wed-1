@@ -21,7 +21,7 @@ The **Wepho marketing website** — not the actual wedding apps. The site sells 
 - **Next.js 16** (App Router), **React 19**
 - **JavaScript only** — no TypeScript, no `.ts`/`.tsx` files
 - **Tailwind CSS v4** + CSS custom properties (tokens). Tailwind 4 uses CSS-first config; `app/globals.css` imports `tailwindcss` and references `tailwind.config.js` for theme extension.
-- Deployed on **Vercel**
+- Deployed as a Node server, self-hosted (Docker on our own host — not Vercel/Netlify)
 - pnpm instead of npm
 
 ---

@@ -85,10 +85,18 @@ function MatchingLoader() {
   )
 }
 
-export default function MoodboardWizard({ initialSeed = null, role = null }) {
+export default function MoodboardWizard({
+  initialSeed = null,
+  role = null,
+  initialAnswers = null,
+  lockedSlug = null,
+}) {
   const seededApp = initialSeed ? apps.find((a) => a.slug === initialSeed) : null
   const [step, setStep] = useState(0)
   const [answers, setAnswers] = useState(() => {
+    if (initialAnswers && typeof initialAnswers === 'object') {
+      return { ...initialAnswers }
+    }
     const base = {}
     if (seededApp) base.seededApp = seededApp.slug
     if (role) base.role = role
@@ -110,17 +118,18 @@ export default function MoodboardWizard({ initialSeed = null, role = null }) {
     }
   }, [])
 
-  // Check for saved progress on mount (once)
+  // Check for saved progress on mount (once) — skip in edit mode
   useEffect(() => {
+    if (lockedSlug) return
     const saved = loadProgress()
     if (saved) setResumeCandidate(saved)
-  }, [])
+  }, [lockedSlug])
 
-  // Autosave whenever answers or step change (skip empty initial state and results phase)
+  // Autosave whenever answers or step change (skip empty initial state, results phase, and edit mode)
   useEffect(() => {
-    if (results || matching) return
+    if (lockedSlug || results || matching) return
     saveProgress(answers, step)
-  }, [answers, step, results, matching])
+  }, [answers, step, results, matching, lockedSlug])
 
   function handleContinueResume() {
     if (!resumeCandidate) return
@@ -196,6 +205,7 @@ export default function MoodboardWizard({ initialSeed = null, role = null }) {
         results={results}
         answers={answers}
         onBriefSent={handleBriefSent}
+        lockedSlug={lockedSlug}
       />
     )
   }
