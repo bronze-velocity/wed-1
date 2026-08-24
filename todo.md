@@ -1,3 +1,7 @@
+- /home/zxc/Documents/code/win-repos/wed-1/components/moodboard/results-redesign.md
+
+- describe entire repo really concisely. with brief suggestions of what to do a slighlty deeper dive on. since highly vibe coded.
+ > continue: /home/zxc/Documents/code/win-repos/wed-1/repo-snapshot-description-24aug.md
 # 21 aug
  node scripts/dataforseo-ai-probe.mjs --resume distribution/ai-seo/probes/2026-08-21T13-20-58-903Z 
 # 20 aug

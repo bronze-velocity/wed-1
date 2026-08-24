@@ -2,115 +2,204 @@
 
 import { useState } from 'react'
 import FreeformField from '../ui/FreeformField'
+import StepShell from '../ui/StepShell'
 
 const QUESTIONS = [
   {
     key: 'howWeMet',
+    chip: 'How you met',
     label: 'How did you meet?',
     hint: 'She sat next to me at a conference and corrected my wrong answer out loud',
   },
   {
     key: 'insideJoke',
+    chip: 'An inside joke',
     label: "What's a joke only your people would get?",
     hint: 'We call the third floor of our building "the vortex"',
   },
   {
-    key: 'mostUs',
-    label: "What's the most "you" thing about your relationship?",
-    hint: "We argue about the optimal route to every destination and she's always right",
-  },
-  {
-    key: 'movieGenre',
-    label: 'If your wedding had a movie genre, what would it be?',
-    hint: 'A Richard Linklater film that ends with someone crying on a staircase',
-  },
-  {
     key: 'soUs',
+    chip: '"That was so us"',
     label: 'What would make you say "that was so us" the next morning?',
-    hint: "One of her aunts cornering me to say she knew from the first time she saw us together",
+    hint: 'One of her aunts cornering me to say she knew from the first time she saw us together',
+  },
+  {
+    key: 'runningDebate',
+    chip: 'A debate you never resolve',
+    label: "What's a running debate you two never resolve?",
+    hint: 'Whether a hot dog is a sandwich. It has been four years.',
+  },
+  {
+    key: 'shockGuests',
+    chip: 'Something guests don’t know',
+    label: "What's something your guests would be shocked to learn about you two?",
+    hint: 'We met on a dating app neither of us admits to using anymore',
+  },
+  {
+    key: 'ritual',
+    chip: 'A tradition only you two have',
+    label: 'What’s a ritual or tradition that only the two of you share?',
+    hint: 'Sunday morning we read horoscopes aloud in bad accents',
+  },
+  {
+    key: 'anthem',
+    chip: 'A song, place, or thing that means "us"',
+    label: 'What’s a song, place, or object that instantly means "us"?',
+    hint: 'The corner booth at Rae’s. We were there the night everything changed.',
+  },
+  {
+    key: 'bestStoryteller',
+    chip: 'Who has the best story about you',
+    label: 'Who in the room has the best story about you two — and what is it?',
+    hint: 'His brother Sam. Ask him about the flat tire in Portugal.',
   },
 ]
 
+function preview(text) {
+  const trimmed = text.trim()
+  if (trimmed.length <= 60) return trimmed
+  return trimmed.slice(0, 57).trimEnd() + '…'
+}
+
 export default function StepStory({ onNext, onBack, initialValues }) {
-  const [substep, setSubstep] = useState(0)
-  const [direction, setDirection] = useState('forward')
   const [story, setStory] = useState(initialValues?.story ?? {})
+  const [openKey, setOpenKey] = useState(null)
 
-  const q = QUESTIONS[substep]
-  const isLast = substep === QUESTIONS.length - 1
+  const answeredCount = Object.values(story).filter((v) => v?.trim()).length
 
-  function advance() {
-    if (isLast) {
-      onNext({ story })
-    } else {
-      setDirection('forward')
-      setSubstep((s) => s + 1)
-    }
+  function toggle(key) {
+    setOpenKey((prev) => (prev === key ? null : key))
   }
 
-  function retreat() {
-    if (substep > 0) {
-      setDirection('back')
-      setSubstep((s) => s - 1)
-    } else {
-      onBack?.()
-    }
+  function submit() {
+    onNext({ story })
   }
 
   return (
-    <div
-      style={{
-        minHeight: '100dvh',
-        paddingTop: 'calc(var(--nav-height) + var(--space-16))',
-        paddingBottom: 'var(--space-24)',
-        paddingLeft: 'var(--space-6)',
-        paddingRight: 'var(--space-6)',
-        maxWidth: 540,
-        margin: '0 auto',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 'var(--space-8)',
-      }}
+    <StepShell
+      stepLabel="Step 5 of 6"
+      title="Tell us about you two"
+      subtitle="Tap any prompt that sparks something. Answer as many as you like — even one helps."
+      cta={
+        <div className="moodboard-cta">
+          <button onClick={onBack} className="btn" style={{ flex: '0 0 auto' }}>
+            ←
+          </button>
+          <button onClick={submit} className="btn btn-primary" style={{ flex: 1 }}>
+            {answeredCount > 0
+              ? `Almost there → (${answeredCount})`
+              : 'Skip this step →'}
+          </button>
+        </div>
+      }
     >
-      <div>
-        <p
-          style={{
-            fontSize: 'var(--text-body-sm)',
-            color: 'var(--color-text-muted)',
-            fontWeight: 600,
-            marginBottom: 'var(--space-2)',
-          }}
-        >
-          Step 5 of 6 &nbsp;·&nbsp; {substep + 1} of {QUESTIONS.length}
-        </p>
-        <h2 style={{ fontSize: 'var(--text-h3)', fontWeight: 800, lineHeight: 1.2 }}>
-          Tell us about you two
-        </h2>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+        {QUESTIONS.map((q) => {
+          const value = story[q.key] ?? ''
+          const isOpen = openKey === q.key
+          const isAnswered = value.trim().length > 0
+          return (
+            <div
+              key={q.key}
+              style={{
+                borderRadius: 'var(--radius-lg)',
+                background: 'var(--color-bg-subtle)',
+                border: `1.5px solid ${
+                  isOpen
+                    ? 'var(--color-accent)'
+                    : isAnswered
+                    ? 'var(--color-accent-light)'
+                    : 'transparent'
+                }`,
+                transition: 'border-color 200ms ease',
+                overflow: 'hidden',
+              }}
+            >
+              <button
+                type="button"
+                onClick={() => toggle(q.key)}
+                aria-expanded={isOpen}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: 'var(--space-3)',
+                  width: '100%',
+                  padding: 'var(--space-4)',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  textAlign: 'left',
+                  fontFamily: 'inherit',
+                }}
+              >
+                <span style={{ display: 'flex', flexDirection: 'column', gap: 2, minWidth: 0 }}>
+                  <span
+                    style={{
+                      fontSize: 'var(--text-body)',
+                      fontWeight: 600,
+                      color: 'var(--color-text-primary)',
+                      lineHeight: 1.3,
+                    }}
+                  >
+                    {q.chip}
+                  </span>
+                  {isAnswered && !isOpen && (
+                    <span
+                      style={{
+                        fontSize: 'var(--text-body-sm)',
+                        color: 'var(--color-text-muted)',
+                        fontStyle: 'italic',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        whiteSpace: 'nowrap',
+                      }}
+                    >
+                      &ldquo;{preview(value)}&rdquo;
+                    </span>
+                  )}
+                </span>
+                <span
+                  aria-hidden="true"
+                  style={{
+                    flexShrink: 0,
+                    width: 24,
+                    height: 24,
+                    borderRadius: 'var(--radius-full)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: isAnswered
+                      ? 'var(--color-accent)'
+                      : 'transparent',
+                    color: isAnswered ? 'var(--color-bg)' : 'var(--color-text-muted)',
+                    fontSize: 14,
+                    fontWeight: 700,
+                    transition: 'background 200ms ease',
+                  }}
+                >
+                  {isAnswered ? '✓' : isOpen ? '–' : '+'}
+                </span>
+              </button>
+              {isOpen && (
+                <div
+                  style={{
+                    padding: '0 var(--space-4) var(--space-4)',
+                    animation: 'briefEntryIn 220ms ease-out',
+                  }}
+                >
+                  <FreeformField
+                    label={q.label}
+                    hint={q.hint}
+                    value={value}
+                    onChange={(val) => setStory((s) => ({ ...s, [q.key]: val }))}
+                  />
+                </div>
+              )}
+            </div>
+          )
+        })}
       </div>
-
-      <div
-        key={`${substep}-${direction}`}
-        style={{
-          animation: `${direction === 'forward' ? 'slideInFromRight' : 'slideInFromLeft'} 240ms ease-out`,
-        }}
-      >
-        <FreeformField
-          label={q.label}
-          hint={q.hint}
-          value={story[q.key] ?? ''}
-          onChange={(val) => setStory((s) => ({ ...s, [q.key]: val }))}
-          onSkip={advance}
-        />
-      </div>
-
-      <div className="moodboard-cta">
-        <button onClick={retreat} className="btn" style={{ flex: '0 0 auto' }}>
-          ←
-        </button>
-        <button onClick={advance} className="btn btn-primary" style={{ flex: 1 }}>
-          {isLast ? 'Almost there →' : 'Next →'}
-        </button>
-      </div>
-    </div>
+    </StepShell>
   )
 }

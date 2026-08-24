@@ -215,8 +215,9 @@ const STORY_LABELS = {
   soUs:       '"That was so us"',
 }
 
-function BriefEmailGate({ results, answers, sectionRef }) {
+function BriefEmailGate({ results, answers, sectionRef, onBriefSent }) {
   const [email, setEmail] = useState('')
+  const [keepBrief, setKeepBrief] = useState(false)
   const [status, setStatus] = useState('idle') // idle | loading | success | error
   const [copied, setCopied] = useState(false)
 
@@ -232,9 +233,14 @@ function BriefEmailGate({ results, answers, sectionRef }) {
       const res = await fetch('/api/moodboard/brief', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, results, answers }),
+        body: JSON.stringify({ email, results, answers, keepBrief }),
       })
-      setStatus(res.ok ? 'success' : 'error')
+      if (res.ok) {
+        setStatus('success')
+        onBriefSent?.()
+      } else {
+        setStatus('error')
+      }
     } catch {
       setStatus('error')
     }
@@ -375,7 +381,7 @@ function BriefEmailGate({ results, answers, sectionRef }) {
                 marginBottom: 'var(--space-6)',
               }}
             >
-              We&rsquo;ll send it to your inbox and follow up to talk through your picks.
+              We&rsquo;ll email your brief and may follow up once about your wedding. That&rsquo;s it.
             </p>
             <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
               <input
@@ -395,6 +401,35 @@ function BriefEmailGate({ results, answers, sectionRef }) {
                 {status === 'loading' ? 'Sending…' : 'Send it →'}
               </button>
             </div>
+            <label
+              style={{
+                display: 'flex',
+                gap: 'var(--space-3)',
+                alignItems: 'flex-start',
+                marginTop: 'var(--space-5)',
+                cursor: 'pointer',
+                fontSize: 'var(--text-body-sm)',
+                color: 'var(--color-text-secondary)',
+                lineHeight: 1.5,
+              }}
+            >
+              <input
+                type="checkbox"
+                checked={keepBrief}
+                onChange={(e) => setKeepBrief(e.target.checked)}
+                style={{ marginTop: 3, width: 16, height: 16, accentColor: 'var(--color-accent)' }}
+              />
+              <span>
+                I&rsquo;d like Wepho to keep my brief so we can pick up the conversation.
+                <span style={{ display: 'block', fontSize: 'var(--text-tiny)', color: 'var(--color-text-muted)', marginTop: 2 }}>
+                  Otherwise we delete our server-side copy within 90 days. See our{' '}
+                  <Link href="/privacy" style={{ color: 'var(--color-accent)', textDecoration: 'underline' }}>
+                    privacy policy
+                  </Link>
+                  .
+                </span>
+              </span>
+            </label>
             {status === 'error' && (
               <p
                 style={{
@@ -435,7 +470,7 @@ function BriefEmailGate({ results, answers, sectionRef }) {
 
 // ── Root composition ──────────────────────────────────────────────────────────
 
-export default function MoodboardResults({ results, answers }) {
+export default function MoodboardResults({ results, answers, onBriefSent }) {
   const emailRef = useRef(null)
 
   function scrollToEmail() {
@@ -451,6 +486,7 @@ export default function MoodboardResults({ results, answers }) {
         results={results}
         answers={answers}
         sectionRef={emailRef}
+        onBriefSent={onBriefSent}
       />
     </div>
   )

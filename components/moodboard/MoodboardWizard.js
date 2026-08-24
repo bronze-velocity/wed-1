@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react'
 import ProgressPulse from './ui/ProgressPulse'
 import BriefPreview from './ui/BriefPreview'
+import ResumeBanner from './ui/ResumeBanner'
+import TalkToUs from './ui/TalkToUs'
 import MoodboardResults from './results/MoodboardResults'
 import StepVibes from './steps/StepVibes'
 import StepGuests from './steps/StepGuests'
@@ -10,6 +12,9 @@ import StepMoments from './steps/StepMoments'
 import StepFeelings from './steps/StepFeelings'
 import StepStory from './steps/StepStory'
 import StepWildcard from './steps/StepWildcard'
+import { loadProgress, saveProgress, clearProgress } from './lib/persistence'
+import { apps } from '@/data/apps'
+import { trackEvent } from '@/lib/analytics'
 
 const STEPS = [StepVibes, StepGuests, StepMoments, StepFeelings, StepStory, StepWildcard]
 
@@ -80,12 +85,20 @@ function MatchingLoader() {
   )
 }
 
-export default function MoodboardWizard() {
+export default function MoodboardWizard({ initialSeed = null, role = null }) {
+  const seededApp = initialSeed ? apps.find((a) => a.slug === initialSeed) : null
   const [step, setStep] = useState(0)
-  const [answers, setAnswers] = useState({})
+  const [answers, setAnswers] = useState(() => {
+    const base = {}
+    if (seededApp) base.seededApp = seededApp.slug
+    if (role) base.role = role
+    return base
+  })
   const [direction, setDirection] = useState('forward')
   const [results, setResults] = useState(null)
   const [matching, setMatching] = useState(false)
+  const [resumeCandidate, setResumeCandidate] = useState(null)
+  const [startedTracked, setStartedTracked] = useState(false)
   const reducedMotion = useReducedMotion()
 
   // Prevent iOS overscroll bounce while wizard is active
@@ -96,6 +109,35 @@ export default function MoodboardWizard() {
       document.body.style.overscrollBehavior = prev
     }
   }, [])
+
+  // Check for saved progress on mount (once)
+  useEffect(() => {
+    const saved = loadProgress()
+    if (saved) setResumeCandidate(saved)
+  }, [])
+
+  // Autosave whenever answers or step change (skip empty initial state and results phase)
+  useEffect(() => {
+    if (results || matching) return
+    saveProgress(answers, step)
+  }, [answers, step, results, matching])
+
+  function handleContinueResume() {
+    if (!resumeCandidate) return
+    setAnswers(resumeCandidate.answers || {})
+    setStep(Math.min(resumeCandidate.step ?? 0, STEPS.length - 1))
+    setResumeCandidate(null)
+  }
+
+  function handleStartFresh() {
+    clearProgress()
+    setResumeCandidate(null)
+  }
+
+  function handleBriefSent() {
+    trackEvent('moodboard_finished', { seed: seededApp?.slug || null, role: role || null })
+    clearProgress()
+  }
 
   async function startMatching(finalAnswers) {
     setMatching(true)
@@ -126,6 +168,10 @@ export default function MoodboardWizard() {
     const merged = { ...answers, ...stepAnswers }
     setAnswers(merged)
     setDirection('forward')
+    if (!startedTracked) {
+      trackEvent('moodboard_started', { seed: seededApp?.slug || null, role: role || null })
+      setStartedTracked(true)
+    }
     const nextStep = step + 1
     setStep(nextStep)
     if (nextStep >= STEPS.length) {
@@ -145,7 +191,13 @@ export default function MoodboardWizard() {
   }
 
   if (isDone && results) {
-    return <MoodboardResults results={results} answers={answers} />
+    return (
+      <MoodboardResults
+        results={results}
+        answers={answers}
+        onBriefSent={handleBriefSent}
+      />
+    )
   }
 
   const CurrentStep = STEPS[step]
@@ -153,6 +205,38 @@ export default function MoodboardWizard() {
   return (
     <div style={{ position: 'relative', overscrollBehavior: 'contain' }}>
       <ProgressPulse total={STEPS.length} current={step} />
+      <TalkToUs answers={answers} />
+      {(seededApp || role === 'planner') && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 'calc(var(--nav-height) + var(--space-3))',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 43,
+            background: 'var(--color-bg-subtle)',
+            color: 'var(--color-text-secondary)',
+            border: '1px solid var(--color-border)',
+            borderRadius: 'var(--radius-md)',
+            padding: '6px 12px',
+            fontSize: 'var(--text-tiny)',
+            fontWeight: 600,
+            letterSpacing: '0.02em',
+            boxShadow: 'var(--shadow-xs)',
+            maxWidth: 'calc(100vw - var(--space-8))',
+            textAlign: 'center',
+          }}
+        >
+          {seededApp ? `Designing around · ${seededApp.title}` : 'Planner brief'}
+        </div>
+      )}
+      {resumeCandidate && (
+        <ResumeBanner
+          savedAt={resumeCandidate.savedAt}
+          onContinue={handleContinueResume}
+          onStartFresh={handleStartFresh}
+        />
+      )}
       <div
         key={step}
         style={{

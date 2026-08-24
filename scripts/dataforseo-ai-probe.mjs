@@ -8,6 +8,8 @@
 // Usage:
 //   node scripts/dataforseo-ai-probe.mjs [outdir]
 //   node scripts/dataforseo-ai-probe.mjs --resume <existing-outdir>
+// node scripts/dataforseo-ai-probe.mjs --resume distribution/ai-seo/probes/2026-08-21T13-20-58-903Z
+// node scripts/dataforseo-ai-probe.mjs --resume distribution/ai-seo/probes/2026-08-22T04-17-03-615Z
 //
 // Reads DATAFORSEO_LOGIN and DATAFORSEO_API_PASSWORD from `.env.local`.
 // Set SANDBOX=1 to hit sandbox.dataforseo.com instead of api.dataforseo.com.
@@ -241,7 +243,7 @@ if (RESUME_DIR) {
 
     for (const entry of pending) {
       try {
-        const got = await getJson(taskGetPathFor(entry.id));
+        const got = await get(taskGetPathFor(entry.id));
         const taskStatus = got.tasks?.[0]?.status_code;
         // Status 40602 = "Task In Queue"; 40601 = "Task Handed"; anything
         // other than 20000 means the task isn't finished yet.

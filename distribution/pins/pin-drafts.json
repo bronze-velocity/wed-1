@@ -1,0 +1,406 @@
+{
+  "_meta": {
+    "generated": "2026-08-24",
+    "source": "zz/wed-apps/20-apps.json (25 apps) filtered by data/apps.js !skip (13 live apps)",
+    "count": 39,
+    "per_app": 3,
+    "note": "Task called for 3 × 20 = 60 pins, but only 13 apps currently have live /apps/[slug] pages. Pinning to a 404 wastes reach, so this file covers the 13 live apps (39 pins). Regenerate when the remaining 7 marketing pages ship.",
+    "constraints": {
+      "pin_title": "max 100 characters",
+      "pin_description": "200–500 characters, keyword-rich",
+      "destination_url": "/apps/[slug] (relative — prefix https://wepho.com when uploading)"
+    }
+  },
+  "pins": [
+    {
+      "app_slug": "couple-trivia",
+      "pin_title": "Live \"How Well Do You Know Us?\" trivia — the whole room plays at once",
+      "pin_description": "A custom wedding reception game where every guest plays the same trivia question at the same second on their phone. Fifteen questions about the couple's real story — first date, the proposal, who cried at the vow rehearsal — with a live leaderboard climbing on the big screen. The winner earns an unscheduled toast at the mic. Interactive wedding entertainment for couples who want their reception to feel like a shared moment, not passive dinner theatre.",
+      "board": "Interactive Wedding Reception Games",
+      "alt_text": "Screenshot of a wedding trivia app on a guest's phone showing a question about the couple with a live leaderboard on the reception big screen behind it",
+      "destination_url": "/apps/couple-trivia",
+      "vibe_tag": "Stop the room",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "couple-trivia",
+      "pin_title": "Wedding trivia game where every question is about the actual couple",
+      "pin_description": "Skip the generic pub quiz. A custom-built wedding trivia app where you write your own questions — the real ones, plus a few funny wrong answers — and your guests play together in sync during dinner. Head table vs. college friends becomes a subplot. Fifteen questions, twenty seconds each, eight minutes total. Personalized wedding entertainment, custom scoring, and a shareable results page you keep forever. A reception idea for couples who want their people arguing about who knows them best.",
+      "board": "Personalized Wedding Ideas",
+      "alt_text": "Guest holding phone displaying a personalized couple trivia question during a wedding reception with a leaderboard visible on screen",
+      "destination_url": "/apps/couple-trivia",
+      "vibe_tag": "Make them laugh",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "couple-trivia",
+      "pin_title": "Reception game idea: 8 minutes of live trivia, then the winner gives a toast",
+      "pin_description": "Looking for wedding reception game ideas that stop the room instead of dragging it down? This custom trivia app runs in eight bounded minutes, table-level scoring layered on individual scores, live leaderboard reveals between rounds, and the couple pre-records five-second video reactions for each answer. The prize: an unscheduled sixty-second toast at the mic. Interactive wedding tech built one-night-only for your reception. See it in action.",
+      "board": "Wedding Reception Ideas",
+      "alt_text": "Bright wedding reception with guests looking up from their phones toward a big screen showing live trivia standings between tables",
+      "destination_url": "/apps/couple-trivia",
+      "vibe_tag": "Stop the room",
+      "moment_tag": "Dancing"
+    },
+    {
+      "app_slug": "venue-scavenger-hunt",
+      "pin_title": "Cocktail hour scavenger hunt through the couple's actual love story",
+      "pin_description": "A custom wedding scavenger hunt where QR codes hidden around the venue each unlock a chapter of the couple's real story — bar for the first drink together, garden for the proposal, dance floor for the first slow song. Guests physically walk the venue while cocktail hour turns into a treasure hunt. Completing every chapter reveals a private thank-you video from the couple. Interactive cocktail hour idea that gets shy guests moving and talking.",
+      "board": "Cocktail Hour Ideas",
+      "alt_text": "Guest scanning a small QR code discreetly placed on a wedding venue garden trellis, phone showing a chapter of the couple's love story",
+      "destination_url": "/apps/venue-scavenger-hunt",
+      "vibe_tag": "Get them talking",
+      "moment_tag": "Cocktail Hour"
+    },
+    {
+      "app_slug": "venue-scavenger-hunt",
+      "pin_title": "Wedding treasure hunt: unlock the couple's story one QR code at a time",
+      "pin_description": "Every QR code sits at a spot with real meaning to the couple. Chapters unlock in order so guests can't skip ahead — they physically move through the venue during cocktail hour, watching the story build. Photo challenges at some stops drop guest selfies straight into the couple's album. First to finish gets a prize at the bar. A unique wedding cocktail hour idea for venues with character and couples with a story worth walking.",
+      "board": "Unique Wedding Ideas",
+      "alt_text": "Wedding guest walking through a garden venue holding phone showing a love story chapter that just unlocked from a scanned QR code",
+      "destination_url": "/apps/venue-scavenger-hunt",
+      "vibe_tag": "Stop the room",
+      "moment_tag": "Cocktail Hour"
+    },
+    {
+      "app_slug": "venue-scavenger-hunt",
+      "pin_title": "Reception ideas for shy guests: give them something to explore, not small talk",
+      "pin_description": "Shy guests, plus-ones who know nobody, older relatives who need a mission — this custom venue scavenger hunt gives everyone something to do during cocktail hour that isn't clustering at the bar. QR codes reveal love story chapters in the couple's own voice, with voice notes and video that a printed clue card physically cannot carry. Modern wedding cocktail hour entertainment, warm and low-pressure.",
+      "board": "Wedding Guest Experience",
+      "alt_text": "Older wedding guest smiling while listening to a voice note on their phone during cocktail hour, unlocked from a hidden venue QR code",
+      "destination_url": "/apps/venue-scavenger-hunt",
+      "vibe_tag": "Get them talking",
+      "moment_tag": "Cocktail Hour"
+    },
+    {
+      "app_slug": "anniversary-time-capsule",
+      "pin_title": "Anniversary time capsule: guest video messages sealed for years, delivered on the date",
+      "pin_description": "Guests record short video messages at your wedding — sealed until your 1st, 5th, 10th, 25th, even 50th anniversary — and the app automatically emails them on the actual date. A grandparent leaving a message for a wedding anniversary they may not see. Future messages for the couple's future children on their 18th birthday. A wedding keepsake idea that turns one night into a gift the wedding keeps giving for decades.",
+      "board": "Wedding Keepsakes & Memories",
+      "alt_text": "Elderly grandparent recording a heartfelt video message on a phone at a wedding reception, screen shows anniversary delivery year selector",
+      "destination_url": "/apps/anniversary-time-capsule",
+      "vibe_tag": "Make them cry",
+      "moment_tag": "Cocktail Hour"
+    },
+    {
+      "app_slug": "anniversary-time-capsule",
+      "pin_title": "The wedding keepsake you open on your 25th anniversary, not next week",
+      "pin_description": "A guestbook gets read once. Envelopes labeled 'Open in 25 years' get lost in a move. This anniversary time capsule app schedules guest video messages for the actual anniversary date — 1, 5, 10, 25 years out — with a photo of the guest from tonight attached so future-you sees present-them. The couple can write messages to themselves on the same schedule. A sentimental wedding idea and unique wedding gift, built one-night-only.",
+      "board": "Sentimental Wedding Ideas",
+      "alt_text": "Split image showing a bride recording a video message at her wedding reception and the same couple watching that message five years later on their anniversary",
+      "destination_url": "/apps/anniversary-time-capsule",
+      "vibe_tag": "Create a keepsake",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "anniversary-time-capsule",
+      "pin_title": "Wedding time capsule app — guests choose which anniversary to unlock",
+      "pin_description": "Emotional wedding reception idea for couples who want more than a signed book. Guests pick their delivery year — 1, 5, 10, 25, even 50 — and record a short video message with a discreet re-record button so no bad takes get sent. Bonus tier: 'for the kids,' delivered when your future children turn 18. A custom wedding app that turns your reception into decades of anniversary moments. Sealed tonight, delivered on the date.",
+      "board": "Anniversary Ideas",
+      "alt_text": "Guest holding phone at wedding reception, screen shows a slider selecting the anniversary year 25 for a sealed video message delivery",
+      "destination_url": "/apps/anniversary-time-capsule",
+      "vibe_tag": "Make them cry",
+      "moment_tag": "Cocktail Hour"
+    },
+    {
+      "app_slug": "prediction-vault",
+      "pin_title": "The Prediction Vault: sealed guest predictions unlocked on each anniversary",
+      "pin_description": "A wedding reception game where guests write predictions about the couple's future — grouped by year, sealed tonight, opened on each anniversary while the couple scores who was right. Kid by 3? Move abroad by 10? Own a dog before a house? The predictions become a recurring anniversary ritual that spans decades. A unique wedding keepsake and party game rolled into one, played once tonight and every year after.",
+      "board": "Wedding Keepsakes & Memories",
+      "alt_text": "Wedding guest laughing as they type a bold prediction on their phone at a reception, screen shows sealed vault icon with unlock year",
+      "destination_url": "/apps/prediction-vault",
+      "vibe_tag": "Create a keepsake",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "prediction-vault",
+      "pin_title": "Guest prediction game: sealed at your wedding, scored on every anniversary",
+      "pin_description": "Modern wedding reception game idea. Guests submit sealed predictions about your future — 1, 5, 10, 25 years out — bucketed by year and locked until each anniversary. Open them together with friends over dinner, score who was right, laugh at who was catastrophically wrong. A wedding app that produces an ongoing party across a decade instead of a single night's entertainment. Custom-built for one couple, one night, decades of anniversaries.",
+      "board": "Unique Wedding Games",
+      "alt_text": "Couple sitting on couch on anniversary opening sealed wedding predictions on a laptop, laughing at what their friends predicted years earlier",
+      "destination_url": "/apps/prediction-vault",
+      "vibe_tag": "Make them laugh",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "prediction-vault",
+      "pin_title": "Reception idea: turn your wedding into a game that plays out over 25 years",
+      "pin_description": "Every guest gets to weigh in on your future — silly, sincere, or catastrophic. The Prediction Vault seals every submission tonight and opens the right bucket on each anniversary. It's a wedding game with genuine stakes and a wedding keepsake with a shelf life longer than any album. Interactive wedding entertainment that respects the night — quiet submission during dinner, no interruptions — then reappears decades later.",
+      "board": "Anniversary Ideas",
+      "alt_text": "Elegant wedding reception table with guests writing predictions on phones, faint overlay showing anniversary years 1 5 10 25 in soft type",
+      "destination_url": "/apps/prediction-vault",
+      "vibe_tag": "Create a keepsake",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "unpopular-opinions",
+      "pin_title": "Cocktail hour icebreaker: vote on the couple's real unpopular opinions",
+      "pin_description": "Guests who don't know each other start debating pineapple on pizza before they've finished their welcome drink. This custom cocktail hour app pre-loads the couple's real unpopular opinions — hot takes only they'd own — and the room votes agree or disagree in real time. See instantly whether the crowd sides with the bride or the groom on each take. A wedding cocktail hour icebreaker that actually starts conversations, no forced mingling required.",
+      "board": "Cocktail Hour Ideas",
+      "alt_text": "Wedding cocktail hour with guests laughing while voting on a phone poll displayed on a nearby screen, agree vs disagree bar filling live",
+      "destination_url": "/apps/unpopular-opinions",
+      "vibe_tag": "Make them laugh",
+      "moment_tag": "Cocktail Hour"
+    },
+    {
+      "app_slug": "unpopular-opinions",
+      "pin_title": "The couple's unpopular opinions icebreaker — bride vs groom, room decides",
+      "pin_description": "A wedding icebreaker game where guests vote in real time on the couple's spiciest takes. Each opinion reveals a live agree/disagree split, plus a bonus reveal of whether the bride or groom holds it. Strangers argue with strangers about the couple within thirty seconds of scanning the QR code. Interactive wedding cocktail hour entertainment that gives shy guests, plus-ones, and second cousins something to talk about without any awkward mingle prompts.",
+      "board": "Wedding Icebreaker Ideas",
+      "alt_text": "Big screen at wedding cocktail hour showing an unpopular opinion poll with two rising bars for bride's side and groom's side of the room",
+      "destination_url": "/apps/unpopular-opinions",
+      "vibe_tag": "Get them talking",
+      "moment_tag": "Cocktail Hour"
+    },
+    {
+      "app_slug": "unpopular-opinions",
+      "pin_title": "Wedding cocktail hour game that ends every 'so how do you know the couple' silence",
+      "pin_description": "Modern wedding reception idea for couples with strong opinions and strong friend groups. Guests scan a QR code, vote on the couple's real hot takes, and watch the room split live. The bride's side vs the groom's side becomes an actual scoreboard. No forced mixers, no name-tag activities — just twelve opinions and a room that suddenly has something to argue about. Custom wedding tech, one night only.",
+      "board": "Modern Wedding Ideas",
+      "alt_text": "Two wedding guests laughing at a phone poll about the couple's opinion on a divisive food, cocktail glasses in hand",
+      "destination_url": "/apps/unpopular-opinions",
+      "vibe_tag": "Make them laugh",
+      "moment_tag": "Cocktail Hour"
+    },
+    {
+      "app_slug": "wedding-bingo",
+      "pin_title": "Custom wedding bingo cards — every square written by the couple",
+      "pin_description": "Every guest gets a unique bingo card with squares only the couple could write: 'best man trips on his speech,' 'DJ plays ABBA before 10pm,' 'Uncle Rob cries during the toast.' Guests tap squares in real time as things happen. The squares are hilarious because they're accurate. A custom wedding bingo game that keeps everyone paying attention to every corner of the night, all day long.",
+      "board": "Wedding Reception Games",
+      "alt_text": "Wedding guest smiling at their phone showing a custom bingo card with squares written by the couple, one square lit up mid-reception",
+      "destination_url": "/apps/wedding-bingo",
+      "vibe_tag": "Make them laugh",
+      "moment_tag": "All Day"
+    },
+    {
+      "app_slug": "wedding-bingo",
+      "pin_title": "Reception game idea: every guest gets a bingo card, every card is different",
+      "pin_description": "Custom wedding bingo where the couple writes every square, and every guest gets a unique card. First to five in a row shouts BINGO on the mic. Because the squares are specific — a particular uncle, a particular DJ tendency, a particular sibling dynamic — guests spend the whole day watching for their squares to hit. Modern wedding entertainment for couples who know their people well enough to make the jokes land.",
+      "board": "Wedding Reception Games",
+      "alt_text": "Overhead shot of two wedding guests comparing phones displaying different custom bingo cards during dinner, some squares crossed off",
+      "destination_url": "/apps/wedding-bingo",
+      "vibe_tag": "Make them laugh",
+      "moment_tag": "All Day"
+    },
+    {
+      "app_slug": "wedding-bingo",
+      "pin_title": "Personalized wedding bingo that makes every guest pay attention all night",
+      "pin_description": "Personalized wedding bingo turns your reception into a quiet, all-day scavenger hunt. Guests tap squares as they see them — the uncle you predicted would cry, the song you knew the DJ would play, the cousin who always leaves early. Every card is unique. Winners shout BINGO on the mic. A custom wedding app that makes guests watch the wedding harder, not scroll through it. Built once, for you.",
+      "board": "Personalized Wedding Ideas",
+      "alt_text": "Wedding guest holding up phone displaying a bingo card mid-cheer as one square flashes bingo during the reception",
+      "destination_url": "/apps/wedding-bingo",
+      "vibe_tag": "Stop the room",
+      "moment_tag": "All Day"
+    },
+    {
+      "app_slug": "advice-oracle",
+      "pin_title": "The Guest Advice Oracle: real wisdom from your people, live on the wall",
+      "pin_description": "Instead of a generic advice card in a jar, guests answer structured prompts — best marriage advice, a mistake to avoid, something you wish someone had told you — and the answers scroll live as an advice oracle wall the whole room reads together. The couple can post a live mid-reception question and watch the room respond in real time. A wedding keepsake app that produces something the couple actually rereads.",
+      "board": "Wedding Keepsakes & Memories",
+      "alt_text": "Large wedding reception display wall softly scrolling advice messages from guests during dinner, dim string lights above",
+      "destination_url": "/apps/advice-oracle",
+      "vibe_tag": "Create a keepsake",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "advice-oracle",
+      "pin_title": "Wedding advice wall — genuine wisdom from the people who actually know you",
+      "pin_description": "A modern replacement for the marriage-advice card. Structured prompts pull out the good stuff — the mistake to avoid, the thing they wish someone had told them, the piece of advice that would've saved them a year. Every response appears on the reception oracle wall. Guests read each other. The couple keeps every entry as a formatted keepsake book. A sentimental wedding reception idea for couples who want their people to say the real thing.",
+      "board": "Sentimental Wedding Ideas",
+      "alt_text": "Wedding guest thoughtfully typing marriage advice on their phone during dinner, faint scroll of previous advice glowing on wall behind",
+      "destination_url": "/apps/advice-oracle",
+      "vibe_tag": "Make them cry",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "advice-oracle",
+      "pin_title": "Reception idea: a live advice wall the couple keeps forever",
+      "pin_description": "Every guest at your wedding has one good piece of advice. The Advice Oracle asks for it in a way that surfaces the real stuff, not the platitudes — best advice, biggest mistake, the thing nobody told them — and streams the responses live to a reception display wall the whole room reads together. The couple keeps every entry as a printed book. Custom wedding app, one night only, for couples who want the wisdom captured properly.",
+      "board": "Wedding Reception Ideas",
+      "alt_text": "Wedding couple at their reception reading softly scrolling wall of live guest advice, smiling at one specific message",
+      "destination_url": "/apps/advice-oracle",
+      "vibe_tag": "Create a keepsake",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "where-next-map",
+      "pin_title": "Where To Next: guests pin the couple's future on an interactive live map",
+      "pin_description": "A live interactive wedding map where guests pin the places the couple should go next — cities to visit, neighborhoods to move to, restaurants they must try, spots where they should retire. The reception screen fills with pins as guests drop them, each with a short one-line note. The couple keeps the map after the wedding as a living travel plan built by the people who know them best.",
+      "board": "Unique Wedding Ideas",
+      "alt_text": "Big reception screen showing a world map filling with colored pins in real time as wedding guests submit place recommendations from phones",
+      "destination_url": "/apps/where-next-map",
+      "vibe_tag": "Create a keepsake",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "where-next-map",
+      "pin_title": "Wedding reception map — 84 pins from the people who know you best",
+      "pin_description": "Guests drop a pin and a one-line reason: 'this Lisbon guesthouse changed our marriage,' 'the one restaurant in Rome that's worth the trip.' The reception display fills live. After the wedding, the couple keeps the map as an actual reference — part conversation piece, part shared travel plan, part keepsake. A modern wedding app for couples with wandering friends and a life to plan.",
+      "board": "Wedding Travel Ideas",
+      "alt_text": "Close-up of wedding guest pinning a city recommendation on interactive phone map with short handwritten note attached to the pin",
+      "destination_url": "/apps/where-next-map",
+      "vibe_tag": "Get them talking",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "where-next-map",
+      "pin_title": "Reception idea: turn your guests' travel wisdom into a map you actually use",
+      "pin_description": "Your guests have been everywhere. This custom wedding map app collects their pins live during dinner — neighborhoods, restaurants, cities, retirement spots — each with a short note explaining why. The reception screen fills in front of the whole room. After the wedding, the couple has a genuinely useful map. An interactive wedding reception idea that produces something more valuable than another framed print.",
+      "board": "Wedding Reception Ideas",
+      "alt_text": "Wedding couple later at home referencing a printed world map filled with pins recommended by their wedding guests, coffee mugs in hand",
+      "destination_url": "/apps/where-next-map",
+      "vibe_tag": "Create a keepsake",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "who-said-it",
+      "pin_title": "Who Said It? — real texts from the couple's relationship, blurred sender",
+      "pin_description": "A live wedding guessing game where guests see real texts, photos, and quotes from the couple's actual relationship — sender blurred — and vote his side vs her side vs mutual friends. Chronological through the relationship. Family-vs-family scoreboard on the big screen. Guests learn the couple through the couple's own voice, and 'who knows them best' becomes a room-wide sport with real stakes.",
+      "board": "Interactive Wedding Reception Games",
+      "alt_text": "Big screen at wedding reception showing a blurred text message with three voting buttons: his side, her side, mutual friends",
+      "destination_url": "/apps/who-said-it",
+      "vibe_tag": "Make them laugh",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "who-said-it",
+      "pin_title": "Wedding game: guess who sent the text — his side vs her side, live",
+      "pin_description": "Real screenshots from the couple's actual chats, blurred senders, live voting on every phone in the room. Twenty texts, chronological, spanning the relationship — the first flirty message, the fight text, the one that started an inside joke. His side, her side, and mutual friends compete for the scoreboard. A modern wedding reception game that feels like the couple opened their whole story to the room without anyone reading it aloud.",
+      "board": "Wedding Reception Games",
+      "alt_text": "Wedding guest laughing while voting on a blurred text message displayed on phone, big screen behind showing family scoreboard",
+      "destination_url": "/apps/who-said-it",
+      "vibe_tag": "Make them laugh",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "who-said-it",
+      "pin_title": "Custom wedding game built from the couple's real texts and photos",
+      "pin_description": "The couple picks twenty moments from their relationship — texts, photos, spoken quotes — and Who Said It turns them into a live guessing game the whole reception plays together. Guests vote his side, her side, or mutual friends; the scoreboard tracks families across rounds. An interactive wedding game that lets guests actually learn who the couple is, in their own words, on their own timeline. Custom-built for one night.",
+      "board": "Personalized Wedding Ideas",
+      "alt_text": "Bride and groom laughing together at their reception watching a blurred text of their own message being guessed by the room",
+      "destination_url": "/apps/who-said-it",
+      "vibe_tag": "Stop the room",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "story-chain",
+      "pin_title": "The Story Chain: guests write one sentence at a time, live on the big screen",
+      "pin_description": "A collaborative wedding story that grows one guest-written sentence at a time on the reception big screen, starting from a single prompt about how the couple's love actually began. Everyone writes one line. The room reads the whole absurd, tender, tangled thing together in real time. The couple keeps the finished story as a printed chapbook. A creative wedding reception idea for couples who trust their friends with a sentence.",
+      "board": "Creative Wedding Ideas",
+      "alt_text": "Wedding reception big screen showing a collaborative story growing sentence by sentence with guest names, one line highlighted as freshly submitted",
+      "destination_url": "/apps/story-chain",
+      "vibe_tag": "Make them laugh",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "story-chain",
+      "pin_title": "Wedding reception idea: a story your guests write together, one sentence at a time",
+      "pin_description": "Instead of a signed book with the same three phrases, this custom wedding app grows a single collaborative story on the reception screen — each guest adds one sentence in real time. The prompt seeds it, the room takes it somewhere the couple could never predict, and the finished chapbook lands in their hands as a keepsake. A wedding entertainment idea that produces something genuinely funny and completely one-of-one.",
+      "board": "Wedding Keepsakes & Memories",
+      "alt_text": "Printed hardback chapbook titled Our Story sitting on a table, opened to a page showing a collaborative story written by wedding guests",
+      "destination_url": "/apps/story-chain",
+      "vibe_tag": "Create a keepsake",
+      "moment_tag": "Cocktail Hour"
+    },
+    {
+      "app_slug": "story-chain",
+      "pin_title": "Collaborative wedding storytelling — the whole room writes one chapter together",
+      "pin_description": "A one-night-only wedding app where guests take turns adding a single sentence to a shared story on the reception big screen. The prompt starts it — 'the night they actually met…' — and forty guests later the couple has a collaborative love story that goes places no one, especially them, could have written alone. Printed as a hardback chapbook after the wedding. Interactive wedding reception entertainment with a keepsake built in.",
+      "board": "Unique Wedding Ideas",
+      "alt_text": "Wedding guests writing sentences on phones during dinner while a story unfolds on the reception screen behind them, sentence 47 highlighted",
+      "destination_url": "/apps/story-chain",
+      "vibe_tag": "Make them laugh",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "ask-us-anything",
+      "pin_title": "Ask Us Anything: guests submit and upvote questions, couple answers live at the mic",
+      "pin_description": "Guests submit and upvote questions for the couple during dinner — silly to sincere, first-date to five-years-in — and the couple answers the top ten live on the mic over dessert. Upvoting surfaces the questions the room actually wants asked, so the answers land instead of the safe ones a single host would pick. A modern wedding reception idea that turns the traditional Q&A into a room-driven moment.",
+      "board": "Wedding Reception Ideas",
+      "alt_text": "Wedding couple standing at reception mic answering a question projected on big screen, upvote counts visible on the question card",
+      "destination_url": "/apps/ask-us-anything",
+      "vibe_tag": "Make them laugh",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "ask-us-anything",
+      "pin_title": "Reception game: the room upvotes questions, the couple answers the top ten",
+      "pin_description": "A custom Ask Us Anything wedding app where every guest can post a question and every guest votes on which ones the couple answers. Sincere, absurd, wildly personal — whichever ten climb to the top get answered live at the mic during dessert. Interactive wedding entertainment that gives guests real agency and gives the couple a chance to say the things a scripted toast never lets them say.",
+      "board": "Interactive Wedding Reception Games",
+      "alt_text": "Wedding reception big screen showing a live-updating list of guest questions with upvote counts and top ten highlighted for the couple",
+      "destination_url": "/apps/ask-us-anything",
+      "vibe_tag": "Get them talking",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "ask-us-anything",
+      "pin_title": "Wedding Q&A app: the room decides which questions the couple actually answers",
+      "pin_description": "The couple sits with a mic over dessert. On the big screen, a live-sorted list of guest questions — upvoted by the room — climbs and rearranges in real time. Answer the top ten. Every guest gets to weigh in on what gets asked, so the questions land: the funny ones, the deep ones, the one someone's been wondering for eight years. A custom wedding reception idea that replaces the awkward host-picked Q&A with something honest.",
+      "board": "Modern Wedding Ideas",
+      "alt_text": "Wedding guest smiling while typing a question on their phone at dinner, faint reception mic on stand visible in background",
+      "destination_url": "/apps/ask-us-anything",
+      "vibe_tag": "Make them laugh",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "video-guestbook",
+      "pin_title": "Two-Minute Video Guestbook — every guest, their face, their voice, on film",
+      "pin_description": "Instead of signing a book, every guest records a short video message from their seat — a wedding video guestbook where the couple gets faces, voices, and stories they can rewatch for decades. Every clip is curated into a single film delivered the week after the wedding. A wedding keepsake that gets replayed on anniversaries, not shelved. Modern wedding reception idea for couples who want to keep the people, not just the signatures.",
+      "board": "Wedding Keepsakes & Memories",
+      "alt_text": "Wedding guest recording a heartfelt two-minute video message on their phone while seated at a candlelit reception dinner table",
+      "destination_url": "/apps/video-guestbook",
+      "vibe_tag": "Make them cry",
+      "moment_tag": "All Day"
+    },
+    {
+      "app_slug": "video-guestbook",
+      "pin_title": "Replace the wedding guestbook with a two-minute film delivered the week after",
+      "pin_description": "A signed line in a book gets read once. A guest's face and voice saying the thing they couldn't write down is the thing the couple actually replays for decades. This custom wedding video guestbook app collects short seated video messages from every guest, curates them into a delivered film the week after the wedding, and turns the guestbook tradition into a sentimental wedding keepsake with an actual shelf life.",
+      "board": "Sentimental Wedding Ideas",
+      "alt_text": "Couple watching curated wedding guestbook film on a laptop weeks after their wedding, tissues nearby, laughing and crying at once",
+      "destination_url": "/apps/video-guestbook",
+      "vibe_tag": "Create a keepsake",
+      "moment_tag": "All Day"
+    },
+    {
+      "app_slug": "video-guestbook",
+      "pin_title": "Wedding video guestbook: quiet, private, and edited into a keepsake film",
+      "pin_description": "Guests record from their seat, so the whole thing stays quiet and low-pressure — no queue, no camera booth, no forced grin. Every clip goes into a curated film delivered a week after the wedding. The wall stays quiet on purpose; this one is meant to be private, watched late together when everyone is gone. A modern wedding keepsake app for couples who want the intimacy without the awkwardness.",
+      "board": "Wedding Video Ideas",
+      "alt_text": "Bride and groom sitting on couch weeks after wedding watching the video guestbook film on television, dim living room lighting",
+      "destination_url": "/apps/video-guestbook",
+      "vibe_tag": "Make them cry",
+      "moment_tag": "All Day"
+    },
+    {
+      "app_slug": "home-the-room-built",
+      "pin_title": "The Home Your Room Built — guests fill your someday home from their phones",
+      "pin_description": "Every guest picks contributions to the couple's someday home — a dog, a big table, a herb garden, a record player, one silly house rule — from their phones. A composite illustration of the home draws itself live on the reception screen as contributions come in. The couple leaves the wedding with a framed poster of the home their people imagined for them. A unique wedding keepsake idea that turns opinions into an inside joke you frame.",
+      "board": "Unique Wedding Ideas",
+      "alt_text": "Reception big screen showing an illustrated house drawing itself live with guest-contributed elements like a dog, garden, and record player",
+      "destination_url": "/apps/home-the-room-built",
+      "vibe_tag": "Create a keepsake",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "home-the-room-built",
+      "pin_title": "Reception idea: your guests build your future home, live, on the big screen",
+      "pin_description": "Every wedding guest already has opinions about how the couple should live. This custom wedding app collects those opinions — the dog, the herb garden, the mandatory Sunday roast, the one silly house rule — and draws them into a composite illustration of the couple's someday home, live on the reception screen as guests contribute. Delivered as a framed poster after the wedding. A creative wedding keepsake for couples with opinionated friends.",
+      "board": "Wedding Keepsakes & Memories",
+      "alt_text": "Framed poster on wall showing illustrated home built from wedding guest contributions with labels naming each element and the guest who chose it",
+      "destination_url": "/apps/home-the-room-built",
+      "vibe_tag": "Get them talking",
+      "moment_tag": "Dinner"
+    },
+    {
+      "app_slug": "home-the-room-built",
+      "pin_title": "Custom wedding keepsake: the house 84 people picked for you, live from dinner",
+      "pin_description": "A modern wedding reception game and keepsake in one. Guests tap up to three contributions each — furniture, pets, plants, quirks, one silly rule — and watch the couple's someday home draw itself live on the reception big screen. Every element is labeled with the guest who picked it, turning the finished framed poster into a running inside joke the couple actually hangs. Interactive wedding app built one night only, for one couple.",
+      "board": "Personalized Wedding Ideas",
+      "alt_text": "Guest tapping selections on phone at wedding dinner while big screen illustration of house adds a small dog element in real time",
+      "destination_url": "/apps/home-the-room-built",
+      "vibe_tag": "Create a keepsake",
+      "moment_tag": "Dinner"
+    }
+  ]
+}

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import TapCard from '../ui/TapCard'
+import StepShell from '../ui/StepShell'
 
 const VIBES = [
   { id: 'dinner-party',   src: '/images/moodboard/vibes/dinner-party.jpg',   label: 'Dinner that got out of hand' },
@@ -32,46 +33,27 @@ export default function StepVibes({ onNext, onBack, initialValues }) {
   }
 
   return (
-    <div
-      style={{
-        minHeight: '100dvh',
-        paddingTop: 'calc(var(--nav-height) + var(--space-16))',
-        paddingBottom: 'var(--space-24)',
-        paddingLeft: 'var(--space-6)',
-        paddingRight: 'var(--space-6)',
-        maxWidth: 540,
-        margin: '0 auto',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 'var(--space-8)',
-      }}
+    <StepShell
+      stepLabel="Step 1 of 6"
+      title="What does your reception feel like?"
+      subtitle={`Pick up to ${MAX}`}
+      cta={
+        <div className="moodboard-cta">
+          {onBack && (
+            <button onClick={onBack} className="btn" style={{ flex: '0 0 auto' }}>
+              ←
+            </button>
+          )}
+          <button
+            onClick={() => onNext({ vibes: Array.from(selected) })}
+            className="btn btn-primary"
+            style={{ flex: 1 }}
+          >
+            These feel like us →
+          </button>
+        </div>
+      }
     >
-      <div>
-        <p
-          style={{
-            fontSize: 'var(--text-body-sm)',
-            color: 'var(--color-text-muted)',
-            fontWeight: 600,
-            marginBottom: 'var(--space-2)',
-          }}
-        >
-          Step 1 of 6
-        </p>
-        <h2
-          style={{
-            fontSize: 'var(--text-h3)',
-            fontWeight: 800,
-            lineHeight: 1.2,
-            marginBottom: 'var(--space-2)',
-          }}
-        >
-          What does your reception feel like?
-        </h2>
-        <p style={{ fontSize: 'var(--text-body-sm)', color: 'var(--color-text-muted)' }}>
-          Pick up to {MAX}
-        </p>
-      </div>
-
       <div
         style={{
           display: 'grid',
@@ -92,21 +74,6 @@ export default function StepVibes({ onNext, onBack, initialValues }) {
           />
         ))}
       </div>
-
-      <div className="moodboard-cta">
-        {onBack && (
-          <button onClick={onBack} className="btn" style={{ flex: '0 0 auto' }}>
-            ←
-          </button>
-        )}
-        <button
-          onClick={() => onNext({ vibes: Array.from(selected) })}
-          className="btn btn-primary"
-          style={{ flex: 1 }}
-        >
-          These feel like us →
-        </button>
-      </div>
-    </div>
+    </StepShell>
   )
 }

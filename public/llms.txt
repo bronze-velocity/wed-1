@@ -10,6 +10,7 @@ Every app is built from scratch around a specific couple's story. Nothing is a t
 - [App catalog](https://wepho.com/apps): Full gallery of every custom app type, filterable by wedding vibe and reception moment.
 - [For wedding planners](https://wepho.com/planners): How planners partner with Wepho to offer custom apps as an upsell or signature touch for their couples.
 - [Moodboard quiz](https://wepho.com/moodboard): Short guided quiz that recommends which custom app types fit a couple's vibe, guests, and story.
+- [Blog index](https://wepho.com/blog): Long-form essays on reception ideas, wedding activities, speeches, guestbooks, venues, and the design principles behind Wepho apps.
 
 ## Custom app catalog (per-app marketing pages)
 
@@ -26,6 +27,42 @@ Every app is built from scratch around a specific couple's story. Nothing is a t
 - [Ask Us Anything](https://wepho.com/apps/ask-us-anything): Guests submit questions for the couple; the room upvotes; top questions get answered on stage.
 - [The Two-Minute Video Guestbook](https://wepho.com/apps/video-guestbook): Guests record short video messages from their phones, stitched into a keepsake film.
 - [The Home Your Room Built](https://wepho.com/apps/home-the-room-built): Guests collectively design the couple's future home — room by room, choice by choice.
+
+## Essays (blog)
+
+- [The 25 wedding reception ideas we saw actually work](https://wepho.com/blog/wedding-reception-ideas): 25 reception ideas grouped by moment, each with a specific-couple example — and the 5 we're begging couples to stop doing.
+- [20 unforgettable wedding ideas (and the rule behind all of them)](https://wepho.com/blog/20-unforgettable-wedding-ideas): The 20 things that made the one wedding you actually remember stick — and the underlying rule.
+- [Wedding inspiration 2026: real weddings we can't stop screenshotting](https://wepho.com/blog/wedding-inspiration-2026): The throughline nobody's naming yet in 2026 weddings — plus 12 real-wedding vignettes worth stealing from.
+- [Unique wedding ideas: unique isn't a colour palette](https://wepho.com/blog/unique-wedding-ideas): 12 categories of decision-you-can-make-different, each with 2 specific ideas.
+- [Non-traditional wedding ideas: keep 3 rituals, rewrite the rest](https://wepho.com/blog/non-traditional-wedding-ideas): 15 non-traditional swaps that keep the emotional weight of tradition without the boilerplate.
+- [Wedding trends 2026: 5 real, 5 fake, 1 forecast](https://wepho.com/blog/wedding-trends-2026): What's actually shifting in 2026 — and what's a headline pretending to be a trend. Plus one 2027 prediction.
+- [12 wedding planning tips we'd tell a friend at 11pm the night before](https://wepho.com/blog/wedding-planning-tips): The tips that matter aren't logistics — they're emotional infrastructure. Grouped as before / morning-of / during / night-after.
+- [Wedding activities that make guests forget their phones](https://wepho.com/blog/wedding-activities): 18 activities grouped as solo (fills a lull), pair (creates a conversation), and room (unifies attention).
+- [Wedding after-party ideas: the two hours everyone remembers](https://wepho.com/blog/wedding-after-party): Nobody plans the 2 hours after the reception ends — but they're the ones guests bring up years later.
+- [20 cocktail hour ideas that work in the 60 minutes nobody plans](https://wepho.com/blog/cocktail-hour-ideas): 60 minutes, a room of strangers, a couple still taking photos — what actually works.
+- [Adult party games that work with 30 people in a room](https://wepho.com/blog/adult-party-games): 15 games ranked by "would our clients play this at their own wedding" — no corporate-retreat energy.
+- [Icebreakers that don't make anyone want to leave](https://wepho.com/blog/icebreakers): 12 icebreakers that pass the grown-adult test, plus 3 designed for a wedding cocktail hour.
+- [Wedding lawn games: 15 alternatives to cornhole](https://wepho.com/blog/wedding-lawn-games-alternatives): 15 lawn-game alternatives that don't require 6 months of Etsy custom orders and actually get remembered.
+- [100 newlywed game questions — and the 12 that always land](https://wepho.com/blog/newlywed-game-questions): 100 questions tagged by category and difficulty, plus a house-style guide for writing your own.
+- [60 wedding trivia questions that make the room lean in](https://wepho.com/blog/wedding-trivia-questions): 60 questions grouped by specificity — from generic-wedding to only-this-couple.
+- [80 wedding shoe game questions ranked by spice](https://wepho.com/blog/wedding-shoe-game-questions): 80 questions ranked PG to grandma-would-leave, plus the 5 that always land.
+- [The shoe game is 40 years old — here are 8 alternatives](https://wepho.com/blog/shoe-game-alternatives): 8 alternatives with shoe-game energy but without the shoes, from lightly-refreshed to fully-different.
+- [Wedding bingo: printable cards vs. live bingo](https://wepho.com/blog/wedding-bingo-cards-printable-vs-live): Printable bingo is a good icebreaker. Live bingo — where the room competes — is a different night entirely.
+- [Wedding guestbook ideas people will actually revisit](https://wepho.com/blog/wedding-guestbook-ideas): 20 guestbook ideas ranked by revisit-score — the ones nobody signs vs. the ones everyone stops to read a year later.
+- [Wedding keepsakes that get looked at at your 10th anniversary](https://wepho.com/blog/wedding-keepsake-ideas): 20 keepsake ideas across visual, textual, audio, and ritual — the ones that survive a decade.
+- [You don't need a wedding photo booth — you need what it's a proxy for](https://wepho.com/blog/wedding-photo-booth-alternatives): 12 photo-booth alternatives that hit the same needs at 1/3 the cost — plus the 2 cases you should still rent one.
+- [Wedding speech ideas that land vs. speeches politely thanked afterwards](https://wepho.com/blog/wedding-speeches-ideas): The structural principle — specificity + one held-breath moment + one laugh — applied across 10 speech ideas by relationship.
+- [Best man speech ideas that don't sound like the other 47](https://wepho.com/blog/best-man-speech-ideas): The best-man remix: specificity + one line the couple didn't know you knew.
+- [The 30-second wedding toast that lands](https://wepho.com/blog/wedding-toast-ideas): Toast ≠ speech. 15 toast templates by relationship and mood — one image, one raise-your-glass.
+- [25 backyard wedding ideas that don't run out of extension cords](https://wepho.com/blog/backyard-wedding-ideas): The 25 backyard-wedding decisions that separate "homemade charm" from "we ran out of extension cords by 6pm."
+- [25 outdoor wedding ideas by venue type](https://wepho.com/blog/outdoor-wedding-ideas): 25 ideas grouped by beach / forest / farm / garden / urban rooftop / backyard, plus a 4-level weather-plan hierarchy.
+- [Small wedding ideas: 20 things you can only do with 20 guests](https://wepho.com/blog/small-wedding-ideas): Small is a design choice, not a compromise — 20 ideas that lean into intimacy plus 5 things only tiny weddings can do.
+- [Rustic wedding ideas without doing 2015 rustic](https://wepho.com/blog/rustic-wedding-ideas): 20 rustic ideas that still work in 2026, plus a kill list of things that scream Pinterest-past-decade.
+- [Boho wedding ideas — and boho vs. its impostors](https://wepho.com/blog/boho-wedding-ideas): 15 boho ideas across desert, forest, and coastal sub-vibes, plus what actually is boho vs. what got sold to you.
+- [Garden wedding ideas — 15 botanical decisions that hold up at 10pm](https://wepho.com/blog/garden-wedding-ideas): 15 garden-wedding ideas with a seasonal-bloom calendar and a guide to which flowers survive to 10pm.
+- [Wedding favors nobody takes home — and the one thing that gets pocketed](https://wepho.com/blog/wedding-favor-ideas-reimagined): The wedding-favor graveyard and the one thing that actually gets taken home — a personal message from the couple to that specific guest.
+- [The wedding reception timeline that keeps energy high, minute by minute](https://wepho.com/blog/reception-program-timeline): A 5-hour reception timeline in 15-minute blocks — including the energy dip nobody plans for 45 minutes after dinner starts.
+- [Moderne Hochzeitsspiele, die 2026 wirklich funktionieren](https://wepho.com/blog/hochzeitsspiele-modern): (German) 15 moderne Alternativen zu klassischen Hochzeitsspielen wie Ehequiz und Schuh-Spiel, mit konkreten Beispielen.
 
 ## Positioning
 

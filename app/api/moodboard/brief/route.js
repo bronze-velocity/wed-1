@@ -10,7 +10,7 @@ const STORY_LABELS = {
   soUs:       '"That was so us"',
 }
 
-function buildBriefHtml(email, results, answers) {
+function buildBriefHtml(email, results, answers, keepBrief) {
   const topMatches = results.matches
     .slice(0, 3)
     .map(
@@ -23,8 +23,13 @@ function buildBriefHtml(email, results, answers) {
     .map(([k, v]) => `<tr><td>${STORY_LABELS[k] ?? k}</td><td><em>"${v}"</em></td></tr>`)
     .join('\n')
 
+  const retentionBanner = keepBrief
+    ? `<p style="padding:8px 12px;background:#EDE9FF;border-radius:6px;font-size:13px"><strong>Retention:</strong> couple opted in to keep this brief. OK to retain in follow-up notes.</p>`
+    : `<p style="padding:8px 12px;background:#F7F6F3;border-radius:6px;font-size:13px"><strong>Retention:</strong> couple did NOT opt in. Delete this brief from notes after replying (90-day max).</p>`
+
   return `
     <h2>Moodboard brief — ${results.threeWords}</h2>
+    ${retentionBanner}
     <p><strong>Email:</strong> ${email}</p>
     <h3>Matches</h3>
     <ul>${topMatches}</ul>
@@ -53,6 +58,11 @@ function buildConfirmationHtml(results) {
   `
 }
 
+// GDPR note: this route intentionally does not persist the brief anywhere —
+// it only sends two emails. If you add logging or a DB write here, mask the
+// email address and drop `answers` (freeform personal content) before it
+// touches Vercel logs or any store, and honour `keepBrief` as the lawful
+// basis for keeping the row past the email send (default TTL: 90 days).
 export async function POST(request) {
   let body
   try {
@@ -61,7 +71,7 @@ export async function POST(request) {
     return Response.json({ error: 'Invalid request body' }, { status: 400 })
   }
 
-  const { email, results, answers } = body
+  const { email, results, answers, keepBrief } = body
 
   if (!email || !EMAIL_RE.test(email)) {
     return Response.json({ error: 'Valid email required' }, { status: 400 })
@@ -70,12 +80,14 @@ export async function POST(request) {
     return Response.json({ error: 'Results missing' }, { status: 400 })
   }
 
+  const keep = keepBrief === true
+
   try {
     await Promise.all([
       sendMail({
         to: process.env.CONTACT_EMAIL_TO,
-        subject: `Moodboard brief — ${results.threeWords} — ${email}`,
-        html: buildBriefHtml(email, results, answers ?? {}),
+        subject: `Moodboard brief${keep ? ' [KEEP]' : ''} — ${results.threeWords} — ${email}`,
+        html: buildBriefHtml(email, results, answers ?? {}, keep),
       }),
       sendMail({
         to: email,

@@ -2,6 +2,16 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { DoorOpen, Martini, Utensils, Mic, Music, Sun, Clock } from 'lucide-react'
+
+const momentIcons = {
+  'Arrival':       DoorOpen,
+  'Cocktail Hour': Martini,
+  'Dinner':        Utensils,
+  'Speeches':      Mic,
+  'Dancing':       Music,
+  'All Day':       Sun,
+}
 
 const vibeConfig = {
   'Make them laugh':   { color: 'var(--color-amber)' },
@@ -86,25 +96,30 @@ export default function AppCard({ app }) {
             </span>
           )
         })}
-        {moments.map((m) => (
-          <span
-            key={`moment-${m}`}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              background: 'var(--color-bg)',
-              color: 'var(--color-text-muted)',
-              border: '1px dashed var(--color-border-strong)',
-              borderRadius: 'var(--radius-md)',
-              padding: '3px 10px',
-              fontSize: 'var(--text-tiny)',
-              fontWeight: 600,
-              lineHeight: 1.4,
-            }}
-          >
-            {m}
-          </span>
-        ))}
+        {moments.map((m) => {
+          const Icon = momentIcons[m] ?? Clock
+          return (
+            <span
+              key={`moment-${m}`}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                background: 'var(--color-bg-subtle)',
+                color: 'var(--color-text-secondary)',
+                border: '1px solid transparent',
+                borderRadius: 'var(--radius-md)',
+                padding: '3px 10px 3px 8px',
+                fontSize: 'var(--text-tiny)',
+                fontWeight: 600,
+                lineHeight: 1.4,
+              }}
+            >
+              <Icon size={12} strokeWidth={1.75} style={{ opacity: 0.75 }} aria-hidden="true" />
+              {m}
+            </span>
+          )
+        })}
         {app.isDemo && (
           <span
             style={{

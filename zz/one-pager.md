@@ -1,16 +1,25 @@
-# Wepho — One-Pager
+# Wepho — One-Pager (v2, 24 Aug 2026)
 
-# short description of the service:
+Updates the original `one-pager.md` to match the repo as it actually stands today. New since v1: the **Moodboard wizard** (LLM-matched brief-builder), a second homepage demo (**Who Said It?**), a **blog** stub of 33 drafts, a **distribution kit**, GDPR consent plumbing, and a candid split between the **20 planned app types** and the **13 currently live** `/apps/[slug]` pages. Tech stack has also moved on (Next.js 16, React 19, Tailwind v4).
+
+---
+
+## Short description of the service
+
 - Interactive wedding reception experience
-- Custom wedding reception app 
+- Custom wedding reception app
 - Bespoke wedding experience app
 - Live wedding party app
-# Example apps:
+
+## Example apps
+
 - **Live Trivia** — 15 questions, all about you two, whole room plays at once
 - **The Live Roast Board** — guests submit gentle burns, best ones hit the big screen
 - **Unpopular Opinions Icebreaker** — guests vote on hot takes, room erupts
 - **Who Said It?** — guess which partner said each quote; guests always get one wrong
 - **Relationship Origin Story Exhibit** — guests explore your story like a museum at cocktail hour
+
+---
 
 ## What It Is
 
@@ -54,9 +63,11 @@ Every Wepho app respects these five rules. They are the UVP in practical form.
 
 ---
 
-## The 20 App Types
+## The 20 App Types (13 live on site)
 
 Each app is a distinct interactive experience. Couples pick one (or a combination). All share four features: couple-authored content, a live display wall, no app install for guests, and a keepsake output.
+
+**Currently live** as full `/apps/[slug]` marketing pages: 13 of the 20. The remaining 7 are filtered out via a `!skip` flag in `getApps.js` until their per-app copy is finished — copy that references "all 20 app types" (llms.txt, sitemap, pin drafts) is being aligned with what's actually shipped.
 
 | # | App | Best Moment | Vibe |
 |---|-----|-------------|------|
@@ -80,6 +91,38 @@ Each app is a distinct interactive experience. Couples pick one (or a combinatio
 | 18 | Table-to-Table Secret Relay | Cocktail / Dinner | Funny / Social |
 | 19 | The Personalized Cocktail Quiz | Arrival / Cocktail | Funny / Social |
 | 20 | The Parallel Universe Game | Dinner / Speeches | Funny / Emotional |
+
+---
+
+## Two Homepage Demos (both frontend-only)
+
+**Demo A — #16 The Unprompted Love Letter Machine.** The primary demo. Three-frame sequence: guest phone → admin/moderation tablet → full-bleed TV reveal. Sells the "grandma's message on the big screen" moment and shows all three surfaces of a live-night product in one flow.
+
+**Demo B — Who Said It?** Guess which partner said each quote. Faster, funnier, lower-emotional-stakes counterweight to the Love Letter Machine — proves the range of the studio without a second commitment from the visitor.
+
+Both are pure client-side simulations. No backend, no data collected.
+
+---
+
+## The Moodboard Wizard *(new)*
+
+`/moodboard` is a 6-step brief-builder for couples who don't know which app they want. It replaces the "stare at 20 tiles and guess" failure mode with a guided conversation, then hands the couple a personalized shortlist and (optionally) emails us the brief.
+
+**Steps:** Vibes → Guests → Moments → Feelings → Story → Wildcard. Each step is optional-freeform-friendly; nothing gates progression.
+
+**How the match works:**
+- Answers are POSTed to `/api/moodboard/match`.
+- OpenRouter → **Claude Haiku 4.5** returns a top matches list, a "hidden matches" list (apps the couple wouldn't have picked but fit their story), and a three-word summary of the vibe.
+- Schema-validated JSON with a hard-coded fallback response if the model misbehaves.
+- Cheap in-memory IP rate limit (10/hr, per instance).
+
+**Persistence & delivery:**
+- LocalStorage autosave with a 30-day TTL and a resume banner.
+- "Talk to us" pill always visible for couples who'd rather skip the wizard.
+- Email-gated brief delivery via `/api/moodboard/brief` — dual send (studio inbox + confirmation to the couple), **no server-side persistence** by design. A retention opt-in toggles a `KEEP` tag in the studio email's subject instead of writing to a store.
+- Shareable `?brief=` URL is generated but **not yet consumed on load** — round-trip is a known gap.
+
+**Why it matters to the pitch:** the moodboard is the low-commitment on-ramp for couples who love the idea but freeze at the catalog. It also feeds the studio a warm, structured brief before the first sales conversation.
 
 ---
 
@@ -111,6 +154,7 @@ Selected because:
 - Influence 3–10 wedding purchases per year
 - Want zero extra work, no download requirement, and something that reflects well on them
 - Hesitate because the category doesn't yet exist in their vocabulary
+- Served by a dedicated `/planners` page and by cold-email templates in `distribution/cold/`
 
 ---
 
@@ -124,6 +168,7 @@ Selected because:
 | "Is $2,000 worth it?" | Flowers cost $800 and die by morning. This lasts forever. |
 | "Is this just Kahoot?" | Kahoot doesn't know how you met. Every question is yours. |
 | "Do I have to run it?" | No. QR-ready handoff. MC makes one announcement. Moderation takes 2 seconds per decision. |
+| "I don't know which app I want" | Take the 6-step moodboard — we'll match you and email a brief. |
 
 ---
 
@@ -147,25 +192,48 @@ Selected because:
 
 ## Website Structure
 
-- **`/`** — Main landing page (couples). Demo-forward. Features the interactive Love Letter Machine demo + filterable 20-app gallery.
-- **`/planners`** — Separate marketing page for wedding planners.
-- **`/apps`** — Full interactive gallery of all 20 app types with vibe filtering (Alt 1) and timeline navigation (Alt 2).
-- **`/apps/[slug]`** — Individual marketing page per app, following the 7-section structure (Hero, Scene, How It Works, Big Screen, Is This You, Book It, FAQ).
+- **`/`** — Main landing page (couples). Demo-forward: hero, story beats, two demos (Love Letter Machine + Who Said It?), 6-card gallery teaser, HowItWorks, SixRules, PaperReframe, PlannersCallout, FinalCta.
+- **`/planners`** — Dedicated marketing page for wedding planners.
+- **`/apps`** — Filterable gallery of the live app types (vibe + moment).
+- **`/apps/[slug]`** — Individual marketing page per app, following the 7-section structure (Hero, Scene, How It Works, Big Screen, Is This You, Book It, FAQ). 13 live today.
+- **`/moodboard`** — 6-step brief wizard with LLM matching and email-gated brief delivery. *(new)*
+- **`/blog`** + **`/blog/[slug]`** — 33 blog stubs, all currently `draft: true` (index badge + per-post `noindex,nofollow`). *(new — outlines only)*
+- **`/privacy`**, **`/terms`** — legal. *(new)*
+- **`/dev/phone/[slug]`** — internal screenshot helper (currently ungated in prod).
 
 **LP wow factors:**
-- Interactive demo (Love Letter Machine) with phone → tablet → TV frame sequence
+- Two interactive demos back-to-back (Love Letter Machine + Who Said It?)
 - Vibe-filter gallery ("Make them laugh", "Make them cry", "Get them talking", "Create a keepsake", "Stop the room")
-- Timeline view by wedding-day moment
+- Moodboard entry point for undecided couples
 
-**SEO is important** — individual app pages should be more wordy than a pure conversion page.
+**SEO is important** — individual app pages and blog posts should be more wordy than pure conversion pages. Every route exports `generateMetadata`; sitemap includes apps and blog posts; `robots.js`, `public/llms.txt`, and `public/llms-full.txt` are hand-maintained from `data/apps.js` and `data/posts.js`.
+
+---
+
+## Distribution Kit *(new)*
+
+Not part of the shipped site, but a first-class part of the project. Under `distribution/`:
+- **Platforms overview** and Pinterest pin drafts (39, generated from live apps)
+- **Reddit** post drafts + subreddit rules
+- **Planner cold-email templates** and a ZoomInfo scraping runbook
+- **Blog plan** — 33 essay outlines with a republish checklist
+- **SEO keyword research** — enriched shortlist, keyword→page map, internal linking plan, FAQ bank
+- **AI-SEO plan** — per-route LLM-visibility audit, 60 probe questions, DataForSEO probe runbook
 
 ---
 
 ## Tech Stack
 
-- **Next.js 15**, App Router, JavaScript only (no TypeScript)
-- **Tailwind CSS**
-- Deployed on Vercel (likely)
+- **Next.js 16** (App Router), **React 19**, **JavaScript only** (no TypeScript)
+- **Tailwind CSS v4** with CSS-first tokens in `app/globals.css` as the source of truth; `<Container>` + `.section-py` rhythm enforced by CLAUDE.md
+- **pnpm**, deployed on **Vercel**
+- Server components by default; `'use client'` reserved for moodboard wizard, demos, consent banner, and interactive hooks
+- Static generation for `/apps/[slug]` and `/blog/[slug]` via `generateStaticParams`
+- **Moodboard matching:** OpenRouter → Claude Haiku 4.5, schema-validated, fallback response, per-instance IP rate limit
+- **Mail:** Nodemailer / SMTP (`lib/mailer.js`) — shared by `/api/contact` and `/api/moodboard/brief`; brief route intentionally does not persist answers
+- **GDPR consent:** region-aware banner + preferences modal, localStorage store with pub/sub, essential/analytics/marketing categories (currently gates nothing — SDKs not yet wired to it)
+- **Analytics:** thin `trackEvent` shim over Vercel Analytics `window.va` (PostHog planned but not connected)
+- **Data:** checked-in JS objects — `data/apps.js`, `data/posts.js`, `data/faqs.js`, `data/hidden-ideas.js`. No CMS, no DB.
 
 ---
 
@@ -200,3 +268,16 @@ Weddings are about presence. Apps are about screens. This tension is real.
 The resolution: the app *creates* connection that wouldn't otherwise exist. When it works, guests aren't staring at phones alone — they're laughing together at the projector screen, comparing bingo cards, debating parallel universes. The phone is the input device. The room is the output.
 
 **The app earns its place by making the room more alive, not by adding a screen.**
+
+---
+
+## Known Gaps (be honest in the pitch)
+
+- Only **13 of 20** app types have live per-app pages; copy still references "all 20" in places.
+- Moodboard `?brief=` share URL is generated but not restored on load.
+- All 33 blog posts are drafts (`noindex,nofollow`).
+- Photography is placeholder SVG behind `dangerouslyAllowSVG` — real photos not yet swapped in.
+- Consent categories exist but no analytics/marketing SDKs consult them yet.
+- No tests, no type checking; brief email HTML is built via string interpolation (XSS/header-injection risk in the studio's own inbox) — worth cleaning up before scale.
+
+*Full detail lives in `repo-snapshot-description-24aug.md`.*

@@ -5,3 +5,7 @@
 - verify server rendered
 - /home/zxc/Documents/code/win-repos/wed-1/distribution/ai-seo/technical-implementation.md
 - switch out wepho everywhere
+- verify llms.txt and llms-full.txt
+- for all the content on the entire page, all the em dashes need to be removed. all the lingo fixed from AI-isms. maybe with another AI model than watermarking Claude
+- responsiveness check
+- a lot of text to check throughout the LP, suggest an AI way of doing it.

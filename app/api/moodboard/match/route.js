@@ -71,6 +71,48 @@ const FALLBACK = {
   hiddenMatches: [],
 }
 
+// Rich dev mock — used when NODE_ENV !== 'production' and either
+// MOODBOARD_MOCK=1 or OPENROUTER_API_KEY is missing. Lets us iterate on
+// the results UI without burning tokens or waiting on the model.
+const DEV_MOCK = {
+  threeWords: 'Warm. Loud. Yours.',
+  matches: [
+    {
+      id: 'who-said-it',
+      tier: 'hero',
+      score: 92,
+      whyItFitsYou:
+        "You told us grandparents are front row and college friends will be loud — Who Said It? is the one moment that lands with both. Quotes from your actual story appear on every phone, and the room argues in real time about which of you is which. It rewards paying attention without asking anyone to stand up.",
+      appPageSlug: 'who-said-it',
+    },
+    {
+      id: 'couple-trivia',
+      tier: 'standard',
+      score: 84,
+      whyItFitsYou:
+        "You picked 'dinner that got out of hand' and mentioned an inside joke about your first date. Live Trivia lets you weaponise that: fifteen questions written by you two, everyone playing on one clock, a leaderboard climbing on the big screen. The people who know you best will pretend to be humble, then win.",
+      appPageSlug: 'couple-trivia',
+    },
+    {
+      id: 'live-roast-board',
+      tier: 'standard',
+      score: 78,
+      whyItFitsYou:
+        "You said 'everyone laughing' more than once, and your crowd sounds ready to write. The Live Roast Board turns the room into the writers' room — anonymous submissions, you approve what goes up, the best lines hit the big screen while dinner is still warm.",
+      appPageSlug: 'live-roast-board',
+    },
+  ],
+  hiddenMatches: [
+    {
+      id: 'the-late-night-confession-booth',
+      tier: 'hidden',
+      score: 71,
+      whyItFitsYou:
+        "You checked 'something nobody has seen before' and 'keepsake from everyone.' We've been holding onto this one — a private late-night booth where guests leave a single voice note for future-you. Nothing goes on the screen. You hear it on your first anniversary.",
+    },
+  ],
+}
+
 async function callOpenRouter(systemPrompt, userPrompt) {
   const response = await client.chat.completions.create({
     model: MODEL,
@@ -120,6 +162,11 @@ export async function POST(request) {
     if (!answers || typeof answers !== 'object') throw new Error('missing answers')
   } catch {
     return Response.json({ error: 'Invalid request body.' }, { status: 400 })
+  }
+
+  const isDev = process.env.NODE_ENV !== 'production'
+  if (isDev && (process.env.MOODBOARD_MOCK === '1' || !process.env.OPENROUTER_API_KEY)) {
+    return Response.json(DEV_MOCK)
   }
 
   if (!process.env.OPENROUTER_API_KEY) {

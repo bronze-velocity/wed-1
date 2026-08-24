@@ -239,13 +239,32 @@ export default function AppGalleryTeaser({ apps }) {
               marginBottom: 'var(--space-3)',
             }}
           >
-            None of these feel like yours? Good.{' '}
-            <ContactLink
+            Not sure which fits?{' '}
+            <Link
+              href="/moodboard"
               className="link-underline"
               style={{ color: 'var(--color-accent)', fontWeight: 600 }}
+              data-moodboard-cta="gallery-teaser"
             >
-              Tell us what would.
+              Build your moodboard →
+            </Link>
+          </p>
+          <p
+            style={{
+              fontSize: 'var(--text-body-sm)',
+              lineHeight: 1.6,
+              color: 'var(--color-text-muted)',
+              marginTop: 'var(--space-2)',
+            }}
+          >
+            Or{' '}
+            <ContactLink
+              className="link-underline"
+              style={{ color: 'var(--color-text-muted)', fontWeight: 600 }}
+            >
+              tell us your own idea
             </ContactLink>
+            .
           </p>
         </div>
 

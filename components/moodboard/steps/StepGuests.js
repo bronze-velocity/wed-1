@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import TapCard from '../ui/TapCard'
-import FreeformField from '../ui/FreeformField'
+import OptionalFreeform from '../ui/OptionalFreeform'
+import StepShell from '../ui/StepShell'
 
 const GUESTS = [
   { id: 'grandparents-front-row', icon: '👵', label: 'Grandparents in the front row', sublabel: 'Family-first crowd' },
@@ -28,79 +29,57 @@ export default function StepGuests({ onNext, onBack, initialValues }) {
   }
 
   return (
-    <div
-      style={{
-        minHeight: '100dvh',
-        paddingTop: 'calc(var(--nav-height) + var(--space-16))',
-        paddingBottom: 'var(--space-24)',
-        paddingLeft: 'var(--space-6)',
-        paddingRight: 'var(--space-6)',
-        maxWidth: 540,
-        margin: '0 auto',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 'var(--space-8)',
-      }}
+    <StepShell
+      stepLabel="Step 2 of 6"
+      title="Tell us about your people"
+      cta={
+        <div className="moodboard-cta">
+          {onBack && (
+            <button onClick={onBack} className="btn" style={{ flex: '0 0 auto' }}>
+              ←
+            </button>
+          )}
+          <button
+            onClick={() =>
+              onNext({ guests: Array.from(selected), guestFreeform: freeform })
+            }
+            className="btn btn-primary"
+            style={{ flex: 1 }}
+          >
+            That's our crowd →
+          </button>
+        </div>
+      }
     >
-      <div>
-        <p
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-5)' }}>
+        <div
           style={{
-            fontSize: 'var(--text-body-sm)',
-            color: 'var(--color-text-muted)',
-            fontWeight: 600,
-            marginBottom: 'var(--space-2)',
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: 'var(--space-3)',
           }}
         >
-          Step 2 of 6
-        </p>
-        <h2 style={{ fontSize: 'var(--text-h3)', fontWeight: 800, lineHeight: 1.2 }}>
-          Tell us about your people
-        </h2>
-      </div>
+          {GUESTS.map((g) => (
+            <TapCard
+              key={g.id}
+              type="illustrated"
+              icon={g.icon}
+              label={g.label}
+              sublabel={g.sublabel}
+              selected={selected.has(g.id)}
+              onClick={() => toggle(g.id)}
+            />
+          ))}
+        </div>
 
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: 'var(--space-3)',
-        }}
-      >
-        {GUESTS.map((g) => (
-          <TapCard
-            key={g.id}
-            type="illustrated"
-            icon={g.icon}
-            label={g.label}
-            sublabel={g.sublabel}
-            selected={selected.has(g.id)}
-            onClick={() => toggle(g.id)}
-          />
-        ))}
+        <OptionalFreeform
+          triggerLabel="Describe your guest list in one sentence"
+          label="Describe your guest list in one sentence"
+          hint="My college friends, her enormous Italian family, and 40 people I've never met"
+          value={freeform}
+          onChange={setFreeform}
+        />
       </div>
-
-      <FreeformField
-        label="Describe your guest list in one sentence"
-        hint="My college friends, her enormous Italian family, and 40 people I've never met"
-        value={freeform}
-        onChange={setFreeform}
-      />
-
-      <div className="moodboard-cta">
-        {onBack && (
-          <button onClick={onBack} className="btn" style={{ flex: '0 0 auto' }}>
-            ←
-          </button>
-        )}
-        <button
-          onClick={() =>
-            onNext({ guests: Array.from(selected), guestFreeform: freeform })
-          }
-          className="btn btn-primary"
-          style={{ flex: 1 }}
-        >
-          That's our crowd →
-        </button>
-      </div>
-    </div>
+    </StepShell>
   )
 }

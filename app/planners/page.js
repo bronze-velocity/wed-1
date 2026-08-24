@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import ContactForm from '../../components/ui/ContactForm.js'
 import Container from '@/components/layout/Container'
 
@@ -46,10 +47,32 @@ export default function PlannersPage() {
               fontSize: 'var(--text-body-lg)',
               color: 'var(--color-text-inverse-secondary)',
               lineHeight: 1.6,
-              marginBottom: 'var(--space-10)',
+              marginBottom: 'var(--space-8)',
             }}
           >
-            Tell us about a couple you&apos;re working with. We respond fast and we come prepared.
+            Build a moodboard for a couple you&rsquo;re briefing — three minutes,
+            no signup. We&rsquo;ll come to the call prepared.
+          </p>
+          <Link
+            href="/moodboard?role=planner"
+            className="btn btn-lg btn-primary"
+            data-moodboard-cta="planners-hero"
+            style={{ marginBottom: 'var(--space-12)' }}
+          >
+            Start a planner moodboard →
+          </Link>
+          <p
+            style={{
+              fontSize: 'var(--text-body-sm)',
+              color: 'var(--color-text-muted)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              fontWeight: 600,
+              marginTop: 'var(--space-6)',
+              marginBottom: 'var(--space-6)',
+            }}
+          >
+            Or write to us directly
           </p>
           <ContactForm />
         </Container>

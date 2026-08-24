@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Container from './Container'
 import ContactLink from '../ui/ContactLink'
+import CookiePreferencesLink from '../consent/CookiePreferencesLink'
 
 export default function Footer() {
   return (
@@ -79,6 +80,18 @@ export default function Footer() {
           >
             For planners
           </Link>
+          <Link
+            href="/moodboard"
+            className="link-underline"
+            style={{
+              fontSize: 'var(--text-body-sm)',
+              color: 'var(--color-text-inverse-secondary)',
+              textDecoration: 'none',
+            }}
+            data-moodboard-cta="footer"
+          >
+            Start your moodboard
+          </Link>
           <ContactLink
             className="link-underline"
             style={{
@@ -87,21 +100,62 @@ export default function Footer() {
               textDecoration: 'none',
             }}
           >
-            Book your app
+            Contact
           </ContactLink>
         </nav>
 
-        <p
+        <div
           style={{
-            fontSize: 'var(--text-tiny)',
-            color: 'var(--color-text-muted)',
-            margin: 0,
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: 'var(--space-6)',
+            alignItems: 'center',
+            justifyContent: 'space-between',
             borderTop: '1px solid var(--color-border-dark)',
             paddingTop: 'var(--space-6)',
           }}
         >
-          © 2026 Wepho. All rights reserved.
-        </p>
+          <p
+            style={{
+              fontSize: 'var(--text-tiny)',
+              color: 'var(--color-text-muted)',
+              margin: 0,
+            }}
+          >
+            © 2026 Wepho. All rights reserved.
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-5)' }}>
+            <Link
+              href="/privacy"
+              className="link-underline"
+              style={{
+                fontSize: 'var(--text-tiny)',
+                color: 'var(--color-text-inverse-secondary)',
+                textDecoration: 'none',
+              }}
+            >
+              Privacy
+            </Link>
+            <Link
+              href="/terms"
+              className="link-underline"
+              style={{
+                fontSize: 'var(--text-tiny)',
+                color: 'var(--color-text-inverse-secondary)',
+                textDecoration: 'none',
+              }}
+            >
+              Terms
+            </Link>
+            <CookiePreferencesLink
+              className="link-underline"
+              style={{
+                fontSize: 'var(--text-tiny)',
+                color: 'var(--color-text-inverse-secondary)',
+              }}
+            />
+          </div>
+        </div>
       </Container>
     </footer>
   )

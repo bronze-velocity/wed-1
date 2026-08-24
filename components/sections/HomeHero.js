@@ -72,13 +72,35 @@ export default function HomeHero() {
             className="card-enter"
             style={{ '--stagger-i': 3, display: 'flex', flexWrap: 'wrap', gap: 'var(--space-4)' }}
           >
-            <Link href="/apps" className="btn btn-lg btn-primary">
-              See {appCount}{' '}things we&rsquo;ve built →
+            <Link
+              href="/moodboard"
+              className="btn btn-lg btn-primary"
+              data-moodboard-cta="hero"
+            >
+              Build your moodboard →
             </Link>
-            <ContactLink className="btn btn-lg btn-secondary">
-              Talk to us about yours
-            </ContactLink>
+            <Link href="/apps" className="btn btn-lg btn-secondary">
+              See {appCount}{' '}we&rsquo;ve built
+            </Link>
           </div>
+          <p
+            className="card-enter"
+            style={{
+              '--stagger-i': 4,
+              marginTop: 'var(--space-4)',
+              fontSize: 'var(--text-body-sm)',
+              color: 'var(--color-text-muted)',
+            }}
+          >
+            3 minutes, no signup — or{' '}
+            <ContactLink
+              className="link-underline"
+              style={{ color: 'var(--color-text-secondary)', fontWeight: 600 }}
+            >
+              talk to a human
+            </ContactLink>
+            .
+          </p>
         </div>
 
         <div

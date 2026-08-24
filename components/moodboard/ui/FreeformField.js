@@ -69,7 +69,7 @@ export default function FreeformField({
           onChange={handleChange}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
-          placeholder={hint}
+          placeholder={floated ? hint : ''}
           rows={1}
           className="moodboard-field"
           style={{

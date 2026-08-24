@@ -1,12 +1,14 @@
 import { getAppSlugs } from '../lib/getApps.js'
+import { getPosts } from '../lib/getPosts.js'
 
 const BASE_URL = 'https://wepho.com'
 
 export default function sitemap() {
   const appSlugs = getAppSlugs()
+  const posts = getPosts()
   const now = new Date()
 
-  const staticRoutes = ['', '/planners', '/apps'].map((path) => ({
+  const staticRoutes = ['', '/planners', '/apps', '/blog'].map((path) => ({
     url: `${BASE_URL}${path}`,
     lastModified: now,
   }))
@@ -22,5 +24,10 @@ export default function sitemap() {
     lastModified: now,
   }))
 
-  return [...staticRoutes, moodboardRoute, ...appRoutes]
+  const postRoutes = posts.map((post) => ({
+    url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: post.date ? new Date(post.date) : now,
+  }))
+
+  return [...staticRoutes, moodboardRoute, ...appRoutes, ...postRoutes]
 }

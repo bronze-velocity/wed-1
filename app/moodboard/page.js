@@ -31,6 +31,9 @@ export const metadata = {
   },
 }
 
-export default function MoodboardPage() {
-  return <MoodboardWizard />
+export default async function MoodboardPage({ searchParams }) {
+  const params = (await searchParams) || {}
+  const seed = typeof params.seed === 'string' ? params.seed : null
+  const role = params.role === 'planner' ? 'planner' : null
+  return <MoodboardWizard initialSeed={seed} role={role} />
 }

@@ -163,6 +163,11 @@
   .section-py { padding-top: var(--space-24); padding-bottom: var(--space-24); }
 }
 
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary { list-style: none; }
+.faq-item[open] .faq-icon { transform: rotate(180deg); }
+.faq-item + .faq-item { margin-top: 0; }
+
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -380,16 +385,19 @@ select.contact-field option {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Moodboard step CTA bar — sticky above the mobile brief drawer (48px), flush on desktop */
+/* Moodboard step CTA bar — the shell's footer row handles vertical placement */
 .moodboard-cta {
-  position: sticky;
-  bottom: calc(env(safe-area-inset-bottom, 0px) + var(--space-6) + 48px);
   display: flex;
   gap: var(--space-3);
 }
+
+/* Footer row of the moodboard step shell. Reserves space above the mobile brief drawer (48px). */
+.moodboard-shell-footer {
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + var(--space-4) + 48px);
+}
 @media (min-width: 1024px) {
-  .moodboard-cta {
-    bottom: calc(env(safe-area-inset-bottom, 0px) + var(--space-6));
+  .moodboard-shell-footer {
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + var(--space-4));
   }
 }
 

@@ -44,11 +44,16 @@ const FEELING_MAP = {
 }
 
 const STORY_KEYS = {
-  howWeMet:    'How you met',
-  insideJoke:  'Inside joke',
-  mostUs:      'Most "you" thing',
-  movieGenre:  'Your movie genre',
-  soUs:        '"That was so us"',
+  howWeMet:         'How you met',
+  insideJoke:       'Inside joke',
+  soUs:             '"That was so us"',
+  runningDebate:    'Debate you never resolve',
+  shockGuests:      "Something guests don't know",
+  ritual:           'A tradition only you two have',
+  anthem:           'Song, place, or thing that means "us"',
+  bestStoryteller:  'Best story about you two',
+  mostUs:           'Most "you" thing',
+  movieGenre:       'Your movie genre',
 }
 
 function countPicks(answers) {
@@ -141,43 +146,40 @@ function BriefContent({ answers }) {
 
       {(guests?.length > 0 || guestFreeform) && (
         <Section label="Your people">
-          {guestFreeform ? (
-            <p
-              style={{
-                fontSize: 'var(--text-body-sm)',
-                color: 'var(--color-text-primary)',
-                lineHeight: 1.5,
-                fontStyle: 'italic',
-                animation: 'briefEntryIn 300ms ease-out',
-              }}
-            >
-              &ldquo;{guestFreeform}&rdquo;
-            </p>
-          ) : (
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
-              {guests.map((id) => (
-                <Chip key={id}>{GUEST_MAP[id] ?? id}</Chip>
-              ))}
-            </div>
-          )}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+            {guests?.length > 0 && (
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
+                {guests.map((id) => (
+                  <Chip key={id}>{GUEST_MAP[id] ?? id}</Chip>
+                ))}
+              </div>
+            )}
+            {guestFreeform && (
+              <p
+                style={{
+                  fontSize: 'var(--text-body-sm)',
+                  color: 'var(--color-text-primary)',
+                  lineHeight: 1.5,
+                  fontStyle: 'italic',
+                  animation: 'briefEntryIn 300ms ease-out',
+                }}
+              >
+                &ldquo;{guestFreeform}&rdquo;
+              </p>
+            )}
+          </div>
         </Section>
       )}
 
       {moments?.length > 0 && (
         <Section label="Moments">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-1)' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
             {moments.map((id) => {
               const m = MOMENT_MAP[id]
               return m ? (
-                <span
-                  key={id}
-                  style={{
-                    fontSize: 'var(--text-body-sm)',
-                    animation: 'briefEntryIn 300ms ease-out',
-                  }}
-                >
+                <Chip key={id}>
                   {m.icon} {m.label}
-                </span>
+                </Chip>
               ) : null
             })}
           </div>

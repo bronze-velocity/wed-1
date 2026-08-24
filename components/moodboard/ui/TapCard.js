@@ -94,7 +94,7 @@ export default function TapCard({
         {...handlers}
         style={{
           ...sharedStyle,
-          aspectRatio: '2 / 3',
+          aspectRatio: '3 / 2',
           background: 'var(--color-bg-subtle)',
         }}
       >

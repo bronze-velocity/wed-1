@@ -92,11 +92,11 @@ for each of the apps' hero section UI visualizations, please suggest 2 alternati
 ###
 - change the pricing to always be $1,000
 
-###
+### skip
 - let's skip the SERP check
 - no need for 
 
-###
+### done
 - it needs to look great on mobile
 - we'll do the AI matching instead of keyword matching
 - answers to the questions: 1. wizard, 2. photos where that elevates it, otherwise illustrations, 3. claude, 4. many
@@ -108,3 +108,39 @@ ai-seo
 ###
 landing page comments:
 - 
+
+# 24 aug
+### opus
+please review all of the text throughout the entire landing page and use the skill I copied to /home/zxc/Documents/code/win-repos/wed-1/distribution/skill-for-desloppifying-ai-written-text.md to rewrite all of the text in a better way. also, make sure that everything aligns very well with the one-pager.md
+
+### opus
+let's switch out all and every vercel analytics part and replace it with posthog instead.
+
+### opus
+for the moodboard, it would be nice if it was sharable, maybe even with a user-created slug in a seamless way, and otherwise a fallback to a short unique id. no need to double check availability, let's overwrite always. what is needed on the backend? how could this be done in a simplistic and seamless way? output into a concise .md in the moodboard folder.
+
+### 
+please do some edits based on improvement areas found in repo-snapshot-description-24aug.md:
+- remove these: - Homepage still has commented `PriceReframe` (T24) and `Testimonials` (T25) slots.
+for all edits, also make it reflected in the description file.
+
+
+### done
+let's do these changes to /moodboard:
+- more landscape ratio image cards in step 1 and step 6 (same kind of formatting)
+- in "your brief", the pills for "moments" need to be the same style as for the other ones
+- in dev mode, we need some non-ai using mock result.
+- let's improve the results page (and also they way in which results are being created). please create a suggestion for the logic and for a really nicely looking one-screen output (with toggleable more info). output into a .md in the moodboard folder.
+
+###
+`/dev/phone/[slug]` (screenshot helper).
+improve all the app phone screenshots:
+- 
+
+###
+interactive demos on LP:
+(obs check competitor/other app LPs)
+
+###
+improve moodboard
+

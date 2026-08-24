@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import ContactForm from '../ui/ContactForm.js'
 import PhotoBackdrop from '@/components/ui/PhotoBackdrop'
 import Container from '@/components/layout/Container'
@@ -36,17 +37,38 @@ export default function FinalCta() {
             lineHeight: 1.1,
           }}
         >
-          Tell us about your wedding.      
+          Tell us about your wedding.
         </h2>
         <p
           style={{
             fontSize: 'var(--text-body-lg)',
             color: 'var(--color-text-inverse-secondary)',
-            marginBottom: 'var(--space-12)',
+            marginBottom: 'var(--space-10)',
             lineHeight: 1.6,
           }}
         >
-          Come with an idea or come with nothing but your story. Either way, we'll figure it out together — and handle every technical bit ourselves.
+          Three minutes, no signup — see what your night could feel like.
+        </p>
+        <Link
+          href="/moodboard"
+          className="btn btn-lg btn-primary"
+          data-moodboard-cta="final"
+          style={{ marginBottom: 'var(--space-10)' }}
+        >
+          Build your moodboard →
+        </Link>
+        <p
+          style={{
+            fontSize: 'var(--text-body-sm)',
+            color: 'var(--color-text-muted)',
+            textTransform: 'uppercase',
+            letterSpacing: '0.08em',
+            fontWeight: 600,
+            marginTop: 'var(--space-12)',
+            marginBottom: 'var(--space-6)',
+          }}
+        >
+          Or write to us directly
         </p>
         <div style={{ textAlign: 'left' }}>
           <ContactForm />

@@ -1,7 +1,9 @@
+import Link from 'next/link'
 import ContactForm from '../ui/ContactForm.js'
 import Container from '@/components/layout/Container'
 
 export default function AppBookIt({ app }) {
+  const seedHref = app?.slug ? `/moodboard?seed=${app.slug}` : '/moodboard'
   return (
     <section
       id="book-it"
@@ -24,12 +26,33 @@ export default function AppBookIt({ app }) {
           style={{
             fontSize: 'var(--text-body-lg)',
             color: 'var(--color-text-inverse-secondary)',
-            marginBottom: 'var(--space-10)',
+            marginBottom: 'var(--space-8)',
             lineHeight: 1.6,
           }}
         >
-          Tell us your date and your story. We&apos;ll design something only your
-          wedding could have.
+          Build a moodboard around <em>{app?.title || 'this app'}</em> — three minutes,
+          no signup. We&rsquo;ll shape it to your night before we ever email.
+        </p>
+        <Link
+          href={seedHref}
+          className="btn btn-lg btn-primary"
+          data-moodboard-cta="app-book-it"
+          style={{ marginBottom: 'var(--space-12)' }}
+        >
+          Start your moodboard →
+        </Link>
+        <p
+          style={{
+            fontSize: 'var(--text-body-sm)',
+            color: 'var(--color-text-muted)',
+            textTransform: 'uppercase',
+            letterSpacing: '0.08em',
+            fontWeight: 600,
+            marginTop: 'var(--space-6)',
+            marginBottom: 'var(--space-6)',
+          }}
+        >
+          Or write to us directly
         </p>
         <ContactForm appName={app?.title} />
       </Container>

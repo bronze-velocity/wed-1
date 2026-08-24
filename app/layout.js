@@ -1,6 +1,8 @@
 import './globals.css'
 import NavBar from '@/components/layout/NavBar'
 import Footer from '@/components/layout/Footer'
+import CookieBanner from '@/components/consent/CookieBanner'
+import MoodboardPill from '@/components/ui/MoodboardPill'
 
 export const metadata = {
   title: {
@@ -25,6 +27,8 @@ export default function RootLayout({ children }) {
         <NavBar />
         {children}
         <Footer />
+        <MoodboardPill />
+        <CookieBanner />
       </body>
     </html>
   )

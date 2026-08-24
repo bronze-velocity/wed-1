@@ -8,7 +8,6 @@ import ContactLink from '../ui/ContactLink'
 const LINKS = [
   { href: '/apps', label: 'Apps' },
   { href: '/planners', label: 'Planners' },
-  { href: '/moodboard', label: 'Find your app' },
 ]
 
 export default function NavBar() {
@@ -98,12 +97,14 @@ export default function NavBar() {
           >
             Contact
           </ContactLink>
-          <ContactLink
+          <Link
+            href="/moodboard"
             className="btn btn-primary"
             style={{ padding: '8px 16px', fontSize: 'var(--text-body-sm)' }}
+            data-moodboard-cta="nav"
           >
-            Book your app
-          </ContactLink>
+            Start your moodboard
+          </Link>
         </nav>
 
         <button
@@ -173,13 +174,15 @@ export default function NavBar() {
           >
             Contact
           </ContactLink>
-          <ContactLink
+          <Link
+            href="/moodboard"
             onClick={() => setOpen(false)}
             className="btn btn-primary"
             style={{ marginTop: 'var(--space-2)', textAlign: 'center' }}
+            data-moodboard-cta="nav-mobile"
           >
-            Book your app
-          </ContactLink>
+            Start your moodboard
+          </Link>
         </div>
       )}
     </header>
