@@ -274,11 +274,11 @@ Always use these — never raw `<img>` or `<a>` for internal navigation.
 
 ```
 POST /api/contact
-Body: { name, email, weddingDate, appInterest, message }
+Body: { name, email, weddingDate, appInterest, message, website, formLoadedAt }
 Response: { ok: true } or { error: '...' }
 ```
 
-Uses Nodemailer with SMTP credentials from env vars. Sends to `CONTACT_EMAIL_TO`. 
+Uses Nodemailer with SMTP credentials from env vars. Sends to `CONTACT_EMAIL_TO`.
 
 Required env vars:
 ```
@@ -288,5 +288,22 @@ SMTP_USER=
 SMTP_PASS=
 CONTACT_EMAIL_TO=
 ```
+
+Optional:
+```
+CONTACT_TEST_MODE=1   # bypasses per-IP rate limit — for local/E2E tests only, NEVER set in production
+```
+
+### Spam protection
+
+- **Honeypot** — hidden `website` field on the form; if filled, the server returns `{ ok: true }` without sending mail.
+- **Timing check** — client sends `formLoadedAt` (ms). Server silently drops submissions <3s or >6h old.
+- **Rate limit** — per-IP sliding window, 5 requests / hour, in-memory `Map` in the route module. Client IP read from `x-forwarded-for` (first hop) or `x-real-ip` — the reverse proxy in front of the Node server MUST set one of these, otherwise every request falls into the `'unknown'` bucket and gets throttled together.
+- **Length caps + HTML escaping** on all fields before they hit the email body.
+
+Rate-limit state is **per Node process, in memory**. Consequences:
+- Single-instance Docker deploy: fine. Entries expire lazily on the next hit for that IP; a size-based sweep runs when the Map exceeds 5000 keys. No timer needed (and none should be added — a `setInterval` would keep the event loop alive and prevent clean shutdown).
+- Multi-instance / horizontal scale: each replica has its own counter, so effective limit becomes `5 × replicas`. If we ever scale out, move the counter to Redis (or put the limit at the reverse proxy).
+- Process restart resets all counters. Acceptable for this use case.
 
 In development, point to a local mailcatcher (Mailhog, Mailtrap, Ethereal) or use Ethereal's auto-credentials.

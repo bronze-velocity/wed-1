@@ -2,6 +2,8 @@ import Link from 'next/link'
 import ContactForm from '../ui/ContactForm.js'
 import PhotoBackdrop from '@/components/ui/PhotoBackdrop'
 import Container from '@/components/layout/Container'
+import MagneticButton from '@/components/ui/MagneticButton'
+import AmbientPetals from '@/components/ui/AmbientPetals'
 
 export default function FinalCta() {
   return (
@@ -19,6 +21,8 @@ export default function FinalCta() {
         alt="The couple leaving through a crowd of guests at night, sparklers lit"
         strength="heavy"
       />
+
+      <AmbientPetals />
 
       <Container
         style={{
@@ -49,14 +53,15 @@ export default function FinalCta() {
         >
           Three minutes, no signup — see what your night could feel like.
         </p>
-        <Link
-          href="/moodboard"
-          className="btn btn-lg btn-primary"
-          data-moodboard-cta="final"
-          style={{ marginBottom: 'var(--space-10)' }}
-        >
-          Build your moodboard →
-        </Link>
+        <MagneticButton style={{ marginBottom: 'var(--space-10)' }}>
+          <Link
+            href="/moodboard"
+            className="btn btn-lg btn-primary cta-breathe"
+            data-moodboard-cta="final"
+          >
+            Build your moodboard →
+          </Link>
+        </MagneticButton>
         <p
           style={{
             fontSize: 'var(--text-body-sm)',

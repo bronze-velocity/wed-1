@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import Container from '@/components/layout/Container'
 import ContactLink from '@/components/ui/ContactLink'
+import TiltCard from '@/components/ui/TiltCard'
 
 const VIBES = [
   {
@@ -90,7 +91,7 @@ export default function AppGalleryTeaser({ apps }) {
             margin: '0 auto var(--space-10)',
           }}
         >
-          Five vibes, {apps.length} apps we&rsquo;ve built, and not one of them off the shelf.
+          Five vibes, {apps.length} {' '}apps we&rsquo;ve built, and not one of them off the shelf.
         </p>
 
         {/* Vibe pills */}
@@ -155,12 +156,18 @@ export default function AppGalleryTeaser({ apps }) {
           }}
         >
           {visibleApps.map((app, i) => (
-            <Link
+            <TiltCard
               key={`${animKey}-${app.id}`}
-              href={`/apps/${app.slug}`}
-              className="card-enter hover-lift"
+              className="card-deal"
               style={{
                 '--stagger-i': i,
+                borderRadius: 'var(--radius-xl)',
+                overflow: 'hidden',
+              }}
+            >
+            <Link
+              href={`/apps/${app.slug}`}
+              style={{
                 display: 'flex',
                 flexDirection: 'column',
                 background: 'var(--color-bg)',
@@ -169,6 +176,7 @@ export default function AppGalleryTeaser({ apps }) {
                 overflow: 'hidden',
                 textDecoration: 'none',
                 color: 'inherit',
+                height: '100%',
               }}
             >
               <div style={{ position: 'relative', height: 140 }}>
@@ -218,6 +226,7 @@ export default function AppGalleryTeaser({ apps }) {
                 See how it works →
               </span>
             </Link>
+            </TiltCard>
           ))}
         </div>
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 const APP_OPTIONS = [
   'Not sure yet',
@@ -36,9 +36,14 @@ export default function ContactForm({ appName }) {
     appInterest: appName || 'Not sure yet',
     customIdea: '',
     message: '',
+    website: '',
   })
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle')
+  const formLoadedAtRef = useRef(0)
+  useEffect(() => {
+    formLoadedAtRef.current = Date.now()
+  }, [])
 
   function validate() {
     const errs = {}
@@ -82,6 +87,7 @@ export default function ContactForm({ appName }) {
         formData.appInterest === CUSTOM_OPTION
           ? `Custom idea: ${formData.customIdea.trim()}`
           : formData.appInterest,
+      formLoadedAt: formLoadedAtRef.current,
     }
     try {
       const res = await fetch('/api/contact', {
@@ -120,6 +126,28 @@ export default function ContactForm({ appName }) {
       className="flex flex-col"
       style={{ gap: 'var(--space-5)' }}
     >
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          left: '-9999px',
+          width: '1px',
+          height: '1px',
+          overflow: 'hidden',
+        }}
+      >
+        <label>
+          Website
+          <input
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            value={formData.website}
+            onChange={handleChange}
+          />
+        </label>
+      </div>
       <div
         className="grid grid-cols-1 sm:grid-cols-2"
         style={{ gap: 'var(--space-5)' }}

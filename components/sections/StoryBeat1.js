@@ -6,10 +6,10 @@ import PhotoBackdrop from '@/components/ui/PhotoBackdrop'
 import Container from '@/components/layout/Container'
 
 export default function StoryBeat1() {
-  const sceneRef = useRef(null)
+  const sectionRef = useRef(null)
 
   useEffect(() => {
-    const el = sceneRef.current
+    const el = sectionRef.current
     if (!el) return
 
     const observer = new IntersectionObserver(
@@ -28,6 +28,7 @@ export default function StoryBeat1() {
 
   return (
     <section
+      ref={sectionRef}
       style={{
         position: 'relative',
         overflow: 'hidden',
@@ -41,10 +42,11 @@ export default function StoryBeat1() {
         src="/images/cocktail/reaction-1.jpg"
         alt="Guests reacting mid-laugh, lit by the display wall during cocktail hour"
         strength="medium"
+        parallax
+        className="reveal-scale-photo"
       />
 
       <Container
-        ref={sceneRef}
         className="reveal"
         style={{ maxWidth: '840px', textAlign: 'center', position: 'relative', zIndex: 1 }}
       >

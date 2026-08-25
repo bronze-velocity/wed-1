@@ -1,4 +1,10 @@
+# 24 aug
+moodboard:
+- moodboard-cta.md (incl new logic)
 - /home/zxc/Documents/code/win-repos/wed-1/components/moodboard/results-redesign.md
+- moodboard-mechanic-scenarios.md
+
+- animations-1.md
 
 - describe entire repo really concisely. with brief suggestions of what to do a slighlty deeper dive on. since highly vibe coded.
  > continue: /home/zxc/Documents/code/win-repos/wed-1/repo-snapshot-description-24aug.md

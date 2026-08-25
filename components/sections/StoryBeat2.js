@@ -6,10 +6,10 @@ import PhotoBackdrop from '@/components/ui/PhotoBackdrop'
 import Container from '@/components/layout/Container'
 
 export default function StoryBeat2() {
-  const sceneRef = useRef(null)
+  const sectionRef = useRef(null)
 
   useEffect(() => {
-    const el = sceneRef.current
+    const el = sectionRef.current
     if (!el) return
 
     const observer = new IntersectionObserver(
@@ -28,6 +28,7 @@ export default function StoryBeat2() {
 
   return (
     <section
+      ref={sectionRef}
       className="section-py"
       style={{ position: 'relative', overflow: 'hidden', background: 'var(--color-bg-dark)' }}
     >
@@ -35,10 +36,11 @@ export default function StoryBeat2() {
         src="/images/cocktail/qr-scan-1.jpg"
         alt="A guest scanning a QR code tucked into the venue during cocktail hour"
         strength="heavy"
+        parallax
+        className="reveal-scale-photo"
       />
 
       <Container
-        ref={sceneRef}
         className="reveal"
         style={{ maxWidth: '840px', textAlign: 'center', position: 'relative', zIndex: 1 }}
       >

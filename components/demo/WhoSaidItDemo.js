@@ -160,9 +160,9 @@ export default function WhoSaidItDemo() {
           padding: '4px 0',
         }}
       >
-        <Panel label="What your guest taps" width={260}>{phone}</Panel>
-        <Panel label="What the host sees" width={260}>{host}</Panel>
-        <Panel label="What the whole room sees" width={420}>{bigScreen}</Panel>
+        <Panel label="A guest's phone" width={260}>{phone}</Panel>
+        <Panel label="The host's phone" width={260}>{host}</Panel>
+        <Panel label="The reception screen" width={420}>{bigScreen}</Panel>
       </div>
 
     </div>
@@ -186,10 +186,10 @@ function Panel({ label, width, children }) {
       <p
         style={{
           fontSize: 'var(--text-tiny)',
-          fontWeight: 600,
-          letterSpacing: '0.08em',
+          fontWeight: 700,
+          letterSpacing: '0.12em',
           textTransform: 'uppercase',
-          color: 'var(--color-text-muted)',
+          color: 'var(--color-accent)',
           textAlign: 'center',
           margin: '0 0 var(--space-3)',
         }}

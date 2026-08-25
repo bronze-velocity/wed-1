@@ -41,10 +41,35 @@ export default function BigScreenFrame({ message, senderName, to, photo, onReset
   const attribution = senderName ? `— ${senderName}` : '— Anonymous'
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--space-6)' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--space-6)', width: '100%' }}>
       <div
         style={{
           position: 'relative',
+          width: '100%',
+          padding: 'clamp(16px, 4%, 32px)',
+          borderRadius: 'var(--radius-2xl)',
+          overflow: 'hidden',
+          isolation: 'isolate',
+        }}
+      >
+        <Image
+          src="/images/dinner/bigscreen-1.jpg"
+          alt=""
+          fill
+          sizes="(max-width: 1024px) 100vw, 560px"
+          style={{ objectFit: 'cover', opacity: 0.18, zIndex: 0 }}
+          aria-hidden="true"
+        />
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(180deg, rgba(17,17,17,0.15), rgba(17,17,17,0.55))',
+          zIndex: 0,
+        }} />
+      <div
+        style={{
+          position: 'relative',
+          zIndex: 1,
           width: '100%',
           background: 'var(--color-bg-dark)',
           borderRadius: 'var(--radius-lg)',
@@ -175,6 +200,7 @@ export default function BigScreenFrame({ message, senderName, to, photo, onReset
         >
           Wepho
         </span>
+      </div>
       </div>
 
       <div

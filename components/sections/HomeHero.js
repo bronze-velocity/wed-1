@@ -2,7 +2,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Container from '@/components/layout/Container'
 import ContactLink from '@/components/ui/ContactLink'
+import MagneticButton from '@/components/ui/MagneticButton'
 import { apps } from '@/data/apps'
+
+const HEADLINE_WORDS = ['A', 'wedding', 'app', 'built', 'for', 'one', 'couple.', 'Yours.']
 
 export default function HomeHero() {
   const appCount = apps.length
@@ -37,9 +40,9 @@ export default function HomeHero() {
           </p>
 
           <h1
-            className="card-enter"
+            className="word-reveal"
             style={{
-              '--stagger-i': 1,
+              '--word-base': '120ms',
               fontSize: 'var(--text-display)',
               fontWeight: 800,
               letterSpacing: '-0.03em',
@@ -48,7 +51,12 @@ export default function HomeHero() {
               marginBottom: 'var(--space-6)',
             }}
           >
-            A wedding app built for one couple. Yours.
+            {HEADLINE_WORDS.map((word, i) => (
+              <span key={i} style={{ '--word-i': i }}>
+                {word}
+                {i < HEADLINE_WORDS.length - 1 ? ' ' : ''}
+              </span>
+            ))}
           </h1>
 
           <p
@@ -71,16 +79,20 @@ export default function HomeHero() {
             className="card-enter"
             style={{ '--stagger-i': 3, display: 'flex', flexWrap: 'wrap', gap: 'var(--space-4)' }}
           >
-            <Link
-              href="/moodboard"
-              className="btn btn-lg btn-primary"
-              data-moodboard-cta="hero"
-            >
-              Build your moodboard →
-            </Link>
-            <Link href="/apps" className="btn btn-lg btn-secondary">
-              See the {appCount} we&rsquo;ve built
-            </Link>
+            <MagneticButton>
+              <Link
+                href="/moodboard"
+                className="btn btn-lg btn-primary cta-breathe"
+                data-moodboard-cta="hero"
+              >
+                Build your moodboard →
+              </Link>
+            </MagneticButton>
+            <MagneticButton>
+              <Link href="/apps" className="btn btn-lg btn-secondary">
+                See the {appCount}{' '}we&rsquo;ve built
+              </Link>
+            </MagneticButton>
           </div>
           <p
             className="card-enter"

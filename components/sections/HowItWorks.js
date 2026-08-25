@@ -90,7 +90,7 @@ export default function HowItWorks() {
 
         <div
           ref={stepsRef}
-          className="reveal-stagger grid grid-cols-1 md:grid-cols-3"
+          className="reveal-flip grid grid-cols-1 md:grid-cols-3"
           style={{ gap: 'var(--space-6)' }}
         >
           {steps.map((step) => (

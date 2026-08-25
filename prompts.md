@@ -148,3 +148,5 @@ interactive demos on LP:
 ###
 improve moodboard
 
+###
+please implement the tier A sugegstions in animations-1.md

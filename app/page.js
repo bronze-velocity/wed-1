@@ -3,6 +3,7 @@ import StoryBeat1 from '@/components/sections/StoryBeat1'
 import DemoSection from '@/components/sections/DemoSection'
 import DemoSectionTwo from '@/components/sections/DemoSectionTwo'
 import AppGalleryTeaser from '@/components/sections/AppGalleryTeaser'
+import MoodboardInvite from '@/components/sections/MoodboardInvite'
 import StoryBeat2 from '@/components/sections/StoryBeat2'
 import StoryBeat3 from '@/components/sections/StoryBeat3'
 import HowItWorks from '@/components/sections/HowItWorks'
@@ -34,6 +35,7 @@ export default function HomePage() {
       <DemoSection />
       <DemoSectionTwo />
       <AppGalleryTeaser apps={apps} />
+      <MoodboardInvite />
       <StoryBeat2 />
       <HowItWorks />
       <StoryBeat3 />

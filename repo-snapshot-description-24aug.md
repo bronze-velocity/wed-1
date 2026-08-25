@@ -29,7 +29,9 @@ Marketing site for a custom wedding-app studio (~$2,000 per one-night app). Not 
 - LLM audit (`distribution/ai-seo/llm-audit.md`) flags `/moodboard` as critical (no `<main>`, no `<h1>`, JS-only), `/apps/[slug]` missing `<article>` + key-facts block, `SixRules` + `AppGalleryFull` needing `<ul>`/`<li>` conversion.
 - PostHog wired **not** connected (only Vercel Analytics `window.va` shim); analytics-plan.md is proposal, not implementation.
 - Contact-form spam protection, rate limiting on `/api/contact`, and analytics of form conversion not implemented.
+> initiated
 - No tests anywhere (no `test/`, no runner in `package.json`).
+> initiated
 
 ## Technical implementation (brief)
 

@@ -7,7 +7,7 @@ function toLabelFor(to) {
   return to === 'her' ? 'To: Her' : to === 'him' ? 'To: Him' : 'To: Both of you'
 }
 
-export default function AdminFrame({ queue = [], pending, onApprove, onSkip, active, resetKey }) {
+export default function AdminFrame({ queue = [], pending, onApprove, onSkip, active, resetKey, autoApproveAfterMs = null }) {
   const [isApproving, setIsApproving] = useState(false)
 
   // AdminFrame stays mounted across the whole demo now, so the fade-out
@@ -15,6 +15,15 @@ export default function AdminFrame({ queue = [], pending, onApprove, onSkip, act
   useEffect(() => {
     setIsApproving(false)
   }, [resetKey])
+
+  useEffect(() => {
+    if (!active || autoApproveAfterMs == null) return
+    const id = setTimeout(() => {
+      setIsApproving(true)
+      setTimeout(() => onApprove?.(), 400)
+    }, autoApproveAfterMs)
+    return () => clearTimeout(id)
+  }, [active, autoApproveAfterMs, onApprove, resetKey])
 
   const { message, senderName, to, photo } = pending
   const toLabel = toLabelFor(to)

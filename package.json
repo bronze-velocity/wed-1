@@ -1,11 +1,16 @@
 {
   "name": "wepho",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "private": true,
   "scripts": {
     "dev": "next dev --webpack -H 127.0.0.1 -p 3003",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test:pre-deploy": "node tests/pre-deploy.mjs",
+    "test:smoke": "node tests/smoke-routes.mjs",
+    "test:contact": "node tests/contact-api.mjs",
+    "test:e2e": "playwright test --config=tests/playwright.config.js",
+    "test:visual:update": "node tests/pre-deploy.mjs --update-snapshots"
   },
   "dependencies": {
     "ioredis": "^5.4.1",
@@ -19,6 +24,7 @@
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.48.0",
     "@tailwindcss/postcss": "^4",
     "tailwindcss": "^4"
   }

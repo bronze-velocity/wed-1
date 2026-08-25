@@ -93,7 +93,7 @@ export default function SixRules() {
 
         <div
           ref={gridRef}
-          className="reveal-stagger grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+          className="reveal-scale-tl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
           style={{ gap: 'var(--space-5)' }}
         >
           {RULES.map((rule) => (
