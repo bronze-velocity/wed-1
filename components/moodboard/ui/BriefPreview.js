@@ -1,423 +1,156 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
+import { buildMoodboardDirections } from '@/lib/moodboard/directions'
+import { APP_DIRECTIONS, MOMENTS } from '@/lib/moodboard/config'
+import { buildMoodboardInsights } from '../lib/insights'
 
-const VIBE_MAP = {
-  'dinner-party':    'Dinner that got out of hand',
-  'film-premiere':   'Film premiere energy',
-  'pub-quiz':        'Pub quiz, best table wins',
-  'gallery-opening': 'Gallery opening',
-  bonfire:           'Bonfire',
-  rooftop:           'Rooftop, city below',
-  brunch:            'Brunch that never ended',
-  'kitchen-party':   'Kitchen party',
-}
-
-const GUEST_MAP = {
-  'grandparents-front-row': '👵 Grandparents front row',
-  'wild-college-friends':   '🎉 Wild college friends',
-  'strangers-meeting':      '🌍 Half never met',
-  'work-crowd':             '👔 Work crowd',
-  'kids-running':           '👧 Lots of kids',
-  'loud-family':            '🎤 Loud family',
-  dancers:                  '🕺 Dancers',
-  'reserved-warm':          '🤍 Reserved but warm',
-}
-
-const MOMENT_MAP = {
-  cocktail:      { icon: '🥂', label: 'Cocktail hour' },
-  dinner:        { icon: '🍽️', label: 'Dinner' },
-  'after-dinner':{ icon: '🕯️', label: 'After dinner' },
-  dancing:       { icon: '💃', label: 'Dancing' },
-  'late-night':  { icon: '🌙', label: 'Late night' },
-}
-
-const FEELING_MAP = {
-  'cry-good-kind':              '😭 Cry (the good kind)',
-  'everyone-laughing':          '😂 Everyone laughing',
-  'room-feels-like-show':       '🎭 Room like a show',
-  'strangers-become-friends':   '🤝 Strangers became friends',
-  'keepsake-from-everyone':     '💌 Keepsake from everyone',
-  'something-nobody-has-seen':  "🌙 Something nobody's seen",
-  'our-story-main-character':   '💑 Our story is the star',
-  'guests-actually-look-up':    '👀 Guests actually looked up',
-}
-
-const STORY_KEYS = {
-  howWeMet:         'How you met',
-  insideJoke:       'Inside joke',
-  soUs:             '"That was so us"',
-  runningDebate:    'Debate you never resolve',
-  shockGuests:      "Something guests don't know",
-  ritual:           'A tradition only you two have',
-  anthem:           'Song, place, or thing that means "us"',
-  bestStoryteller:  'Best story about you two',
-  mostUs:           'Most "you" thing',
-  movieGenre:       'Your movie genre',
-}
-
-function countPicks(answers) {
+function DirectionRow({ direction, onSave, onReject }) {
   return (
-    (answers.vibes?.length ?? 0) +
-    (answers.guests?.length ?? 0) +
-    (answers.moments?.length ?? 0) +
-    (answers.feelings?.length ?? 0) +
-    (answers.wildcard ? 1 : 0)
+    <article className="moodboard-direction" data-saved={direction.saved || undefined}>
+      <div>
+        <p className="moodboard-direction-title">{direction.title}</p>
+        <p className="moodboard-direction-description">{direction.description}</p>
+      </div>
+      <div className="moodboard-direction-actions">
+        <button type="button" aria-pressed={direction.saved} onClick={() => onSave(direction.id)}>
+          {direction.saved ? 'Saved' : 'Save'}
+        </button>
+        <button type="button" onClick={() => onReject(direction.id)}>Not for us</button>
+      </div>
+    </article>
   )
 }
 
-function Chip({ children }) {
-  return (
-    <span
-      style={{
-        display: 'inline-block',
-        padding: '2px 10px',
-        borderRadius: 'var(--radius-md)',
-        background: 'var(--color-accent-light)',
-        color: 'var(--color-accent)',
-        fontSize: 'var(--text-tiny)',
-        fontWeight: 600,
-        animation: 'briefEntryIn 280ms ease-out',
-      }}
-    >
-      {children}
-    </span>
-  )
-}
+function DirectionContent({ answers, step, directions, onSave, onReject, onRestore }) {
+  const { commentary, fits, flags } = buildMoodboardInsights(answers, step)
+  const momentTags = (answers.moments ?? [])
+    .map((id) => MOMENTS.find((item) => item.id === id)?.label)
+    .filter(Boolean)
+  const rejected = (answers.directionPreferences?.rejected ?? [])
+    .map((id) => ({ id, ...APP_DIRECTIONS[id] }))
+    .filter((item) => item.title)
 
-function Section({ label, children }) {
-  return (
-    <div style={{ animation: 'briefEntryIn 300ms ease-out' }}>
-      <p
-        style={{
-          fontSize: 'var(--text-tiny)',
-          fontWeight: 700,
-          color: 'var(--color-text-muted)',
-          textTransform: 'uppercase',
-          letterSpacing: '0.08em',
-          marginBottom: 'var(--space-2)',
-        }}
-      >
-        {label}
-      </p>
-      {children}
-    </div>
-  )
-}
-
-function BriefContent({ answers }) {
-  const { vibes, guests, guestFreeform, moments, feelings, story } = answers
-  const storyAnswers = Object.entries(story ?? {}).filter(([, v]) => v?.trim())
-
-  const hasContent =
-    vibes?.length ||
-    guests?.length ||
-    guestFreeform ||
-    moments?.length ||
-    feelings?.length ||
-    storyAnswers.length
-
-  if (!hasContent) {
+  if (!directions.length) {
     return (
-      <p
-        style={{
-          fontSize: 'var(--text-body-sm)',
-          color: 'var(--color-text-muted)',
-          fontStyle: 'italic',
-          lineHeight: 1.5,
-        }}
-      >
-        Your answers appear here as you go.
-      </p>
+      <div className="moodboard-directions-content">
+        <p className="moodboard-directions-empty">
+          Pick a first instinct. Plausible app directions will appear here.
+        </p>
+        {rejected.length > 0 && (
+          <div className="moodboard-rejected-list">
+            {rejected.map((item) => (
+              <button type="button" key={item.id} onClick={() => onRestore(item.id)}>
+                Restore {item.title}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
     )
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-5)' }}>
-      {vibes?.length > 0 && (
-        <Section label="Vibe">
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
-            {vibes.map((id) => (
-              <Chip key={id}>{VIBE_MAP[id] ?? id}</Chip>
+    <div className="moodboard-directions-content">
+      {momentTags.length > 0 && (
+        <div className="moodboard-direction-tags" aria-label="Selected moments">
+          {momentTags.map((tag) => <span key={tag}>{tag}</span>)}
+        </div>
+      )}
+      <div className="moodboard-direction-list">
+        {directions.map((direction) => (
+          <DirectionRow
+            key={direction.id}
+            direction={direction}
+            onSave={onSave}
+            onReject={onReject}
+          />
+        ))}
+      </div>
+      {(commentary || fits.length > 0 || flags.length > 0) && (
+        <details className="moodboard-direction-details">
+          <summary>Why these directions</summary>
+          {commentary && <p>{commentary}</p>}
+          {fits.length > 0 && <p><strong>Green light:</strong> {fits[0]}</p>}
+          {flags.length > 0 && <p><strong>We would avoid:</strong> {flags[0]}</p>}
+        </details>
+      )}
+      {rejected.length > 0 && (
+        <details className="moodboard-direction-details">
+          <summary>Ruled out ({rejected.length})</summary>
+          <div className="moodboard-rejected-list">
+            {rejected.map((item) => (
+              <button type="button" key={item.id} onClick={() => onRestore(item.id)}>
+                Restore {item.title}
+              </button>
             ))}
           </div>
-        </Section>
-      )}
-
-      {(guests?.length > 0 || guestFreeform) && (
-        <Section label="Your people">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-            {guests?.length > 0 && (
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
-                {guests.map((id) => (
-                  <Chip key={id}>{GUEST_MAP[id] ?? id}</Chip>
-                ))}
-              </div>
-            )}
-            {guestFreeform && (
-              <p
-                style={{
-                  fontSize: 'var(--text-body-sm)',
-                  color: 'var(--color-text-primary)',
-                  lineHeight: 1.5,
-                  fontStyle: 'italic',
-                  animation: 'briefEntryIn 300ms ease-out',
-                }}
-              >
-                &ldquo;{guestFreeform}&rdquo;
-              </p>
-            )}
-          </div>
-        </Section>
-      )}
-
-      {moments?.length > 0 && (
-        <Section label="Moments">
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
-            {moments.map((id) => {
-              const m = MOMENT_MAP[id]
-              return m ? (
-                <Chip key={id}>
-                  {m.icon} {m.label}
-                </Chip>
-              ) : null
-            })}
-          </div>
-        </Section>
-      )}
-
-      {feelings?.length > 0 && (
-        <Section label="You want to feel">
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
-            {feelings.map((id) => (
-              <Chip key={id}>{FEELING_MAP[id] ?? id}</Chip>
-            ))}
-          </div>
-        </Section>
-      )}
-
-      {storyAnswers.length > 0 && (
-        <Section label="Your story">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-            {storyAnswers.map(([key, val]) => (
-              <div key={key} style={{ animation: 'briefEntryIn 300ms ease-out' }}>
-                <p
-                  style={{
-                    fontSize: 'var(--text-tiny)',
-                    color: 'var(--color-text-muted)',
-                    marginBottom: 2,
-                  }}
-                >
-                  {STORY_KEYS[key] ?? key}
-                </p>
-                <p
-                  style={{
-                    fontSize: 'var(--text-body-sm)',
-                    color: 'var(--color-text-primary)',
-                    lineHeight: 1.5,
-                    fontStyle: 'italic',
-                  }}
-                >
-                  &ldquo;{val}&rdquo;
-                </p>
-              </div>
-            ))}
-          </div>
-        </Section>
+        </details>
       )}
     </div>
   )
 }
 
-export default function BriefPreview({ answers, step }) {
+export default function BriefPreview({ answers, step, onPreferencesChange }) {
   const [expanded, setExpanded] = useState(false)
-  const hasAutoExpanded = useRef(false)
-  const contentRef = useRef(null)
-  const triggerRef = useRef(null)
+  const directions = buildMoodboardDirections(answers)
+  const strongest = directions[0]
 
-  useEffect(() => {
-    if (step >= 3 && !hasAutoExpanded.current) {
-      setExpanded(true)
-      hasAutoExpanded.current = true
-    }
-  }, [step])
+  function updatePreference(id, kind) {
+    const current = answers.directionPreferences ?? { saved: [], rejected: [] }
+    const saved = new Set(current.saved ?? [])
+    const rejected = new Set(current.rejected ?? [])
 
-  // Focus trap + ESC-to-close when drawer is expanded; restore focus on close.
-  useEffect(() => {
-    if (!expanded) return
-    const el = contentRef.current
-    if (!el) return
-    const focusable = el.querySelectorAll(
-      'button, a, input, textarea, [tabindex]:not([tabindex="-1"])'
-    )
-    const first = focusable[0]
-    const last = focusable[focusable.length - 1]
-    function trap(e) {
-      if (e.key === 'Escape') {
-        e.preventDefault()
-        setExpanded(false)
-        triggerRef.current?.focus()
-        return
-      }
-      if (e.key !== 'Tab') return
-      if (e.shiftKey) {
-        if (document.activeElement === first) {
-          e.preventDefault()
-          last?.focus()
-        }
-      } else {
-        if (document.activeElement === last) {
-          e.preventDefault()
-          first?.focus()
-        }
-      }
+    if (kind === 'saved') {
+      saved.has(id) ? saved.delete(id) : saved.add(id)
+      rejected.delete(id)
+    } else {
+      kind === 'rejected' ? rejected.add(id) : rejected.delete(id)
+      saved.delete(id)
     }
-    el.addEventListener('keydown', trap)
-    document.addEventListener('keydown', trap)
-    return () => {
-      el.removeEventListener('keydown', trap)
-      document.removeEventListener('keydown', trap)
-    }
-  }, [expanded])
 
-  const picks = countPicks(answers)
+    onPreferencesChange({ saved: [...saved], rejected: [...rejected] })
+  }
+
+  const content = (
+    <DirectionContent
+      answers={answers}
+      step={step}
+      directions={directions}
+      onSave={(id) => updatePreference(id, 'saved')}
+      onReject={(id) => updatePreference(id, 'rejected')}
+      onRestore={(id) => updatePreference(id, 'restore')}
+    />
+  )
 
   return (
     <>
-      {/* Mobile drawer — hidden on lg+ */}
-      <div
-        className="lg:hidden"
-        style={{
-          position: 'fixed',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          zIndex: 40,
-          background: 'var(--color-bg)',
-          borderTop: '1px solid var(--color-border)',
-          boxShadow: '0 -4px 24px rgba(0,0,0,0.07)',
-          paddingBottom: 'env(safe-area-inset-bottom, 0px)',
-        }}
-      >
+      <div className="moodboard-directions-mobile lg:hidden">
         <button
           type="button"
-          ref={triggerRef}
-          onClick={() => {
-            setExpanded((e) => {
-              const next = !e
-              if (!next) setTimeout(() => triggerRef.current?.focus(), 0)
-              return next
-            })
-          }}
+          className="moodboard-directions-trigger"
+          onClick={() => setExpanded((current) => !current)}
           aria-expanded={expanded}
-          aria-controls="moodboard-brief-drawer"
-          aria-label={expanded ? 'Collapse brief' : 'Expand brief'}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: 'var(--space-3)',
-            width: '100%',
-            minHeight: 48,
-            padding: '0 var(--space-6)',
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            fontFamily: 'inherit',
-            touchAction: 'pan-y',
-            WebkitTapHighlightColor: 'transparent',
-          }}
+          aria-controls="moodboard-directions-sheet"
         >
-          <span
-            style={{
-              fontSize: 'var(--text-body-sm)',
-              fontWeight: 700,
-              color: 'var(--color-text-primary)',
-              minWidth: 0,
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            Your brief
-            {picks > 0 && (
-              <span style={{ color: 'var(--color-text-muted)', fontWeight: 400 }}>
-                {' '}· {picks} pick{picks !== 1 ? 's' : ''} so far
-              </span>
-            )}
+          <span>
+            <strong>Directions{directions.length ? ` · ${directions.length}` : ''}</strong>
+            {strongest && <small>{strongest.title}</small>}
           </span>
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            aria-hidden="true"
-            style={{
-              transform: expanded ? 'rotate(180deg)' : 'none',
-              transition: 'transform 250ms ease',
-              flexShrink: 0,
-            }}
-          >
-            <path
-              d="M3 6l5 5 5-5"
-              stroke="var(--color-text-muted)"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <span aria-hidden="true">{expanded ? '\u2193' : '\u2191'}</span>
         </button>
-
-        <div
-          ref={contentRef}
-          id="moodboard-brief-drawer"
-          role={expanded ? 'dialog' : undefined}
-          aria-modal={expanded ? 'true' : undefined}
-          aria-label={expanded ? 'Your brief so far' : undefined}
-          style={{
-            maxHeight: expanded ? '55dvh' : 0,
-            overflowY: expanded ? 'auto' : 'hidden',
-            transition: 'max-height 350ms cubic-bezier(0.32, 0.72, 0, 1)',
-            WebkitOverflowScrolling: 'touch',
-            overscrollBehavior: 'contain',
-          }}
-        >
-          <div style={{ padding: 'var(--space-4) var(--space-6) var(--space-8)' }}>
-            <BriefContent answers={answers} />
+        {expanded && (
+          <div id="moodboard-directions-sheet" className="moodboard-directions-sheet">
+            {content}
           </div>
-        </div>
+        )}
       </div>
 
-      {/* Desktop sidebar — hidden below lg */}
-      <div
-        className="hidden lg:block"
-        style={{
-          position: 'fixed',
-          top: 'calc(var(--nav-height) + var(--space-6))',
-          right: 'var(--space-8)',
-          width: 280,
-          maxHeight: 'calc(100dvh - var(--nav-height) - var(--space-8) * 2)',
-          overflowY: 'auto',
-          padding: 'var(--space-5)',
-          background: 'var(--color-bg)',
-          borderRadius: 'var(--radius-xl)',
-          border: '1px solid var(--color-border)',
-          boxShadow: '0 4px 24px rgba(0,0,0,0.05)',
-          zIndex: 30,
-        }}
-      >
-        <p
-          style={{
-            fontSize: 'var(--text-body-sm)',
-            fontWeight: 800,
-            color: 'var(--color-text-primary)',
-            marginBottom: 'var(--space-5)',
-          }}
-        >
-          Your brief
-        </p>
-        <BriefContent answers={answers} />
-      </div>
+      <aside className="moodboard-directions-desktop hidden lg:block" aria-label="Directions so far">
+        <p className="moodboard-directions-eyebrow">Directions so far</p>
+        <h2>What fits your room</h2>
+        {content}
+      </aside>
     </>
   )
 }

@@ -1,3 +1,9 @@
+# 26 aug
+- impr
+- conclusions from the seo runs
+- ai validation `zz/tasks/ai-validation-defense-plan.md`.
+- zz/moodboard/moodboard-social-sharing-plan.md
+
 # 24 aug
 moodboard:
 - moodboard-cta.md (incl new logic)

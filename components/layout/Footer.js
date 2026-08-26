@@ -1,9 +1,15 @@
+'use client'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import Container from './Container'
 import ContactLink from '../ui/ContactLink'
 import CookiePreferencesLink from '../consent/CookiePreferencesLink'
 
 export default function Footer() {
+  const pathname = usePathname()
+  if (pathname.startsWith('/moodboard')) return null
+
   return (
     <footer
       style={{

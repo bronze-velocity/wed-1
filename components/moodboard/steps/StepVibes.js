@@ -3,39 +3,28 @@
 import { useState } from 'react'
 import TapCard from '../ui/TapCard'
 import StepShell from '../ui/StepShell'
-
-const VIBES = [
-  { id: 'dinner-party',   src: '/images/moodboard/vibes/dinner-party.jpg',   label: 'Dinner that got out of hand' },
-  { id: 'film-premiere',  src: '/images/moodboard/vibes/film-premiere.jpg',  label: 'Film premiere energy' },
-  { id: 'pub-quiz',       src: '/images/moodboard/vibes/pub-quiz.jpg',        label: 'Pub quiz, best table wins' },
-  { id: 'gallery-opening',src: '/images/moodboard/vibes/gallery-opening.jpg', label: 'Gallery opening, wine in hand' },
-  { id: 'bonfire',        src: '/images/moodboard/vibes/bonfire.jpg',          label: 'Bonfire at the end of the night' },
-  { id: 'rooftop',        src: '/images/moodboard/vibes/rooftop.jpg',          label: 'Rooftop, city below' },
-  { id: 'brunch',         src: '/images/moodboard/vibes/brunch.jpg',           label: 'Brunch that never ended' },
-  { id: 'kitchen-party',  src: '/images/moodboard/vibes/kitchen-party.jpg',   label: 'Everyone ended up in the kitchen' },
-]
+import { VIBES, appTitles } from '@/lib/moodboard/config'
 
 const MAX = 3
 
-export default function StepVibes({ onNext, onBack, initialValues }) {
+export default function StepVibes({ onNext, onBack, initialValues, onDraftChange }) {
   const [selected, setSelected] = useState(new Set(initialValues?.vibes ?? []))
 
   function toggle(id) {
-    setSelected((prev) => {
-      const next = new Set(prev)
-      if (next.has(id)) {
-        next.delete(id)
-      } else if (next.size < MAX) {
-        next.add(id)
-      }
-      return next
-    })
+    const next = new Set(selected)
+    if (next.has(id)) {
+      next.delete(id)
+    } else if (next.size < MAX) {
+      next.add(id)
+    }
+    setSelected(next)
+    onDraftChange?.({ vibes: Array.from(next) })
   }
 
   return (
     <StepShell
       stepLabel="Step 1 of 6"
-      title="What does your reception feel like?"
+      title="Which scene feels like the reception you want?"
       subtitle={`Pick up to ${MAX}`}
       cta={
         <div className="moodboard-cta">
@@ -55,9 +44,11 @@ export default function StepVibes({ onNext, onBack, initialValues }) {
       }
     >
       <div
+        className="moodboard-photo-grid"
+        role="group"
+        aria-label={`Reception scenes. Choose up to ${MAX}.`}
         style={{
           display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
           gap: 'var(--space-3)',
         }}
       >
@@ -68,9 +59,12 @@ export default function StepVibes({ onNext, onBack, initialValues }) {
             src={v.src}
             alt={v.label}
             label={v.label}
+            detail={v.guestAction}
+            appLabel={appTitles(v.appIds)}
             selected={selected.has(v.id)}
             onClick={() => toggle(v.id)}
             maxSelect={MAX}
+            disabled={!selected.has(v.id) && selected.size >= MAX}
           />
         ))}
       </div>

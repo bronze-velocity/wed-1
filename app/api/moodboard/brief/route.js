@@ -1,20 +1,15 @@
 import { sendMail } from '@/lib/mailer.js'
+import { APP_DIRECTIONS, STORY_QUESTIONS } from '@/lib/moodboard/config.js'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-const STORY_LABELS = {
-  howWeMet:   'How they met',
-  insideJoke: 'Their inside joke',
-  mostUs:     'Most "them" thing',
-  movieGenre: 'Movie genre',
-  soUs:       '"That was so us"',
-}
+const STORY_LABELS = Object.fromEntries(STORY_QUESTIONS.map((question) => [question.key, question.chip]))
 
 function buildBriefHtml(email, results, answers, keepBrief) {
   const topMatches = results.matches
     .slice(0, 3)
     .map(
-      (m) => `<li><strong>${m.id}</strong> (score ${m.score}): ${m.whyItFitsYou}</li>`
+      (m) => `<li><strong>${APP_DIRECTIONS[m.id]?.title ?? m.id}</strong> (score ${m.score}): ${m.whyItFitsYou}</li>`
     )
     .join('\n')
 
@@ -37,9 +32,13 @@ function buildBriefHtml(email, results, answers, keepBrief) {
     <h3>Their brief</h3>
     <table cellpadding="6">
       ${answers.vibes?.length ? `<tr><td>Vibes</td><td>${answers.vibes.join(', ')}</td></tr>` : ''}
+      ${answers.guests?.length ? `<tr><td>Guests</td><td>${answers.guests.join(', ')}</td></tr>` : ''}
       ${answers.moments?.length ? `<tr><td>Moments</td><td>${answers.moments.join(', ')}</td></tr>` : ''}
       ${answers.feelings?.length ? `<tr><td>Feelings</td><td>${answers.feelings.join(', ')}</td></tr>` : ''}
       ${answers.guestFreeform ? `<tr><td>Guest list</td><td><em>"${answers.guestFreeform}"</em></td></tr>` : ''}
+      ${answers.wildcard ? `<tr><td>Energy</td><td>${answers.wildcard}</td></tr>` : ''}
+      ${answers.directionPreferences?.saved?.length ? `<tr><td>Saved directions</td><td>${answers.directionPreferences.saved.map((id) => APP_DIRECTIONS[id]?.title ?? id).join(', ')}</td></tr>` : ''}
+      ${answers.directionPreferences?.rejected?.length ? `<tr><td>Rejected directions</td><td>${answers.directionPreferences.rejected.map((id) => APP_DIRECTIONS[id]?.title ?? id).join(', ')}</td></tr>` : ''}
       ${storyRows}
     </table>
   `
@@ -47,7 +46,7 @@ function buildBriefHtml(email, results, answers, keepBrief) {
 
 function buildConfirmationHtml(results) {
   const appNames = results.matches
-    .map((m) => m.id.split('-').map((w) => w[0].toUpperCase() + w.slice(1)).join(' '))
+    .map((m) => APP_DIRECTIONS[m.id]?.title ?? m.title ?? m.id)
     .join(', ')
 
   return `

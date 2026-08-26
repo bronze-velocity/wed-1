@@ -4,34 +4,23 @@ import { useState } from 'react'
 import TapCard from '../ui/TapCard'
 import OptionalFreeform from '../ui/OptionalFreeform'
 import StepShell from '../ui/StepShell'
+import { GUESTS, appTitles } from '@/lib/moodboard/config'
 
-const GUESTS = [
-  { id: 'grandparents-front-row', icon: '👵', label: 'Grandparents in the front row', sublabel: 'Family-first crowd' },
-  { id: 'wild-college-friends',   icon: '🎉', label: 'Wild college friends',           sublabel: "They'll close the bar" },
-  { id: 'strangers-meeting',      icon: '🌍', label: 'Half the room never met',        sublabel: "People meeting for the first time" },
-  { id: 'work-crowd',             icon: '👔', label: 'Work crowd mixed in',             sublabel: 'Colleagues + close friends' },
-  { id: 'kids-running',           icon: '👧', label: 'Lots of kids',                    sublabel: 'Multigenerational' },
-  { id: 'loud-family',            icon: '🎤', label: 'Loud, opinionated family',        sublabel: 'Everyone has a speech in them' },
-  { id: 'dancers',                icon: '🕺', label: 'Dancers',                          sublabel: 'The floor will fill' },
-  { id: 'reserved-warm',          icon: '🤍', label: 'Reserved but warm',               sublabel: 'They show it differently' },
-]
-
-export default function StepGuests({ onNext, onBack, initialValues }) {
+export default function StepGuests({ onNext, onBack, initialValues, onDraftChange }) {
   const [selected, setSelected] = useState(new Set(initialValues?.guests ?? []))
   const [freeform, setFreeform] = useState(initialValues?.guestFreeform ?? '')
 
   function toggle(id) {
-    setSelected((prev) => {
-      const next = new Set(prev)
-      next.has(id) ? next.delete(id) : next.add(id)
-      return next
-    })
+    const next = new Set(selected)
+    next.has(id) ? next.delete(id) : next.add(id)
+    setSelected(next)
+    onDraftChange?.({ guests: Array.from(next), guestFreeform: freeform })
   }
 
   return (
     <StepShell
       stepLabel="Step 2 of 6"
-      title="Tell us about your people"
+      title="Which description sounds most like your guests?"
       cta={
         <div className="moodboard-cta">
           {onBack && (
@@ -53,9 +42,11 @@ export default function StepGuests({ onNext, onBack, initialValues }) {
     >
       <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-5)' }}>
         <div
+          className="moodboard-option-grid"
+          role="group"
+          aria-label="Guest descriptions"
           style={{
             display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
             gap: 'var(--space-3)',
           }}
         >
@@ -63,9 +54,9 @@ export default function StepGuests({ onNext, onBack, initialValues }) {
             <TapCard
               key={g.id}
               type="illustrated"
-              icon={g.icon}
               label={g.label}
-              sublabel={g.sublabel}
+              detail={g.description}
+              appLabel={appTitles(g.appIds)}
               selected={selected.has(g.id)}
               onClick={() => toggle(g.id)}
             />
@@ -77,7 +68,10 @@ export default function StepGuests({ onNext, onBack, initialValues }) {
           label="Describe your guest list in one sentence"
           hint="My college friends, her enormous Italian family, and 40 people I've never met"
           value={freeform}
-          onChange={setFreeform}
+          onChange={(value) => {
+            setFreeform(value)
+            onDraftChange?.({ guests: Array.from(selected), guestFreeform: value })
+          }}
         />
       </div>
     </StepShell>

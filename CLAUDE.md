@@ -1,3 +1,6 @@
+# Writing files
+If you're asked to write a file, write files inside this repo only (repo root = this file's directory; it's /work inside the opencode oc container).
+
 Wepho is a Custom Wedding Experience Studio that builds one-night-only interactive web apps for individual wedding couples — used by guests on their phones during the reception. **~$2,000 per custom app.**
 
 ---

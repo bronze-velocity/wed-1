@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useSyncExternalStore } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { subscribeConsent, getConsentState, hydrateConsent, acceptAll, rejectAll, setRegion } from '@/lib/consentStore'
 import { detectRegion, getComplianceRules } from '@/lib/consentRegion'
 import CookieSettings from './CookieSettings'
@@ -15,6 +16,8 @@ export default function CookieBanner() {
   const [rules, setRules] = useState(null)
   const [showSettings, setShowSettings] = useState(false)
   const [mounted, setMounted] = useState(false)
+  const pathname = usePathname()
+  const inMoodboard = pathname.startsWith('/moodboard')
 
   useEffect(() => {
     hydrateConsent()
@@ -33,7 +36,7 @@ export default function CookieBanner() {
 
   const bannerStyle = {
     position: 'fixed',
-    bottom: 'var(--space-4)',
+    bottom: inMoodboard ? 'calc(var(--space-16) + env(safe-area-inset-bottom, 0px))' : 'var(--space-4)',
     right: 'var(--space-4)',
     left: 'var(--space-4)',
     maxWidth: 380,

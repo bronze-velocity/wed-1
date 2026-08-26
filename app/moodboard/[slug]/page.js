@@ -61,7 +61,7 @@ export default async function SharedBriefPage({ params }) {
 
   if (!unlocked) {
     return (
-      <div style={{ paddingTop: 'var(--nav-height)' }}>
+      <div className="moodboard-protected-page">
         <BriefPasswordGate slug={slug} />
       </div>
     )
@@ -70,7 +70,7 @@ export default async function SharedBriefPage({ params }) {
   void recordView(slug)
 
   return (
-    <div style={{ paddingTop: 'var(--nav-height)' }}>
+    <div>
       <BriefViewBeacon
         slug={slug}
         threeWords={brief.results?.threeWords}

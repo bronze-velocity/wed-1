@@ -8,7 +8,7 @@ Five options, each pitched at "we're going to invent something for you, live, wh
 
 **Eyebrow:** `Build something no one else will have`
 **Headline:** `Invent your wedding app with us.`
-**Sub:** `Answer a few questions and watch ideas appear, get weirder, get sharper. By the end you'll have three or four sketches nobody's ever built before, aimed at your couple and your guest list specifically.`
+**Sub:** `Answer a few questions and watch the directions get clearer and more specific. By the end you'll have a shortlist aimed at your couple and your guest list specifically.`
 **CTA:** `Start inventing`
 **Reassurance:** `Three minutes. No email. You keep whatever we come up with.`
 
@@ -48,7 +48,7 @@ Five options, each pitched at "we're going to invent something for you, live, wh
 
 **Eyebrow:** `Skip the catalog`
 **Headline:** `Don't shop for a wedding app. Grow one.`
-**Sub:** `Answer a handful of questions about your day. Instead of a filtered list, you get custom sketches that shift and mutate as you keep going. Some will be too much. Some will be perfect. All of them are aimed at you.`
+**Sub:** `Answer a handful of questions about your day. Instead of a filtered list, you get app directions that sharpen as you keep going. Save the ones that fit and rule out the ones that do not.`
 **CTA:** `Grow one`
 **Reassurance:** `Three minutes. No account. No email unless you ask.`
 
@@ -62,7 +62,7 @@ Goal: turn the wizard from a filter-and-match tool into a live invention studio.
 
 ### 1. Live "idea feed" that grows as they answer
 
-A persistent right-rail (or sticky bottom sheet on mobile) titled something like **"Ideas so far"** or **"What we'd try for you."** Starts empty. Every step adds 1–3 cards to it. Some cards are catalog apps recontextualized ("Love Letter Machine, but the letters unlock only after the maid of honor's speech"). Some are wholly new. Cards can be pinned, dismissed, or "make it weirder" (which regenerates the card with a stronger version of whatever trait the user just told us).
+A persistent right-rail (or sticky bottom sheet on mobile) titled **"Directions so far."** It starts empty and narrows toward approved app shapes as the couple answers. Each compact row explains the guest action in 3–10 words and can be saved or marked `Not for us`.
 
 Why this matters: users watch the artifact assemble. That's the exciting part. Right now the moodboard only pays off at the end.
 
@@ -95,9 +95,9 @@ The existing Wildcard step becomes a spine that runs through the whole wizard. E
 
 Answers to these feed the idea rail with the wildest cards. Optional skip on each. The escalation is the choose-your-own-adventure feel.
 
-### 5. "Make it weirder" and "make it calmer" knobs
+### 5. Save and reject controls
 
-At any point, two buttons on the idea rail let the user shift the entire generated set toward more adventurous or more restrained. Applies a delta to the prompts that produce the next round of cards. Cheap to build, and a huge part of what makes it feel *playable* rather than a form.
+Each direction can be saved or marked `Not for us`. These choices persist and affect the final shortlist, so the live feedback and final result cannot contradict each other.
 
 ### 6. The final brief becomes a "reel," not a report
 
@@ -113,10 +113,10 @@ The reel format is more fun to share, and the "don't build" section is what make
 ### 7. Build order (roughly)
 
 1. Ship the copy change on the homepage section (small, unblocks positioning).
-2. Add the persistent "Ideas so far" rail with hand-authored card templates keyed to answer combos. Start with maybe 40 templates covering the common branches. No LLM yet.
+2. Add the persistent `Directions so far` rail using approved app relationships and compact guest-action descriptions.
 3. Add reactive commentary lines using the same template approach.
 4. Add the fits / doesn't-fit panel.
-5. Add "make it weirder / calmer" toggles.
+5. Persist save/reject choices and feed them into matching.
 6. Restructure the results view into the reel format with the "don't build" section.
 7. Optional later: swap hand-authored templates for a live model call when the shape of the interactions has settled.
 
@@ -128,4 +128,4 @@ The reel format is more fun to share, and the "don't build" section is what make
 
 ---
 
-Want me to (a) swap Option C or another into `MoodboardInvite.js`, (b) sketch the "Ideas so far" rail as a component skeleton, or (c) draft the first 20 or so hand-authored reactive-commentary templates? Any combination is fine.
+Follow-up work can refine the homepage invitation, direction relationships, and hand-authored reactive commentary after observing real sessions.

@@ -13,7 +13,7 @@ Guiding constraints, pulled from `zz/one-pager.md`:
 
 Two shared mechanics referenced below:
 
-- **Ideas rail.** Sticky right column that fills with app-idea cards as they answer. Each card has three buttons: pin, dismiss, make it weirder.
+- **Directions rail.** Sticky right column that narrows toward approved app shapes as they answer. Each compact direction can be saved or marked `Not for us`.
 - **Fit panel.** Two lists that live-populate: *Would work at your wedding* and *Probably not for you*.
 
 ---
@@ -37,7 +37,7 @@ Two shared mechanics referenced below:
 **They enter:** *"If you gave our friends a mic, we'd never get it back."*
 **Tool reacts:**
 - Rail: **The Rolling Roast.** Every 20 minutes during dinner a new roast prompt appears on the big screen. Guests text in. The couple's chosen best hits the wall live.
-- "Make it weirder" turns it into: **The Roast Bracket.** 16 submissions get voted down until a champion roast is crowned during speeches.
+- Saving the direction strengthens the closest approved room-game shape; rejecting it removes that mechanic from the shortlist.
 - Fit panel red-flags "quiet contemplative apps."
 
 **Wow moment:** the tool responds with a whole *tournament format* they hadn't even asked for.
@@ -170,7 +170,7 @@ Two shared mechanics referenced below:
 **Tool reacts:**
 - Rail: **The Wedding Bracket.** 16 competitive events across the night: longest speech, most tears, first drunk uncle. Guests submit predictions. Live leaderboard on the big screen.
 - Rail: **The Fantasy Draft.** Pre-wedding, each guest drafts a roster of five other guests they think will do specific things (make a fool of themselves, cry, leave first). Points accrue live.
-- "Make it weirder" turns the bracket into a full ESPN-style broadcast with a friend hired as the commentator.
+- Saving the competitive direction keeps the final shortlist focused on bounded room games rather than passive keepsakes.
 
 **Wow moment:** the tool inviting them to hire a *friend as commentator*. That kind of idea shift is where a $2k app justifies itself.
 
@@ -226,5 +226,5 @@ Two shared mechanics referenced below:
 
 1. The reactive-commentary pattern library needs enough hand-authored branches to hit the 15 archetypes above. Start there. Do not go to a model until this shape holds.
 2. Red-flag logic is a first-class feature, not a nice-to-have. It's what makes the greens credible.
-3. The rail card component needs three modes from day one: pin, dismiss, make it weirder. Skipping "make it weirder" removes the playfulness that makes any of this feel creative rather than clinical.
+3. The directions component needs saved, neutral, and rejected states from day one. Those decisions must persist and affect the final shortlist.
 4. The planner-mode artifact (scenario 15) is different enough to warrant its own results component. Design it now, even if you ship it later.

@@ -3,41 +3,30 @@
 import { useState } from 'react'
 import TapCard from '../ui/TapCard'
 import StepShell from '../ui/StepShell'
-
-const FEELINGS = [
-  { id: 'cry-good-kind',          icon: '😭', label: 'Cry (the good kind)' },
-  { id: 'everyone-laughing',      icon: '😂', label: 'Everyone laughing at the same time' },
-  { id: 'room-feels-like-show',   icon: '🎭', label: 'Room feels like a show' },
-  { id: 'strangers-become-friends',icon: '🤝', label: 'Strangers became friends' },
-  { id: 'keepsake-from-everyone', icon: '💌', label: 'A keepsake from everyone' },
-  { id: 'something-nobody-has-seen', icon: '🌙', label: "Something nobody's seen before" },
-  { id: 'our-story-main-character', icon: '💑', label: 'Our story was the main character' },
-  { id: 'guests-actually-look-up', icon: '👀', label: 'Guests actually looked up' },
-]
+import { FEELINGS, appTitles } from '@/lib/moodboard/config'
 
 const MAX = 2
 
 const bigLabel = { fontSize: 'var(--text-body)', fontWeight: 700 }
 
-export default function StepFeelings({ onNext, onBack, initialValues }) {
+export default function StepFeelings({ onNext, onBack, initialValues, onDraftChange }) {
   const [selected, setSelected] = useState(new Set(initialValues?.feelings ?? []))
 
   function toggle(id) {
-    setSelected((prev) => {
-      const next = new Set(prev)
-      if (next.has(id)) {
-        next.delete(id)
-      } else if (next.size < MAX) {
-        next.add(id)
-      }
-      return next
-    })
+    const next = new Set(selected)
+    if (next.has(id)) {
+      next.delete(id)
+    } else if (next.size < MAX) {
+      next.add(id)
+    }
+    setSelected(next)
+    onDraftChange?.({ feelings: Array.from(next) })
   }
 
   return (
     <StepShell
       stepLabel="Step 4 of 6"
-      title="What do you want to feel the next morning?"
+      title="What should the room feel like?"
       subtitle={`Pick up to ${MAX}`}
       cta={
         <div className="moodboard-cta">
@@ -57,9 +46,11 @@ export default function StepFeelings({ onNext, onBack, initialValues }) {
       }
     >
       <div
+        className="moodboard-option-grid"
+        role="group"
+        aria-label={`Desired room feelings. Choose up to ${MAX}.`}
         style={{
           display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
           gap: 'var(--space-3)',
         }}
       >
@@ -67,11 +58,13 @@ export default function StepFeelings({ onNext, onBack, initialValues }) {
           <TapCard
             key={f.id}
             type="illustrated"
-            icon={f.icon}
             label={f.label}
+            detail={f.description}
+            appLabel={appTitles(f.appIds)}
             selected={selected.has(f.id)}
             onClick={() => toggle(f.id)}
             maxSelect={MAX}
+            disabled={!selected.has(f.id) && selected.size >= MAX}
             labelStyle={bigLabel}
           />
         ))}

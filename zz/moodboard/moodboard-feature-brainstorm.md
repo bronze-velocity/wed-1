@@ -71,14 +71,17 @@ A free tool on the Wepho site where a couple answers visual + freeform questions
 
 ### Category 5 — The Couple Themselves
 
-**Freeform fields** (short answers, shown one at a time — feels like a quiz):
-- "How did you meet? One sentence."
+**Freeform fields** (short answers, shown as tappable prompts — answer only the ones that spark something):
+- "How did you meet?"
 - "What's a joke or reference that only your people would get?"
-- "What's the most 'you' thing about your relationship?"
-- "If your wedding had a movie genre, what would it be?"
 - "What would make you say 'that was so us' the next morning?"
+- "What's a running debate you two never resolve?"
+- "What's something your guests would be shocked to learn about you two?"
+- "What's a ritual or tradition that only the two of you share?"
+- "What's a song, place, or object that instantly means 'us'?"
+- "Who in the room has the best story about you two — and what is it?"
 
-**Hidden signal these fields capture:** content fodder for Who Said It, Love Letters, Trivia, Oracle, etc. — these answers seed the actual custom app build.
+**Hidden signal these fields capture:** origin stories, inside references, disputed details, rituals, artifacts, and trusted storytellers. These become content fodder for `Who Said It?`, `Live Trivia`, `Custom Wedding Bingo`, `The Story Chain`, `The Guest Advice Oracle`, `Anniversary Time Capsule`, and other custom app builds.
 
 ---
 

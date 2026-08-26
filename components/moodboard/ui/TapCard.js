@@ -47,7 +47,10 @@ export default function TapCard({
   // illustrated variant
   icon,
   sublabel,
+  detail,
+  appLabel,
   labelStyle,
+  disabled = false,
 }) {
   const [pressing, setPressing] = useState(false)
 
@@ -59,24 +62,23 @@ export default function TapCard({
 
   const sharedStyle = {
     position: 'relative',
-    cursor: 'pointer',
+    cursor: disabled ? 'not-allowed' : 'pointer',
     userSelect: 'none',
     WebkitTapHighlightColor: 'transparent',
     touchAction: 'manipulation',
     borderRadius: 'var(--radius-xl)',
     overflow: 'hidden',
-    outline: 'none',
-    boxShadow: selected ? 'inset 0 0 0 3px var(--color-accent)' : 'inset 0 0 0 0px transparent',
+    opacity: disabled ? 0.52 : 1,
     transform: pressing ? 'scale(0.96)' : selected ? 'scale(1.02)' : 'scale(1)',
     transition: pressing ? pressTransition : releaseTransition,
   }
 
   const handlers = {
-    onClick,
+    onClick: disabled ? undefined : onClick,
     onKeyDown: (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault()
-        onClick?.()
+        if (!disabled) onClick?.()
       }
     },
     onPointerDown: () => setPressing(true),
@@ -88,9 +90,12 @@ export default function TapCard({
   if (type === 'photo') {
     return (
       <div
+        className="moodboard-tap-card"
+        data-selected={selected || undefined}
         role={role}
         aria-checked={selected}
-        tabIndex={0}
+        aria-disabled={disabled || undefined}
+        tabIndex={disabled ? -1 : 0}
         {...handlers}
         style={{
           ...sharedStyle,
@@ -117,21 +122,22 @@ export default function TapCard({
             zIndex: 1,
           }}
         />
-        {label && (
+        {(label || detail || appLabel) && (
           <span
             style={{
               position: 'absolute',
-              bottom: 'var(--space-4)',
+              bottom: 'var(--space-3)',
               left: 'var(--space-4)',
               right: 'var(--space-4)',
-              fontSize: 'var(--text-body-lg)',
-              fontWeight: 700,
-              color: '#fff',
-              lineHeight: 1.3,
+              display: 'grid',
+              gap: 2,
+              color: 'var(--color-text-inverse)',
               zIndex: 1,
             }}
           >
-            {label}
+            <span style={{ fontSize: 'var(--text-body)', fontWeight: 800, lineHeight: 1.25 }}>{label}</span>
+            {detail && <span style={{ fontSize: 'var(--text-tiny)', lineHeight: 1.35 }}>{detail}</span>}
+            {appLabel && <span style={{ fontSize: 'var(--text-tiny)', fontWeight: 700, opacity: 0.86 }}>Often: {appLabel}</span>}
           </span>
         )}
         {selected && <CheckBadge />}
@@ -141,9 +147,12 @@ export default function TapCard({
 
   return (
     <div
+      className="moodboard-tap-card"
+      data-selected={selected || undefined}
       role={role}
       aria-checked={selected}
-      tabIndex={0}
+      aria-disabled={disabled || undefined}
+      tabIndex={disabled ? -1 : 0}
       {...handlers}
       style={{
         ...sharedStyle,
@@ -183,11 +192,21 @@ export default function TapCard({
         <span
           style={{
             fontSize: 'var(--text-tiny)',
-            color: 'var(--color-text-muted)',
+            color: 'var(--color-text-secondary)',
             lineHeight: 1.4,
           }}
         >
           {sublabel}
+        </span>
+      )}
+      {detail && (
+        <span style={{ fontSize: 'var(--text-tiny)', color: 'var(--color-text-secondary)', lineHeight: 1.4 }}>
+          {detail}
+        </span>
+      )}
+      {appLabel && (
+        <span style={{ fontSize: 'var(--text-tiny)', color: 'var(--color-accent)', fontWeight: 700, lineHeight: 1.35 }}>
+          Often: {appLabel}
         </span>
       )}
       {selected && <CheckBadge />}

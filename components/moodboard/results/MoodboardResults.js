@@ -16,14 +16,14 @@ function ThreeWords({ threeWords }) {
 
   return (
     <section
-      className="section-py"
+      className="moodboard-results-intro"
       style={{ textAlign: 'center', background: 'var(--color-bg)' }}
     >
       <Container>
         <p
           style={{
             fontSize: 'var(--text-body-sm)',
-            color: 'var(--color-text-muted)',
+            color: 'var(--color-text-secondary)',
             fontWeight: 600,
             letterSpacing: '0.06em',
             textTransform: 'uppercase',
@@ -33,7 +33,7 @@ function ThreeWords({ threeWords }) {
         >
           Based on what you told us.
         </p>
-        <div
+        <h1
           aria-label={threeWords}
           style={{
             fontFamily: 'var(--font-serif-accent)',
@@ -55,7 +55,7 @@ function ThreeWords({ threeWords }) {
               {word}.
             </span>
           ))}
-        </div>
+        </h1>
       </Container>
     </section>
   )
@@ -66,7 +66,7 @@ function ThreeWords({ threeWords }) {
 function MatchedApps({ matches, onWantThis }) {
   return (
     <section
-      className="section-py"
+      className="moodboard-results-matches"
       style={{ background: 'var(--color-bg-subtle)' }}
     >
       <Container>
@@ -74,13 +74,13 @@ function MatchedApps({ matches, onWantThis }) {
           style={{
             fontSize: 'var(--text-h3)',
             fontWeight: 800,
-            marginBottom: 'var(--space-10)',
+            marginBottom: 'var(--space-6)',
             animation: 'fadeInUp 500ms ease-out 100ms both',
           }}
         >
-          Apps that feel like you
+          Three that feel like you
         </h2>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
+        <div className="moodboard-results-grid">
           {matches.map((match, i) => (
             <ResultCard
               key={match.id}
@@ -209,11 +209,14 @@ function HiddenTier({ hiddenMatches, onWantThis }) {
 // ── Section 4 — Brief + Email Gate ───────────────────────────────────────────
 
 const STORY_LABELS = {
-  howWeMet:   'How you met',
+  howWeMet: 'How you met',
   insideJoke: 'Your inside joke',
-  mostUs:     'Most "you" thing',
-  movieGenre: 'Your movie genre',
-  soUs:       '"That was so us"',
+  soUs: '"That was so us"',
+  runningDebate: 'Your running debate',
+  shockGuests: "What guests don't know",
+  ritual: 'Your ritual',
+  anthem: 'What means "us"',
+  bestStoryteller: 'Your best storyteller',
 }
 
 function BriefEmailGate({ results, answers, sectionRef, onBriefSent, shared, lockedSlug }) {
@@ -275,7 +278,7 @@ function BriefEmailGate({ results, answers, sectionRef, onBriefSent, shared, loc
               style={{
                 fontSize: 'var(--text-tiny)',
                 fontWeight: 700,
-                color: 'var(--color-text-muted)',
+                color: 'var(--color-text-secondary)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.08em',
               }}
@@ -304,7 +307,7 @@ function BriefEmailGate({ results, answers, sectionRef, onBriefSent, shared, loc
                   style={{
                     fontSize: 'var(--text-tiny)',
                     fontWeight: 700,
-                    color: 'var(--color-text-muted)',
+                    color: 'var(--color-text-secondary)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.08em',
                     marginTop: 'var(--space-3)',
@@ -317,7 +320,7 @@ function BriefEmailGate({ results, answers, sectionRef, onBriefSent, shared, loc
                     <p
                       style={{
                         fontSize: 'var(--text-tiny)',
-                        color: 'var(--color-text-muted)',
+                        color: 'var(--color-text-secondary)',
                         marginBottom: 2,
                       }}
                     >
@@ -370,8 +373,10 @@ function BriefEmailGate({ results, answers, sectionRef, onBriefSent, shared, loc
             >
               We&rsquo;ll email your brief and may follow up once about your wedding. That&rsquo;s it.
             </p>
+            <label htmlFor="moodboard-brief-email" className="visually-hidden">Email address</label>
             <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
               <input
+                id="moodboard-brief-email"
                 type="email"
                 required
                 value={email}
@@ -408,7 +413,7 @@ function BriefEmailGate({ results, answers, sectionRef, onBriefSent, shared, loc
               />
               <span>
                 I&rsquo;d like Wepho to keep my brief so we can pick up the conversation.
-                <span style={{ display: 'block', fontSize: 'var(--text-tiny)', color: 'var(--color-text-muted)', marginTop: 2 }}>
+                <span style={{ display: 'block', fontSize: 'var(--text-tiny)', color: 'var(--color-text-secondary)', marginTop: 2 }}>
                   Otherwise we delete our server-side copy within 90 days. See our{' '}
                   <Link href="/privacy" style={{ color: 'var(--color-accent)', textDecoration: 'underline' }}>
                     privacy policy
@@ -538,8 +543,10 @@ function ShareableLink({ results, answers, lockedSlug }) {
       <form onSubmit={handleShare}>
         {!isEdit && (
           <>
+            <label htmlFor="moodboard-share-name" className="visually-hidden">Share link name</label>
             <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
               <input
+                id="moodboard-share-name"
                 type="text"
                 value={desiredSlug}
                 onChange={(e) => setDesiredSlug(e.target.value)}
@@ -552,7 +559,7 @@ function ShareableLink({ results, answers, lockedSlug }) {
               style={{
                 marginTop: 'var(--space-3)',
                 fontSize: 'var(--text-tiny)',
-                color: 'var(--color-text-muted)',
+                color: 'var(--color-text-secondary)',
                 fontFamily: 'var(--font-mono, monospace)',
               }}
             >
@@ -566,7 +573,9 @@ function ShareableLink({ results, answers, lockedSlug }) {
                 marginTop: 'var(--space-4)',
               }}
             >
+              <label htmlFor="moodboard-share-password" className="visually-hidden">Share password</label>
               <input
+                id="moodboard-share-password"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -672,7 +681,7 @@ export default function MoodboardResults({
   }
 
   return (
-    <div>
+    <main className="moodboard-results">
       <ThreeWords threeWords={results.threeWords} />
       <MatchedApps matches={results.matches} onWantThis={scrollToEmail} />
       <HiddenTier hiddenMatches={results.hiddenMatches} onWantThis={scrollToEmail} />
@@ -684,6 +693,6 @@ export default function MoodboardResults({
         shared={shared}
         lockedSlug={lockedSlug}
       />
-    </div>
+    </main>
   )
 }

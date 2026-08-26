@@ -3,57 +3,7 @@
 import { useState } from 'react'
 import FreeformField from '../ui/FreeformField'
 import StepShell from '../ui/StepShell'
-
-const QUESTIONS = [
-  {
-    key: 'howWeMet',
-    chip: 'How you met',
-    label: 'How did you meet?',
-    hint: 'She sat next to me at a conference and corrected my wrong answer out loud',
-  },
-  {
-    key: 'insideJoke',
-    chip: 'An inside joke',
-    label: "What's a joke only your people would get?",
-    hint: 'We call the third floor of our building "the vortex"',
-  },
-  {
-    key: 'soUs',
-    chip: '"That was so us"',
-    label: 'What would make you say "that was so us" the next morning?',
-    hint: 'One of her aunts cornering me to say she knew from the first time she saw us together',
-  },
-  {
-    key: 'runningDebate',
-    chip: 'A debate you never resolve',
-    label: "What's a running debate you two never resolve?",
-    hint: 'Whether a hot dog is a sandwich. It has been four years.',
-  },
-  {
-    key: 'shockGuests',
-    chip: 'Something guests don’t know',
-    label: "What's something your guests would be shocked to learn about you two?",
-    hint: 'We met on a dating app neither of us admits to using anymore',
-  },
-  {
-    key: 'ritual',
-    chip: 'A tradition only you two have',
-    label: 'What’s a ritual or tradition that only the two of you share?',
-    hint: 'Sunday morning we read horoscopes aloud in bad accents',
-  },
-  {
-    key: 'anthem',
-    chip: 'A song, place, or thing that means "us"',
-    label: 'What’s a song, place, or object that instantly means "us"?',
-    hint: 'The corner booth at Rae’s. We were there the night everything changed.',
-  },
-  {
-    key: 'bestStoryteller',
-    chip: 'Who has the best story about you',
-    label: 'Who in the room has the best story about you two — and what is it?',
-    hint: 'His brother Sam. Ask him about the flat tire in Portugal.',
-  },
-]
+import { STORY_QUESTIONS } from '@/lib/moodboard/config'
 
 function preview(text) {
   const trimmed = text.trim()
@@ -61,11 +11,21 @@ function preview(text) {
   return trimmed.slice(0, 57).trimEnd() + '…'
 }
 
-export default function StepStory({ onNext, onBack, initialValues }) {
+export default function StepStory({ onNext, onBack, initialValues, onDraftChange, directionIds = [] }) {
   const [story, setStory] = useState(initialValues?.story ?? {})
   const [openKey, setOpenKey] = useState(null)
+  const [showAll, setShowAll] = useState(false)
+  const [questions] = useState(() => [...STORY_QUESTIONS].sort((a, b) => {
+    const aAnswered = initialValues?.story?.[a.key]?.trim() ? 1 : 0
+    const bAnswered = initialValues?.story?.[b.key]?.trim() ? 1 : 0
+    if (aAnswered !== bAnswered) return bAnswered - aAnswered
+    const aFit = a.appIds.some((id) => directionIds.includes(id)) ? 1 : 0
+    const bFit = b.appIds.some((id) => directionIds.includes(id)) ? 1 : 0
+    return bFit - aFit
+  }))
 
   const answeredCount = Object.values(story).filter((v) => v?.trim()).length
+  const visibleQuestions = showAll ? questions : questions.slice(0, 3)
 
   function toggle(key) {
     setOpenKey((prev) => (prev === key ? null : key))
@@ -78,8 +38,8 @@ export default function StepStory({ onNext, onBack, initialValues }) {
   return (
     <StepShell
       stepLabel="Step 5 of 6"
-      title="Tell us about you two"
-      subtitle="Tap any prompt that sparks something. Answer as many as you like — even one helps."
+      title="What could make this unmistakably yours?"
+      subtitle="We picked the prompts most useful for your directions. Even one answer helps."
       cta={
         <div className="moodboard-cta">
           <button onClick={onBack} aria-label="Back" className="btn moodboard-back" style={{ flex: "0 0 auto" }}>
@@ -94,7 +54,7 @@ export default function StepStory({ onNext, onBack, initialValues }) {
       }
     >
       <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-        {QUESTIONS.map((q) => {
+        {visibleQuestions.map((q) => {
           const value = story[q.key] ?? ''
           const isOpen = openKey === q.key
           const isAnswered = value.trim().length > 0
@@ -148,7 +108,7 @@ export default function StepStory({ onNext, onBack, initialValues }) {
                     <span
                       style={{
                         fontSize: 'var(--text-body-sm)',
-                        color: 'var(--color-text-muted)',
+                        color: 'var(--color-text-secondary)',
                         fontStyle: 'italic',
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
@@ -192,13 +152,22 @@ export default function StepStory({ onNext, onBack, initialValues }) {
                     label={q.label}
                     hint={q.hint}
                     value={value}
-                    onChange={(val) => setStory((s) => ({ ...s, [q.key]: val }))}
+                    onChange={(val) => {
+                      const next = { ...story, [q.key]: val }
+                      setStory(next)
+                      onDraftChange?.({ story: next })
+                    }}
                   />
                 </div>
               )}
             </div>
           )
         })}
+        {!showAll && (
+          <button type="button" className="moodboard-more-prompts" onClick={() => setShowAll(true)}>
+            More prompts
+          </button>
+        )}
       </div>
     </StepShell>
   )

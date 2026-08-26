@@ -107,7 +107,7 @@ export default function FreeformField({
               border: 'none',
               padding: 0,
               fontSize: 'var(--text-body-sm)',
-              color: 'var(--color-text-muted)',
+              color: 'var(--color-text-secondary)',
               cursor: 'pointer',
               fontFamily: 'inherit',
             }}

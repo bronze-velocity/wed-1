@@ -24,7 +24,7 @@ export default async function EditBriefPage({ params }) {
 
   if (!unlocked) {
     return (
-      <div style={{ paddingTop: 'var(--nav-height)' }}>
+      <div className="moodboard-protected-page">
         <BriefPasswordGate slug={slug} />
       </div>
     )

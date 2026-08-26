@@ -145,8 +145,74 @@ improve all the app phone screenshots:
 interactive demos on LP:
 (obs check competitor/other app LPs)
 
-###
-improve moodboard
+### done
+please improve the moodboard with these suggestions from /home/zxc/Documents/code/win-repos/wed-1/zz/moodboard/moodboard-cta.md
+- #1, #2, #3
+
+### done
+please implement the tier A sugegstions in animations-1.md
+
+# 26 aug
+### luna
+what are examples of website lead magnets for other niches that could be similar in style to our suggested wedding receiption app moodboard? find 10 examples by searching the web for really visual and interactive lead magnets.
+
+### other
+todo: from  the repo mini-course, what are the AI safeguards/guardrails for user inputs?
+
+### luna
+we need to create refined app guidelines in a new zz/app-guidelines.md. base them off the 13 approved apps that are currently being shown, the zz/one-pager.md
+
+### skip
+in /home/zxc/Documents/code/win-repos/wed-1/zz/moodboard/moodboard-mechanic-scenarios.md there are ideas for what scenarios could look like. I'm however not happy with the app outcomes. I think you need to describe the apps in a bit more detail, so that we are really sure that they follow the guidelines set out in one-pager.md.
+could you do 2 suggestions per app for: 
+#1
+
+### sol medium
+we need to create better safeguards for the moodboard lead gen feature when it comes to user input that is used in LLM calls. some ideas:
+- /home/zxc/Documents/code/mini-course/z_cc-additional-instructions/AI-ARCHITECTURE.md
+- however, key is user input validation and making sure it's not abused.
+please create a plan for this in a new zz/tasks/ai-validation-defense-plan.md
+
+### luna
+in the moodboard step 5, i'm having trouble visualizing how different answers to those questions can lead to great app suggestions. can you for each question come up with 3 common answers from wedding couples or wedding planners as well as the specific app recommendations (specific apps (maybe from our 13 approved apps), app angles or ideas). fyi - /home/zxc/Documents/code/win-repos/wed-1/zz/app-guidelines.md
+
+### sol med
+for the moodboard mechanics, let's create a plan for doing great UI/UX for the below:
+- it would be nice if the entire experience felt more immersive, especially when on the phone. suggest UI/UX to make that happen. also, consistency between pages is important.
+- make all the steps clickable in some UI above the individual step. it also needs to look good on mobile.
+- remove the "make it weirder" feature
+- the "ideas so far" need to be much shorter. are we able to make them into just 3-10 word descriptions that describe it in a very simple way?
+- the suggestions in here zz/moodboard/moodboard-app-led-alternatives-v2.md are great, let's go with them.
+
+### luna high
+let's create a plan for sharing of the moodboard on socials
+- share button / good UI
+- nice link
+- what is important for when the shared link appears on other platforms (OG images etc? - could we have some generic background image overlayed with some specific text for this couple?)
+
+
 
 ###
-please implement the tier A sugegstions in animations-1.md
+in /moodboard "talk to us" modal, the email input is white so it can't be seen against the white background.
+
+### opus
+in /moodboard:
+(fyi, this was the latest moodboard iteration plan that was worked from: zz/moodboard/moodboard-ui-ux-plan.md)
+- step 1, I don't think the options are the optimal options, please suggest others.
+- "why these directions" isn't great
+- in step 1 and 2 and 4, let's remove the "Often" app mentions.
+- in step 2, let's add in large emojis to visualize the options.
+- there is now no indication as to what the user provided inputs have been.
+- shouldn't we 
+- is there a way to make the results page more dynamic and sharable on social media? would be nice with some info about the user answers to contextualize. The app descriptions also need to be a bit better visualized/pitched so that people with whom the results page has been shared feel like it's a great idea to do an app like that. 
+- 
+
+### sonnet
+please have a look at the dataforseo output and write a conclusions .md about them. very concise, bulleted conclusions.
+
+###
+please implement /home/zxc/Documents/code/win-repos/wed-1/zz/moodboard/moodboard-social-sharing-plan.md with these changes:
+- let's make /moodboard/[slug]/edit the password protected editable one and /moodboard/[slug] the sharable one
+- 
+
+

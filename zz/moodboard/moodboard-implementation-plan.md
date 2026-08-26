@@ -166,14 +166,18 @@ Each step receives `onNext(answers)`, `onBack()`, `initialValues`.
 - Bold, slightly larger type than StepGuests — these are emotional, not logistical
 
 **StepStory** — "Tell us about you two"
-- 5 `FreeformField`s shown one at a time (sub-wizard within the step: answer one → slide to next)
-  - How did you meet? (one sentence)
-  - What's a joke only your people would get?
-  - What's the most "you" thing about your relationship?
-  - If your wedding had a movie genre, what would it be?
+- 8 optional `FreeformField`s shown as tappable prompts; answer only the ones that spark something
+  - How did you meet?
+  - What's a joke or reference that only your people would get?
   - What would make you say "that was so us" the next morning?
+  - What's a running debate you two never resolve?
+  - What's something your guests would be shocked to learn about you two?
+  - What's a ritual or tradition that only the two of you share?
+  - What's a song, place, or object that instantly means "us"?
+  - Who in the room has the best story about you two — and what is it?
 - Each field: animated floating label, soft character limit hint (not enforced), "Skip" link bottom-left
-- This step's answers are the richest Claude input — handle gracefully if all skipped
+- This step's answers are the richest Claude input: they provide the concrete people, places, phrases, artifacts, and permissions that make an app recommendation feel specific
+- See `zz/moodboard/step-5-answer-to-app-map.md` for common answer patterns and app directions
 
 **StepWildcard** — "One last thing — pick the image that feels like your reception"
 - Single-select, 6 full-width stacked photo cards on mobile (large, immersive)

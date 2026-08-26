@@ -8,7 +8,7 @@ export default function ResumeBanner({ savedAt, onContinue, onStartFresh }) {
       role="status"
       style={{
         position: 'fixed',
-        top: 'calc(var(--nav-height) + var(--space-3))',
+        top: 'calc(var(--nav-height) + 72px)',
         left: '50%',
         transform: 'translateX(-50%)',
         zIndex: 45,

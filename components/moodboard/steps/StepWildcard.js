@@ -3,24 +3,16 @@
 import { useState } from 'react'
 import TapCard from '../ui/TapCard'
 import StepShell from '../ui/StepShell'
+import { WILDCARDS } from '@/lib/moodboard/config'
 
-const WILDCARDS = [
-  { id: 'candlelit-pan',           src: '/images/moodboard/wildcard/candlelit-pan.jpg',           alt: 'Candlelit pan' },
-  { id: 'phone-in-dark',           src: '/images/moodboard/wildcard/phone-in-dark.jpg',           alt: 'Phone in the dark' },
-  { id: 'crowd-goes-quiet',        src: '/images/moodboard/wildcard/crowd-goes-quiet.jpg',        alt: 'Crowd going quiet' },
-  { id: 'everyone-points-at-screen',src: '/images/moodboard/wildcard/everyone-points-at-screen.jpg', alt: 'Everyone pointing at a screen' },
-  { id: 'someone-crying-at-table', src: '/images/moodboard/wildcard/someone-crying-at-table.jpg', alt: 'Someone crying at a table' },
-  { id: 'flash-mob',               src: '/images/moodboard/wildcard/flash-mob.jpg',               alt: 'Flash mob' },
-]
-
-export default function StepWildcard({ onNext, onBack, initialValues }) {
+export default function StepWildcard({ onNext, onBack, initialValues, onDraftChange }) {
   const [selected, setSelected] = useState(initialValues?.wildcard ?? null)
 
   return (
     <StepShell
       stepLabel="Step 6 of 6"
-      title="One last thing"
-      subtitle="Pick the image that feels like your reception."
+      title="Which final image has the right energy?"
+      subtitle="Pick one final instinct, then review your shortlist."
       cta={
         <div className="moodboard-cta">
           {onBack && (
@@ -34,15 +26,17 @@ export default function StepWildcard({ onNext, onBack, initialValues }) {
             style={{ flex: 1 }}
             disabled={!selected}
           >
-            Find my apps →
+            Reveal our directions →
           </button>
         </div>
       }
     >
       <div
+        className="moodboard-photo-grid"
+        role="radiogroup"
+        aria-label="Final reception energy"
         style={{
           display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
           gap: 'var(--space-3)',
         }}
       >
@@ -51,9 +45,13 @@ export default function StepWildcard({ onNext, onBack, initialValues }) {
             key={w.id}
             type="photo"
             src={w.src}
-            alt={w.alt}
+            alt={w.label}
+            label={w.label}
             selected={selected === w.id}
-            onClick={() => setSelected(w.id)}
+            onClick={() => {
+              setSelected(w.id)
+              onDraftChange?.({ wildcard: w.id })
+            }}
             maxSelect={1}
           />
         ))}

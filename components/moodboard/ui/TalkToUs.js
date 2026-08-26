@@ -49,8 +49,22 @@ function TalkToUsModal({ answers, onClose }) {
   useEffect(() => {
     function onKey(e) {
       if (e.key === 'Escape') onClose()
+      if (e.key === 'Tab') {
+        const focusable = dialogRef.current?.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled])')
+        if (!focusable?.length) return
+        const first = focusable[0]
+        const last = focusable[focusable.length - 1]
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault()
+          last.focus()
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault()
+          first.focus()
+        }
+      }
     }
     document.addEventListener('keydown', onKey)
+    requestAnimationFrame(() => dialogRef.current?.querySelector('input, textarea, button, a[href]')?.focus())
     const prevOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     return () => {
@@ -85,7 +99,7 @@ function TalkToUsModal({ answers, onClose }) {
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Talk to Wepho"
+      aria-labelledby="moodboard-talk-title"
       onClick={onClose}
       style={{
         position: 'fixed',
@@ -126,7 +140,7 @@ function TalkToUsModal({ answers, onClose }) {
             border: 'none',
             padding: 8,
             cursor: 'pointer',
-            color: 'var(--color-text-muted)',
+            color: 'var(--color-text-secondary)',
             fontFamily: 'inherit',
             lineHeight: 1,
             fontSize: 20,
@@ -147,6 +161,7 @@ function TalkToUsModal({ answers, onClose }) {
         ) : (
           <>
             <h2
+              id="moodboard-talk-title"
               style={{
                 fontSize: 'var(--text-h3)',
                 fontWeight: 800,
@@ -191,7 +206,7 @@ function TalkToUsModal({ answers, onClose }) {
               style={{
                 textAlign: 'center',
                 fontSize: 'var(--text-body-sm)',
-                color: 'var(--color-text-muted)',
+                color: 'var(--color-text-secondary)',
                 marginBottom: 'var(--space-4)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.06em',
@@ -202,22 +217,26 @@ function TalkToUsModal({ answers, onClose }) {
             </div>
 
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+              <label htmlFor="moodboard-talk-email" className="visually-hidden">Email address</label>
               <input
+                id="moodboard-talk-email"
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
-                className="contact-field"
+                className="moodboard-input"
                 style={{ fontSize: 16 }}
               />
+              <label htmlFor="moodboard-talk-note" className="visually-hidden">What is on your mind?</label>
               <textarea
+                id="moodboard-talk-note"
                 required
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
-                placeholder="What&rsquo;s on your mind?"
+                placeholder="What's on your mind?"
                 rows={3}
-                className="contact-field"
+                className="moodboard-input"
                 style={{ fontSize: 16, resize: 'vertical', minHeight: 80 }}
               />
               {answersExist && (
@@ -269,17 +288,25 @@ function TalkToUsModal({ answers, onClose }) {
 
 export default function TalkToUs({ answers }) {
   const [open, setOpen] = useState(false)
+  const triggerRef = useRef(null)
+
+  function closeModal() {
+    setOpen(false)
+    requestAnimationFrame(() => triggerRef.current?.focus())
+  }
 
   return (
     <>
       <button
+        ref={triggerRef}
         type="button"
         onClick={() => setOpen(true)}
+        className="moodboard-talk-trigger"
         style={{
           position: 'fixed',
-          top: 'calc(var(--nav-height) + var(--space-3))',
-          left: 'var(--space-4)',
-          zIndex: 44,
+          top: '10px',
+          right: 'var(--space-4)',
+          zIndex: 60,
           background: 'var(--color-bg)',
           color: 'var(--color-text-primary)',
           border: '1px solid var(--color-border)',
@@ -296,7 +323,7 @@ export default function TalkToUs({ answers }) {
       >
         Talk to us →
       </button>
-      {open && <TalkToUsModal answers={answers} onClose={() => setOpen(false)} />}
+      {open && <TalkToUsModal answers={answers} onClose={closeModal} />}
     </>
   )
 }

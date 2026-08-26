@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import ProgressPulse from './ui/ProgressPulse'
+import StepNavigator from './ui/StepNavigator'
 import BriefPreview from './ui/BriefPreview'
 import ResumeBanner from './ui/ResumeBanner'
 import TalkToUs from './ui/TalkToUs'
@@ -15,6 +15,7 @@ import StepWildcard from './steps/StepWildcard'
 import { loadProgress, saveProgress, clearProgress } from './lib/persistence'
 import { apps } from '@/data/apps'
 import { trackEvent } from '@/lib/analytics'
+import { buildMoodboardDirections } from '@/lib/moodboard/directions'
 
 const STEPS = [StepVibes, StepGuests, StepMoments, StepFeelings, StepStory, StepWildcard]
 
@@ -32,7 +33,7 @@ function useReducedMotion() {
 
 function MatchingLoader() {
   return (
-    <div
+    <main
       style={{
         minHeight: '100dvh',
         paddingTop: 'var(--nav-height)',
@@ -64,14 +65,14 @@ function MatchingLoader() {
       <p
         style={{
           fontSize: 'var(--text-body-sm)',
-          color: 'var(--color-text-muted)',
+          color: 'var(--color-text-secondary)',
           fontWeight: 600,
           letterSpacing: '0.04em',
         }}
       >
         Reading your brief…
       </p>
-      <h2
+      <h1
         style={{
           fontSize: 'var(--text-h3)',
           fontWeight: 800,
@@ -80,8 +81,8 @@ function MatchingLoader() {
         }}
       >
         Finding your apps.
-      </h2>
-    </div>
+      </h1>
+    </main>
   )
 }
 
@@ -93,6 +94,7 @@ export default function MoodboardWizard({
 }) {
   const seededApp = initialSeed ? apps.find((a) => a.slug === initialSeed) : null
   const [step, setStep] = useState(0)
+  const [furthestVisitedStep, setFurthestVisitedStep] = useState(0)
   const [answers, setAnswers] = useState(() => {
     if (initialAnswers && typeof initialAnswers === 'object') {
       return { ...initialAnswers }
@@ -128,13 +130,14 @@ export default function MoodboardWizard({
   // Autosave whenever answers or step change (skip empty initial state, results phase, and edit mode)
   useEffect(() => {
     if (lockedSlug || results || matching) return
-    saveProgress(answers, step)
-  }, [answers, step, results, matching, lockedSlug])
+    saveProgress(answers, step, furthestVisitedStep)
+  }, [answers, step, furthestVisitedStep, results, matching, lockedSlug])
 
   function handleContinueResume() {
     if (!resumeCandidate) return
     setAnswers(resumeCandidate.answers || {})
     setStep(Math.min(resumeCandidate.step ?? 0, STEPS.length - 1))
+    setFurthestVisitedStep(Math.min(resumeCandidate.furthestVisitedStep ?? resumeCandidate.step ?? 0, STEPS.length - 1))
     setResumeCandidate(null)
   }
 
@@ -157,6 +160,7 @@ export default function MoodboardWizard({
         body: JSON.stringify({ answers: finalAnswers }),
       })
       const data = await res.json()
+      if (!res.ok || !Array.isArray(data.matches)) throw new Error('match failed')
       setResults(data)
     } catch {
       // Use fallback results so the page always resolves
@@ -183,6 +187,7 @@ export default function MoodboardWizard({
     }
     const nextStep = step + 1
     setStep(nextStep)
+    setFurthestVisitedStep((current) => Math.max(current, Math.min(nextStep, STEPS.length - 1)))
     if (nextStep >= STEPS.length) {
       startMatching(merged)
     }
@@ -191,6 +196,17 @@ export default function MoodboardWizard({
   function onBack() {
     setDirection('back')
     setStep((prev) => Math.max(0, prev - 1))
+  }
+
+  function goToStep(target) {
+    if (target === step) return
+    setDirection(target > step ? 'forward' : 'back')
+    setStep(target)
+    setFurthestVisitedStep((current) => Math.max(current, target))
+  }
+
+  function onDraftChange(stepAnswers) {
+    setAnswers((current) => ({ ...current, ...stepAnswers }))
   }
 
   const isDone = step >= STEPS.length
@@ -211,19 +227,16 @@ export default function MoodboardWizard({
   }
 
   const CurrentStep = STEPS[step]
+  const directionIds = buildMoodboardDirections(answers).map((item) => item.id)
 
   return (
-    <div style={{ position: 'relative', overscrollBehavior: 'contain' }}>
-      <ProgressPulse total={STEPS.length} current={step} />
+    <main className="moodboard-experience">
       <TalkToUs answers={answers} />
       {(seededApp || role === 'planner') && (
         <div
           style={{
-            position: 'fixed',
-            top: 'calc(var(--nav-height) + var(--space-3))',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            zIndex: 43,
+            width: 'fit-content',
+            margin: 'var(--space-3) auto 0',
             background: 'var(--color-bg-subtle)',
             color: 'var(--color-text-secondary)',
             border: '1px solid var(--color-border)',
@@ -247,23 +260,33 @@ export default function MoodboardWizard({
           onStartFresh={handleStartFresh}
         />
       )}
-      <div
-        key={step}
-        style={{
-          animation: reducedMotion
-            ? 'none'
-            : direction === 'forward'
-            ? 'slideInFromRight 240ms ease-out'
-            : 'slideInFromLeft 240ms ease-out',
-        }}
-      >
-        <CurrentStep
-          onNext={onNext}
-          onBack={step > 0 ? onBack : undefined}
-          initialValues={answers}
+      <StepNavigator current={step} answers={answers} furthestVisitedStep={furthestVisitedStep} onNavigate={goToStep} />
+      <div className="moodboard-studio-canvas">
+        <div
+          key={step}
+          className="moodboard-step-stage"
+          style={{
+            animation: reducedMotion
+              ? 'none'
+              : direction === 'forward'
+              ? 'slideInFromRight 240ms ease-out'
+              : 'slideInFromLeft 240ms ease-out',
+          }}
+        >
+          <CurrentStep
+            onNext={onNext}
+            onBack={step > 0 ? onBack : undefined}
+            initialValues={answers}
+            onDraftChange={onDraftChange}
+            directionIds={directionIds}
+          />
+        </div>
+        <BriefPreview
+          answers={answers}
+          step={step}
+          onPreferencesChange={(directionPreferences) => onDraftChange({ directionPreferences })}
         />
       </div>
-      <BriefPreview answers={answers} step={step} />
-    </div>
+    </main>
   )
 }

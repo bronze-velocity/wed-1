@@ -1,5 +1,6 @@
 import OpenAI from 'openai'
 import { buildSystemPrompt, buildUserPrompt } from '@/lib/moodboard/prompts.js'
+import { scoreMoodboardApps } from '@/lib/moodboard/scoring.js'
 
 const MODEL = process.env.OPENROUTER_MODEL ?? 'anthropic/claude-haiku-4-5-20251001'
 
@@ -12,7 +13,6 @@ const client = new OpenAI({
   },
 })
 
-// In-memory rate limit — resets on cold start in production (acceptable for v1)
 const rateMap = new Map()
 
 function checkRateLimit(ip) {
@@ -27,90 +27,33 @@ function checkRateLimit(ip) {
   return true
 }
 
-function validateResponse(data) {
-  return (
-    data &&
+function fallbackResult(matches) {
+  return {
+    threeWords: 'Warm. Shared. Yours.',
+    matches: matches.map(({ fallbackRationale, ...match }) => ({
+      ...match,
+      whyItFitsYou: fallbackRationale,
+    })),
+    hiddenMatches: [],
+  }
+}
+
+function validNarration(data, matches) {
+  return data &&
     typeof data.threeWords === 'string' &&
-    Array.isArray(data.matches) &&
-    data.matches.length > 0 &&
-    data.matches.every(
-      (m) => typeof m.id === 'string' && typeof m.whyItFitsYou === 'string'
-    ) &&
-    Array.isArray(data.hiddenMatches)
-  )
+    data.rationales &&
+    matches.every((match) => typeof data.rationales[match.id] === 'string')
 }
 
-const FALLBACK = {
-  threeWords: 'Yours. Entirely.',
-  matches: [
-    {
-      id: 'who-said-it',
-      tier: 'standard',
-      score: 80,
-      whyItFitsYou:
-        "We couldn't finish your match right now — but Who Said It? is our most-loved app for any couple. It works for every kind of crowd.",
-      appPageSlug: 'who-said-it',
-    },
-    {
-      id: 'couple-trivia',
-      tier: 'standard',
-      score: 75,
-      whyItFitsYou:
-        'Live Trivia brings the whole room together in under ten minutes. A strong recommendation for any couple with real stories behind them.',
-      appPageSlug: 'couple-trivia',
-    },
-    {
-      id: 'live-roast-board',
-      tier: 'standard',
-      score: 70,
-      whyItFitsYou:
-        "The Live Roast Board puts the couple at the center without a script. If your people are funny, they'll do the work for you.",
-      appPageSlug: 'live-roast-board',
-    },
-  ],
-  hiddenMatches: [],
-}
-
-// Rich dev mock — used when NODE_ENV !== 'production' and either
-// MOODBOARD_MOCK=1 or OPENROUTER_API_KEY is missing. Lets us iterate on
-// the results UI without burning tokens or waiting on the model.
-const DEV_MOCK = {
-  threeWords: 'Warm. Loud. Yours.',
-  matches: [
-    {
-      id: 'who-said-it',
-      tier: 'hero',
-      score: 92,
-      whyItFitsYou:
-        "You told us grandparents are front row and college friends will be loud — Who Said It? is the one moment that lands with both. Quotes from your actual story appear on every phone, and the room argues in real time about which of you is which. It rewards paying attention without asking anyone to stand up.",
-      appPageSlug: 'who-said-it',
-    },
-    {
-      id: 'couple-trivia',
-      tier: 'standard',
-      score: 84,
-      whyItFitsYou:
-        "You picked 'dinner that got out of hand' and mentioned an inside joke about your first date. Live Trivia lets you weaponise that: fifteen questions written by you two, everyone playing on one clock, a leaderboard climbing on the big screen. The people who know you best will pretend to be humble, then win.",
-      appPageSlug: 'couple-trivia',
-    },
-    {
-      id: 'live-roast-board',
-      tier: 'standard',
-      score: 78,
-      whyItFitsYou:
-        "You said 'everyone laughing' more than once, and your crowd sounds ready to write. The Live Roast Board turns the room into the writers' room — anonymous submissions, you approve what goes up, the best lines hit the big screen while dinner is still warm.",
-      appPageSlug: 'live-roast-board',
-    },
-  ],
-  hiddenMatches: [
-    {
-      id: 'the-late-night-confession-booth',
-      tier: 'hidden',
-      score: 71,
-      whyItFitsYou:
-        "You checked 'something nobody has seen before' and 'keepsake from everyone.' We've been holding onto this one — a private late-night booth where guests leave a single voice note for future-you. Nothing goes on the screen. You hear it on your first anniversary.",
-    },
-  ],
+function stitchResult(matches, narration) {
+  return {
+    threeWords: narration.threeWords,
+    matches: matches.map(({ fallbackRationale, ...match }) => ({
+      ...match,
+      whyItFitsYou: narration.rationales[match.id],
+    })),
+    hiddenMatches: [],
+  }
 }
 
 async function callOpenRouter(systemPrompt, userPrompt) {
@@ -119,78 +62,55 @@ async function callOpenRouter(systemPrompt, userPrompt) {
     messages: [
       {
         role: 'system',
-        content: [
-          {
-            type: 'text',
-            text: systemPrompt,
-            cache_control: { type: 'ephemeral' },
-          },
-        ],
+        content: [{ type: 'text', text: systemPrompt, cache_control: { type: 'ephemeral' } }],
       },
-      {
-        role: 'user',
-        content: userPrompt,
-      },
+      { role: 'user', content: userPrompt },
     ],
-    max_tokens: 2000,
-    temperature: 0.7,
+    max_tokens: 900,
+    temperature: 0.6,
   })
 
   const text = response.choices[0]?.message?.content ?? ''
-  // Strip any accidental markdown fences
   const cleaned = text.replace(/^```(?:json)?\n?/m, '').replace(/\n?```$/m, '').trim()
   return JSON.parse(cleaned)
 }
 
 export async function POST(request) {
-  const ip =
-    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
+  const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
     request.headers.get('x-real-ip') ??
     'unknown'
 
   if (!checkRateLimit(ip)) {
-    return Response.json(
-      { error: 'Too many requests. Please try again in an hour.' },
-      { status: 429 }
-    )
+    return Response.json({ error: 'Too many requests. Please try again in an hour.' }, { status: 429 })
   }
 
   let answers
   try {
     const body = await request.json()
     answers = body.answers
-    if (!answers || typeof answers !== 'object') throw new Error('missing answers')
+    if (!answers || typeof answers !== 'object' || Array.isArray(answers)) throw new Error('missing answers')
   } catch {
     return Response.json({ error: 'Invalid request body.' }, { status: 400 })
   }
 
-  const isDev = process.env.NODE_ENV !== 'production'
-  if (isDev && (process.env.MOODBOARD_MOCK === '1' || !process.env.OPENROUTER_API_KEY)) {
-    return Response.json(DEV_MOCK)
-  }
+  const matches = scoreMoodboardApps(answers)
+  const fallback = fallbackResult(matches)
+  const isDevMock = process.env.NODE_ENV !== 'production' &&
+    (process.env.MOODBOARD_MOCK === '1' || !process.env.OPENROUTER_API_KEY)
 
-  if (!process.env.OPENROUTER_API_KEY) {
-    return Response.json(FALLBACK)
-  }
+  if (isDevMock || !process.env.OPENROUTER_API_KEY) return Response.json(fallback)
 
-  const systemPrompt = buildSystemPrompt()
-  const userPrompt = buildUserPrompt(answers)
+  const systemPrompt = buildSystemPrompt(matches)
+  const userPrompt = buildUserPrompt(answers, matches)
 
-  let result
-  try {
-    result = await callOpenRouter(systemPrompt, userPrompt)
-  } catch {
-    // Retry once
+  for (let attempt = 0; attempt < 2; attempt++) {
     try {
-      result = await callOpenRouter(systemPrompt, userPrompt)
+      const narration = await callOpenRouter(systemPrompt, userPrompt)
+      if (validNarration(narration, matches)) return Response.json(stitchResult(matches, narration))
     } catch {
-      return Response.json(FALLBACK)
+      // Retry once, then preserve the deterministic shortlist.
     }
   }
 
-  if (!validateResponse(result)) {
-    return Response.json(FALLBACK)
-  }
-
-  return Response.json(result)
+  return Response.json(fallback)
 }

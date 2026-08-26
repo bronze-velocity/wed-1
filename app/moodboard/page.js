@@ -2,7 +2,7 @@ import MoodboardWizard from '@/components/moodboard/MoodboardWizard'
 
 const TITLE = 'Design Your Wedding Reception App | Wepho'
 const DESCRIPTION =
-  'Answer a few questions about your couple and your guests. We’ll match you to the reception experience that fits — including ideas we’ve never built for anyone else.'
+  'Choose a reception scene, tell us about your guests, and build a shortlist of custom wedding app directions that fit your room.'
 
 export const metadata = {
   title: TITLE,

@@ -61,7 +61,7 @@ export default function BriefPasswordGate({ slug }) {
               fontWeight: 700,
               letterSpacing: '0.08em',
               textTransform: 'uppercase',
-              color: 'var(--color-text-muted)',
+              color: 'var(--color-text-secondary)',
               marginBottom: 'var(--space-3)',
             }}
           >
@@ -98,7 +98,9 @@ export default function BriefPasswordGate({ slug }) {
               margin: '0 auto',
             }}
           >
+            <label htmlFor="moodboard-unlock-password" className="visually-hidden">Brief password</label>
             <input
+              id="moodboard-unlock-password"
               type="password"
               autoFocus
               value={password}

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import Container from './Container'
 import ContactLink from '../ui/ContactLink'
 
@@ -13,6 +14,8 @@ const LINKS = [
 export default function NavBar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
+  const inMoodboard = pathname.startsWith('/moodboard')
 
   useEffect(() => {
     function onScroll() {
@@ -24,6 +27,15 @@ export default function NavBar() {
   }, [])
 
   const solid = scrolled || open
+
+  if (inMoodboard) {
+    return (
+      <header className="moodboard-studio-header">
+        <Link href="/" className="moodboard-studio-logo">Wepho</Link>
+        <span>Wedding app studio</span>
+      </header>
+    )
+  }
 
   return (
     <header
