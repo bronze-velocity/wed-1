@@ -602,6 +602,29 @@
         "needed": "No — a wall-of-stickies house diagram is a lovely low-tech version.",
         "adds_to_the_experience": "Yes — a live illustration that draws itself as votes come in, category clustering, a strong-opinions ticker, and a professionally illustrated printed poster all move it from craft project to keepsake."
       }
+    },
+    {
+      "id": 26,
+      "slug": "first-look-voice-letter",
+      "title": "The First-Look Voice Letter",
+      "description": "Guests leave short voice memos across cocktail hour and dinner — what they noticed when the couple walked in, what they wish for them, what they remember from before. Stitched into a private audio letter the couple listens to together on the way home.",
+      "why": "The classical reception-videographer interview reimagined without the tripod, the queue, or the awkward eye-line. Preserves the voices of older relatives especially well, and gives introverted or emotionally-driven couples a keepsake that feels like the wedding is still speaking to them.",
+      "alt1_vibe": ["Make them cry", "Create a keepsake"],
+      "alt2_moment": ["Cocktail Hour", "Dinner"],
+      "alt4_feeling": ["Emotional", "Romantic"],
+      "cool_features": [
+        "Voice only — no video queue, no tripod, no lighting to worry about",
+        "Three couple-authored prompts to pick from, printed on the program: what you noticed today, what you wish for them, what you remember about them from before",
+        "Discreet re-record button so nobody sends a bad take",
+        "Assisted mode for older guests: a family member can hold the phone while grandma speaks",
+        "Delivered as a private podcast link — 25 to 40 minutes, stitched with gentle music and light editing"
+      ],
+      "why_it_respects_the_irl_wedding": "Deliberately quiet. No big-screen presence, no reveal moment — just a soft MC prompt once and a card in the program. Guests submit when they have a natural minute and put the phone away.",
+      "non_app_version": {
+        "description": "A voicemail line printed on the program; guests call a number and leave a message.",
+        "needed": "No — voicemail is a real option and some couples will love it.",
+        "adds_to_the_experience": "Yes — three couple-authored prompts, re-record support, assisted mode for elderly guests, and a stitched final letter delivered as a private podcast turn a jumble of voicemails into a keepsake worth revisiting."
+      }
     }
   ]
 }

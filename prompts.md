@@ -210,9 +210,18 @@ in /moodboard:
 ### sonnet
 please have a look at the dataforseo output and write a conclusions .md about them. very concise, bulleted conclusions.
 
-###
+### done
 please implement /home/zxc/Documents/code/win-repos/wed-1/zz/moodboard/moodboard-social-sharing-plan.md with these changes:
 - let's make /moodboard/[slug]/edit the password protected editable one and /moodboard/[slug] the sharable one
 - 
+
+### done
+for #1, another suggestion please.
+for #2, your suggestion sounds good.
+
+###
+
+
+
 
 

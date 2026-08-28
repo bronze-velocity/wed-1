@@ -1,6 +1,6 @@
 import { cookies } from 'next/headers'
-import { getBrief, saveBrief } from '@/lib/moodboard/briefStore'
-import { resolveSlug, slugify } from '@/lib/moodboard/slug'
+import { briefExists, getBrief, saveBrief } from '@/lib/moodboard/briefStore'
+import { newSlug, resolveSlug, slugify } from '@/lib/moodboard/slug'
 import {
   cookieMatchesHash,
   cookieNameFor,
@@ -47,7 +47,7 @@ export async function POST(request) {
     return Response.json({ error: 'Invalid request body.' }, { status: 400 })
   }
 
-  const { answers, results, desiredSlug, lockedSlug, password, meta } = body ?? {}
+  const { answers, results, desiredSlug, lockedSlug, password, meta, coupleName } = body ?? {}
 
   if (!results?.matches?.length) {
     return Response.json({ error: 'Results missing' }, { status: 400 })
@@ -73,6 +73,13 @@ export async function POST(request) {
       return Response.json({ error: 'Unauthorized.' }, { status: 401 })
     }
 
+    const nextCoupleName =
+      typeof coupleName === 'string' && coupleName.trim()
+        ? coupleName.trim().slice(0, 120)
+        : typeof meta?.coupleName === 'string' && meta.coupleName.trim()
+        ? meta.coupleName.trim().slice(0, 120)
+        : existing.meta?.coupleName ?? null
+
     const updated = {
       ...existing,
       answers,
@@ -80,10 +87,7 @@ export async function POST(request) {
       updatedAt: new Date().toISOString(),
       meta: {
         ...existing.meta,
-        coupleName:
-          typeof meta?.coupleName === 'string' && meta.coupleName.trim()
-            ? meta.coupleName.slice(0, 120)
-            : existing.meta?.coupleName ?? null,
+        coupleName: nextCoupleName,
         role: meta?.role === 'planner' ? 'planner' : existing.meta?.role ?? 'couple',
       },
     }
@@ -98,6 +102,12 @@ export async function POST(request) {
     return Response.json({
       slug: cleaned,
       url: `${siteUrl()}/moodboard/${cleaned}`,
+      privateUrl: `${siteUrl()}/moodboard/${cleaned}`,
+      socialUrl: updated.meta?.socialPreviewEnabled
+        ? `${siteUrl()}/moodboard/${cleaned}/preview`
+        : null,
+      socialPreviewEnabled: Boolean(updated.meta?.socialPreviewEnabled),
+      coupleName: updated.meta?.coupleName ?? null,
     })
   }
 
@@ -109,7 +119,29 @@ export async function POST(request) {
     )
   }
 
-  const slug = resolveSlug(desiredSlug)
+  const cleanedCoupleName =
+    typeof coupleName === 'string' && coupleName.trim()
+      ? coupleName.trim().slice(0, 120)
+      : typeof meta?.coupleName === 'string' && meta.coupleName.trim()
+      ? meta.coupleName.trim().slice(0, 120)
+      : null
+
+  const baseSlug = resolveSlug(desiredSlug || cleanedCoupleName || '')
+  let slug = baseSlug
+  try {
+    let tries = 0
+    while (await briefExists(slug)) {
+      if (tries >= 6) {
+        slug = newSlug()
+        break
+      }
+      slug = `${baseSlug}-${newSlug().slice(0, 4)}`
+      tries += 1
+    }
+  } catch (err) {
+    console.error('[api/moodboard/share] slug check failed:', err)
+  }
+
   const auth = hashPassword(password)
 
   const brief = {
@@ -119,8 +151,9 @@ export async function POST(request) {
     results,
     auth,
     meta: {
-      coupleName: typeof meta?.coupleName === 'string' ? meta.coupleName.slice(0, 120) : null,
+      coupleName: cleanedCoupleName,
       role: meta?.role === 'planner' ? 'planner' : 'couple',
+      socialPreviewEnabled: false,
     },
   }
 
@@ -144,5 +177,9 @@ export async function POST(request) {
   return Response.json({
     slug,
     url: `${siteUrl()}/moodboard/${slug}`,
+    privateUrl: `${siteUrl()}/moodboard/${slug}`,
+    socialUrl: null,
+    socialPreviewEnabled: false,
+    coupleName: cleanedCoupleName,
   })
 }

@@ -1,14 +1,106 @@
 'use client'
 
-import { useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import Container from '@/components/layout/Container'
 import ResultCard from './ResultCard'
+import ShareSheet from './ShareSheet'
 import { slugify } from '@/lib/moodboard/slug'
+import { VIBES, GUESTS, MOMENTS, FEELINGS, WILDCARDS, STORY_QUESTIONS } from '@/lib/moodboard/config'
+
+function buildAnswerChips(answers) {
+  const chips = []
+  const pick = (list, ids) =>
+    (ids ?? []).map((id) => list.find((item) => item.id === id)?.label).filter(Boolean)
+
+  pick(VIBES, answers?.vibes).forEach((label) => chips.push({ kind: 'Scene', label }))
+  pick(GUESTS, answers?.guests).forEach((label) => chips.push({ kind: 'Guests', label }))
+  pick(MOMENTS, answers?.moments).forEach((label) => chips.push({ kind: 'Moment', label }))
+  pick(FEELINGS, answers?.feelings).forEach((label) => chips.push({ kind: 'Feeling', label }))
+  const wildcardLabel = WILDCARDS.find((w) => w.id === answers?.wildcard)?.label
+  if (wildcardLabel) chips.push({ kind: 'Energy', label: wildcardLabel })
+  return chips
+}
+
+function AnswerStrip({ answers }) {
+  const chips = buildAnswerChips(answers)
+  if (!chips.length) return null
+
+  return (
+    <section
+      className="moodboard-answer-strip"
+      aria-label="Your answers"
+      style={{
+        background: 'var(--color-bg)',
+        paddingTop: 'var(--space-8)',
+        paddingBottom: 'var(--space-8)',
+        borderTop: '1px solid var(--color-border-subtle, rgba(0,0,0,0.06))',
+      }}
+    >
+      <Container>
+        <p
+          style={{
+            fontSize: 'var(--text-tiny)',
+            fontWeight: 700,
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            color: 'var(--color-text-secondary)',
+            marginBottom: 'var(--space-3)',
+            textAlign: 'center',
+          }}
+        >
+          You told us
+        </p>
+        <ul
+          style={{
+            listStyle: 'none',
+            padding: 0,
+            margin: 0,
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: 'var(--space-2)',
+            justifyContent: 'center',
+          }}
+        >
+          {chips.map((chip, i) => (
+            <li
+              key={`${chip.kind}-${chip.label}-${i}`}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'baseline',
+                gap: 'var(--space-2)',
+                padding: 'var(--space-2) var(--space-4)',
+                background: 'var(--color-bg-subtle)',
+                borderRadius: 'var(--radius-md)',
+                fontSize: 'var(--text-body-sm)',
+                color: 'var(--color-text-primary)',
+                fontWeight: 600,
+                lineHeight: 1.3,
+              }}
+            >
+              <span
+                style={{
+                  fontSize: 'var(--text-tiny)',
+                  fontWeight: 700,
+                  letterSpacing: '0.06em',
+                  textTransform: 'uppercase',
+                  color: 'var(--color-text-secondary)',
+                }}
+              >
+                {chip.kind}
+              </span>
+              <span>{chip.label}</span>
+            </li>
+          ))}
+        </ul>
+      </Container>
+    </section>
+  )
+}
 
 // ── Section 1 ────────────────────────────────────────────────────────────────
 
-function ThreeWords({ threeWords }) {
+function ThreeWords({ threeWords, onShare }) {
   const words = threeWords
     .split(/\.\s*/)
     .map((w) => w.trim())
@@ -56,6 +148,25 @@ function ThreeWords({ threeWords }) {
             </span>
           ))}
         </h1>
+        {onShare && (
+          <div
+            style={{
+              marginTop: 'var(--space-8)',
+              display: 'flex',
+              justifyContent: 'center',
+              animation: 'fadeInUp 500ms ease-out 900ms both',
+            }}
+          >
+            <button
+              type="button"
+              onClick={onShare}
+              className="btn btn-primary"
+              style={{ minHeight: 44 }}
+            >
+              Share this moodboard →
+            </button>
+          </div>
+        )}
       </Container>
     </section>
   )
@@ -63,7 +174,7 @@ function ThreeWords({ threeWords }) {
 
 // ── Section 2 ────────────────────────────────────────────────────────────────
 
-function MatchedApps({ matches, onWantThis }) {
+function MatchedApps({ matches, answers, onWantThis }) {
   return (
     <section
       className="moodboard-results-matches"
@@ -86,6 +197,7 @@ function MatchedApps({ matches, onWantThis }) {
               key={match.id}
               match={match}
               index={i}
+              answers={answers}
               onWantThis={onWantThis}
             />
           ))}
@@ -219,7 +331,7 @@ const STORY_LABELS = {
   bestStoryteller: 'Your best storyteller',
 }
 
-function BriefEmailGate({ results, answers, sectionRef, onBriefSent, shared, lockedSlug }) {
+function BriefEmailGate({ results, answers, sectionRef, onBriefSent, shared, lockedSlug, onShared, openSheet, savedShare }) {
   const [email, setEmail] = useState('')
   const [keepBrief, setKeepBrief] = useState(false)
   const [status, setStatus] = useState('idle') // idle | loading | success | error
@@ -438,7 +550,26 @@ function BriefEmailGate({ results, answers, sectionRef, onBriefSent, shared, loc
 
         {!shared && (
           <div style={{ marginTop: 'var(--space-10)' }}>
-            <ShareableLink results={results} answers={answers} lockedSlug={lockedSlug} />
+            <ShareableLink
+              results={results}
+              answers={answers}
+              lockedSlug={lockedSlug}
+              onShared={onShared}
+              openSheet={openSheet}
+              savedShare={savedShare}
+            />
+          </div>
+        )}
+        {shared && openSheet && (
+          <div style={{ marginTop: 'var(--space-10)', textAlign: 'center' }}>
+            <button
+              type="button"
+              onClick={openSheet}
+              className="btn btn-secondary"
+              style={{ minHeight: 44 }}
+            >
+              Share this moodboard →
+            </button>
           </div>
         )}
       </Container>
@@ -448,18 +579,21 @@ function BriefEmailGate({ results, answers, sectionRef, onBriefSent, shared, loc
 
 // ── Shareable Link block ─────────────────────────────────────────────────────
 
-function ShareableLink({ results, answers, lockedSlug }) {
+function ShareableLink({ results, answers, lockedSlug, onShared, openSheet, savedShare }) {
   const isEdit = Boolean(lockedSlug)
+  const [coupleName, setCoupleName] = useState('')
   const [desiredSlug, setDesiredSlug] = useState('')
   const [password, setPassword] = useState('')
   const [status, setStatus] = useState('idle') // idle | loading | ready | error
   const [errorMsg, setErrorMsg] = useState('')
-  const [shareUrl, setShareUrl] = useState('')
-  const [copied, setCopied] = useState(false)
 
   const origin = typeof window !== 'undefined' ? window.location.origin : 'https://wepho.com'
-  const previewSlug = useMemo(() => slugify(desiredSlug), [desiredSlug])
+  const previewSlug = useMemo(
+    () => slugify(desiredSlug || coupleName),
+    [desiredSlug, coupleName]
+  )
   const displaySlug = previewSlug || 'auto-generated'
+  const shareUrl = savedShare?.privateUrl || ''
 
   async function handleShare(e) {
     e.preventDefault()
@@ -470,21 +604,22 @@ function ShareableLink({ results, answers, lockedSlug }) {
     }
     setStatus('loading')
     setErrorMsg('')
-    setCopied(false)
     try {
       const body = isEdit
         ? {
             answers,
             results,
             lockedSlug,
+            coupleName: coupleName || undefined,
             meta: { role: answers?.role ?? 'couple' },
           }
         : {
             answers,
             results,
-            desiredSlug,
+            desiredSlug: desiredSlug || undefined,
+            coupleName: coupleName || undefined,
             password,
-            meta: { coupleName: desiredSlug || null, role: answers?.role ?? 'couple' },
+            meta: { role: answers?.role ?? 'couple' },
           }
       const res = await fetch('/api/moodboard/share', {
         method: 'POST',
@@ -498,21 +633,18 @@ function ShareableLink({ results, answers, lockedSlug }) {
         return
       }
       const data = await res.json()
-      setShareUrl(data.url)
+      onShared?.({
+        slug: data.slug,
+        privateUrl: data.privateUrl || data.url,
+        socialUrl: data.socialUrl || null,
+        socialPreviewEnabled: Boolean(data.socialPreviewEnabled),
+        coupleName: data.coupleName || coupleName || null,
+        password: isEdit ? null : password,
+      })
       setStatus('ready')
     } catch {
       setStatus('error')
       setErrorMsg('Couldn’t save. Try again.')
-    }
-  }
-
-  async function copy() {
-    try {
-      await navigator.clipboard.writeText(shareUrl)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    } catch {
-      // ignore
     }
   }
 
@@ -543,14 +675,26 @@ function ShareableLink({ results, answers, lockedSlug }) {
       <form onSubmit={handleShare}>
         {!isEdit && (
           <>
-            <label htmlFor="moodboard-share-name" className="visually-hidden">Share link name</label>
+            <label htmlFor="moodboard-share-couple" className="visually-hidden">Couple names</label>
             <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
               <input
-                id="moodboard-share-name"
+                id="moodboard-share-couple"
+                type="text"
+                value={coupleName}
+                onChange={(e) => setCoupleName(e.target.value)}
+                placeholder="Jack & Simone (optional)"
+                className="moodboard-input"
+                style={{ flex: 1, minWidth: 220 }}
+              />
+            </div>
+            <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap', marginTop: 'var(--space-3)' }}>
+              <label htmlFor="moodboard-share-slug" className="visually-hidden">Custom URL</label>
+              <input
+                id="moodboard-share-slug"
                 type="text"
                 value={desiredSlug}
                 onChange={(e) => setDesiredSlug(e.target.value)}
-                placeholder="jack-and-simone (optional)"
+                placeholder="Custom URL (optional)"
                 className="moodboard-input"
                 style={{ flex: 1, minWidth: 220 }}
               />
@@ -611,7 +755,7 @@ function ShareableLink({ results, answers, lockedSlug }) {
         </div>
       </form>
 
-      {status === 'ready' && (
+      {status === 'ready' && shareUrl && (
         <div
           style={{
             marginTop: 'var(--space-5)',
@@ -624,28 +768,24 @@ function ShareableLink({ results, answers, lockedSlug }) {
             flexWrap: 'wrap',
           }}
         >
-          <a
-            href={shareUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <span
             style={{
               flex: 1,
               minWidth: 200,
               fontSize: 'var(--text-body-sm)',
-              color: 'var(--color-accent)',
+              color: 'var(--color-text-primary)',
               wordBreak: 'break-all',
-              textDecoration: 'underline',
             }}
           >
             {shareUrl}
-          </a>
+          </span>
           <button
             type="button"
-            onClick={copy}
-            className="btn btn-secondary"
+            onClick={openSheet}
+            className="btn btn-primary"
             style={{ padding: 'var(--space-2) var(--space-4)' }}
           >
-            {copied ? 'Copied ✓' : 'Copy'}
+            Share options →
           </button>
         </div>
       )}
@@ -673,25 +813,116 @@ export default function MoodboardResults({
   onBriefSent,
   shared = false,
   lockedSlug = null,
+  sharedBrief = null,
 }) {
   const emailRef = useRef(null)
+  const shareRef = useRef(null)
+  const [sheetOpen, setSheetOpen] = useState(false)
+  const [savedShare, setSavedShare] = useState(() => {
+    if (shared && sharedBrief) {
+      const origin = typeof window !== 'undefined' ? window.location.origin : ''
+      return {
+        slug: sharedBrief.slug,
+        privateUrl: `${origin}/moodboard/${sharedBrief.slug}`,
+        socialUrl: sharedBrief.socialPreviewEnabled
+          ? `${origin}/moodboard/${sharedBrief.slug}/preview`
+          : null,
+        socialPreviewEnabled: Boolean(sharedBrief.socialPreviewEnabled),
+        coupleName: sharedBrief.coupleName || null,
+        password: null,
+      }
+    }
+    return null
+  })
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    if (!savedShare || savedShare.privateUrl?.startsWith('http')) return
+    setSavedShare((s) => (s ? { ...s, privateUrl: `${window.location.origin}${s.privateUrl}` } : s))
+  }, [savedShare])
 
   function scrollToEmail() {
     emailRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
+  const openSheet = useCallback(() => {
+    if (savedShare?.privateUrl) {
+      setSheetOpen(true)
+    } else {
+      shareRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [savedShare])
+
+  const handleShared = useCallback((data) => {
+    setSavedShare(data)
+    setSheetOpen(true)
+  }, [])
+
+  const handlePreviewChange = useCallback((patch) => {
+    setSavedShare((s) => (s ? { ...s, ...patch } : s))
+  }, [])
+
+  const sharedByName = shared ? savedShare?.coupleName || sharedBrief?.coupleName : null
+
   return (
     <main className="moodboard-results">
-      <ThreeWords threeWords={results.threeWords} />
-      <MatchedApps matches={results.matches} onWantThis={scrollToEmail} />
+      {shared && (
+        <section
+          aria-label="Shared moodboard"
+          style={{
+            background: 'var(--color-accent-light)',
+            paddingTop: 'var(--space-4)',
+            paddingBottom: 'var(--space-4)',
+            textAlign: 'center',
+          }}
+        >
+          <Container>
+            <p
+              style={{
+                fontSize: 'var(--text-body-sm)',
+                color: 'var(--color-accent-dark)',
+                fontWeight: 600,
+              }}
+            >
+              {sharedByName
+                ? `Shared with you by ${sharedByName}`
+                : 'Shared with you'}
+              {' · '}
+              <span style={{ color: 'var(--color-text-secondary)' }}>
+                A wedding moodboard from Wepho
+              </span>
+            </p>
+          </Container>
+        </section>
+      )}
+      <ThreeWords threeWords={results.threeWords} onShare={openSheet} />
+      <AnswerStrip answers={answers} />
+      <MatchedApps matches={results.matches} answers={answers} onWantThis={scrollToEmail} />
       <HiddenTier hiddenMatches={results.hiddenMatches} onWantThis={scrollToEmail} />
-      <BriefEmailGate
-        results={results}
-        answers={answers}
-        sectionRef={emailRef}
-        onBriefSent={onBriefSent}
-        shared={shared}
-        lockedSlug={lockedSlug}
+      <div ref={shareRef}>
+        <BriefEmailGate
+          results={results}
+          answers={answers}
+          sectionRef={emailRef}
+          onBriefSent={onBriefSent}
+          shared={shared}
+          lockedSlug={lockedSlug}
+          onShared={handleShared}
+          openSheet={savedShare?.privateUrl ? () => setSheetOpen(true) : null}
+          savedShare={savedShare}
+        />
+      </div>
+      <ShareSheet
+        open={sheetOpen}
+        onClose={() => setSheetOpen(false)}
+        coupleName={savedShare?.coupleName}
+        threeWords={results.threeWords}
+        privateUrl={savedShare?.privateUrl || ''}
+        socialUrl={savedShare?.socialUrl || null}
+        socialPreviewEnabled={Boolean(savedShare?.socialPreviewEnabled)}
+        password={savedShare?.password || null}
+        slug={savedShare?.slug || null}
+        onPreviewChange={handlePreviewChange}
       />
     </main>
   )

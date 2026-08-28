@@ -1,19 +1,23 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
+
 export default function ResumeBanner({ savedAt, onContinue, onStartFresh }) {
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => { setMounted(true) }, [])
   const relative = savedAt ? formatRelative(savedAt) : ''
 
-  return (
+  const node = (
     <div
       role="status"
       style={{
         position: 'fixed',
-        top: 'calc(var(--nav-height) + 72px)',
+        top: 'calc(var(--nav-height) + 12px)',
         left: '50%',
         transform: 'translateX(-50%)',
-        zIndex: 45,
-        maxWidth: 'min(560px, calc(100vw - var(--space-6)))',
-        width: 'max-content',
+        zIndex: 60,
+        width: 'min(560px, calc(100vw - var(--space-4) * 2))',
         padding: 'var(--space-3) var(--space-4)',
         background: 'var(--color-bg)',
         border: '1px solid var(--color-border)',
@@ -21,7 +25,7 @@ export default function ResumeBanner({ savedAt, onContinue, onStartFresh }) {
         boxShadow: 'var(--shadow-md)',
         display: 'flex',
         alignItems: 'center',
-        gap: 'var(--space-4)',
+        gap: 'var(--space-3)',
         flexWrap: 'wrap',
         justifyContent: 'center',
         animation: 'fadeInUp 300ms ease-out both',
@@ -75,6 +79,9 @@ export default function ResumeBanner({ savedAt, onContinue, onStartFresh }) {
       </div>
     </div>
   )
+
+  if (!mounted) return null
+  return createPortal(node, document.body)
 }
 
 function formatRelative(savedAt) {

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import TapCard from '../ui/TapCard'
 import StepShell from '../ui/StepShell'
-import { VIBES, appTitles } from '@/lib/moodboard/config'
+import { VIBES } from '@/lib/moodboard/config'
 
 const MAX = 3
 
@@ -52,7 +52,7 @@ export default function StepVibes({ onNext, onBack, initialValues, onDraftChange
           gap: 'var(--space-3)',
         }}
       >
-        {VIBES.map((v) => (
+        {VIBES.map((v, i) => (
           <TapCard
             key={v.id}
             type="photo"
@@ -60,11 +60,11 @@ export default function StepVibes({ onNext, onBack, initialValues, onDraftChange
             alt={v.label}
             label={v.label}
             detail={v.guestAction}
-            appLabel={appTitles(v.appIds)}
             selected={selected.has(v.id)}
             onClick={() => toggle(v.id)}
             maxSelect={MAX}
             disabled={!selected.has(v.id) && selected.size >= MAX}
+            priority={i < 2}
           />
         ))}
       </div>

@@ -1,9 +1,18 @@
 'use client'
 
 import { useState } from 'react'
+import { Martini, Utensils, Sparkles, Music, Moon } from 'lucide-react'
 import TapCard from '../ui/TapCard'
 import StepShell from '../ui/StepShell'
 import { MOMENTS } from '@/lib/moodboard/config'
+
+const MOMENT_ICONS = {
+  cocktail: Martini,
+  dinner: Utensils,
+  'after-dinner': Sparkles,
+  dancing: Music,
+  'late-night': Moon,
+}
 
 export default function StepMoments({ onNext, onBack, initialValues, onDraftChange }) {
   const [selected, setSelected] = useState(new Set(initialValues?.moments ?? []))
@@ -38,16 +47,20 @@ export default function StepMoments({ onNext, onBack, initialValues, onDraftChan
       }
     >
       <div role="group" aria-label="Reception moments" style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-        {MOMENTS.map((m) => (
-          <TapCard
-            key={m.id}
-            type="illustrated"
-            label={m.label}
-            detail={m.description}
-            selected={selected.has(m.id)}
-            onClick={() => toggle(m.id)}
-          />
-        ))}
+        {MOMENTS.map((m) => {
+          const Icon = MOMENT_ICONS[m.id]
+          return (
+            <TapCard
+              key={m.id}
+              type="illustrated"
+              icon={Icon ? <Icon size={24} strokeWidth={2} /> : undefined}
+              label={m.label}
+              detail={m.description}
+              selected={selected.has(m.id)}
+              onClick={() => toggle(m.id)}
+            />
+          )
+        })}
       </div>
     </StepShell>
   )

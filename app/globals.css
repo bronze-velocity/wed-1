@@ -684,33 +684,120 @@ select.contact-field option {
   line-height: 1.5;
 }
 .moodboard-direction {
+  position: relative;
   display: grid;
   gap: var(--space-3);
   padding: var(--space-4);
+  padding-left: calc(var(--space-4) + 3px);
+  padding-right: calc(var(--space-4) + 64px);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   background: var(--color-bg);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+.moodboard-direction::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: var(--space-3);
+  bottom: var(--space-3);
+  width: 3px;
+  border-radius: var(--radius-full);
+  background: var(--color-border);
+  transition: background 180ms ease;
+}
+.moodboard-direction:hover {
+  border-color: color-mix(in srgb, var(--color-accent) 40%, var(--color-border));
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+.moodboard-direction:hover::before {
+  background: var(--color-accent);
 }
 .moodboard-direction[data-saved] {
   border-color: var(--color-accent);
   background: var(--color-accent-light);
 }
+.moodboard-direction[data-saved]::before {
+  background: var(--color-accent);
+}
 .moodboard-direction-title {
   font-size: var(--text-body-sm);
   font-weight: 800;
   line-height: 1.3;
+  color: var(--color-text-primary);
+  letter-spacing: -0.005em;
 }
 .moodboard-direction-description {
-  margin-top: 2px;
+  margin-top: 4px;
   color: var(--color-text-secondary);
   font-size: var(--text-tiny);
-  line-height: 1.4;
+  line-height: 1.5;
 }
-.moodboard-direction-actions {
+.moodboard-direction-icons {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
   display: flex;
-  gap: var(--space-4);
+  gap: 4px;
 }
-.moodboard-direction-actions button,
+.moodboard-direction-icon {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+.moodboard-direction-icon:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-text-secondary);
+}
+.moodboard-direction-icon[data-active] {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-text-inverse);
+}
+.moodboard-direction-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.moodboard-direction-pills li {
+  padding: 3px 9px;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-accent) 10%, var(--color-bg));
+  color: var(--color-text-secondary);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, var(--color-border));
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.moodboard-direction[data-saved] .moodboard-direction-pills li {
+  background: var(--color-bg);
+  border-color: color-mix(in srgb, var(--color-accent) 40%, var(--color-border));
+  color: var(--color-accent-dark);
+}
+.moodboard-direction-pill-emoji {
+  margin-right: 4px;
+  font-size: 12px;
+  line-height: 1;
+}
+.moodboard-direction-pill-more {
+  background: transparent !important;
+  border-style: dashed !important;
+  font-style: italic;
+  font-weight: 500 !important;
+}
 .moodboard-more-prompts {
   min-height: 44px;
   padding: 0;
@@ -728,14 +815,18 @@ select.contact-field option {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-1);
 }
 .moodboard-direction-tags span {
-  padding: 3px 8px;
+  padding: 4px 10px;
   border-radius: var(--radius-md);
-  background: var(--color-bg-subtle);
-  color: var(--color-text-secondary);
-  font-size: var(--text-tiny);
+  background: var(--color-accent-light);
+  color: var(--color-accent-dark);
+  font-size: 11px;
   font-weight: 700;
+  letter-spacing: 0.01em;
 }
 .moodboard-direction-details {
   color: var(--color-text-secondary);
@@ -765,17 +856,41 @@ select.contact-field option {
   cursor: pointer;
 }
 .moodboard-directions-eyebrow {
-  margin-bottom: var(--space-1);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: var(--space-2);
   color: var(--color-accent);
-  font-size: var(--text-tiny);
+  font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+.moodboard-directions-eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-light);
+}
 .moodboard-directions-desktop > h2 {
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
   font-size: var(--text-h4);
   line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.moodboard-direction-reasoning {
+  padding: var(--space-3);
+  border-left: 2px solid var(--color-accent);
+  background: var(--color-accent-light);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  color: var(--color-text-primary);
+  font-size: var(--text-tiny);
+  line-height: 1.5;
+  font-style: italic;
 }
 
 @media (min-width: 1024px) {
@@ -803,11 +918,16 @@ select.contact-field option {
     max-height: calc(100dvh - var(--nav-height) - 100px);
     overflow-y: auto;
     margin-top: var(--space-6);
-    padding: var(--space-5);
+    padding: var(--space-6);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
-    background: var(--color-bg);
+    background: linear-gradient(180deg, var(--color-bg) 0%, color-mix(in srgb, var(--color-bg-subtle) 60%, var(--color-bg)) 100%);
     box-shadow: var(--shadow-md);
+  }
+  .moodboard-directions-desktop::-webkit-scrollbar { width: 6px; }
+  .moodboard-directions-desktop::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--color-text-secondary) 25%, transparent);
+    border-radius: var(--radius-full);
   }
 }
 @media (min-width: 560px) {
@@ -849,6 +969,25 @@ select.contact-field option {
   text-transform: uppercase;
 }
 .moodboard-result-summary h3 { font-size: var(--text-h4); line-height: 1.2; }
+.moodboard-result-personal {
+  font-size: var(--text-body-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+.moodboard-result-personal strong {
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+.moodboard-result-payoff {
+  font-family: var(--font-serif-accent);
+  font-style: italic;
+  font-size: var(--text-body-lg);
+  line-height: 1.4;
+  color: var(--color-text-primary);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
 .moodboard-result-summary > p:last-of-type,
 .moodboard-result-detail p { color: var(--color-text-secondary); font-size: var(--text-body-sm); line-height: 1.55; }
 .moodboard-result-toggle {
@@ -877,6 +1016,120 @@ select.contact-field option {
 @media (min-width: 768px) {
   .moodboard-results-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .moodboard-results-intro { padding: var(--space-12) 0 var(--space-10); }
+}
+
+/* --- Share sheet --- */
+.moodboard-sharesheet-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.6);
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fadeInUp 200ms var(--ease-out) both;
+}
+.moodboard-sharesheet {
+  width: 100%;
+  max-width: 560px;
+  background: var(--color-bg);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  padding: var(--space-5) var(--space-5) var(--space-8);
+  max-height: 92dvh;
+  overflow-y: auto;
+  animation: slideUp 240ms var(--ease-out) both;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+@media (min-width: 640px) {
+  .moodboard-sharesheet-overlay { align-items: center; }
+  .moodboard-sharesheet {
+    border-radius: var(--radius-xl);
+    padding: var(--space-6) var(--space-6) var(--space-6);
+    max-height: 88dvh;
+  }
+}
+.moodboard-sharesheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.moodboard-sharesheet-close {
+  min-width: 44px;
+  min-height: 44px;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-md);
+}
+.moodboard-sharesheet-close:hover { color: var(--color-text-primary); }
+.moodboard-sharesheet-preview {
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-bg-subtle);
+  border-radius: var(--radius-lg);
+}
+.moodboard-sharesheet-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.moodboard-sharesheet-heading {
+  font-size: var(--text-body);
+  font-weight: 800;
+  margin: 0;
+}
+.moodboard-sharesheet-body {
+  font-size: var(--text-body-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+.moodboard-sharesheet-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+.moodboard-sharesheet-btn {
+  min-height: 44px;
+  flex: 1 1 auto;
+  text-align: center;
+}
+.moodboard-sharesheet-warning {
+  font-size: var(--text-tiny);
+  color: var(--color-accent);
+  margin: 0;
+}
+.moodboard-sharesheet-status {
+  font-size: var(--text-body-sm);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+.moodboard-sharesheet-hint {
+  font-size: var(--text-tiny);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+.moodboard-sharesheet-linkfield {
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-subtle);
+  border-radius: var(--radius-md);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-primary);
+  word-break: break-all;
+  user-select: all;
+}
+.moodboard-sharesheet-footer {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-5);
 }
 
 /* --- Tier-A additions (animations-1.md) --- */

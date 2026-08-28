@@ -5,22 +5,33 @@ import Link from 'next/link'
 import PhoneScene from '@/components/appui/PhoneScene'
 import { getAppBySlug } from '@/lib/getApps'
 import { COUPLE_DEFAULT } from '@/lib/couple'
+import { roomPayoffFor, personalReasonFor } from '@/lib/moodboard/personalization'
 
 function firstSentence(value) {
   const match = value?.match(/^.*?[.!?](?:\s|$)/)
   return match?.[0]?.trim() ?? value
 }
 
-export default function ResultCard({ match, index, onWantThis }) {
+export default function ResultCard({ match, index, answers, onWantThis }) {
   const [expanded, setExpanded] = useState(false)
   const app = getAppBySlug(match.appPageSlug)
   const phoneScene = app?.extended?.deviceScenes?.phone
+  const roomPayoff = roomPayoffFor(match.id)
+  const personal = personalReasonFor(match.id, answers)
 
   return (
     <article className="moodboard-result-card" data-expanded={expanded || undefined}>
       <div className="moodboard-result-summary">
         <p className="moodboard-result-rank">{index === 0 ? 'Best fit' : index === 1 ? 'Strong fit' : 'Worth a look'}</p>
         <h3>{app?.title ?? match.title}</h3>
+        {personal && (
+          <p className="moodboard-result-personal">
+            <span>Because you picked</span> <strong>{personal.label}</strong>
+          </p>
+        )}
+        {roomPayoff && (
+          <p className="moodboard-result-payoff">{roomPayoff}</p>
+        )}
         <p>{expanded ? match.whyItFitsYou : firstSentence(match.whyItFitsYou)}</p>
         <button
           type="button"

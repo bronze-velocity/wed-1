@@ -1802,6 +1802,75 @@ const extendedContent = {
       },
     ],
   },
+
+  'first-look-voice-letter': {
+    hero: {
+      headline: 'The voices from your wedding, still speaking to you on the drive home.',
+      subhead:
+        'Guests leave short voice memos across cocktail hour and dinner. Stitched into one private audio letter you listen to together, whenever you need to hear the room again.',
+    },
+    scene:
+      "There's no line, no booth, no camera pointed at anyone. Sometime during cocktail hour or between courses, guests pick one of three prompts you wrote and leave a thirty-second voice memo from wherever they're sitting. What they noticed when you walked in. What they wish for you. What they remember about you from before. Grandparents record leaning close to the phone; college friends laugh through theirs. Nothing goes on any screen. A week later, a private podcast link arrives — thirty-odd minutes, gently edited, one voice at a time. You listen together on the drive home from the airport, and the wedding starts speaking to you all over again.",
+    howItWorks: {
+      setup: {
+        time: '~10 minutes',
+        detail:
+          "You write the three prompts in your own voice and pick who curates the final letter. We handle the recording flow, the assisted mode for older guests, and the stitched edit.",
+      },
+      guests: {
+        detail:
+          "Guests scan the QR from their program, pick one of your three prompts, and record a 15 to 30 second voice memo directly in their phone's browser. Re-record button included. No download, no queue, no attendant.",
+      },
+      keepsake: {
+        artifact: 'A private audio letter, plus every clip on its own',
+        detail:
+          "One stitched 25 to 40 minute audio letter delivered as a private podcast link the week after the wedding. Every individual clip archived separately too, so a voice you love is never one file failure away from disappearing.",
+      },
+    },
+    bigScreen:
+      "None. This app deliberately has no wall — the only in-room presence is a small prompt on the printed program and one soft MC mention. The value is entirely private, entirely for you.",
+    deviceScenes: {
+      phone: {
+        layout: 'record',
+        eyebrow: '30 seconds · voice only',
+        prompt: 'What did you notice about Simone & Jack today?',
+        subtitle: 'They’ll listen to this on the drive home.',
+        timer: '0:14',
+        maxDuration: '0:30',
+        recording: true,
+      },
+      bigScreen: {
+        layout: 'moment',
+        title: 'First-Look Voice Letter',
+        statusPill: 'Off-screen · by design',
+        headline: 'Aunt Rae is leaving Simone & Jack a message they’ll hear on the way home.',
+        subtitle: 'Nothing from this app appears on the wall. It’s meant for you two, later.',
+      },
+    },
+    isThisYou: [
+      "You'd rather your keepsake feel like a letter than a highlight reel.",
+      'You have older or distant relatives whose voice you want captured while you can, without asking them to perform on camera.',
+      "You're introverted about big-screen moments and want a keepsake that doesn't ask the room to watch anything.",
+      "You already know the drive home from a wedding is a strange, quiet moment — and you want something to fill it.",
+    ],
+    faq: [
+      { q: 'Do guests need to download anything?', a: NO_DOWNLOAD_A },
+      { q: 'How long does setup take?', a: 'About 10 minutes to write your three prompts and pick who curates the final letter.' },
+      {
+        q: 'Is anything shown on the big screen?',
+        a: "No — that's the point. This one is deliberately off-screen. The only in-room presence is a small prompt in the printed program and one soft MC mention.",
+      },
+      {
+        q: 'When do we get the audio letter?',
+        a: 'The stitched letter arrives the week after the wedding as a private podcast link. Individual clips are archived separately at the same time.',
+      },
+      { q: 'What if something breaks on the day?', a: FAILS_A },
+      {
+        q: 'What can we customize?',
+        a: 'The three prompts, whether guests can attach their name or stay anonymous, the length limit per memo, and the pacing and music of the final stitched letter.',
+      },
+    ],
+  },
 }
 
 const emptyExtended = {

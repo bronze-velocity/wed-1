@@ -3,7 +3,18 @@
 import { useState } from 'react'
 import TapCard from '../ui/TapCard'
 import StepShell from '../ui/StepShell'
-import { FEELINGS, appTitles } from '@/lib/moodboard/config'
+import { FEELINGS } from '@/lib/moodboard/config'
+
+const FEELING_EMOJIS = {
+  'cry-good-kind': '🥹',
+  'everyone-laughing': '😂',
+  'room-feels-like-show': '🎭',
+  'strangers-become-friends': '🤝',
+  'keepsake-from-everyone': '🎁',
+  'something-nobody-has-seen': '✨',
+  'our-story-main-character': '💌',
+  'guests-actually-look-up': '🙌',
+}
 
 const MAX = 2
 
@@ -54,20 +65,23 @@ export default function StepFeelings({ onNext, onBack, initialValues, onDraftCha
           gap: 'var(--space-3)',
         }}
       >
-        {FEELINGS.map((f) => (
-          <TapCard
-            key={f.id}
-            type="illustrated"
-            label={f.label}
-            detail={f.description}
-            appLabel={appTitles(f.appIds)}
-            selected={selected.has(f.id)}
-            onClick={() => toggle(f.id)}
-            maxSelect={MAX}
-            disabled={!selected.has(f.id) && selected.size >= MAX}
-            labelStyle={bigLabel}
-          />
-        ))}
+        {FEELINGS.map((f) => {
+          const emoji = FEELING_EMOJIS[f.id]
+          return (
+            <TapCard
+              key={f.id}
+              type="illustrated"
+              icon={emoji}
+              label={f.label}
+              detail={f.description}
+              selected={selected.has(f.id)}
+              onClick={() => toggle(f.id)}
+              maxSelect={MAX}
+              disabled={!selected.has(f.id) && selected.size >= MAX}
+              labelStyle={bigLabel}
+            />
+          )
+        })}
       </div>
     </StepShell>
   )

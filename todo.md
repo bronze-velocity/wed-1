@@ -1,9 +1,12 @@
+# 28 aug
+- all-event-studio
+- restyling a la www.la-fete.com? maybe just typography?
 # 26 aug
 - impr
 - conclusions from the seo runs
 - ai validation `zz/tasks/ai-validation-defense-plan.md`.
-- zz/moodboard/moodboard-social-sharing-plan.md
-
+- zz/moodboard/moodboard-social-sharing-plan.md > done
+- improved SEO from /home/zxc/Documents/code/win-repos/wed-1/distribution/seo/dataforseo-conclusions.md
 # 24 aug
 moodboard:
 - moodboard-cta.md (incl new logic)

@@ -1,6 +1,6 @@
 # Wepho App Guidelines
 
-Refined product guidelines for the 13 approved app concepts currently shown on the site. These guidelines are derived from `zz/one-pager.md`, the approved catalog in `zz/wed-apps/20-apps.json`, and the extended app pages in `data/apps.js`.
+Refined product guidelines for the 15 approved app concepts currently shown on the site. These guidelines are derived from `zz/one-pager.md`, the approved catalog in `zz/wed-apps/20-apps.json`, and the extended app pages in `data/apps.js`.
 
 ## What Every Wepho App Must Be
 
@@ -74,7 +74,7 @@ The approved catalog contains four useful experience shapes. New concepts should
 
 ### Room games and reveals
 
-`Live Trivia`, `Who Said It?`, `Unpopular Opinions`, and `The Story Chain` create a shared burst of attention. They need a host, a bounded runtime, a strong reveal loop, and a display that can carry the room.
+`Live Trivia`, `Who Said It?`, `Unpopular Opinions`, `The Story Chain`, and `The Unprompted Love Letter Machine` create a shared burst of attention. They need a host, a bounded runtime, a strong reveal loop, and a display that can carry the room. The Love Letter Machine is the emotional outlier in this shape: guests submit privately, the couple reads live during speeches, and the register is tender rather than competitive.
 
 ### Ambient participation
 
@@ -86,7 +86,7 @@ The approved catalog contains four useful experience shapes. New concepts should
 
 ### Private keepsakes
 
-`Anniversary Time Capsule` and `The Two-Minute Video Guestbook` are deliberately quieter. They can omit the public display when a private future moment is the actual value. Do not force communal spectacle onto an app whose promise is intimacy.
+`Anniversary Time Capsule`, `The Two-Minute Video Guestbook`, and `The First-Look Voice Letter` are deliberately quieter. They can omit the public display when a private future moment is the actual value. Do not force communal spectacle onto an app whose promise is intimacy.
 
 ## Approved App Guidelines
 
@@ -209,6 +209,26 @@ The approved catalog contains four useful experience shapes. New concepts should
 - **Design guardrail:** Recording must work without an attendant, offer re-record, show duration clearly, and explain who can view the clips.
 - **Make it personal:** Use a prompt that sounds like the couple, and capture the voices of people whose presence matters, especially older or distant relatives.
 - **Do not:** Put a live video feed on the main wall, create a booth queue, or optimize for volume at the expense of usable, emotionally honest clips.
+
+### The First-Look Voice Letter
+
+- **Job:** Preserve the voices of the room in a private audio letter the couple listens to later — no video queue, no big-screen presence, no performance pressure.
+- **Best moment:** Available across cocktail hour and dinner, with a single soft MC prompt.
+- **Core input:** One 15 to 30 second voice memo per guest, answering one of three couple-authored prompts (what you noticed today, what you wish for them, what you remember from before).
+- **Required payoff:** A stitched 25 to 40 minute audio letter delivered as a private podcast link the week after the wedding, plus every individual clip archived on its own.
+- **Design guardrail:** Recording must work without an attendant, offer re-record, respect a hard length limit, and expose an assisted mode so a family member can hold the phone for older guests. Nothing appears on the wall — the in-room presence is a printed prompt in the program and one gentle MC mention.
+- **Make it personal:** Prompts should sound like the couple, not like a form. Encourage guests to name specific memories, not generic well-wishes.
+- **Do not:** Add a public feed. Turn this into a video app in disguise. Suggest permanent archival without a real hosting plan. Force a live-night reveal moment onto an experience whose whole value is quiet.
+
+### The Unprompted Love Letter Machine
+
+- **Job:** Turn every guest into a source of specific, on-the-night affection the couple reads together in front of the room.
+- **Best moment:** Speeches, or a planned tender segment before dessert.
+- **Core input:** One short written message per guest, submitted from their phone.
+- **Required payoff:** The couple (or MC) reads approved messages live from the big screen; the room hears grandma, the college roommate, the aunt who never says anything out loud. Ends with a printed or PDF keepsake of every message.
+- **Design guardrail:** Submission is dead simple and can be re-edited before send. Every message passes through a moderation queue held by a trusted friend so the couple never sees an unreviewed one live. The reader controls pace — nothing auto-advances.
+- **Make it personal:** Prompt language should sound like the couple. Include an optional "who is this from" line so the room can react when a specific voice appears. Seed the queue with a written message from each partner to the other so the display never sits empty.
+- **Do not:** Auto-publish anything. Let the queue become a public feed. Use it as an open-mic replacement — this app supports speeches, it does not replace them. Promise permanent hosting of messages without a real storage plan for the keepsake.
 
 ### The Home Your Room Built
 

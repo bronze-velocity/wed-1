@@ -32,6 +32,7 @@
 
 ### `/blog/wedding-reception-ideas`
 - **Targets:** wedding reception ideas (1,600), reception ideas (170), fun reception ideas (480), fun wedding reception ideas (480), unique reception ideas (390), reception activities (390), wedding party ideas (260). **~3,380/mo aggregate.**
+- **Keywords:** wedding reception ideas, reception ideas, fun reception ideas, fun wedding reception ideas, unique reception ideas, reception activities, wedding party ideas
 - **Angle:** "The 25 reception ideas we saw actually work — and the 5 we're begging couples to stop doing."
 - **Outline:**
   - Hook: one scene from a real reception (60 words).
@@ -51,6 +52,7 @@
 
 ### `/blog/20-unforgettable-wedding-ideas`
 - **Targets:** wedding ideas (9,900). **Biggest single blog-post keyword.**
+- **Keywords:** wedding ideas
 - **Angle:** "Every wedding you've been to in the last 5 years — and the 20 things that made you remember the one you actually loved."
 - **Outline:**
   - Cold open: three specific weddings the writer's been to, why one is unforgettable and two aren't.
@@ -68,6 +70,7 @@
 
 ### `/blog/wedding-inspiration-2026` (also serves "wedding inspo")
 - **Targets:** wedding inspiration (1,900), wedding inspo (1,900). **~3,800/mo.**
+- **Keywords:** wedding inspiration, wedding inspo, wedding trends 2026, wedding trends 2025
 - **Angle:** "Real weddings we can't stop screenshotting in 2026 — and the throughline nobody's naming yet."
 - **Outline:**
   - Cold open: the writer's camera roll ("we save every wedding photo we can't scroll past").
@@ -84,6 +87,7 @@
 
 ### `/blog/unique-wedding-ideas`
 - **Targets:** unique wedding ideas (1,600), creative wedding ideas (1,600), fun wedding ideas (720), modern wedding ideas (110). **~4,030/mo aggregate across 4 SERPs.**
+- **Keywords:** unique wedding ideas, creative wedding ideas, fun wedding ideas, modern wedding ideas
 - **Angle:** "Unique isn't a colour palette. Unique is a specific decision only you would make."
 - **Outline:**
   - Hook: the difference between "unique wedding" (search term) and unique wedding (the actual thing).
@@ -100,6 +104,7 @@
 
 ### `/blog/non-traditional-wedding-ideas`
 - **Targets:** non traditional wedding ideas (720), non traditional wedding reception ideas (110).
+- **Keywords:** non traditional wedding ideas, non traditional wedding reception ideas
 - **Angle:** "You don't need to burn down tradition. You need to keep 3 rituals and rewrite the rest."
 - **Outline:**
   - Hook: three traditions worth keeping (why they still land) + why the rest are copy-paste.
@@ -116,6 +121,7 @@
 
 ### `/blog/wedding-trends-2026`
 - **Targets:** wedding trends 2026 (880), wedding trends 2025 (210 — 301 redirect from `/blog/wedding-trends-2025` for canonical safety).
+- **Keywords:** wedding trends 2026, wedding trends 2025
 - **Angle:** "What's actually shifting in 2026 — and what's a headline pretending to be a trend."
 - **Outline:**
   - Executive summary: 5 real trends + 5 fake trends.
@@ -134,6 +140,7 @@
 
 ### `/blog/wedding-planning-tips` (also serves "wedding day tips")
 - **Targets:** wedding planning tips (1,000), wedding day tips (140).
+- **Keywords:** wedding planning tips, wedding day tips
 - **Angle:** "The 12 tips we'd tell a friend at 11pm the night before her wedding — nothing you'd Google."
 - **Outline:**
   - Framing: 90% of tips online are logistics; the ones that matter are emotional infrastructure.
@@ -150,6 +157,7 @@
 
 ### `/blog/wedding-activities` (also serves party activities, activities for guests, wedding guest ideas)
 - **Targets:** wedding activities (880), wedding party activities (880), activities for wedding guests (320), wedding guest ideas (140). **~2,220/mo.**
+- **Keywords:** wedding activities, wedding party activities, activities for wedding guests, wedding guest ideas
 - **Angle:** "The activities that actually make guests forget their phones — and the ones that make grandma leave early."
 - **Outline:**
   - Hook: what "activity" even means at a wedding (contrasted with "entertainment").
@@ -166,6 +174,7 @@
 
 ### `/blog/wedding-after-party` (also serves wedding night ideas)
 - **Targets:** wedding after party ideas (260), wedding night ideas (110).
+- **Keywords:** wedding after party ideas, wedding night ideas
 - **Angle:** "The two hours after the reception ends — what nobody plans and everybody remembers."
 - **Outline:**
   - Hook: a specific 1am scene from a real after-party.
@@ -183,6 +192,7 @@
 
 ### `/blog/cocktail-hour-ideas`
 - **Targets:** cocktail hour ideas (140), wedding cocktail hour entertainment (140 — **CPC $14.39, highest in shortlist**).
+- **Keywords:** cocktail hour ideas, wedding cocktail hour entertainment
 - **Angle:** "60 minutes, a room of strangers, and a couple who's still taking photos. Here's what actually works."
 - **Outline:**
   - Hook: cocktail hour is the most-underestimated hour of the wedding.
@@ -203,6 +213,7 @@
 
 ### `/blog/adult-party-games` (also serves group games for adults, large group party games, trivia game for party, party games for adults)
 - **Targets:** party games for adults (8,100), adult party games (8,100), group games for adults (2,900), large group party games (2,400), trivia game for party (2,900). **~24,400/mo — biggest new-post cluster.**
+- **Keywords:** party games for adults, adult party games, group games for adults, large group party games, trivia game for party
 - **Angle:** "The party games that work with 30 adults in a room without feeling like a corporate retreat."
 - **Outline:**
   - Hook: why most party-game listicles are recycled Kahoot content.
@@ -219,6 +230,7 @@
 
 ### `/blog/icebreakers`
 - **Targets:** party icebreakers (480), icebreaker games for groups (210).
+- **Keywords:** party icebreakers, icebreaker games for groups
 - **Angle:** "The icebreakers that don't make anyone want to leave — including your dad."
 - **Outline:**
   - Hook: the icebreakers we've all endured and hated. Named.
@@ -235,6 +247,7 @@
 
 ### `/blog/wedding-lawn-games-alternatives` (also serves lawn games wedding, wedding yard games)
 - **Targets:** lawn games wedding (1,000), wedding lawn games (1,000), wedding yard games (1,000). **3,000/mo.**
+- **Keywords:** lawn games wedding, wedding lawn games, wedding yard games
 - **Angle:** "Cornhole is fine. Here are 15 alternatives that don't require six months of Etsy custom orders."
 - **Outline:**
   - Hook: how cornhole became the default and why nobody remembers the couple who had cornhole.
@@ -255,6 +268,7 @@
 
 ### `/blog/newlywed-game-questions`
 - **Targets:** newlywed game questions (8,100 — **flagship traffic, low CPC $0.08**).
+- **Keywords:** newlywed game questions, newlywed game
 - **Angle:** "The 100 newlywed-game questions we've written for real couples — plus the 12 that always land."
 - **Outline:**
   - Hook: the difference between a great newlywed question and a mediocre one — one word.
@@ -273,6 +287,7 @@
 
 ### `/blog/wedding-trivia-questions` (also serves questions about the couple)
 - **Targets:** wedding trivia questions (720), wedding trivia questions about the couple (140).
+- **Keywords:** wedding trivia questions, wedding trivia questions about the couple
 - **Angle:** "60 wedding-trivia questions that make the room lean in, not check their phones."
 - **Outline:**
   - Framing: trivia at a wedding fails when questions could be from any wedding.
@@ -289,6 +304,7 @@
 
 ### `/blog/wedding-shoe-game-questions`
 - **Targets:** wedding shoe game questions (3,600), shoe game questions (1,900). **5,500/mo.**
+- **Keywords:** wedding shoe game questions, shoe game questions
 - **Angle:** "80 shoe-game questions ranked from PG to grandma-would-leave — and the 5 that always land."
 - **Outline:**
   - Hook: the shoe game is the trivia of weddings — universal, tired, revivable.
@@ -306,6 +322,7 @@
 
 ### `/blog/shoe-game-alternatives`
 - **Targets:** wedding shoe game (3,600).
+- **Keywords:** wedding shoe game
 - **Angle:** "The shoe game is 40 years old. Here's what to do instead if it feels tired."
 - **Outline:**
   - Brief history + why the shoe game gets recycled.
@@ -321,6 +338,7 @@
 
 ### `/blog/wedding-bingo-cards-printable-vs-live`
 - **Targets:** wedding bingo cards (880).
+- **Keywords:** wedding bingo cards
 - **Angle:** "Printable wedding bingo is fine. Live bingo — where the room competes — is a different night entirely."
 - **Outline:**
   - Hook: what printable bingo does well (icebreaker) vs. what it can't do (moment).
@@ -341,6 +359,7 @@
 
 ### `/blog/wedding-guestbook-ideas`
 - **Targets:** wedding guestbook ideas (210).
+- **Keywords:** wedding guestbook ideas
 - **Angle:** "The guestbook nobody signs vs. the guestbook everyone stops to read a year later."
 - **Outline:**
   - Hook: the wedding guestbook museum — signed once, opened never.
@@ -357,6 +376,7 @@
 
 ### `/blog/wedding-keepsake-ideas` (also serves wedding memory ideas)
 - **Targets:** wedding keepsake ideas (260), wedding memory ideas (480). **740/mo.**
+- **Keywords:** wedding keepsake ideas, wedding memory ideas
 - **Angle:** "The keepsakes that get looked at once vs. the ones that get looked at at your 10th anniversary."
 - **Outline:**
   - Framing: keepsake ≠ photo. Keepsake = a specific artifact that unlocks a specific memory.
@@ -373,6 +393,7 @@
 
 ### `/blog/wedding-photo-booth-alternatives`
 - **Targets:** wedding photo booth (8,100 — **CPC $7.10, second-highest volume in shortlist**).
+- **Keywords:** wedding photo booth, wedding selfie station, selfie station wedding
 - **Angle:** "You don't need a photo booth. You need what a photo booth is a proxy for."
 - **Outline:**
   - Hook: the photo-booth-industrial-complex and why every couple rents one.
@@ -393,6 +414,7 @@
 
 ### `/blog/wedding-speeches-ideas`
 - **Targets:** wedding speeches ideas (720).
+- **Keywords:** wedding speeches ideas, wedding mad libs
 - **Angle:** "The speeches everyone remembers vs. the ones the couple politely thanked afterwards."
 - **Outline:**
   - Hook: the 5 speech clichés we all suffer.
@@ -409,6 +431,7 @@
 
 ### `/blog/best-man-speech-ideas`
 - **Targets:** best man speech ideas (480).
+- **Keywords:** best man speech ideas
 - **Angle:** "Best-man speeches are a genre. Here's how to write one that doesn't sound like the other 47 you've heard."
 - **Outline:**
   - Hook: the anatomy of a bad best-man speech (opening joke → story → toast). Why it's dead.
@@ -425,6 +448,7 @@
 
 ### `/blog/wedding-toast-ideas`
 - **Targets:** wedding toast ideas (210).
+- **Keywords:** wedding toast ideas
 - **Angle:** "The 30-second toast that lands vs. the 8-minute speech disguised as a toast."
 - **Outline:**
   - Framing: toast ≠ speech. Toast = 30 seconds, one image, one raise-your-glass.
@@ -434,7 +458,7 @@
 - **Key points:** short, screenshot-shareable, evergreen.
 - **Creative twists:**
   - Downloadable "toast cards" — deck of 30 templates.
-  - The "one-line toast challenge" — a mini-viral hook.
+  - "The one-line toast challenge" — a mini-viral hook.
 - **Visuals:** 15 toast cards, 1 hero glass-raise photo.
 - **Internal links:** `/apps/advice-oracle`, `/apps/couple-trivia` (winner-gives-toast tie-in), `/blog/wedding-speeches-ideas`, `/blog/best-man-speech-ideas`.
 - **AI-SEO specific:** `HowTo` for the 3-part toast formula.
@@ -447,6 +471,7 @@
 
 ### `/blog/backyard-wedding-ideas`
 - **Targets:** backyard wedding ideas (3,600).
+- **Keywords:** backyard wedding ideas
 - **Angle:** "The 25 backyard-wedding decisions that separate 'homemade charm' from 'we ran out of extension cords by 6pm.'"
 - **Outline:**
   - Hook: one specific backyard wedding that worked, one that flopped, and the single decision that separated them.
@@ -464,36 +489,42 @@
 
 ### `/blog/outdoor-wedding-ideas`
 - **Targets:** outdoor wedding ideas (1,600).
+- **Keywords:** outdoor wedding ideas
 - **Delta:** broader than backyard. Group by venue type (beach, forest, farm, garden, urban rooftop, backyard). 25 ideas.
 - **Notable twist:** "the weather-plan hierarchy" — 4 levels of backup, when each kicks in.
 - **Internal links:** `/moodboard`, `/apps/venue-scavenger-hunt`, `/blog/backyard-wedding-ideas`, `/blog/garden-wedding-ideas`, `/blog/rustic-wedding-ideas`.
 
 ### `/blog/small-wedding-ideas` (also intimate wedding ideas)
 - **Targets:** small wedding ideas (1,900), intimate wedding ideas (320). **2,220/mo.**
+- **Keywords:** small wedding ideas, intimate wedding ideas
 - **Delta:** frame as *small is a design choice*, not a compromise. 20 ideas that lean into intimacy (personalised place-settings, storytelling seating charts, guest-participation moments).
 - **Notable twist:** "the 20-guest advantage" — 5 things you can only do when the whole room fits at one table.
 - **Internal links:** `/moodboard`, `/apps/love-letter-machine`, `/apps/anniversary-time-capsule`, `/apps/couple-trivia` (small-room trivia is way more intense).
 
 ### `/blog/rustic-wedding-ideas`
 - **Targets:** rustic wedding ideas (880).
+- **Keywords:** rustic wedding ideas
 - **Delta:** aesthetic-heavy, treat as inspiration post. 20 ideas.
 - **Notable twist:** "how to do rustic without doing 2015 rustic" — kill list of things that scream Pinterest-past-decade.
 - **Internal links:** `/moodboard`, `/blog/outdoor-wedding-ideas`, `/blog/garden-wedding-ideas`.
 
 ### `/blog/boho-wedding-ideas`
 - **Targets:** boho wedding ideas (260).
+- **Keywords:** boho wedding ideas
 - **Delta:** 15 ideas. Style guide with mood boards for 3 boho sub-vibes (desert, forest, coastal).
 - **Notable twist:** "boho vs. its impostors" — cutting section on what actually is boho vs. what got sold to you as boho.
 - **Internal links:** `/moodboard`, `/blog/rustic-wedding-ideas`, `/blog/garden-wedding-ideas`.
 
 ### `/blog/garden-wedding-ideas`
 - **Targets:** garden wedding ideas (210).
+- **Keywords:** garden wedding ideas
 - **Delta:** 15 ideas, botanical-heavy. Include a seasonal-bloom calendar.
 - **Notable twist:** "which flowers will still be alive at 10pm" — practical gardening reality.
 - **Internal links:** `/moodboard`, `/blog/rustic-wedding-ideas`, `/blog/outdoor-wedding-ideas`.
 
 ### `/blog/wedding-favor-ideas-reimagined`
 - **Targets:** wedding favor ideas (8,100 — **third-biggest keyword in shortlist**).
+- **Keywords:** wedding favor ideas
 - **Angle:** "Nobody takes the favor home. Here's what actually gets pocketed."
 - **Outline:**
   - Hook: the wedding-favor graveyard (candied almonds, mini bottles, monogrammed matchbooks).
@@ -514,6 +545,7 @@
 
 ### `/blog/reception-program-timeline`
 - **Targets:** wedding reception program (590).
+- **Keywords:** wedding reception program
 - **Angle:** "The reception timeline that keeps energy high — minute-by-minute, from cocktail to send-off."
 - **Outline:**
   - Hook: the "energy dip" nobody plans for (usually 45 min after dinner starts).
@@ -534,6 +566,7 @@
 
 ### `/blog/hochzeitsspiele-modern` (DE)
 - **Targets:** Hochzeitsspiele modern (2,900).
+- **Keywords:** Hochzeitsspiele modern
 - **Angle:** "Moderne Hochzeitsspiele, die euer 2026er-Publikum nicht peinlich finden wird." *(German-language version — needs a native DE writer.)*
 - **Outline:**
   - Hook: warum die klassischen Hochzeitsspiele (Ehequiz, Schuh-Spiel, Reise nach Jerusalem für Erwachsene) 2026 nicht mehr funktionieren.

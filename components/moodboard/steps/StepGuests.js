@@ -4,7 +4,7 @@ import { useState } from 'react'
 import TapCard from '../ui/TapCard'
 import OptionalFreeform from '../ui/OptionalFreeform'
 import StepShell from '../ui/StepShell'
-import { GUESTS, appTitles } from '@/lib/moodboard/config'
+import { GUESTS } from '@/lib/moodboard/config'
 
 export default function StepGuests({ onNext, onBack, initialValues, onDraftChange }) {
   const [selected, setSelected] = useState(new Set(initialValues?.guests ?? []))
@@ -54,9 +54,9 @@ export default function StepGuests({ onNext, onBack, initialValues, onDraftChang
             <TapCard
               key={g.id}
               type="illustrated"
+              icon={g.emoji}
               label={g.label}
               detail={g.description}
-              appLabel={appTitles(g.appIds)}
               selected={selected.has(g.id)}
               onClick={() => toggle(g.id)}
             />

@@ -64,7 +64,9 @@ The **Wepho marketing website** — not the actual wedding apps. The site sells 
 | `zz/app-who-said-id.md`, `zz/app-who-said-it-implementation-plan.md` | Who Said It demo spec + build plan |
 | `zz/info/mkting-page-structure-shorter.md` | 7-section structure for each `/apps/[slug]` page |
 | `zz/lp-v2-suggestions.md`, `zz/lp-v3-suggestions.md` | Landing-page iteration notes |
-| `zz/one-pager.md` | Full project one-pager (positioning, ICP, app list, website structure) |
+| `zz/one-pager.md` | Full project one-pager (positioning, ICP, app list, website structure). Good reference doc for any task touching on UX or strategy. |
+| `zz/app-guidelines.md` | What the app development strategy and heuristics are like.  Good reference doc for any task touching on UX or strategy. |
+
 
 ---
 

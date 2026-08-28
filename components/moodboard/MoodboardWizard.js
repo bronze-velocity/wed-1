@@ -181,6 +181,7 @@ export default function MoodboardWizard({
     const merged = { ...answers, ...stepAnswers }
     setAnswers(merged)
     setDirection('forward')
+    if (resumeCandidate) setResumeCandidate(null)
     if (!startedTracked) {
       trackEvent('moodboard_started', { seed: seededApp?.slug || null, role: role || null })
       setStartedTracked(true)
@@ -203,10 +204,12 @@ export default function MoodboardWizard({
     setDirection(target > step ? 'forward' : 'back')
     setStep(target)
     setFurthestVisitedStep((current) => Math.max(current, target))
+    if (resumeCandidate) setResumeCandidate(null)
   }
 
   function onDraftChange(stepAnswers) {
     setAnswers((current) => ({ ...current, ...stepAnswers }))
+    if (resumeCandidate) setResumeCandidate(null)
   }
 
   const isDone = step >= STEPS.length

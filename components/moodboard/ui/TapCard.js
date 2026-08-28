@@ -51,6 +51,7 @@ export default function TapCard({
   appLabel,
   labelStyle,
   disabled = false,
+  priority = false,
 }) {
   const [pressing, setPressing] = useState(false)
 
@@ -109,6 +110,7 @@ export default function TapCard({
             alt={alt}
             fill
             sizes="(max-width: 768px) 50vw, 240px"
+            priority={priority}
             style={{ objectFit: 'cover' }}
           />
         )}
@@ -171,9 +173,30 @@ export default function TapCard({
       }}
     >
       {icon && (
-        <span aria-hidden="true" style={{ fontSize: 28, lineHeight: 1 }}>
-          {icon}
-        </span>
+        typeof icon === 'string' ? (
+          <span aria-hidden="true" style={{ fontSize: 48, lineHeight: 1, marginBottom: 'var(--space-1)' }}>
+            {icon}
+          </span>
+        ) : (
+          <span
+            aria-hidden="true"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: 48,
+              height: 48,
+              borderRadius: 'var(--radius-full)',
+              background: selected ? 'var(--color-bg)' : 'var(--color-accent-light)',
+              color: 'var(--color-accent)',
+              marginBottom: 'var(--space-1)',
+              boxShadow: selected ? 'inset 0 0 0 1.5px var(--color-accent)' : 'none',
+              transition: 'background 200ms ease, box-shadow 200ms ease',
+            }}
+          >
+            {icon}
+          </span>
+        )
       )}
       {label && (
         <span

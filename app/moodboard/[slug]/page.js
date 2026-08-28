@@ -22,11 +22,22 @@ export async function generateMetadata({ params }) {
   }
 
   const coupleName = brief.meta?.coupleName
+  const threeWords = brief.results?.threeWords
   const title = coupleName
-    ? `${coupleName}'s wedding app brief | Wepho`
-    : 'A private Wepho brief'
-  const description = 'A password-protected custom wedding reception app brief, built with Wepho.'
-  const url = `${(process.env.SITE_URL || 'https://wepho.com').replace(/\/$/, '')}/moodboard/${slug}`
+    ? `${coupleName}'s wedding app moodboard | Wepho`
+    : 'Wedding app moodboard | Wepho'
+  const description = threeWords
+    ? `${threeWords} A custom reception experience shaped around their people, stories, and energy.`
+    : 'A private, password-protected custom wedding reception app moodboard, built with Wepho.'
+  const site = (process.env.SITE_URL || 'https://wepho.com').replace(/\/$/, '')
+  const url = `${site}/moodboard/${slug}`
+  const version = brief.updatedAt || brief.createdAt || ''
+  const imageUrl = `${site}/moodboard/${slug}/opengraph-image${
+    version ? `?v=${encodeURIComponent(version)}` : ''
+  }`
+  const imageAlt = coupleName
+    ? `${coupleName}'s Wepho wedding app moodboard`
+    : 'A Wepho wedding app moodboard'
 
   return {
     title,
@@ -38,13 +49,14 @@ export async function generateMetadata({ params }) {
       description,
       url,
       type: 'website',
-      images: [{ url: '/images/moodboard/og.jpg', width: 1200, height: 630 }],
+      siteName: 'Wepho',
+      images: [{ url: imageUrl, width: 1200, height: 630, alt: imageAlt }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: ['/images/moodboard/og.jpg'],
+      images: [imageUrl],
     },
   }
 }
@@ -80,6 +92,11 @@ export default async function SharedBriefPage({ params }) {
         results={brief.results}
         answers={brief.answers}
         shared
+        sharedBrief={{
+          slug,
+          coupleName: brief.meta?.coupleName ?? null,
+          socialPreviewEnabled: Boolean(brief.meta?.socialPreviewEnabled),
+        }}
       />
       <section
         className="section-py"
