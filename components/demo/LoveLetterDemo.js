@@ -10,14 +10,14 @@ const STEPS = ['phone', 'admin', 'screen']
 
 const STEP_LABELS = {
   phone: "A guest's phone",
-  admin: "Maid of honor's tablet",
+  admin: "Maid of honor's phone",
   screen: 'The reception screen',
 }
 
 const STEP_SUBTITLES = {
-  phone: 'They tap in a message during cocktail hour.',
-  admin: 'She reads it, then approves — nothing hits the wall without her.',
-  screen: 'At dinner, you read it together for the first time.',
+  phone: 'Any guest, any moment, from their own phone.',
+  admin: 'She screens each one from her phone.',
+  screen: 'Together, on the big screen, when dinner starts.',
 }
 
 // Seeded so the demo always has queue history and a pending message.
@@ -128,7 +128,18 @@ export default function LoveLetterDemo() {
   }
 
   const isAuto = mode === 'auto'
-  const frameWidth = step === 'phone' ? 300 : step === 'admin' ? 540 : 620
+  const frameWidth = step === 'screen' ? 620 : 300
+
+  function goPrev() {
+    if (mode === 'auto') return
+    const i = Math.max(0, stepIndex - 1)
+    setStep(STEPS[i])
+  }
+  function goNext() {
+    if (mode === 'auto') return
+    if (stepIndex >= STEPS.length - 1) return
+    setStep(STEPS[stepIndex + 1])
+  }
 
   return (
     <div ref={containerRef} style={{ width: '100%' }}>
@@ -209,7 +220,7 @@ export default function LoveLetterDemo() {
         </div>
       </div>
 
-      {/* Progress dots + controls */}
+      {/* Progress + controls */}
       <div style={{
         display: 'flex',
         flexDirection: 'column',
@@ -217,75 +228,156 @@ export default function LoveLetterDemo() {
         gap: 'var(--space-4)',
         marginTop: 'var(--space-6)',
       }}>
-        <div style={{ display: 'flex', gap: 8 }}>
-          {STEPS.map((s, i) => {
-            const isCurrent = s === step
-            const isDone = i < stepIndex
-            return (
-              <button
-                key={s}
-                type="button"
-                onClick={() => {
-                  if (mode === 'auto') return
-                  setStep(s)
-                }}
-                aria-label={`Jump to step ${i + 1}: ${STEP_LABELS[s]}`}
-                disabled={mode === 'auto'}
-                style={{
-                  width: isCurrent ? 28 : 10,
-                  height: 10,
-                  padding: 0,
-                  borderRadius: 'var(--radius-full)',
-                  border: 'none',
-                  background: isCurrent
-                    ? 'var(--color-accent)'
-                    : isDone
-                    ? 'var(--color-border-strong)'
-                    : 'var(--color-border)',
-                  cursor: mode === 'auto' ? 'default' : 'pointer',
-                  transition: 'width 300ms var(--ease-out), background 300ms var(--ease-out)',
-                }}
-              />
-            )
-          })}
-        </div>
-
         {isAuto ? (
-          <button
-            type="button"
-            onClick={tryItYourself}
-            style={{
-              padding: '10px 20px',
-              borderRadius: 'var(--radius-md)',
-              border: '1.5px solid var(--color-accent)',
-              background: 'var(--color-accent)',
-              color: '#fff',
-              fontSize: 'var(--text-body-sm)',
-              fontWeight: 700,
-              cursor: 'pointer',
-              fontFamily: 'inherit',
-            }}
-          >
-            Try it yourself →
-          </button>
+          <>
+            <div style={{ display: 'flex', gap: 8 }}>
+              {STEPS.map((s, i) => {
+                const isCurrent = s === step
+                const isDone = i < stepIndex
+                return (
+                  <span
+                    key={s}
+                    aria-hidden="true"
+                    style={{
+                      width: isCurrent ? 28 : 10,
+                      height: 10,
+                      borderRadius: 'var(--radius-full)',
+                      background: isCurrent
+                        ? 'var(--color-accent)'
+                        : isDone
+                        ? 'var(--color-border-strong)'
+                        : 'var(--color-border)',
+                      transition: 'width 300ms var(--ease-out), background 300ms var(--ease-out)',
+                    }}
+                  />
+                )
+              })}
+            </div>
+            <button
+              type="button"
+              onClick={tryItYourself}
+              style={{
+                padding: '10px 20px',
+                borderRadius: 'var(--radius-md)',
+                border: '1.5px solid var(--color-accent)',
+                background: 'var(--color-accent)',
+                color: '#fff',
+                fontSize: 'var(--text-body-sm)',
+                fontWeight: 700,
+                cursor: 'pointer',
+                fontFamily: 'inherit',
+              }}
+            >
+              Try it yourself →
+            </button>
+          </>
         ) : (
-          <button
-            type="button"
-            onClick={restart}
-            style={{
-              padding: '8px 18px',
-              borderRadius: 'var(--radius-md)',
-              border: '1.5px solid var(--color-border-strong)',
-              background: 'transparent',
-              color: 'var(--color-text-secondary)',
-              fontSize: 'var(--text-body-sm)',
-              fontWeight: 600,
-              cursor: 'pointer',
-              fontFamily: 'inherit',
-            }}
-          >
-            ↺ Watch the auto-demo
-          </button>
+          <>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 'var(--space-4)',
+            }}>
+              <button
+                type="button"
+                onClick={goPrev}
+                disabled={stepIndex === 0}
+                aria-label="Previous step"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 6,
+                  padding: '8px 14px',
+                  borderRadius: 'var(--radius-md)',
+                  border: '1px solid var(--color-border)',
+                  background: 'var(--color-bg)',
+                  color: stepIndex === 0 ? 'var(--color-text-muted)' : 'var(--color-text-primary)',
+                  fontSize: 'var(--text-body-sm)',
+                  fontWeight: 600,
+                  cursor: stepIndex === 0 ? 'not-allowed' : 'pointer',
+                  opacity: stepIndex === 0 ? 0.5 : 1,
+                  fontFamily: 'inherit',
+                  transition: 'background var(--duration-fast), border-color var(--duration-fast)',
+                }}
+              >
+                <span aria-hidden="true">←</span> Back
+              </button>
+
+              <div style={{ display: 'flex', gap: 8 }}>
+                {STEPS.map((s, i) => {
+                  const isCurrent = s === step
+                  const isDone = i < stepIndex
+                  return (
+                    <button
+                      key={s}
+                      type="button"
+                      onClick={() => setStep(s)}
+                      aria-label={`Jump to step ${i + 1}: ${STEP_LABELS[s]}`}
+                      aria-current={isCurrent ? 'step' : undefined}
+                      style={{
+                        width: isCurrent ? 28 : 10,
+                        height: 10,
+                        padding: 0,
+                        borderRadius: 'var(--radius-full)',
+                        border: 'none',
+                        background: isCurrent
+                          ? 'var(--color-accent)'
+                          : isDone
+                          ? 'var(--color-border-strong)'
+                          : 'var(--color-border)',
+                        cursor: 'pointer',
+                        transition: 'width 300ms var(--ease-out), background 300ms var(--ease-out)',
+                      }}
+                    />
+                  )
+                })}
+              </div>
+
+              <button
+                type="button"
+                onClick={goNext}
+                disabled={stepIndex >= STEPS.length - 1}
+                aria-label="Next step"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 6,
+                  padding: '8px 14px',
+                  borderRadius: 'var(--radius-md)',
+                  border: '1.5px solid var(--color-accent)',
+                  background: stepIndex >= STEPS.length - 1 ? 'transparent' : 'var(--color-accent)',
+                  color: stepIndex >= STEPS.length - 1 ? 'var(--color-text-muted)' : '#fff',
+                  fontSize: 'var(--text-body-sm)',
+                  fontWeight: 700,
+                  cursor: stepIndex >= STEPS.length - 1 ? 'not-allowed' : 'pointer',
+                  opacity: stepIndex >= STEPS.length - 1 ? 0.5 : 1,
+                  fontFamily: 'inherit',
+                  borderColor: stepIndex >= STEPS.length - 1 ? 'var(--color-border)' : 'var(--color-accent)',
+                  transition: 'background var(--duration-fast)',
+                }}
+              >
+                Next <span aria-hidden="true">→</span>
+              </button>
+            </div>
+            <button
+              type="button"
+              onClick={restart}
+              style={{
+                padding: '4px 8px',
+                border: 'none',
+                background: 'transparent',
+                color: 'var(--color-text-muted)',
+                fontSize: 'var(--text-body-sm)',
+                fontWeight: 500,
+                cursor: 'pointer',
+                fontFamily: 'inherit',
+                textDecoration: 'underline',
+                textUnderlineOffset: 3,
+              }}
+            >
+              ↺ Watch the auto-demo
+            </button>
+          </>
         )}
       </div>
 

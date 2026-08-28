@@ -8,7 +8,7 @@ export default function sitemap() {
   const posts = getPosts()
   const now = new Date()
 
-  const staticRoutes = ['', '/planners', '/apps', '/blog'].map((path) => ({
+  const staticRoutes = ['', '/planners', '/apps', '/blog', '/how-it-works'].map((path) => ({
     url: `${BASE_URL}${path}`,
     lastModified: now,
   }))

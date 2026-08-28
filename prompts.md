@@ -219,9 +219,19 @@ please implement /home/zxc/Documents/code/win-repos/wed-1/zz/moodboard/moodboard
 for #1, another suggestion please.
 for #2, your suggestion sounds good.
 
+### done
+please do these changes to the live demo (#1) on the landing page:
+- better styled pills. they now look like buttons. aligned with the design system/other UI on the landing page.
+- shorter and improved description. no em dashes. let's have the maid of honor do it on their own phone instead.
+- pill "yours to keep forever" isn't strong. suggest a better one or remove it.
+- rethink where what type of content goes, now it seems we're repeating ourselves in intro, pills, step description.
+- improve spacing between the pills and what's under
+- better next/previous UI and UX
+- better UI for the step 2 screen. also, now it needs to be a mobile screen.
+
 ###
-
-
+please do these changes to the second demo (#2) on the landing page:
+- same scrolling UI as for demo 1
 
 
 

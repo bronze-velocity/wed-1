@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import Container from '@/components/layout/Container'
 import { apps } from '@/data/apps'
 
@@ -169,6 +170,24 @@ export default function HowItWorks() {
             </div>
           ))}
         </div>
+
+        <p
+          style={{
+            marginTop: 'var(--space-10)',
+            textAlign: 'center',
+            fontSize: 'var(--text-body)',
+            color: 'var(--color-text-secondary)',
+          }}
+        >
+          Curious about the technical side — offline behaviour, moderation, day-of monitoring?{' '}
+          <Link
+            href="/how-it-works"
+            className="link-underline"
+            style={{ color: 'var(--color-accent)', fontWeight: 600, textDecoration: 'none' }}
+          >
+            See exactly how a Wepho app works &rarr;
+          </Link>
+        </p>
       </Container>
     </section>
   )

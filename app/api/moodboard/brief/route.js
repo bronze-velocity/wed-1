@@ -1,9 +1,18 @@
 import { sendMail } from '@/lib/mailer.js'
-import { APP_DIRECTIONS, STORY_QUESTIONS } from '@/lib/moodboard/config.js'
+import { APP_DIRECTIONS, STORY_QUESTIONS, allCustomEntries } from '@/lib/moodboard/config.js'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const STORY_LABELS = Object.fromEntries(STORY_QUESTIONS.map((question) => [question.key, question.chip]))
+
+function esc(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
 
 function buildBriefHtml(email, results, answers, keepBrief) {
   const topMatches = results.matches
@@ -22,10 +31,18 @@ function buildBriefHtml(email, results, answers, keepBrief) {
     ? `<p style="padding:8px 12px;background:#EDE9FF;border-radius:6px;font-size:13px"><strong>Retention:</strong> couple opted in to keep this brief. OK to retain in follow-up notes.</p>`
     : `<p style="padding:8px 12px;background:#F7F6F3;border-radius:6px;font-size:13px"><strong>Retention:</strong> couple did NOT opt in. Delete this brief from notes after replying (90-day max).</p>`
 
+  const customGroups = allCustomEntries(answers)
+  const customBlock = customGroups.length
+    ? `<h3>In their own words</h3><ul>${customGroups
+        .flatMap((g) => g.entries.map((e) => `<li><strong>${esc(g.label)}:</strong> <em>"${esc(e.text)}"</em></li>`))
+        .join('')}</ul>`
+    : ''
+
   return `
     <h2>Moodboard brief — ${results.threeWords}</h2>
     ${retentionBanner}
     <p><strong>Email:</strong> ${email}</p>
+    ${customBlock}
     <h3>Matches</h3>
     <ul>${topMatches}</ul>
     ${results.hiddenMatches?.length ? `<h3>Hidden matches</h3><ul>${results.hiddenMatches.map((m) => `<li><strong>${m.id}</strong>: ${m.whyItFitsYou}</li>`).join('')}</ul>` : ''}

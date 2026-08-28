@@ -22,7 +22,7 @@ export default function DemoSection() {
         <div
           ref={headingRef}
           className="reveal"
-          style={{ textAlign: 'center', marginBottom: 'var(--space-14)' }}
+          style={{ textAlign: 'center', marginBottom: 'var(--space-20)' }}
         >
           <p
             style={{
@@ -53,39 +53,58 @@ export default function DemoSection() {
               fontSize: 'var(--text-body-lg)',
               lineHeight: 1.6,
               color: 'var(--color-text-secondary)',
-              maxWidth: '640px',
+              maxWidth: '620px',
               margin: '0 auto',
             }}
           >
-            During cocktail hour, your guests write you a secret message: a memory, a wish, something they&rsquo;ve never said out loud. Your maid of honor (yes, she gets a tablet) approves each one before it hits the big screen. At dinner, you read them together for the first time, live, in front of everyone. Watch it play through &mdash; or tap &ldquo;Try it yourself.&rdquo;
+            The Unprompted Love Letter Machine. Every guest gets a chance to say the thing they&rsquo;d never say out loud. Read them together, live, when dinner starts.
           </p>
 
           <div
             style={{
               display: 'flex',
               flexWrap: 'wrap',
-              gap: 'var(--space-2)',
+              gap: 8,
               justifyContent: 'center',
-              marginTop: 'var(--space-8)',
+              marginTop: 'var(--space-6)',
             }}
           >
             {[
-              'Tap, submit, back to your drink',
-              'You approve every message',
-              'Yours to keep forever',
+              'No app to download',
+              'Nothing hits the wall unapproved',
+              'Every message saved',
             ].map((label) => (
               <span
                 key={label}
                 style={{
-                  padding: '6px 14px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 6,
+                  padding: '5px 12px 5px 10px',
                   borderRadius: 'var(--radius-md)',
-                  border: '1.5px solid var(--color-border-strong)',
-                  background: 'var(--color-bg)',
+                  border: '1px solid var(--color-border)',
+                  background: 'var(--color-bg-subtle)',
                   fontSize: 'var(--text-body-sm)',
-                  fontWeight: 600,
-                  color: 'var(--color-text-secondary)',
+                  fontWeight: 500,
+                  color: 'var(--color-text-primary)',
                 }}
               >
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  aria-hidden="true"
+                  style={{ flexShrink: 0, color: 'var(--color-accent)' }}
+                >
+                  <path
+                    d="M2 6.2l2.6 2.6L10 3.4"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
                 {label}
               </span>
             ))}

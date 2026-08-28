@@ -3,42 +3,42 @@
 import { useState } from 'react'
 import TapCard from '../ui/TapCard'
 import StepShell from '../ui/StepShell'
-import { FEELINGS } from '@/lib/moodboard/config'
-
-const FEELING_EMOJIS = {
-  'cry-good-kind': '🥹',
-  'everyone-laughing': '😂',
-  'room-feels-like-show': '🎭',
-  'strangers-become-friends': '🤝',
-  'keepsake-from-everyone': '🎁',
-  'something-nobody-has-seen': '✨',
-  'our-story-main-character': '💌',
-  'guests-actually-look-up': '🙌',
-}
+import CustomEntryPills from '../ui/CustomEntryPills'
+import { FEELINGS, customEntriesFor } from '@/lib/moodboard/config'
 
 const MAX = 2
+const CUSTOM_MAX = 2
 
 const bigLabel = { fontSize: 'var(--text-body)', fontWeight: 700 }
 
 export default function StepFeelings({ onNext, onBack, initialValues, onDraftChange }) {
   const [selected, setSelected] = useState(new Set(initialValues?.feelings ?? []))
+  const [customEntries, setCustomEntries] = useState(customEntriesFor(initialValues, 'feelings'))
+
+  const totalSelected = selected.size + customEntries.length
 
   function toggle(id) {
     const next = new Set(selected)
     if (next.has(id)) {
       next.delete(id)
-    } else if (next.size < MAX) {
+    } else if (totalSelected < MAX) {
       next.add(id)
     }
     setSelected(next)
     onDraftChange?.({ feelings: Array.from(next) })
   }
 
+  function handleCustomChange(entries) {
+    const trimmed = entries.slice(0, CUSTOM_MAX)
+    setCustomEntries(trimmed)
+    onDraftChange?.({ customEntries: { feelings: trimmed } })
+  }
+
   return (
     <StepShell
-      stepLabel="Step 4 of 6"
+      stepLabel="Step 4 of 7"
       title="What should the room feel like?"
-      subtitle={`Pick up to ${MAX}`}
+      subtitle={`Pick up to ${MAX} — or say it in your words`}
       cta={
         <div className="moodboard-cta">
           {onBack && (
@@ -47,7 +47,12 @@ export default function StepFeelings({ onNext, onBack, initialValues, onDraftCha
             </button>
           )}
           <button
-            onClick={() => onNext({ feelings: Array.from(selected) })}
+            onClick={() =>
+              onNext({
+                feelings: Array.from(selected),
+                customEntries: { feelings: customEntries },
+              })
+            }
             className="btn btn-primary"
             style={{ flex: 1 }}
           >
@@ -56,32 +61,42 @@ export default function StepFeelings({ onNext, onBack, initialValues, onDraftCha
         </div>
       }
     >
-      <div
-        className="moodboard-option-grid"
-        role="group"
-        aria-label={`Desired room feelings. Choose up to ${MAX}.`}
-        style={{
-          display: 'grid',
-          gap: 'var(--space-3)',
-        }}
-      >
-        {FEELINGS.map((f) => {
-          const emoji = FEELING_EMOJIS[f.id]
-          return (
-            <TapCard
-              key={f.id}
-              type="illustrated"
-              icon={emoji}
-              label={f.label}
-              detail={f.description}
-              selected={selected.has(f.id)}
-              onClick={() => toggle(f.id)}
-              maxSelect={MAX}
-              disabled={!selected.has(f.id) && selected.size >= MAX}
-              labelStyle={bigLabel}
-            />
-          )
-        })}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
+        <div
+          className="moodboard-option-grid"
+          role="group"
+          aria-label={`Desired room feelings. Choose up to ${MAX}.`}
+          style={{
+            display: 'grid',
+            gap: 'var(--space-3)',
+          }}
+        >
+          {FEELINGS.map((f) => {
+            return (
+              <TapCard
+                key={f.id}
+                type="illustrated"
+                icon={f.emoji}
+                label={f.label}
+                detail={f.description}
+                selected={selected.has(f.id)}
+                onClick={() => toggle(f.id)}
+                maxSelect={MAX}
+                disabled={!selected.has(f.id) && totalSelected >= MAX}
+                labelStyle={bigLabel}
+              />
+            )
+          })}
+        </div>
+        <CustomEntryPills
+          entries={customEntries}
+          onChange={handleCustomChange}
+          placeholder="A feeling we didn't list — e.g. 'quietly proud'"
+          idPrefix="custom-feeling"
+          max={CUSTOM_MAX}
+          charCap={120}
+          addCapReached={totalSelected >= MAX}
+        />
       </div>
     </StepShell>
   )

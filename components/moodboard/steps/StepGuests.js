@@ -2,25 +2,42 @@
 
 import { useState } from 'react'
 import TapCard from '../ui/TapCard'
-import OptionalFreeform from '../ui/OptionalFreeform'
 import StepShell from '../ui/StepShell'
-import { GUESTS } from '@/lib/moodboard/config'
+import CustomEntryPills from '../ui/CustomEntryPills'
+import { GUESTS, customEntriesFor } from '@/lib/moodboard/config'
+
+const CUSTOM_MAX = 2
+
+function initialCustomEntries(initialValues) {
+  const existing = customEntriesFor(initialValues, 'guests')
+  if (existing.length) return existing
+  const legacy = initialValues?.guestFreeform?.trim()
+  if (legacy) return [{ id: 'custom-guest-1', text: legacy.slice(0, 120) }]
+  return []
+}
 
 export default function StepGuests({ onNext, onBack, initialValues, onDraftChange }) {
   const [selected, setSelected] = useState(new Set(initialValues?.guests ?? []))
-  const [freeform, setFreeform] = useState(initialValues?.guestFreeform ?? '')
+  const [customEntries, setCustomEntries] = useState(() => initialCustomEntries(initialValues))
 
   function toggle(id) {
     const next = new Set(selected)
     next.has(id) ? next.delete(id) : next.add(id)
     setSelected(next)
-    onDraftChange?.({ guests: Array.from(next), guestFreeform: freeform })
+    onDraftChange?.({ guests: Array.from(next) })
+  }
+
+  function handleCustomChange(entries) {
+    const trimmed = entries.slice(0, CUSTOM_MAX)
+    setCustomEntries(trimmed)
+    onDraftChange?.({ customEntries: { guests: trimmed }, guestFreeform: '' })
   }
 
   return (
     <StepShell
-      stepLabel="Step 2 of 6"
+      stepLabel="Step 2 of 7"
       title="Which description sounds most like your guests?"
+      subtitle="Pick what fits — or add your own"
       cta={
         <div className="moodboard-cta">
           {onBack && (
@@ -30,7 +47,11 @@ export default function StepGuests({ onNext, onBack, initialValues, onDraftChang
           )}
           <button
             onClick={() =>
-              onNext({ guests: Array.from(selected), guestFreeform: freeform })
+              onNext({
+                guests: Array.from(selected),
+                customEntries: { guests: customEntries },
+                guestFreeform: '',
+              })
             }
             className="btn btn-primary"
             style={{ flex: 1 }}
@@ -40,7 +61,7 @@ export default function StepGuests({ onNext, onBack, initialValues, onDraftChang
         </div>
       }
     >
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-5)' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
         <div
           className="moodboard-option-grid"
           role="group"
@@ -63,15 +84,13 @@ export default function StepGuests({ onNext, onBack, initialValues, onDraftChang
           ))}
         </div>
 
-        <OptionalFreeform
-          triggerLabel="Describe your guest list in one sentence"
-          label="Describe your guest list in one sentence"
-          hint="My college friends, her enormous Italian family, and 40 people I've never met"
-          value={freeform}
-          onChange={(value) => {
-            setFreeform(value)
-            onDraftChange?.({ guests: Array.from(selected), guestFreeform: value })
-          }}
+        <CustomEntryPills
+          entries={customEntries}
+          onChange={handleCustomChange}
+          placeholder="Something specific — e.g. 'four generations dancing'"
+          idPrefix="custom-guest"
+          max={CUSTOM_MAX}
+          charCap={120}
         />
       </div>
     </StepShell>

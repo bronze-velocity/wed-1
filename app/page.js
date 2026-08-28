@@ -9,6 +9,7 @@ import StoryBeat3 from '@/components/sections/StoryBeat3'
 import HowItWorks from '@/components/sections/HowItWorks'
 import SixRules from '@/components/sections/SixRules'
 import PaperReframe from '@/components/sections/PaperReframe'
+import HomeFaq from '@/components/sections/HomeFaq'
 import PlannersCallout from '@/components/sections/PlannersCallout'
 import FinalCta from '@/components/sections/FinalCta'
 import { getApps } from '@/lib/getApps'
@@ -41,6 +42,7 @@ export default function HomePage() {
       <StoryBeat3 />
       <SixRules />
       <PaperReframe />
+      <HomeFaq />
       <PlannersCallout />
       <FinalCta />
     </main>

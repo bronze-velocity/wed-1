@@ -12,12 +12,14 @@ import StepMoments from './steps/StepMoments'
 import StepFeelings from './steps/StepFeelings'
 import StepStory from './steps/StepStory'
 import StepWildcard from './steps/StepWildcard'
+import StepReview from './steps/StepReview'
 import { loadProgress, saveProgress, clearProgress } from './lib/persistence'
 import { apps } from '@/data/apps'
 import { trackEvent } from '@/lib/analytics'
 import { buildMoodboardDirections } from '@/lib/moodboard/directions'
 
-const STEPS = [StepVibes, StepGuests, StepMoments, StepFeelings, StepStory, StepWildcard]
+const STEPS = [StepVibes, StepGuests, StepMoments, StepFeelings, StepStory, StepWildcard, StepReview]
+const REVIEW_STEP_INDEX = STEPS.length - 1
 
 function useReducedMotion() {
   const [reduced, setReduced] = useState(false)
@@ -163,11 +165,16 @@ export default function MoodboardWizard({
       if (!res.ok || !Array.isArray(data.matches)) throw new Error('match failed')
       setResults(data)
     } catch {
-      // Use fallback results so the page always resolves
+      const hasCustom = Object.values(finalAnswers?.customEntries ?? {}).some(
+        (list) => Array.isArray(list) && list.length > 0
+      )
+      const wordsHeldNote = hasCustom
+        ? " We saved what you wrote in your own words and will read it before we get back to you."
+        : ''
       setResults({
         threeWords: 'Yours. Entirely.',
         matches: [
-          { id: 'who-said-it', tier: 'standard', score: 80, whyItFitsYou: "We couldn't reach the matching service right now — but Who Said It? is our most-loved app for any crowd.", appPageSlug: 'who-said-it' },
+          { id: 'who-said-it', tier: 'standard', score: 80, whyItFitsYou: `We couldn't reach the matching service right now — but Who Said It? is our most-loved app for any crowd.${wordsHeldNote}`, appPageSlug: 'who-said-it' },
           { id: 'couple-trivia', tier: 'standard', score: 75, whyItFitsYou: 'Live Trivia brings the whole room together in under ten minutes. Strong for any couple with good stories.', appPageSlug: 'couple-trivia' },
         ],
         hiddenMatches: [],
@@ -177,8 +184,16 @@ export default function MoodboardWizard({
     }
   }
 
+  function mergeAnswers(current, stepAnswers) {
+    const merged = { ...current, ...stepAnswers }
+    if (stepAnswers?.customEntries) {
+      merged.customEntries = { ...(current.customEntries ?? {}), ...stepAnswers.customEntries }
+    }
+    return merged
+  }
+
   function onNext(stepAnswers) {
-    const merged = { ...answers, ...stepAnswers }
+    const merged = mergeAnswers(answers, stepAnswers)
     setAnswers(merged)
     setDirection('forward')
     if (resumeCandidate) setResumeCandidate(null)
@@ -208,7 +223,7 @@ export default function MoodboardWizard({
   }
 
   function onDraftChange(stepAnswers) {
-    setAnswers((current) => ({ ...current, ...stepAnswers }))
+    setAnswers((current) => mergeAnswers(current, stepAnswers))
     if (resumeCandidate) setResumeCandidate(null)
   }
 
@@ -282,13 +297,16 @@ export default function MoodboardWizard({
             initialValues={answers}
             onDraftChange={onDraftChange}
             directionIds={directionIds}
+            onJumpTo={goToStep}
           />
         </div>
-        <BriefPreview
-          answers={answers}
-          step={step}
-          onPreferencesChange={(directionPreferences) => onDraftChange({ directionPreferences })}
-        />
+        {step !== REVIEW_STEP_INDEX && (
+          <BriefPreview
+            answers={answers}
+            step={step}
+            onPreferencesChange={(directionPreferences) => onDraftChange({ directionPreferences })}
+          />
+        )}
       </div>
     </main>
   )

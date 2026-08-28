@@ -1,18 +1,14 @@
 import Link from 'next/link'
 import FaqList from '@/components/ui/FaqList'
-import { getFaqsForApp, universalFaqs } from '@/data/faqs'
+import { universalFaqs } from '@/data/faqs'
 
-export default function AppFaq({ app }) {
-  const perApp = getFaqsForApp(app.slug)
-  const items = [...perApp, ...universalFaqs]
-  if (items.length === 0) return null
-
+export default function HomeFaq() {
   return (
     <FaqList
-      items={items}
+      items={universalFaqs}
       eyebrow="Questions"
-      heading={`Common questions about ${app.title}`}
-      subheading="The objections that come up most on discovery calls — plus a few Wepho-wide ones every couple asks."
+      heading="What couples ask before booking"
+      subheading="The objections that come up most on discovery calls — grandma, WiFi, price, and whether this is just Kahoot in a nice dress."
       background="var(--color-bg-subtle)"
       footer={
         <>

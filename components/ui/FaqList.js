@@ -27,6 +27,7 @@ export default function FaqList({
   background = 'var(--color-bg)',
   jsonLd = true,
   narrow = true,
+  footer,
 }) {
   if (!items || items.length === 0) return null
 
@@ -155,6 +156,19 @@ export default function FaqList({
             </li>
           ))}
         </ul>
+
+        {footer && (
+          <div
+            style={{
+              marginTop: 'var(--space-8)',
+              textAlign: 'center',
+              fontSize: 'var(--text-body)',
+              color: 'var(--color-text-secondary)',
+            }}
+          >
+            {footer}
+          </div>
+        )}
       </Container>
 
       {jsonLd && (

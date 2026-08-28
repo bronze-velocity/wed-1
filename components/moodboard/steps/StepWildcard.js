@@ -10,9 +10,9 @@ export default function StepWildcard({ onNext, onBack, initialValues, onDraftCha
 
   return (
     <StepShell
-      stepLabel="Step 6 of 6"
+      stepLabel="Step 6 of 7"
       title="Which final image has the right energy?"
-      subtitle="Pick one final instinct, then review your shortlist."
+      subtitle="Pick one final instinct, then review your brief."
       cta={
         <div className="moodboard-cta">
           {onBack && (
@@ -26,7 +26,7 @@ export default function StepWildcard({ onNext, onBack, initialValues, onDraftCha
             style={{ flex: 1 }}
             disabled={!selected}
           >
-            Reveal our directions →
+            Review our brief →
           </button>
         </div>
       }

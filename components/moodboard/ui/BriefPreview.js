@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { buildMoodboardDirections } from '@/lib/moodboard/directions'
-import { APP_DIRECTIONS, MOMENTS } from '@/lib/moodboard/config'
+import { APP_DIRECTIONS, MOMENTS, allCustomEntries } from '@/lib/moodboard/config'
 import { buildMoodboardInsights } from '../lib/insights'
 
 function HeartIcon({ filled }) {
@@ -76,6 +76,72 @@ function DirectionRow({ direction, onSave, onReject }) {
   )
 }
 
+function YourWordsHeld({ answers }) {
+  const groups = allCustomEntries(answers)
+  const totalCount = groups.reduce((sum, g) => sum + g.entries.length, 0)
+  if (totalCount === 0) return null
+  return (
+    <div
+      style={{
+        borderRadius: 'var(--radius-md)',
+        background: 'var(--color-accent-light)',
+        padding: 'var(--space-3) var(--space-4)',
+        marginBottom: 'var(--space-4)',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 'var(--space-2)',
+      }}
+    >
+      <p style={{ margin: 0, fontSize: 'var(--text-body-sm)', fontWeight: 700, color: 'var(--color-text-primary)' }}>
+        Your own words are held.
+      </p>
+      <p style={{ margin: 0, fontSize: 'var(--text-tiny)', color: 'var(--color-text-secondary)', lineHeight: 1.45 }}>
+        The directions here come from your picks. Anything you wrote in your own words is bundled with them on the review page at the end — it shapes the final read.
+      </p>
+      <ul
+        aria-label={`In your words (${totalCount})`}
+        style={{
+          listStyle: 'none',
+          margin: 0,
+          padding: 0,
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: 6,
+        }}
+      >
+        {groups.flatMap((g) =>
+          g.entries.slice(0, 6).map((entry) => (
+            <li
+              key={entry.id}
+              title={`${g.label}: ${entry.text}`}
+              style={{
+                fontSize: 'var(--text-tiny)',
+                fontWeight: 600,
+                color: 'var(--color-accent)',
+                background: 'var(--color-bg)',
+                borderRadius: 'var(--radius-md)',
+                padding: '4px 8px',
+                border: '1px dashed var(--color-accent)',
+                maxWidth: 200,
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              {entry.text}
+            </li>
+          ))
+        )}
+        {totalCount > 6 && (
+          <li style={{ fontSize: 'var(--text-tiny)', color: 'var(--color-text-muted)', alignSelf: 'center' }}>
+            + {totalCount - 6} more
+          </li>
+        )}
+      </ul>
+    </div>
+  )
+}
+
 function DirectionContent({ answers, step, directions, onSave, onReject, onRestore }) {
   const { commentary, fits, flags } = buildMoodboardInsights(answers, step)
   const momentTags = (answers.moments ?? [])
@@ -88,6 +154,7 @@ function DirectionContent({ answers, step, directions, onSave, onReject, onResto
   if (!directions.length) {
     return (
       <div className="moodboard-directions-content">
+        <YourWordsHeld answers={answers} />
         <p className="moodboard-directions-empty">
           Pick a first instinct. Plausible app directions will appear here.
         </p>
@@ -106,6 +173,7 @@ function DirectionContent({ answers, step, directions, onSave, onReject, onResto
 
   return (
     <div className="moodboard-directions-content">
+      <YourWordsHeld answers={answers} />
       {momentTags.length > 0 && (
         <div className="moodboard-direction-tags" aria-label="Selected moments">
           {momentTags.map((tag) => <span key={tag}>{tag}</span>)}

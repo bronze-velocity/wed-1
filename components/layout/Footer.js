@@ -76,6 +76,17 @@ export default function Footer() {
             Explore apps
           </Link>
           <Link
+            href="/how-it-works"
+            className="link-underline"
+            style={{
+              fontSize: 'var(--text-body-sm)',
+              color: 'var(--color-text-inverse-secondary)',
+              textDecoration: 'none',
+            }}
+          >
+            How it works
+          </Link>
+          <Link
             href="/planners"
             className="link-underline"
             style={{
