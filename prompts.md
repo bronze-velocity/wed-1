@@ -233,5 +233,50 @@ please do these changes to the live demo (#1) on the landing page:
 please do these changes to the second demo (#2) on the landing page:
 - same scrolling UI as for demo 1
 
+### done
+for demo 1, visual in step #2, can you suggest how we can improve the UI of it. I don't like the left accent on the card, the italic, the "just approved" styling, what components are being displayed. also, it doesn't feel cohesive. how would this app acutally look? 
+
+### done
+please review all of the text throughout the entire landing page and remove all em dashes and rewrite those kinds of sentences. 
+also, wordings I don't think are that great (maybe not explaining it well or not doing it clearly). please suggest changes for all of them
+- , and guests are back in the room before their drink gets warm. 
+- hero phone app visual - it's a very weird example
+- 
+also,
+let's change out the price to "$2000 for your custom app" everywhere where needed.
 
 
+### done
+the animation effects when being close to a button, e.g. the hero buttons, is a bit weird. please fix.
+
+### done
+in step 2 in Live demo, please restyle the app UI in the phone UI so that it aligns with the UI of step 1 - i.e. the same colors, border radius, font, top part, etc.
+please also do a better previous/next that is usable and has great UX. it now only seems to work after "start over". let's make sure it's swipable on mobile in a nice and obvious way.
+In step 3, the screen is showing really poorly on mobile, let's use another image/visual for mobile so that it take up approx the same space as the phone visuals do.
+
+### done
+for this sidebar :
+Directions so far
+What fits your room
+
+let's also add a "open in new tab" icon that links to the specific app page for each of the cards.
+
+also, let's make the +N more, e.g. +1 more, toggleable
+
+### done
+for all of the images and placeholder images throughout the app, we need to create simple, effective AI image generation prompts. Everything needs to look cohesive and suitable for a wedding. please create a zz/image-prompts.md for all of them. The most important thing is consistency between images when they are grouped together, and AI models can have a bit of variability, so please make sure to do this as good as possible.
+
+### done
+Let's see if we can do some restyling of the website to look less like a saas website and a bit more like a wedding app website.
+Things I like:
+- big dramatic images from different kinds of settings at or around weddings
+- titles semi-over images like on this page: https://www.jessetombs.com/about- where the names of the people are semi-overlapped on nicely looking places.
+- I like a color like #54697a, but maybe it's copying too much from another wedding website. maybe we could go for something similarly romantic/wedding like though?
+- nice fonts, but these should only be used as accents, never for too long sections/texts: Agatha and Winsterday.
+- for the rest of the text, maybe the font Gill?
+Let's make sure that we are only using fonts which we can serve ourselves instead of using them from cdns.
+
+I took some screenshots, please see the 2 in the /tmp folder.
+
+Please create a redesign plan for our full design system/ website.
+###

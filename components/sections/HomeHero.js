@@ -149,12 +149,15 @@ export default function HomeHero() {
             style={{
               position: 'relative',
               width: 280,
+              aspectRatio: '9 / 19.5',
               background: '#1A1A1A',
               borderRadius: 'var(--radius-2xl)',
               border: '2px solid #2E2E2E',
               boxShadow: 'var(--shadow-xl)',
               userSelect: 'none',
               transform: 'rotate(2deg)',
+              display: 'flex',
+              flexDirection: 'column',
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'center', paddingTop: 14, paddingBottom: 10 }}>
@@ -163,6 +166,7 @@ export default function HomeHero() {
 
             <div
               style={{
+                flex: 1,
                 background: 'var(--color-bg)',
                 margin: '0 4px',
                 padding: '20px 16px',
@@ -217,6 +221,7 @@ export default function HomeHero() {
                   color: 'var(--color-text-primary)',
                   lineHeight: 1.55,
                   minHeight: 96,
+                  flex: 1,
                 }}
               >
                 We stayed up till 2am the night we met, talking about everything and nothing. I knew by the time the sun came up.

@@ -37,7 +37,7 @@ export default function StepStory({ onNext, onBack, initialValues, onDraftChange
 
   return (
     <StepShell
-      stepLabel="Step 5 of 7"
+      stepLabel="Step 5 of 6"
       title="What could make this unmistakably yours?"
       subtitle="We picked the prompts most useful for your directions. Even one answer helps."
       cta={

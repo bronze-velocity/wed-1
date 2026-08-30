@@ -50,7 +50,10 @@ export default function LoveLetterDemo() {
   const [resetCount, setResetCount] = useState(0)
   const [inView, setInView] = useState(true)
   const [reducedMotion, setReducedMotion] = useState(false)
+  const [pausedByUser, setPausedByUser] = useState(false)
+  const [swipeHint, setSwipeHint] = useState(false)
   const containerRef = useRef(null)
+  const touchStartRef = useRef(null)
 
   const stepIndex = STEPS.indexOf(step)
   const pendingMessage = mode === 'interactive' ? (interactiveData || SEED_PENDING) : AUTO_MESSAGE
@@ -79,9 +82,19 @@ export default function LoveLetterDemo() {
     return () => obs.disconnect()
   }, [])
 
+  // Show a brief swipe hint on mobile the first time the demo is in view
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    if (!inView) return
+    if (!window.matchMedia('(max-width: 640px)').matches) return
+    setSwipeHint(true)
+    const id = setTimeout(() => setSwipeHint(false), 3200)
+    return () => clearTimeout(id)
+  }, [inView])
+
   // Autoplay loop (phone → admin → screen → loop) when in auto mode.
   useEffect(() => {
-    if (mode !== 'auto' || !inView) return
+    if (mode !== 'auto' || !inView || pausedByUser) return
     if (reducedMotion) {
       setStep('screen')
       return
@@ -97,7 +110,7 @@ export default function LoveLetterDemo() {
     }
     // 'admin' advances via AdminFrame's autoApproveAfterMs → onApprove.
     return () => clearTimeout(timer)
-  }, [mode, step, inView, reducedMotion, resetCount])
+  }, [mode, step, inView, reducedMotion, resetCount, pausedByUser])
 
   function handleInteractiveSubmit({ message, senderName, to, photo }) {
     setInteractiveData({ message, senderName, to, photo })
@@ -117,6 +130,7 @@ export default function LoveLetterDemo() {
     setApprovedMessage(null)
     setStep('phone')
     setResetCount((c) => c + 1)
+    setPausedByUser(false)
   }
 
   function restart() {
@@ -125,20 +139,46 @@ export default function LoveLetterDemo() {
     setApprovedMessage(null)
     setStep('phone')
     setResetCount((c) => c + 1)
+    setPausedByUser(false)
   }
 
   const isAuto = mode === 'auto'
   const frameWidth = step === 'screen' ? 620 : 300
 
+  function goToStep(nextStep) {
+    setStep(nextStep)
+    setPausedByUser(true)
+    setResetCount((c) => c + 1)
+    setSwipeHint(false)
+  }
   function goPrev() {
-    if (mode === 'auto') return
-    const i = Math.max(0, stepIndex - 1)
-    setStep(STEPS[i])
+    if (stepIndex <= 0) return
+    goToStep(STEPS[stepIndex - 1])
   }
   function goNext() {
-    if (mode === 'auto') return
     if (stepIndex >= STEPS.length - 1) return
-    setStep(STEPS[stepIndex + 1])
+    goToStep(STEPS[stepIndex + 1])
+  }
+
+  function handleTouchStart(e) {
+    const t = e.touches?.[0]
+    if (!t) return
+    touchStartRef.current = { x: t.clientX, y: t.clientY, t: Date.now() }
+  }
+  function handleTouchEnd(e) {
+    const start = touchStartRef.current
+    touchStartRef.current = null
+    if (!start) return
+    const t = e.changedTouches?.[0]
+    if (!t) return
+    const dx = t.clientX - start.x
+    const dy = t.clientY - start.y
+    const dt = Date.now() - start.t
+    if (dt > 700) return
+    if (Math.abs(dx) < 48) return
+    if (Math.abs(dy) > Math.abs(dx)) return
+    if (dx < 0) goNext()
+    else goPrev()
   }
 
   return (
@@ -167,12 +207,16 @@ export default function LoveLetterDemo() {
 
       {/* Single frame slot with cross-fade */}
       <div
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
         style={{
+          position: 'relative',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'flex-start',
           padding: '4px 16px',
           minHeight: 560,
+          touchAction: 'pan-y',
         }}
       >
         <div
@@ -220,7 +264,27 @@ export default function LoveLetterDemo() {
         </div>
       </div>
 
-      {/* Progress + controls */}
+      {/* Swipe hint (mobile-only, first time in view) */}
+      {swipeHint && (
+        <div
+          aria-hidden="true"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginTop: 'var(--space-3)',
+            fontSize: 'var(--text-tiny)',
+            fontWeight: 600,
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            color: 'var(--color-text-muted)',
+            animation: 'lldSwipeHint 3.2s var(--ease-out)',
+          }}
+        >
+          <span aria-hidden="true">← swipe →</span>
+        </div>
+      )}
+
+      {/* Progress + controls (always visible) */}
       <div style={{
         display: 'flex',
         flexDirection: 'column',
@@ -228,156 +292,138 @@ export default function LoveLetterDemo() {
         gap: 'var(--space-4)',
         marginTop: 'var(--space-6)',
       }}>
-        {isAuto ? (
-          <>
-            <div style={{ display: 'flex', gap: 8 }}>
-              {STEPS.map((s, i) => {
-                const isCurrent = s === step
-                const isDone = i < stepIndex
-                return (
-                  <span
-                    key={s}
-                    aria-hidden="true"
-                    style={{
-                      width: isCurrent ? 28 : 10,
-                      height: 10,
-                      borderRadius: 'var(--radius-full)',
-                      background: isCurrent
-                        ? 'var(--color-accent)'
-                        : isDone
-                        ? 'var(--color-border-strong)'
-                        : 'var(--color-border)',
-                      transition: 'width 300ms var(--ease-out), background 300ms var(--ease-out)',
-                    }}
-                  />
-                )
-              })}
-            </div>
-            <button
-              type="button"
-              onClick={tryItYourself}
-              style={{
-                padding: '10px 20px',
-                borderRadius: 'var(--radius-md)',
-                border: '1.5px solid var(--color-accent)',
-                background: 'var(--color-accent)',
-                color: '#fff',
-                fontSize: 'var(--text-body-sm)',
-                fontWeight: 700,
-                cursor: 'pointer',
-                fontFamily: 'inherit',
-              }}
-            >
-              Try it yourself →
-            </button>
-          </>
-        ) : (
-          <>
-            <div style={{
-              display: 'flex',
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 'var(--space-3)',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+        }}>
+          <button
+            type="button"
+            onClick={goPrev}
+            disabled={stepIndex === 0}
+            aria-label="Previous step"
+            style={{
+              display: 'inline-flex',
               alignItems: 'center',
-              gap: 'var(--space-4)',
-            }}>
-              <button
-                type="button"
-                onClick={goPrev}
-                disabled={stepIndex === 0}
-                aria-label="Previous step"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  padding: '8px 14px',
-                  borderRadius: 'var(--radius-md)',
-                  border: '1px solid var(--color-border)',
-                  background: 'var(--color-bg)',
-                  color: stepIndex === 0 ? 'var(--color-text-muted)' : 'var(--color-text-primary)',
-                  fontSize: 'var(--text-body-sm)',
-                  fontWeight: 600,
-                  cursor: stepIndex === 0 ? 'not-allowed' : 'pointer',
-                  opacity: stepIndex === 0 ? 0.5 : 1,
-                  fontFamily: 'inherit',
-                  transition: 'background var(--duration-fast), border-color var(--duration-fast)',
-                }}
-              >
-                <span aria-hidden="true">←</span> Back
-              </button>
+              justifyContent: 'center',
+              gap: 6,
+              minWidth: 44,
+              minHeight: 44,
+              padding: '10px 16px',
+              borderRadius: 'var(--radius-md)',
+              border: '1.5px solid var(--color-border-strong)',
+              background: 'var(--color-bg)',
+              color: stepIndex === 0 ? 'var(--color-text-muted)' : 'var(--color-text-primary)',
+              fontSize: 'var(--text-body-sm)',
+              fontWeight: 600,
+              cursor: stepIndex === 0 ? 'not-allowed' : 'pointer',
+              opacity: stepIndex === 0 ? 0.4 : 1,
+              fontFamily: 'inherit',
+              transition: 'background var(--duration-fast), border-color var(--duration-fast)',
+            }}
+          >
+            <span aria-hidden="true">←</span> Back
+          </button>
 
-              <div style={{ display: 'flex', gap: 8 }}>
-                {STEPS.map((s, i) => {
-                  const isCurrent = s === step
-                  const isDone = i < stepIndex
-                  return (
-                    <button
-                      key={s}
-                      type="button"
-                      onClick={() => setStep(s)}
-                      aria-label={`Jump to step ${i + 1}: ${STEP_LABELS[s]}`}
-                      aria-current={isCurrent ? 'step' : undefined}
-                      style={{
-                        width: isCurrent ? 28 : 10,
-                        height: 10,
-                        padding: 0,
-                        borderRadius: 'var(--radius-full)',
-                        border: 'none',
-                        background: isCurrent
-                          ? 'var(--color-accent)'
-                          : isDone
-                          ? 'var(--color-border-strong)'
-                          : 'var(--color-border)',
-                        cursor: 'pointer',
-                        transition: 'width 300ms var(--ease-out), background 300ms var(--ease-out)',
-                      }}
-                    />
-                  )
-                })}
-              </div>
+          <div style={{ display: 'flex', gap: 8 }}>
+            {STEPS.map((s, i) => {
+              const isCurrent = s === step
+              const isDone = i < stepIndex
+              return (
+                <button
+                  key={s}
+                  type="button"
+                  onClick={() => goToStep(s)}
+                  aria-label={`Jump to step ${i + 1}: ${STEP_LABELS[s]}`}
+                  aria-current={isCurrent ? 'step' : undefined}
+                  style={{
+                    width: isCurrent ? 28 : 10,
+                    height: 10,
+                    padding: 0,
+                    borderRadius: 'var(--radius-full)',
+                    border: 'none',
+                    background: isCurrent
+                      ? 'var(--color-accent)'
+                      : isDone
+                      ? 'var(--color-border-strong)'
+                      : 'var(--color-border)',
+                    cursor: 'pointer',
+                    transition: 'width 300ms var(--ease-out), background 300ms var(--ease-out)',
+                  }}
+                />
+              )
+            })}
+          </div>
 
-              <button
-                type="button"
-                onClick={goNext}
-                disabled={stepIndex >= STEPS.length - 1}
-                aria-label="Next step"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  padding: '8px 14px',
-                  borderRadius: 'var(--radius-md)',
-                  border: '1.5px solid var(--color-accent)',
-                  background: stepIndex >= STEPS.length - 1 ? 'transparent' : 'var(--color-accent)',
-                  color: stepIndex >= STEPS.length - 1 ? 'var(--color-text-muted)' : '#fff',
-                  fontSize: 'var(--text-body-sm)',
-                  fontWeight: 700,
-                  cursor: stepIndex >= STEPS.length - 1 ? 'not-allowed' : 'pointer',
-                  opacity: stepIndex >= STEPS.length - 1 ? 0.5 : 1,
-                  fontFamily: 'inherit',
-                  borderColor: stepIndex >= STEPS.length - 1 ? 'var(--color-border)' : 'var(--color-accent)',
-                  transition: 'background var(--duration-fast)',
-                }}
-              >
-                Next <span aria-hidden="true">→</span>
-              </button>
-            </div>
-            <button
-              type="button"
-              onClick={restart}
-              style={{
-                padding: '4px 8px',
-                border: 'none',
-                background: 'transparent',
-                color: 'var(--color-text-muted)',
-                fontSize: 'var(--text-body-sm)',
-                fontWeight: 500,
-                cursor: 'pointer',
-                fontFamily: 'inherit',
-                textDecoration: 'underline',
-                textUnderlineOffset: 3,
-              }}
-            >
-              ↺ Watch the auto-demo
-            </button>
-          </>
+          <button
+            type="button"
+            onClick={goNext}
+            disabled={stepIndex >= STEPS.length - 1}
+            aria-label="Next step"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 6,
+              minWidth: 44,
+              minHeight: 44,
+              padding: '10px 16px',
+              borderRadius: 'var(--radius-md)',
+              border: '1.5px solid var(--color-accent)',
+              background: stepIndex >= STEPS.length - 1 ? 'transparent' : 'var(--color-accent)',
+              color: stepIndex >= STEPS.length - 1 ? 'var(--color-text-muted)' : '#fff',
+              fontSize: 'var(--text-body-sm)',
+              fontWeight: 700,
+              cursor: stepIndex >= STEPS.length - 1 ? 'not-allowed' : 'pointer',
+              opacity: stepIndex >= STEPS.length - 1 ? 0.4 : 1,
+              fontFamily: 'inherit',
+              borderColor: stepIndex >= STEPS.length - 1 ? 'var(--color-border)' : 'var(--color-accent)',
+              transition: 'background var(--duration-fast)',
+            }}
+          >
+            Next <span aria-hidden="true">→</span>
+          </button>
+        </div>
+
+        {isAuto && !pausedByUser ? (
+          <button
+            type="button"
+            onClick={tryItYourself}
+            style={{
+              padding: '10px 20px',
+              borderRadius: 'var(--radius-md)',
+              border: '1.5px solid var(--color-accent)',
+              background: 'var(--color-accent)',
+              color: '#fff',
+              fontSize: 'var(--text-body-sm)',
+              fontWeight: 700,
+              cursor: 'pointer',
+              fontFamily: 'inherit',
+            }}
+          >
+            Try it yourself →
+          </button>
+        ) : (
+          <button
+            type="button"
+            onClick={restart}
+            style={{
+              padding: '4px 8px',
+              border: 'none',
+              background: 'transparent',
+              color: 'var(--color-text-muted)',
+              fontSize: 'var(--text-body-sm)',
+              fontWeight: 500,
+              cursor: 'pointer',
+              fontFamily: 'inherit',
+              textDecoration: 'underline',
+              textUnderlineOffset: 3,
+            }}
+          >
+            ↺ Restart auto-demo
+          </button>
         )}
       </div>
 
@@ -385,6 +431,12 @@ export default function LoveLetterDemo() {
         @keyframes lldFade {
           from { opacity: 0; transform: translateY(6px); }
           to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes lldSwipeHint {
+          0% { opacity: 0; transform: translateX(-10px); }
+          15% { opacity: 1; transform: translateX(0); }
+          85% { opacity: 1; transform: translateX(10px); }
+          100% { opacity: 0; transform: translateX(20px); }
         }
       `}</style>
     </div>

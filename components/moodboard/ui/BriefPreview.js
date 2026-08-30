@@ -2,8 +2,7 @@
 
 import { useState } from 'react'
 import { buildMoodboardDirections } from '@/lib/moodboard/directions'
-import { APP_DIRECTIONS, MOMENTS, allCustomEntries } from '@/lib/moodboard/config'
-import { buildMoodboardInsights } from '../lib/insights'
+import { APP_DIRECTIONS, allCustomEntries } from '@/lib/moodboard/config'
 
 function HeartIcon({ filled }) {
   return (
@@ -27,8 +26,23 @@ function TrashIcon() {
   )
 }
 
+function ExternalLinkIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+      fill="none" stroke="currentColor" strokeWidth="2"
+      strokeLinecap="round" strokeLinejoin="round">
+      <path d="M15 3h6v6" />
+      <path d="M10 14L21 3" />
+      <path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5" />
+    </svg>
+  )
+}
+
 function DirectionRow({ direction, onSave, onReject }) {
+  const [showAllPills, setShowAllPills] = useState(false)
   const pills = (direction.contributors ?? []).filter((c) => c.group !== 'saved')
+  const visiblePills = showAllPills ? pills : pills.slice(0, 5)
+  const hiddenCount = pills.length - 5
   return (
     <article className="moodboard-direction" data-saved={direction.saved || undefined}>
       <div className="moodboard-direction-icons">
@@ -52,6 +66,16 @@ function DirectionRow({ direction, onSave, onReject }) {
         >
           <TrashIcon />
         </button>
+        <a
+          className="moodboard-direction-icon"
+          href={`/apps/${direction.id}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Open ${direction.title} page in a new tab`}
+          title="Open app page in new tab"
+        >
+          <ExternalLinkIcon />
+        </a>
       </div>
       <div>
         <p className="moodboard-direction-title">{direction.title}</p>
@@ -59,15 +83,22 @@ function DirectionRow({ direction, onSave, onReject }) {
       </div>
       {pills.length > 0 && (
         <ul className="moodboard-direction-pills" aria-label="Why this appears">
-          {pills.slice(0, 5).map((c, i) => (
+          {visiblePills.map((c, i) => (
             <li key={`${c.group}-${c.label}-${i}`} data-group={c.group}>
               {c.emoji && <span className="moodboard-direction-pill-emoji" aria-hidden="true">{c.emoji}</span>}
               {c.label}
             </li>
           ))}
-          {pills.length > 5 && (
-            <li className="moodboard-direction-pill-more" aria-label={`${pills.length - 5} more`}>
-              +{pills.length - 5} more
+          {hiddenCount > 0 && (
+            <li className="moodboard-direction-pill-more">
+              <button
+                type="button"
+                onClick={() => setShowAllPills((v) => !v)}
+                aria-expanded={showAllPills}
+                aria-label={showAllPills ? 'Show fewer' : `Show ${hiddenCount} more`}
+              >
+                {showAllPills ? 'Show less' : `+${hiddenCount} more`}
+              </button>
             </li>
           )}
         </ul>
@@ -79,74 +110,61 @@ function DirectionRow({ direction, onSave, onReject }) {
 function YourWordsHeld({ answers }) {
   const groups = allCustomEntries(answers)
   const totalCount = groups.reduce((sum, g) => sum + g.entries.length, 0)
-  if (totalCount === 0) return null
+  const hasWords = totalCount > 0
   return (
     <div
+      aria-label={hasWords ? `In your words (${totalCount})` : 'Preview note'}
       style={{
-        borderRadius: 'var(--radius-md)',
-        background: 'var(--color-accent-light)',
-        padding: 'var(--space-3) var(--space-4)',
-        marginBottom: 'var(--space-4)',
         display: 'flex',
         flexDirection: 'column',
-        gap: 'var(--space-2)',
+        gap: 6,
+        marginBottom: 'var(--space-4)',
+        paddingBottom: 'var(--space-3)',
+        borderBottom: '1px solid var(--color-border)',
       }}
     >
-      <p style={{ margin: 0, fontSize: 'var(--text-body-sm)', fontWeight: 700, color: 'var(--color-text-primary)' }}>
-        Your own words are held.
-      </p>
-      <p style={{ margin: 0, fontSize: 'var(--text-tiny)', color: 'var(--color-text-secondary)', lineHeight: 1.45 }}>
-        The directions here come from your picks. Anything you wrote in your own words is bundled with them on the review page at the end — it shapes the final read.
-      </p>
-      <ul
-        aria-label={`In your words (${totalCount})`}
+      <span
         style={{
-          listStyle: 'none',
-          margin: 0,
-          padding: 0,
-          display: 'flex',
-          flexWrap: 'wrap',
-          gap: 6,
+          fontSize: 'var(--text-tiny)',
+          fontWeight: 600,
+          color: 'var(--color-text-secondary)',
         }}
       >
-        {groups.flatMap((g) =>
-          g.entries.slice(0, 6).map((entry) => (
-            <li
-              key={entry.id}
-              title={`${g.label}: ${entry.text}`}
-              style={{
-                fontSize: 'var(--text-tiny)',
-                fontWeight: 600,
-                color: 'var(--color-accent)',
-                background: 'var(--color-bg)',
-                borderRadius: 'var(--radius-md)',
-                padding: '4px 8px',
-                border: '1px dashed var(--color-accent)',
-                maxWidth: 200,
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                whiteSpace: 'nowrap',
-              }}
-            >
-              {entry.text}
-            </li>
-          ))
-        )}
+        {hasWords
+          ? `Your words, saved (${totalCount}) — they'll shape the final brief on the last step.`
+          : "Draft — your own words shape the final brief on the last step."}
+      </span>
+      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 6 }}>
+      {groups.flatMap((g) =>
+        g.entries.slice(0, 6).map((entry) => (
+          <span
+            key={entry.id}
+            title={`${g.label}: ${entry.text}`}
+            style={{
+              fontSize: 'var(--text-tiny)',
+              color: 'var(--color-text-secondary)',
+              maxWidth: 240,
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            <span style={{ fontWeight: 600, color: 'var(--color-text-primary)' }}>{g.label}:</span>{' '}
+            <span style={{ fontStyle: 'italic' }}>“{entry.text}”</span>
+          </span>
+        ))
+      )}
         {totalCount > 6 && (
-          <li style={{ fontSize: 'var(--text-tiny)', color: 'var(--color-text-muted)', alignSelf: 'center' }}>
-            + {totalCount - 6} more
-          </li>
+          <span style={{ fontSize: 'var(--text-tiny)', color: 'var(--color-text-muted)' }}>
+            +{totalCount - 6} more
+          </span>
         )}
-      </ul>
+      </div>
     </div>
   )
 }
 
-function DirectionContent({ answers, step, directions, onSave, onReject, onRestore }) {
-  const { commentary, fits, flags } = buildMoodboardInsights(answers, step)
-  const momentTags = (answers.moments ?? [])
-    .map((id) => MOMENTS.find((item) => item.id === id)?.label)
-    .filter(Boolean)
+function DirectionContent({ answers, directions, onSave, onReject, onRestore }) {
   const rejected = (answers.directionPreferences?.rejected ?? [])
     .map((id) => ({ id, ...APP_DIRECTIONS[id] }))
     .filter((item) => item.title)
@@ -154,7 +172,7 @@ function DirectionContent({ answers, step, directions, onSave, onReject, onResto
   if (!directions.length) {
     return (
       <div className="moodboard-directions-content">
-        <YourWordsHeld answers={answers} />
+      <YourWordsHeld answers={answers} />
         <p className="moodboard-directions-empty">
           Pick a first instinct. Plausible app directions will appear here.
         </p>
@@ -173,12 +191,8 @@ function DirectionContent({ answers, step, directions, onSave, onReject, onResto
 
   return (
     <div className="moodboard-directions-content">
+      
       <YourWordsHeld answers={answers} />
-      {momentTags.length > 0 && (
-        <div className="moodboard-direction-tags" aria-label="Selected moments">
-          {momentTags.map((tag) => <span key={tag}>{tag}</span>)}
-        </div>
-      )}
       <div className="moodboard-direction-list">
         {directions.map((direction) => (
           <DirectionRow
@@ -189,11 +203,6 @@ function DirectionContent({ answers, step, directions, onSave, onReject, onResto
           />
         ))}
       </div>
-      {(commentary || fits.length > 0 || flags.length > 0) && (
-        <p className="moodboard-direction-reasoning">
-          {commentary || fits[0] || flags[0]}
-        </p>
-      )}
       {rejected.length > 0 && (
         <details className="moodboard-direction-details">
           <summary>Ruled out ({rejected.length})</summary>
@@ -234,7 +243,6 @@ export default function BriefPreview({ answers, step, onPreferencesChange }) {
   const content = (
     <DirectionContent
       answers={answers}
-      step={step}
       directions={directions}
       onSave={(id) => updatePreference(id, 'saved')}
       onReject={(id) => updatePreference(id, 'rejected')}
@@ -266,8 +274,7 @@ export default function BriefPreview({ answers, step, onPreferencesChange }) {
       </div>
 
       <aside className="moodboard-directions-desktop hidden lg:block" aria-label="Directions so far">
-        <p className="moodboard-directions-eyebrow">Directions so far</p>
-        <h2>What fits your room</h2>
+        <h2>Directions so far</h2>
         {content}
       </aside>
     </>

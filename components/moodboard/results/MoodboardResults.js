@@ -6,25 +6,34 @@ import Container from '@/components/layout/Container'
 import ResultCard from './ResultCard'
 import ShareSheet from './ShareSheet'
 import { slugify } from '@/lib/moodboard/slug'
-import { VIBES, GUESTS, MOMENTS, FEELINGS, WILDCARDS, STORY_QUESTIONS } from '@/lib/moodboard/config'
+import { VIBES, GUESTS, MOMENTS, FEELINGS, STORY_QUESTIONS } from '@/lib/moodboard/config'
 
 function buildAnswerChips(answers) {
   const chips = []
-  const pick = (list, ids) =>
-    (ids ?? []).map((id) => list.find((item) => item.id === id)?.label).filter(Boolean)
-
-  pick(VIBES, answers?.vibes).forEach((label) => chips.push({ kind: 'Scene', label }))
-  pick(GUESTS, answers?.guests).forEach((label) => chips.push({ kind: 'Guests', label }))
-  pick(MOMENTS, answers?.moments).forEach((label) => chips.push({ kind: 'Moment', label }))
-  pick(FEELINGS, answers?.feelings).forEach((label) => chips.push({ kind: 'Feeling', label }))
-  const wildcardLabel = WILDCARDS.find((w) => w.id === answers?.wildcard)?.label
-  if (wildcardLabel) chips.push({ kind: 'Energy', label: wildcardLabel })
+  const pushMany = (list, ids, kind, field) => {
+    for (const id of ids ?? []) {
+      const item = list.find((entry) => entry.id === id)
+      if (item) chips.push({ kind, label: item.label, id, field, kind_: 'multi' })
+    }
+  }
+  pushMany(VIBES, answers?.vibes, 'Scene', 'vibes')
+  pushMany(GUESTS, answers?.guests, 'Guests', 'guests')
+  pushMany(MOMENTS, answers?.moments, 'Moment', 'moments')
+  pushMany(FEELINGS, answers?.feelings, 'Feeling', 'feelings')
   return chips
 }
 
-function AnswerStrip({ answers }) {
+function removeChipFromAnswers(answers, chip) {
+  const next = { ...answers }
+  next[chip.field] = (answers?.[chip.field] ?? []).filter((id) => id !== chip.id)
+  return next
+}
+
+function AnswerStrip({ answers, onRemoveChip, onAdd, onRerun, dirty, rerunsLeft, rerunning }) {
   const chips = buildAnswerChips(answers)
-  if (!chips.length) return null
+  if (!chips.length && !onAdd) return null
+  const canRerun = dirty && rerunsLeft > 0 && !rerunning
+  const outOfReruns = dirty && rerunsLeft <= 0
 
   return (
     <section
@@ -64,12 +73,12 @@ function AnswerStrip({ answers }) {
         >
           {chips.map((chip, i) => (
             <li
-              key={`${chip.kind}-${chip.label}-${i}`}
+              key={`${chip.kind}-${chip.id}-${i}`}
               style={{
                 display: 'inline-flex',
-                alignItems: 'baseline',
+                alignItems: 'center',
                 gap: 'var(--space-2)',
-                padding: 'var(--space-2) var(--space-4)',
+                padding: 'var(--space-2) var(--space-3) var(--space-2) var(--space-4)',
                 background: 'var(--color-bg-subtle)',
                 borderRadius: 'var(--radius-md)',
                 fontSize: 'var(--text-body-sm)',
@@ -90,9 +99,93 @@ function AnswerStrip({ answers }) {
                 {chip.kind}
               </span>
               <span>{chip.label}</span>
+              {onRemoveChip && (
+                <button
+                  type="button"
+                  onClick={() => onRemoveChip(chip)}
+                  aria-label={`Remove ${chip.kind}: ${chip.label}`}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: 20,
+                    height: 20,
+                    marginLeft: 2,
+                    borderRadius: 'var(--radius-full)',
+                    border: 'none',
+                    background: 'transparent',
+                    color: 'var(--color-text-secondary)',
+                    cursor: 'pointer',
+                    fontSize: 14,
+                    lineHeight: 1,
+                    padding: 0,
+                  }}
+                >
+                  ×
+                </button>
+              )}
             </li>
           ))}
+          {onAdd && (
+            <li>
+              <button
+                type="button"
+                onClick={onAdd}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 'var(--space-2)',
+                  padding: 'var(--space-2) var(--space-4)',
+                  background: 'transparent',
+                  border: '1px dashed var(--color-border-strong)',
+                  borderRadius: 'var(--radius-md)',
+                  fontSize: 'var(--text-body-sm)',
+                  color: 'var(--color-text-primary)',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  lineHeight: 1.3,
+                }}
+              >
+                ＋ Add
+              </button>
+            </li>
+          )}
         </ul>
+        {(canRerun || outOfReruns || rerunning) && (
+          <div
+            style={{
+              marginTop: 'var(--space-5)',
+              display: 'flex',
+              justifyContent: 'center',
+            }}
+          >
+            {canRerun && (
+              <button
+                type="button"
+                onClick={onRerun}
+                className="btn btn-primary"
+                style={{ minHeight: 44 }}
+              >
+                Re-run with edits →
+              </button>
+            )}
+            {rerunning && (
+              <span style={{ fontSize: 'var(--text-body-sm)', color: 'var(--color-text-secondary)' }}>
+                Re-matching…
+              </span>
+            )}
+            {outOfReruns && (
+              <button
+                type="button"
+                className="btn btn-secondary"
+                disabled
+                style={{ minHeight: 44, opacity: 0.6 }}
+              >
+                Tweak more in the review step
+              </button>
+            )}
+          </div>
+        )}
       </Container>
     </section>
   )
@@ -100,7 +193,7 @@ function AnswerStrip({ answers }) {
 
 // ── Section 1 ────────────────────────────────────────────────────────────────
 
-function ThreeWords({ threeWords, onShare }) {
+function ThreeWords({ threeWords, onShare, onTweak }) {
   const words = threeWords
     .split(/\.\s*/)
     .map((w) => w.trim())
@@ -148,23 +241,37 @@ function ThreeWords({ threeWords, onShare }) {
             </span>
           ))}
         </h1>
-        {onShare && (
+        {(onShare || onTweak) && (
           <div
             style={{
               marginTop: 'var(--space-8)',
               display: 'flex',
+              gap: 'var(--space-3)',
               justifyContent: 'center',
+              flexWrap: 'wrap',
               animation: 'fadeInUp 500ms ease-out 900ms both',
             }}
           >
-            <button
-              type="button"
-              onClick={onShare}
-              className="btn btn-primary"
-              style={{ minHeight: 44 }}
-            >
-              Share this moodboard →
-            </button>
+            {onShare && (
+              <button
+                type="button"
+                onClick={onShare}
+                className="btn btn-primary"
+                style={{ minHeight: 44 }}
+              >
+                Share this moodboard →
+              </button>
+            )}
+            {onTweak && (
+              <button
+                type="button"
+                onClick={onTweak}
+                className="btn btn-secondary"
+                style={{ minHeight: 44 }}
+              >
+                ← Tweak your answers
+              </button>
+            )}
           </div>
         )}
       </Container>
@@ -174,7 +281,17 @@ function ThreeWords({ threeWords, onShare }) {
 
 // ── Section 2 ────────────────────────────────────────────────────────────────
 
+const COUNT_WORDS = { 1: 'One', 2: 'Two', 3: 'Three' }
+const COUNT_VERB = { 1: 'feels', 2: 'feel', 3: 'feel' }
+
 function MatchedApps({ matches, answers, onWantThis }) {
+  const count = matches.length
+  const topRaw = matches[0]?.rawScore ?? 0
+  const softFallback = topRaw > 0 && topRaw < 5
+  const heading = softFallback
+    ? 'Closest to what you told us'
+    : `${COUNT_WORDS[count] ?? 'A few'} that ${COUNT_VERB[count] ?? 'feel'} like you`
+
   return (
     <section
       className="moodboard-results-matches"
@@ -185,21 +302,129 @@ function MatchedApps({ matches, answers, onWantThis }) {
           style={{
             fontSize: 'var(--text-h3)',
             fontWeight: 800,
-            marginBottom: 'var(--space-6)',
+            marginBottom: count === 1 && !softFallback ? 'var(--space-3)' : 'var(--space-6)',
             animation: 'fadeInUp 500ms ease-out 100ms both',
           }}
         >
-          Three that feel like you
+          {heading}
         </h2>
+        {count === 1 && !softFallback && (
+          <p
+            style={{
+              fontSize: 'var(--text-body-lg)',
+              color: 'var(--color-text-secondary)',
+              marginBottom: 'var(--space-6)',
+              maxWidth: 560,
+              animation: 'fadeInUp 500ms ease-out 200ms both',
+            }}
+          >
+            We&rsquo;d rather show you one strong fit than pad it out.
+          </p>
+        )}
         <div className="moodboard-results-grid">
           {matches.map((match, i) => (
             <ResultCard
               key={match.id}
               match={match}
               index={i}
+              total={count}
               answers={answers}
               onWantThis={onWantThis}
             />
+          ))}
+        </div>
+      </Container>
+    </section>
+  )
+}
+
+// ── Invented Apps (AI-generated when hasOwnWords) ────────────────────────────
+
+function InventedApps({ inventedApps, onWantThis }) {
+  if (!inventedApps?.length) return null
+  return (
+    <section
+      className="section-py"
+      style={{ background: 'var(--color-bg)' }}
+    >
+      <Container>
+        <p
+          style={{
+            fontSize: 'var(--text-tiny)',
+            fontWeight: 700,
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            color: 'var(--color-text-secondary)',
+            marginBottom: 'var(--space-3)',
+          }}
+        >
+          From what you wrote
+        </p>
+        <h2
+          style={{
+            fontSize: 'var(--text-h3)',
+            fontWeight: 800,
+            marginBottom: 'var(--space-6)',
+            maxWidth: 640,
+          }}
+        >
+          Ideas we thought of while reading your words
+        </h2>
+        <div
+          style={{
+            display: 'grid',
+            gap: 'var(--space-5)',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          }}
+        >
+          {inventedApps.map((idea, i) => (
+            <article
+              key={`${idea.title}-${i}`}
+              style={{
+                padding: 'var(--space-6)',
+                border: '1px dashed var(--color-border-strong)',
+                borderRadius: 'var(--radius-xl)',
+                background: 'var(--color-bg-subtle)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 'var(--space-3)',
+              }}
+            >
+              <h3 style={{ fontSize: 'var(--text-h4)', fontWeight: 800, lineHeight: 1.2 }}>
+                {idea.title}
+              </h3>
+              {idea.description && (
+                <p style={{ fontSize: 'var(--text-body-sm)', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  {idea.description}
+                </p>
+              )}
+              {idea.whyItFitsYou && (
+                <p style={{ fontSize: 'var(--text-body-sm)', color: 'var(--color-text-primary)', lineHeight: 1.5 }}>
+                  {idea.whyItFitsYou}
+                </p>
+              )}
+              {idea.sourceQuote && (
+                <p
+                  style={{
+                    fontSize: 'var(--text-tiny)',
+                    color: 'var(--color-text-secondary)',
+                    fontStyle: 'italic',
+                    borderLeft: '2px solid var(--color-accent)',
+                    paddingLeft: 'var(--space-3)',
+                  }}
+                >
+                  From what you wrote: &ldquo;{idea.sourceQuote}&rdquo;
+                </p>
+              )}
+              <button
+                type="button"
+                onClick={onWantThis}
+                className="btn btn-secondary"
+                style={{ alignSelf: 'flex-start', marginTop: 'var(--space-2)' }}
+              >
+                Talk to us about this idea
+              </button>
+            </article>
           ))}
         </div>
       </Container>
@@ -491,6 +716,7 @@ function BriefEmailGate({ results, answers, sectionRef, onBriefSent, shared, loc
                 id="moodboard-brief-email"
                 type="email"
                 required
+                maxLength={254}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
@@ -680,8 +906,9 @@ function ShareableLink({ results, answers, lockedSlug, onShared, openSheet, save
               <input
                 id="moodboard-share-couple"
                 type="text"
+                maxLength={120}
                 value={coupleName}
-                onChange={(e) => setCoupleName(e.target.value)}
+                onChange={(e) => setCoupleName(e.target.value.slice(0, 120))}
                 placeholder="Jack & Simone (optional)"
                 className="moodboard-input"
                 style={{ flex: 1, minWidth: 220 }}
@@ -692,8 +919,9 @@ function ShareableLink({ results, answers, lockedSlug, onShared, openSheet, save
               <input
                 id="moodboard-share-slug"
                 type="text"
+                maxLength={60}
                 value={desiredSlug}
-                onChange={(e) => setDesiredSlug(e.target.value)}
+                onChange={(e) => setDesiredSlug(e.target.value.slice(0, 60))}
                 placeholder="Custom URL (optional)"
                 className="moodboard-input"
                 style={{ flex: 1, minWidth: 220 }}
@@ -729,6 +957,7 @@ function ShareableLink({ results, answers, lockedSlug, onShared, openSheet, save
                 autoComplete="new-password"
                 required
                 minLength={4}
+                maxLength={128}
               />
             </div>
           </>
@@ -814,10 +1043,44 @@ export default function MoodboardResults({
   shared = false,
   lockedSlug = null,
   sharedBrief = null,
+  onTweak = null,
+  onRerun = null,
+  rerunCount = 0,
+  justUpdatedTs = 0,
 }) {
   const emailRef = useRef(null)
   const shareRef = useRef(null)
   const [sheetOpen, setSheetOpen] = useState(false)
+  const [showToast, setShowToast] = useState(false)
+  const [editedAnswers, setEditedAnswers] = useState(null)
+  const [rerunning, setRerunning] = useState(false)
+  const RERUN_LIMIT = 3
+  const rerunsLeft = Math.max(0, RERUN_LIMIT - (rerunCount ?? 0))
+  const workingAnswers = editedAnswers ?? answers
+  const dirty = editedAnswers !== null
+
+  useEffect(() => {
+    if (!justUpdatedTs) return
+    setShowToast(true)
+    setEditedAnswers(null)
+    setRerunning(false)
+    const t = setTimeout(() => setShowToast(false), 2600)
+    return () => clearTimeout(t)
+  }, [justUpdatedTs])
+
+  const handleRemoveChip = useCallback((chip) => {
+    setEditedAnswers((current) => removeChipFromAnswers(current ?? answers, chip))
+  }, [answers])
+
+  const handleRerun = useCallback(async () => {
+    if (!onRerun || !editedAnswers || rerunsLeft <= 0) return
+    setRerunning(true)
+    try {
+      await onRerun(editedAnswers)
+    } finally {
+      setRerunning(false)
+    }
+  }, [onRerun, editedAnswers, rerunsLeft])
   const [savedShare, setSavedShare] = useState(() => {
     if (shared && sharedBrief) {
       const origin = typeof window !== 'undefined' ? window.location.origin : ''
@@ -895,9 +1158,43 @@ export default function MoodboardResults({
           </Container>
         </section>
       )}
-      <ThreeWords threeWords={results.threeWords} onShare={openSheet} />
-      <AnswerStrip answers={answers} />
+      {showToast && (
+        <div
+          role="status"
+          aria-live="polite"
+          style={{
+            position: 'fixed',
+            top: 'calc(var(--nav-height) + var(--space-3))',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 90,
+            background: 'var(--color-text-primary)',
+            color: 'var(--color-text-inverse)',
+            padding: 'var(--space-3) var(--space-5)',
+            borderRadius: 'var(--radius-md)',
+            fontSize: 'var(--text-body-sm)',
+            fontWeight: 600,
+            boxShadow: 'var(--shadow-md)',
+            animation: 'fadeInUp 300ms ease-out both',
+          }}
+        >
+          Updated with your edits.
+        </div>
+      )}
+      <ThreeWords threeWords={results.threeWords} onShare={openSheet} onTweak={onTweak} />
+      <AnswerStrip
+        answers={workingAnswers}
+        onRemoveChip={onRerun ? handleRemoveChip : null}
+        onAdd={onTweak}
+        onRerun={handleRerun}
+        dirty={dirty}
+        rerunsLeft={rerunsLeft}
+        rerunning={rerunning}
+      />
       <MatchedApps matches={results.matches} answers={answers} onWantThis={scrollToEmail} />
+      {results.hasOwnWords && (
+        <InventedApps inventedApps={results.inventedApps} onWantThis={scrollToEmail} />
+      )}
       <HiddenTier hiddenMatches={results.hiddenMatches} onWantThis={scrollToEmail} />
       <div ref={shareRef}>
         <BriefEmailGate

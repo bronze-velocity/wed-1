@@ -1,5 +1,6 @@
 import { sendMail } from '@/lib/mailer.js'
 import { APP_DIRECTIONS, STORY_QUESTIONS, allCustomEntries } from '@/lib/moodboard/config.js'
+import { sanitizeAnswers, requestTooLarge, INPUT_LIMITS } from '@/lib/moodboard/validateAnswers.js'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -53,7 +54,6 @@ function buildBriefHtml(email, results, answers, keepBrief) {
       ${answers.moments?.length ? `<tr><td>Moments</td><td>${answers.moments.join(', ')}</td></tr>` : ''}
       ${answers.feelings?.length ? `<tr><td>Feelings</td><td>${answers.feelings.join(', ')}</td></tr>` : ''}
       ${answers.guestFreeform ? `<tr><td>Guest list</td><td><em>"${answers.guestFreeform}"</em></td></tr>` : ''}
-      ${answers.wildcard ? `<tr><td>Energy</td><td>${answers.wildcard}</td></tr>` : ''}
       ${answers.directionPreferences?.saved?.length ? `<tr><td>Saved directions</td><td>${answers.directionPreferences.saved.map((id) => APP_DIRECTIONS[id]?.title ?? id).join(', ')}</td></tr>` : ''}
       ${answers.directionPreferences?.rejected?.length ? `<tr><td>Rejected directions</td><td>${answers.directionPreferences.rejected.map((id) => APP_DIRECTIONS[id]?.title ?? id).join(', ')}</td></tr>` : ''}
       ${storyRows}
@@ -80,6 +80,10 @@ function buildConfirmationHtml(results) {
 // touches Vercel logs or any store, and honour `keepBrief` as the lawful
 // basis for keeping the row past the email send (default TTL: 90 days).
 export async function POST(request) {
+  if (requestTooLarge(request)) {
+    return Response.json({ error: 'Request too large.' }, { status: 413 })
+  }
+
   let body
   try {
     body = await request.json()
@@ -87,8 +91,9 @@ export async function POST(request) {
     return Response.json({ error: 'Invalid request body' }, { status: 400 })
   }
 
-  const { email, results, answers, keepBrief } = body
+  const { email: rawEmail, results, answers: rawAnswers, keepBrief } = body
 
+  const email = typeof rawEmail === 'string' ? rawEmail.trim().slice(0, INPUT_LIMITS.emailMax) : ''
   if (!email || !EMAIL_RE.test(email)) {
     return Response.json({ error: 'Valid email required' }, { status: 400 })
   }
@@ -96,6 +101,7 @@ export async function POST(request) {
     return Response.json({ error: 'Results missing' }, { status: 400 })
   }
 
+  const answers = sanitizeAnswers(rawAnswers) ?? {}
   const keep = keepBrief === true
 
   try {

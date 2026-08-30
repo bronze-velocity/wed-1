@@ -43,6 +43,7 @@ export default function BigScreenFrame({ message, senderName, to, photo, onReset
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--space-6)', width: '100%' }}>
       <div
+        className="bsf-outer"
         style={{
           position: 'relative',
           width: '100%',
@@ -67,6 +68,7 @@ export default function BigScreenFrame({ message, senderName, to, photo, onReset
           zIndex: 0,
         }} />
       <div
+        className="bsf-screen"
         style={{
           position: 'relative',
           zIndex: 1,
@@ -76,7 +78,6 @@ export default function BigScreenFrame({ message, senderName, to, photo, onReset
           boxShadow: active
             ? '0 0 0 3px rgba(173, 138, 62, 0.35), 0 24px 48px rgba(0, 0, 0, 0.5)'
             : '0 0 0 2px rgba(255,255,255,0.08), 0 24px 48px rgba(0, 0, 0, 0.5)',
-          aspectRatio: '16 / 9',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',

@@ -8,7 +8,6 @@ import {
   GUESTS,
   MOMENTS,
   FEELINGS,
-  WILDCARDS,
   STORY_QUESTIONS,
   customEntriesFor,
 } from '@/lib/moodboard/config'
@@ -142,7 +141,6 @@ export default function StepReview({
   const [guests, setGuests] = useState(new Set(answers.guests ?? []))
   const [moments, setMoments] = useState(new Set(answers.moments ?? []))
   const [feelings, setFeelings] = useState(new Set(answers.feelings ?? []))
-  const [wildcard, setWildcard] = useState(answers.wildcard ?? null)
   const [story, setStory] = useState(answers.story ?? {})
 
   const [customVibes, setCustomVibes] = useState(customEntriesFor(answers, 'vibes'))
@@ -209,19 +207,12 @@ export default function StepReview({
     if (expandedStoryKey === key) setExpandedStoryKey(null)
   }
 
-  function removeWildcard() {
-    setWildcard(null)
-    pushDraft({ wildcard: null })
-  }
-
   const answeredStory = STORY_QUESTIONS.filter((q) => story?.[q.key]?.trim())
   const skippedStory = STORY_QUESTIONS.filter((q) => !story?.[q.key]?.trim())
 
-  const wildcardOption = WILDCARDS.find((w) => w.id === wildcard) ?? null
-
   const totalSignal =
     vibes.size + guests.size + moments.size + feelings.size +
-    (wildcard ? 1 : 0) + answeredStory.length +
+    answeredStory.length +
     customVibes.length + customGuests.length + customMoments.length +
     customFeelings.length + finalNotes.length
 
@@ -231,7 +222,6 @@ export default function StepReview({
       guests: [...guests],
       moments: [...moments],
       feelings: [...feelings],
-      wildcard,
       story,
       customEntries: {
         vibes: customVibes,
@@ -245,7 +235,7 @@ export default function StepReview({
 
   return (
     <StepShell
-      stepLabel="Step 7 of 7 · Your brief"
+      stepLabel="Step 6 of 6 · Your brief"
       title="Everything you told us."
       subtitle="This is what we're about to read. Edit anything in place, or jump back to a step. When you're ready, we'll find your apps."
       cta={
@@ -431,9 +421,10 @@ export default function StepReview({
                   {isExpanded ? (
                     <textarea
                       value={value}
-                      onChange={(e) => editStory(q.key, e.target.value)}
+                      onChange={(e) => editStory(q.key, e.target.value.slice(0, 500))}
                       autoFocus
                       rows={3}
+                      maxLength={500}
                       style={{
                         width: '100%',
                         fontFamily: 'inherit',
@@ -484,20 +475,6 @@ export default function StepReview({
           </div>
         </GroupPanel>
 
-        <GroupPanel
-          title="Energy"
-          stepIndex={5}
-          onJumpTo={onJumpTo}
-          isEmpty={!wildcardOption}
-          emptyLabel="You didn't pick a final image."
-        >
-          {wildcardOption && (
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
-              <CannedPill label={wildcardOption.label} onRemove={removeWildcard} />
-            </div>
-          )}
-        </GroupPanel>
-
         <section
           style={{
             borderRadius: 'var(--radius-lg)',
@@ -511,7 +488,7 @@ export default function StepReview({
           <header>
             <h3 style={{ fontSize: 'var(--text-body-lg)', fontWeight: 700, margin: 0 }}>Anything else</h3>
             <p style={{ margin: 'var(--space-1) 0 0', color: 'var(--color-text-secondary)', fontSize: 'var(--text-body-sm)' }}>
-              Anything we should know before we read your brief? Optional — but the specific stuff is what makes the match land.
+              Anything else you want to add to see your suitable apps?
             </p>
           </header>
           <CustomEntryPills

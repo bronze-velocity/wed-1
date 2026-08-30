@@ -36,7 +36,7 @@ export default function StepFeelings({ onNext, onBack, initialValues, onDraftCha
 
   return (
     <StepShell
-      stepLabel="Step 4 of 7"
+      stepLabel="Step 4 of 6"
       title="What should the room feel like?"
       subtitle={`Pick up to ${MAX} — or say it in your words`}
       cta={

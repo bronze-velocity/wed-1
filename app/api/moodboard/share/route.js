@@ -6,10 +6,12 @@ import {
   cookieNameFor,
   hashPassword,
 } from '@/lib/moodboard/passwords'
+import { sanitizeAnswers, requestTooLarge, INPUT_LIMITS } from '@/lib/moodboard/validateAnswers.js'
 
 const rateMap = new Map()
 const COOKIE_MAX_AGE = 60 * 60 * 24 * 30 // 30 days
-const MIN_PASSWORD_LEN = 4
+const MIN_PASSWORD_LEN = INPUT_LIMITS.passwordMin
+const MAX_PASSWORD_LEN = INPUT_LIMITS.passwordMax
 
 function checkRateLimit(ip) {
   const now = Date.now()
@@ -40,6 +42,10 @@ export async function POST(request) {
     )
   }
 
+  if (requestTooLarge(request)) {
+    return Response.json({ error: 'Request too large.' }, { status: 413 })
+  }
+
   let body
   try {
     body = await request.json()
@@ -47,12 +53,13 @@ export async function POST(request) {
     return Response.json({ error: 'Invalid request body.' }, { status: 400 })
   }
 
-  const { answers, results, desiredSlug, lockedSlug, password, meta, coupleName } = body ?? {}
+  const { answers: rawAnswers, results, desiredSlug, lockedSlug, password, meta, coupleName } = body ?? {}
 
   if (!results?.matches?.length) {
     return Response.json({ error: 'Results missing' }, { status: 400 })
   }
-  if (!answers || typeof answers !== 'object') {
+  const answers = sanitizeAnswers(rawAnswers)
+  if (!answers) {
     return Response.json({ error: 'Answers missing' }, { status: 400 })
   }
 
@@ -115,6 +122,12 @@ export async function POST(request) {
   if (typeof password !== 'string' || password.length < MIN_PASSWORD_LEN) {
     return Response.json(
       { error: `Password must be at least ${MIN_PASSWORD_LEN} characters.` },
+      { status: 400 }
+    )
+  }
+  if (password.length > MAX_PASSWORD_LEN) {
+    return Response.json(
+      { error: `Password must be ${MAX_PASSWORD_LEN} characters or fewer.` },
       { status: 400 }
     )
   }

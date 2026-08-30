@@ -1,3 +1,5 @@
+# 29 AUG
+- image prompts
 # 28 aug
 - all-event-studio
 - restyling a la www.la-fete.com? maybe just typography?

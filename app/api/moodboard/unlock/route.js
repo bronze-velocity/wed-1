@@ -2,6 +2,7 @@ import { cookies } from 'next/headers'
 import { getBrief } from '@/lib/moodboard/briefStore'
 import { slugify } from '@/lib/moodboard/slug'
 import { cookieNameFor, verifyPassword } from '@/lib/moodboard/passwords'
+import { INPUT_LIMITS } from '@/lib/moodboard/validateAnswers.js'
 
 const attemptMap = new Map()
 const COOKIE_MAX_AGE = 60 * 60 * 24 * 30 // 30 days
@@ -31,6 +32,9 @@ export async function POST(request) {
 
   if (!slug || typeof password !== 'string' || !password) {
     return Response.json({ error: 'Missing slug or password.' }, { status: 400 })
+  }
+  if (password.length > INPUT_LIMITS.passwordMax) {
+    return Response.json({ error: 'Password too long.' }, { status: 400 })
   }
 
   const ip =

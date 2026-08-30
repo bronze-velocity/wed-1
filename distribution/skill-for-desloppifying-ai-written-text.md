@@ -35,7 +35,6 @@ If the user provides a writing sample (their own previous writing), analyze it b
 2. Match those habits. Do not replace casual words with formal ones or remove deliberate quirks.
 3. If there is no sample, use the guidance below.
 
-A writing sample takes priority over these style rules. If the sample uses em dashes, keep them at about the same rate. Do not apply §14 as a ban.
 
 ## Add personality only when it fits
 
@@ -180,7 +179,7 @@ Do not ban the repeated word. Fix the repeated sentence pattern. The remaining s
 
 ### 14. Em and en dashes
 
-**Rule:** The final rewrite must not contain em dashes (—) or en dashes (–), unless the writer's sample uses them. Replace a dash with a period, comma, colon, or parentheses, or rewrite the sentence. Also check for spaced dashes (` — `) and double hyphens (` -- `) used as dashes.
+**Rule:** The final rewrite must not contain em dashes (—) or en dashes (–). Replace a dash with a period, comma, colon, or parentheses, or rewrite the sentence. Also check for spaced dashes (` — `) and double hyphens (` -- `) used as dashes.
 **Before:**
 > The term is primarily promoted by Dutch institutions—not by the people themselves. You don't say "Netherlands, Europe" as an address—yet this mislabeling continues—even in official documents.
 **After:**
@@ -190,7 +189,7 @@ Do not ban the repeated word. Fix the repeated sentence pattern. The remaining s
 **After:**
 > The new policy, announced without warning, affects thousands of workers. The changes, long overdue according to critics, will take effect immediately.
 
-Before returning the rewrite, search for `—` and `–`. Remove each one unless the writer's sample uses that mark. In that case, match the sample's rate.
+Before returning the rewrite, search for `—` and `–`. Remove each one.
 
 ### 15. Too much bold text
 **Problem:** AI chatbots often bold words and phrases without a clear reason.
@@ -403,7 +402,6 @@ A person may use some of these patterns. Do not treat any item below as proof by
 - **Letter-style opening or closing on a comment.** Salutations and sign-offs predate ChatGPT by centuries.
 - **Common transition words in isolation.** *Additionally*, *moreover*, *consequently* are AI-coded only when piled up. One *however* is not a tell.
 - **Curly quotes alone.** macOS, Word, Google Docs, and most CMSes auto-curl by default. Curly quotes only count when stacked with other tells.
-- **Em dashes alone.** Many editors and journalists use them often. Em dashes are evidence only when paired with formulaic sales-y rhythm.
 - **One short sentence for emphasis.** Flag dramatic fragments only when several appear in a row.
 - **Deliberate repeated openings.** Writers may repeat an opening to build rhythm or pressure, as in "She came. She saw. She conquered." Change it only when the repetition adds nothing.
 - **"Honestly" or "look" mid-sentence.** These are ordinary in casual writing. The tell is the standalone theatrical opener, not the word itself.
@@ -445,7 +443,7 @@ These details often carry the writer's voice. Keep them unless they hurt the mea
    - **"What still sounds AI-generated?"**
    - **"Did the rewrite add or remove any fact, name, number, date, quote, citation, ranking, or other claim?"**
    Treat any unsupported addition or lost claim as an error.
-4. Write the final version. State each point naturally instead of patching one flagged phrase at a time. If a sentence stays awkward, rewrite the paragraph around its main point. Apply the dash rule in §14.
+4. Write the final version. State each point naturally instead of patching one flagged phrase at a time. If a sentence stays awkward, rewrite the paragraph around its main point. 
 
 Return the result required by [How to return the result](#how-to-return-the-result).
 

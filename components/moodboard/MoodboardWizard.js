@@ -11,14 +11,13 @@ import StepGuests from './steps/StepGuests'
 import StepMoments from './steps/StepMoments'
 import StepFeelings from './steps/StepFeelings'
 import StepStory from './steps/StepStory'
-import StepWildcard from './steps/StepWildcard'
 import StepReview from './steps/StepReview'
 import { loadProgress, saveProgress, clearProgress } from './lib/persistence'
 import { apps } from '@/data/apps'
 import { trackEvent } from '@/lib/analytics'
 import { buildMoodboardDirections } from '@/lib/moodboard/directions'
 
-const STEPS = [StepVibes, StepGuests, StepMoments, StepFeelings, StepStory, StepWildcard, StepReview]
+const STEPS = [StepVibes, StepGuests, StepMoments, StepFeelings, StepStory, StepReview]
 const REVIEW_STEP_INDEX = STEPS.length - 1
 
 function useReducedMotion() {
@@ -111,6 +110,8 @@ export default function MoodboardWizard({
   const [matching, setMatching] = useState(false)
   const [resumeCandidate, setResumeCandidate] = useState(null)
   const [startedTracked, setStartedTracked] = useState(false)
+  const [rerunCount, setRerunCount] = useState(0)
+  const [justUpdatedTs, setJustUpdatedTs] = useState(0)
   const reducedMotion = useReducedMotion()
 
   // Prevent iOS overscroll bounce while wizard is active
@@ -151,6 +152,20 @@ export default function MoodboardWizard({
   function handleBriefSent() {
     trackEvent('moodboard_finished', { seed: seededApp?.slug || null, role: role || null })
     clearProgress()
+  }
+
+  function goBackToReview() {
+    setResults(null)
+    setDirection('back')
+    setStep(REVIEW_STEP_INDEX)
+    setFurthestVisitedStep((current) => Math.max(current, REVIEW_STEP_INDEX))
+  }
+
+  async function rerunFromAnswers(nextAnswers) {
+    setAnswers(nextAnswers)
+    setRerunCount((n) => n + 1)
+    await startMatching(nextAnswers)
+    setJustUpdatedTs(Date.now())
   }
 
   async function startMatching(finalAnswers) {
@@ -240,6 +255,10 @@ export default function MoodboardWizard({
         answers={answers}
         onBriefSent={handleBriefSent}
         lockedSlug={lockedSlug}
+        onTweak={goBackToReview}
+        onRerun={rerunFromAnswers}
+        rerunCount={rerunCount}
+        justUpdatedTs={justUpdatedTs}
       />
     )
   }

@@ -142,18 +142,6 @@ export function buildMoodboardInsights(answers, step) {
     addIdea('room-built-ending', 'An Ending the Room Builds', 'Every choice changes the final scene, so even we cannot know what your screen will show beforehand.', 'Pushing it further')
   }
 
-  const wildcardIdeas = {
-    'candlelit-pan': ['candlelight-sequence', 'The Candlelight Sequence', 'A slow chain of guest messages appears across the room one sentence at a time.'],
-    'phone-in-dark': ['private-public', 'Private In, Public Out', 'Guests answer alone for ten seconds; their combined answer becomes one image everyone sees.'],
-    'crowd-goes-quiet': ['earned-silence', 'The Earned Silence', 'A playful trail suddenly resolves into one true story nobody expected to hear.'],
-    'everyone-points-at-screen': ['point-at-screen', 'The Screen Knows Something', 'A live reveal spots the connection, contradiction, or secret the whole room just created.'],
-    'someone-crying-at-table': ['one-person-story', 'One Person Tells It', 'The room unlocks a story from the guest who knows this chapter better than anyone.'],
-    'flash-mob': ['room-choreography', 'The Room Choreographs Itself', 'Tiny private instructions combine into one coordinated moment nobody had to rehearse.'],
-  }
-  if (answers.wildcard && wildcardIdeas[answers.wildcard]) {
-    addIdea(...wildcardIdeas[answers.wildcard], 'Your boldest direction')
-  }
-
   const storyEntries = Object.entries(answers.story ?? {}).filter(([, value]) => value?.trim())
   if (storyEntries.length) {
     const [key, value] = storyEntries[storyEntries.length - 1]
@@ -198,18 +186,6 @@ export function buildMoodboardInsights(answers, step) {
     const [, value] = storyEntries[storyEntries.length - 1]
     commentary = `“${excerpt(value, 92)}” is specific enough to shape the app. We’re using it to sharpen your directions.`
   }
-  if (step === 5 && answers.wildcard) {
-    const wildcardCommentary = {
-      'candlelit-pan': 'Quiet and cinematic wins. We’d let one image or sentence arrive at a time instead of filling the screen.',
-      'phone-in-dark': 'This wants a private contribution with a public payoff, not a room full of people staring down at once.',
-      'crowd-goes-quiet': 'You’re chasing attention without noise. A single earned reveal will beat a sequence of mini-games.',
-      'everyone-points-at-screen': 'That shared “wait, look” reaction is the target. The screen needs to change because of something a guest just did.',
-      'someone-crying-at-table': 'The emotional turn should come from a real person in the room, not generic sentiment written by us.',
-      'flash-mob': 'You’re giving us permission to orchestrate the room. We’d still build in an easy spectator role for guests who won’t perform.',
-    }
-    commentary = wildcardCommentary[answers.wildcard] ?? ''
-  }
-
   return {
     ideas: ideas.slice(-8).reverse(),
     commentary,

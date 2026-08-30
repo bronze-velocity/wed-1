@@ -36,7 +36,7 @@ export default function StepMoments({ onNext, onBack, initialValues, onDraftChan
 
   return (
     <StepShell
-      stepLabel="Step 3 of 7"
+      stepLabel="Step 3 of 6"
       title="When should this experience earn its place?"
       subtitle="Select any that fit your timeline — or add a moment we missed"
       cta={

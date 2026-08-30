@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 
-export default function MagneticButton({ children, radius = 120, strength = 0.35, as: Tag = 'div', style, ...rest }) {
+export default function MagneticButton({ children, radius = 80, strength = 0.25, as: Tag = 'div', style, ...rest }) {
   const ref = useRef(null)
 
   useEffect(() => {
@@ -12,10 +12,10 @@ export default function MagneticButton({ children, radius = 120, strength = 0.35
     if (window.matchMedia('(hover: none)').matches) return
 
     let raf = 0
-    let tx = 0
-    let ty = 0
+    let inside = false
 
-    function apply() {
+    function apply(tx, ty, withTransition) {
+      el.style.transition = withTransition ? 'transform 400ms cubic-bezier(0.23, 1, 0.32, 1)' : 'none'
       el.style.transform = `translate(${tx.toFixed(2)}px, ${ty.toFixed(2)}px)`
     }
 
@@ -26,23 +26,28 @@ export default function MagneticButton({ children, radius = 120, strength = 0.35
       const dx = e.clientX - cx
       const dy = e.clientY - cy
       const dist = Math.hypot(dx, dy)
+
       if (dist > radius) {
-        tx = 0
-        ty = 0
-      } else {
-        const falloff = 1 - dist / radius
-        tx = dx * strength * falloff
-        ty = dy * strength * falloff
+        if (inside) {
+          inside = false
+          cancelAnimationFrame(raf)
+          raf = requestAnimationFrame(() => apply(0, 0, true))
+        }
+        return
       }
+
+      inside = true
+      const falloff = 1 - dist / radius
+      const tx = dx * strength * falloff
+      const ty = dy * strength * falloff
       cancelAnimationFrame(raf)
-      raf = requestAnimationFrame(apply)
+      raf = requestAnimationFrame(() => apply(tx, ty, false))
     }
 
     function onLeave() {
-      tx = 0
-      ty = 0
+      inside = false
       cancelAnimationFrame(raf)
-      raf = requestAnimationFrame(apply)
+      raf = requestAnimationFrame(() => apply(0, 0, true))
     }
 
     window.addEventListener('pointermove', onMove, { passive: true })
@@ -59,7 +64,6 @@ export default function MagneticButton({ children, radius = 120, strength = 0.35
       ref={ref}
       style={{
         display: 'inline-block',
-        transition: 'transform var(--duration-slow) var(--ease-spring)',
         willChange: 'transform',
         ...style,
       }}

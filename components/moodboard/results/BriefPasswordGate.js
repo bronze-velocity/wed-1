@@ -109,6 +109,7 @@ export default function BriefPasswordGate({ slug }) {
               className="moodboard-input"
               style={{ textAlign: 'center' }}
               autoComplete="off"
+              maxLength={128}
             />
             <button
               type="submit"

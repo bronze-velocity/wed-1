@@ -4,16 +4,12 @@ export const universalFaqs = [
     a: "No. Every Wepho app is browser-based. Guests scan a QR code and everything happens in their phone's browser.",
   },
   {
-    q: 'What if it breaks during the wedding?',
-    a: 'We stress-test on your actual venue WiFi before the day, we deploy the app ourselves, and we stay reachable during your reception if anything comes up.',
-  },
-  {
     q: 'How much does a Wepho app cost?',
-    a: "Around $2,000. For context: flowers cost $800 and die by morning; a photographer costs $3,500 and guests don't see the photos for six weeks. Wepho is $2,000 and every guest participates.",
+    a: 'Around $2,000.',
   },
   {
-    q: 'Is this basically Kahoot with a wedding theme?',
-    a: "No. Kahoot doesn't know your story. Every Wepho app is custom-built for one couple, one night — the content, the mechanics, the moderation rules, the keepsake.",
+    q: 'What do you need from us to build it?',
+    a: 'A short intake call, a bit of raw material (photos, quotes, stories — whatever the app calls for), and one round of review before the wedding. Most couples spend 2–3 hours total on their end.',
   },
   {
     q: 'What if our guests are older / less tech-comfortable?',
@@ -25,20 +21,8 @@ export const universalFaqs = [
   },
   {
     q: 'How far in advance do we need to book?',
-    a: 'Minimum 8 weeks for a straightforward build; 12+ weeks for the more custom apps (Relationship Exhibit, Home Your Room Built).',
-  },
-  {
-    q: 'Can we mix multiple apps in one wedding?',
-    a: 'Yes — most weddings run 2–3 apps across different moments (cocktail hour + dinner + dancing). Bundle pricing available for 2+ apps.',
-  },
-  {
-    q: 'What happens to our data after the wedding?',
-    a: 'Guest submissions live on a private page you access forever. Aggregate data (histograms, leaderboards, keepsake pages) is yours; individual guest data is deleted after 12 months unless you export it.',
-  },
-  {
-    q: 'Can we see a real wedding’s app before booking?',
-    a: "Yes — we have footage from prior weddings we can share on a discovery call (subject to that couple's release). Homepage demos let you try two apps end-to-end without a call.",
-  },
+    a: 'Minimum 3 weeks. More lead time is better, especially for the more custom apps (Relationship Exhibit, Home Your Room Built).',
+  }
 ]
 
 export const faqsBySlug = {

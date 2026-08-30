@@ -5,7 +5,20 @@ import Image from 'next/image'
 import PhoneShell from './PhoneShell'
 
 function toLabelFor(to) {
-  return to === 'her' ? 'To: Her' : to === 'him' ? 'To: Him' : 'To: Both'
+  return to === 'her' ? 'To Her' : to === 'him' ? 'To Him' : 'To Both'
+}
+
+function initialsFor(name) {
+  if (!name) return '?'
+  const parts = name.trim().split(/\s+/)
+  if (parts.length === 1) return parts[0][0].toUpperCase()
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase()
+}
+
+function truncate(text, max = 52) {
+  if (!text) return ''
+  if (text.length <= max) return text
+  return text.slice(0, max).trimEnd() + '…'
 }
 
 export default function AdminFrame({ queue = [], pending, onApprove, onSkip, active, resetKey, autoApproveAfterMs = null }) {
@@ -26,7 +39,7 @@ export default function AdminFrame({ queue = [], pending, onApprove, onSkip, act
 
   const { message, senderName, to, photo } = pending
   const toLabel = toLabelFor(to)
-  const lastApproved = queue.length > 0 ? queue[queue.length - 1] : null
+  const recentApproved = queue.slice(-3).reverse()
 
   function handleApprove() {
     if (!active || isApproving) return
@@ -37,109 +50,162 @@ export default function AdminFrame({ queue = [], pending, onApprove, onSkip, act
   }
 
   return (
-    <PhoneShell screenBg="var(--color-bg-subtle)">
+    <PhoneShell>
       <div style={{
-        padding: '10px 14px 16px',
+        padding: '0 16px 20px',
         display: 'flex',
         flexDirection: 'column',
-        gap: 12,
+        gap: 14,
         fontFamily: 'var(--font-sans)',
       }}>
-        {/* App header */}
+        {/* Couple photo strip — the only place brand romance lives on this screen */}
+        <div style={{
+          position: 'relative',
+          height: 64,
+          margin: '0 -16px',
+          overflow: 'hidden',
+        }}>
+          <Image
+            src="/images/post/legacy-1.jpg"
+            alt=""
+            fill
+            sizes="280px"
+            style={{ objectFit: 'cover' }}
+          />
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(180deg, rgba(17,17,17,0.05) 0%, rgba(17,17,17,0.55) 100%)',
+          }} />
+          <p style={{
+            position: 'absolute',
+            left: 12,
+            bottom: 7,
+            margin: 0,
+            fontFamily: 'var(--font-serif-accent)',
+            fontStyle: 'italic',
+            fontSize: 15,
+            color: '#fff',
+            letterSpacing: '0.01em',
+          }}>
+            Sam &amp; Jordan &middot; Oct 4
+          </p>
+        </div>
+
+        {/* Header row */}
         <div style={{
           display: 'flex',
-          alignItems: 'center',
+          alignItems: 'baseline',
           justifyContent: 'space-between',
           gap: 8,
         }}>
-          <div style={{
-            fontFamily: 'var(--font-serif-accent)',
-            fontStyle: 'italic',
-            fontSize: 'var(--text-body-sm)',
-            color: 'var(--color-text-primary)',
-            lineHeight: 1.25,
-          }}>
-            Sam &amp; Jordan&rsquo;s queue
-          </div>
-          <div style={{
-            fontSize: 10,
+          <h3 style={{
+            fontSize: 'var(--text-h4)',
             fontWeight: 700,
-            letterSpacing: '0.06em',
-            textTransform: 'uppercase',
-            background: 'var(--color-gold-light)',
-            color: 'var(--color-gold)',
-            borderRadius: 'var(--radius-md)',
-            padding: '3px 8px',
-            whiteSpace: 'nowrap',
+            color: 'var(--color-text-primary)',
+            lineHeight: 1.2,
+            margin: 0,
+          }}>
+            Approve for the wall
+          </h3>
+          <span style={{
+            fontSize: 'var(--text-tiny)',
+            color: 'var(--color-text-muted)',
+            fontWeight: 600,
           }}>
             1 waiting
-          </div>
+          </span>
         </div>
 
-        {/* Pending message card */}
+        {/* Pending message card — inbox-item styling */}
         <div style={{
-          background: '#FFFFFF',
+          background: 'var(--color-bg)',
           border: '1px solid var(--color-border)',
-          borderLeft: '3px solid var(--color-gold)',
           borderRadius: 'var(--radius-lg)',
-          padding: '12px 12px 14px',
-          boxShadow: 'var(--shadow-sm)',
+          padding: '12px',
           transition: 'opacity 350ms var(--ease-out), transform 350ms var(--ease-out)',
           opacity: isApproving ? 0 : 1,
           transform: isApproving ? 'translateX(24px)' : 'translateX(0)',
         }}>
+          {/* Sender row: avatar + name + timestamp, To-chip on the right */}
           <div style={{
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'space-between',
-            marginBottom: 6,
+            gap: 8,
+            marginBottom: 10,
           }}>
+            <div style={{
+              width: 28,
+              height: 28,
+              borderRadius: 'var(--radius-full)',
+              background: 'var(--color-bg-subtle)',
+              border: '1px solid var(--color-border)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: 11,
+              fontWeight: 700,
+              color: 'var(--color-text-secondary)',
+              flexShrink: 0,
+            }}>
+              {initialsFor(senderName)}
+            </div>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, minWidth: 0, flex: 1 }}>
+              <span style={{
+                fontSize: 'var(--text-body-sm)',
+                fontWeight: 700,
+                color: 'var(--color-text-primary)',
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+              }}>
+                {senderName || 'Anonymous'}
+              </span>
+              <span style={{
+                fontSize: 'var(--text-tiny)',
+                color: 'var(--color-text-muted)',
+                whiteSpace: 'nowrap',
+              }}>
+                · 12s ago
+              </span>
+            </div>
             <span style={{
               fontSize: 10,
-              fontWeight: 700,
-              letterSpacing: '0.06em',
-              textTransform: 'uppercase',
-              color: 'var(--color-gold)',
+              fontWeight: 600,
+              letterSpacing: '0.04em',
+              color: 'var(--color-text-secondary)',
+              background: 'var(--color-bg-subtle)',
+              border: '1px solid var(--color-border)',
+              borderRadius: 'var(--radius-md)',
+              padding: '2px 6px',
+              whiteSpace: 'nowrap',
             }}>
               {toLabel}
-            </span>
-            <span style={{
-              fontSize: 10,
-              color: 'var(--color-text-muted)',
-            }}>
-              just now
             </span>
           </div>
 
           {photo && (
-            <div style={{ position: 'relative', width: 56, height: 56, borderRadius: 'var(--radius-md)', overflow: 'hidden', marginBottom: 8, boxShadow: 'var(--shadow-sm)' }}>
-              <Image src={photo} alt="Photo attached to this message" fill sizes="56px" style={{ objectFit: 'cover' }} />
+            <div style={{ position: 'relative', width: '100%', height: 120, borderRadius: 'var(--radius-md)', overflow: 'hidden', marginBottom: 10 }}>
+              <Image src={photo} alt="Photo attached to this message" fill sizes="260px" style={{ objectFit: 'cover' }} />
             </div>
           )}
 
           <p style={{
-            fontFamily: 'var(--font-serif-accent)',
+            fontFamily: 'var(--font-sans)',
             fontSize: 'var(--text-body-sm)',
             lineHeight: 1.5,
             color: 'var(--color-text-primary)',
-            margin: '0 0 8px',
-            fontStyle: 'italic',
+            margin: 0,
           }}>
-            &ldquo;{message}&rdquo;
+            {message}
           </p>
-
-          <div style={{
-            fontSize: 'var(--text-tiny)',
-            color: 'var(--color-text-secondary)',
-          }}>
-            — {senderName || 'Anonymous'}
-          </div>
         </div>
 
-        {/* Action buttons */}
+        {/* Action buttons — Approve dominant, Skip as low-weight text link */}
         <div style={{
           display: 'flex',
-          gap: 8,
+          alignItems: 'center',
+          gap: 12,
         }}>
           <button
             onClick={handleApprove}
@@ -149,8 +215,7 @@ export default function AdminFrame({ queue = [], pending, onApprove, onSkip, act
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              gap: 6,
-              padding: '10px 12px',
+              padding: '11px 12px',
               background: 'var(--color-green)',
               color: '#FFFFFF',
               border: 'none',
@@ -163,30 +228,31 @@ export default function AdminFrame({ queue = [], pending, onApprove, onSkip, act
               fontFamily: 'inherit',
             }}
           >
-            <span aria-hidden="true">♥</span> Approve
+            Approve
           </button>
 
           <button
             onClick={onSkip}
             disabled={isApproving}
             style={{
-              padding: '10px 14px',
+              padding: '4px 6px',
               background: 'transparent',
-              color: 'var(--color-text-secondary)',
-              border: '1.5px solid var(--color-border-strong)',
-              borderRadius: 'var(--radius-md)',
+              color: 'var(--color-text-muted)',
+              border: 'none',
               fontSize: 'var(--text-body-sm)',
-              fontWeight: 600,
+              fontWeight: 500,
               cursor: isApproving ? 'default' : 'pointer',
               fontFamily: 'inherit',
+              textDecoration: 'underline',
+              textUnderlineOffset: 3,
             }}
           >
             Skip
           </button>
         </div>
 
-        {/* Recently approved (compact) */}
-        {lastApproved && (
+        {/* Queue — recently approved */}
+        {recentApproved.length > 0 && (
           <div style={{ marginTop: 4, display: 'flex', flexDirection: 'column', gap: 6 }}>
             <span style={{
               fontSize: 10,
@@ -195,35 +261,52 @@ export default function AdminFrame({ queue = [], pending, onApprove, onSkip, act
               textTransform: 'uppercase',
               color: 'var(--color-text-muted)',
             }}>
-              Just approved
+              Recently approved
             </span>
-            <div style={{
+            <ul style={{
+              listStyle: 'none',
+              padding: 0,
+              margin: 0,
               display: 'flex',
-              alignItems: 'center',
-              gap: 8,
-              padding: '8px 10px',
-              background: 'var(--color-bg)',
-              border: '1px solid var(--color-border)',
-              borderRadius: 'var(--radius-md)',
-              opacity: 0.85,
+              flexDirection: 'column',
+              gap: 4,
             }}>
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" style={{ flexShrink: 0, color: 'var(--color-green)' }}>
-                <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              <p style={{
-                margin: 0,
-                fontFamily: 'var(--font-serif-accent)',
-                fontSize: 'var(--text-tiny)',
-                color: 'var(--color-text-secondary)',
-                fontStyle: 'italic',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                whiteSpace: 'nowrap',
-                lineHeight: 1.4,
-              }}>
-                &ldquo;{lastApproved.message}&rdquo;
-              </p>
-            </div>
+              {recentApproved.map((item, i) => (
+                <li
+                  key={i}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    padding: '6px 8px',
+                    borderRadius: 'var(--radius-md)',
+                  }}
+                >
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" style={{ flexShrink: 0, color: 'var(--color-green)' }}>
+                    <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span style={{
+                    fontSize: 'var(--text-tiny)',
+                    fontWeight: 700,
+                    color: 'var(--color-text-secondary)',
+                    whiteSpace: 'nowrap',
+                    flexShrink: 0,
+                  }}>
+                    {item.senderName || 'Anonymous'}
+                  </span>
+                  <span style={{
+                    fontSize: 'var(--text-tiny)',
+                    color: 'var(--color-text-muted)',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    whiteSpace: 'nowrap',
+                    minWidth: 0,
+                  }}>
+                    {truncate(item.message, 40)}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
         )}
       </div>

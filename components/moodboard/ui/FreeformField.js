@@ -8,13 +8,15 @@ export default function FreeformField({
   value = '',
   onChange,
   onSkip,
+  maxLength = 500,
 }) {
   const [focused, setFocused] = useState(false)
   const id = useId()
   const ref = useRef(null)
 
   const floated = focused || value.length > 0
-  const showCounter = value.length >= 200
+  const counterThreshold = Math.max(0, maxLength - 100)
+  const showCounter = value.length >= counterThreshold
 
   useEffect(() => {
     if (ref.current && value) {
@@ -24,7 +26,8 @@ export default function FreeformField({
   }, [])
 
   function handleChange(e) {
-    onChange(e.target.value)
+    const next = e.target.value.slice(0, maxLength)
+    onChange(next)
     e.target.style.height = 'auto'
     e.target.style.height = e.target.scrollHeight + 'px'
   }
@@ -71,6 +74,7 @@ export default function FreeformField({
           onBlur={() => setFocused(false)}
           placeholder={floated ? hint : ''}
           rows={1}
+          maxLength={maxLength}
           className="moodboard-field"
           style={{
             display: 'block',
@@ -119,7 +123,7 @@ export default function FreeformField({
         )}
         {showCounter && (
           <span style={{ fontSize: 'var(--text-tiny)', color: 'var(--color-accent)' }}>
-            {value.length}
+            {value.length} / {maxLength}
           </span>
         )}
       </div>
