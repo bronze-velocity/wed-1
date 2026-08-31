@@ -1,3 +1,5 @@
+# 31 aug
+- on lp: more about the couple being able to decide on anything they want (differentiation vs any other app out there) and that ours only are examples. 
 # 29 AUG
 - image prompts
 # 28 aug

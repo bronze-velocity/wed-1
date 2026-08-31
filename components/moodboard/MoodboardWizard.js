@@ -11,13 +11,14 @@ import StepGuests from './steps/StepGuests'
 import StepMoments from './steps/StepMoments'
 import StepFeelings from './steps/StepFeelings'
 import StepStory from './steps/StepStory'
+import StepVenue from './steps/StepVenue'
 import StepReview from './steps/StepReview'
 import { loadProgress, saveProgress, clearProgress } from './lib/persistence'
 import { apps } from '@/data/apps'
 import { trackEvent } from '@/lib/analytics'
 import { buildMoodboardDirections } from '@/lib/moodboard/directions'
 
-const STEPS = [StepVibes, StepGuests, StepMoments, StepFeelings, StepStory, StepReview]
+const STEPS = [StepVibes, StepGuests, StepMoments, StepFeelings, StepStory, StepVenue, StepReview]
 const REVIEW_STEP_INDEX = STEPS.length - 1
 
 function useReducedMotion() {

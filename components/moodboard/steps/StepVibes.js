@@ -34,7 +34,7 @@ export default function StepVibes({ onNext, onBack, initialValues, onDraftChange
 
   return (
     <StepShell
-      stepLabel="Step 1 of 6"
+      stepLabel="Step 1 of 7"
       title="Which scene feels like the reception you want?"
       subtitle={`Pick up to ${MAX} — add your own if we missed it`}
       cta={
