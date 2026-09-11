@@ -29,8 +29,8 @@ export default function StoryBeat3() {
   return (
     <section
       ref={sectionRef}
-      className="section-py"
-      style={{ position: 'relative', overflow: 'hidden', background: 'var(--color-bg-dark)' }}
+      className="section-screen"
+      style={{ position: 'relative', overflow: 'hidden', background: 'var(--color-bg-dark)', alignItems: 'center' }}
     >
       <PhotoBackdrop
         src="/images/dinner/bigscreen-1.jpg"
@@ -60,7 +60,7 @@ export default function StoryBeat3() {
         <h2
           className="display-italic"
           style={{
-            fontSize: 'var(--text-display)',
+            fontSize: 'var(--text-display-fit)',
             lineHeight: 1.08,
             color: 'var(--color-text-inverse)',
             margin: 0,

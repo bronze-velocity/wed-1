@@ -6,6 +6,7 @@ export default function HomeFaq() {
   return (
     <FaqList
       items={universalFaqs}
+      fitViewport
       eyebrow="Questions"
       heading="What couples ask before booking"
       subheading="The objections that come up most on discovery calls — grandma, WiFi, price, and whether this is just Kahoot in a nice dress."

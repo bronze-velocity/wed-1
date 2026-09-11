@@ -2,10 +2,11 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import Container from '@/components/layout/Container'
 import ContactLink from '@/components/ui/ContactLink'
 import TiltCard from '@/components/ui/TiltCard'
+import HScrollControls from '@/components/ui/HScrollControls'
 
 const VIBES = [
   {
@@ -53,27 +54,29 @@ const VIBES = [
 export default function AppGalleryTeaser({ apps }) {
   const [activeVibe, setActiveVibe] = useState(VIBES[0])
   const [animKey, setAnimKey] = useState(0)
+  const scrollRef = useRef(null)
 
   function selectVibe(vibe) {
     if (vibe.label === activeVibe.label) return
     setActiveVibe(vibe)
     setAnimKey((k) => k + 1)
+    scrollRef.current?.scrollTo({ left: 0, behavior: 'smooth' })
   }
 
   const visibleApps = apps
     .filter((app) => activeVibe.appIds.includes(app.id))
-    .slice(0, 5)
+    .slice(0, 8)
 
   return (
-    <section className="section-py" style={{ background: 'var(--color-bg-subtle)' }}>
+    <section className="section-screen" style={{ background: 'var(--color-bg-subtle)' }}>
       <Container>
 
         <h2
           style={{
-            fontSize: 'var(--text-h2)',
+            fontSize: 'var(--text-h2-fit)',
             fontWeight: 700,
             textAlign: 'center',
-            marginBottom: 'var(--space-3)',
+            marginBottom: 'var(--space-2)',
             color: 'var(--color-text-primary)',
           }}
         >
@@ -83,12 +86,11 @@ export default function AppGalleryTeaser({ apps }) {
         <p
           style={{
             textAlign: 'center',
-            fontSize: 'var(--text-body-lg)',
-            lineHeight: 1.6,
+            fontSize: 'var(--text-body)',
+            lineHeight: 1.5,
             color: 'var(--color-text-secondary)',
-            marginBottom: 'var(--space-10)',
             maxWidth: '620px',
-            margin: '0 auto var(--space-10)',
+            margin: '0 auto var(--space-5)',
           }}
         >
           Five vibes, {apps.length} {' '}apps we&rsquo;ve built, and not one of them off the shelf.
@@ -101,7 +103,7 @@ export default function AppGalleryTeaser({ apps }) {
             flexWrap: 'wrap',
             gap: 'var(--space-2)',
             justifyContent: 'center',
-            marginBottom: 'var(--space-4)',
+            marginBottom: 'var(--space-3)',
           }}
         >
           {VIBES.map((vibe) => {
@@ -138,31 +140,35 @@ export default function AppGalleryTeaser({ apps }) {
           style={{
             '--stagger-i': 0,
             textAlign: 'center',
-            fontSize: 'var(--text-body)',
+            fontSize: 'var(--text-body-sm)',
             color: 'var(--color-text-secondary)',
-            marginBottom: 'var(--space-10)',
+            marginBottom: 'var(--space-5)',
           }}
         >
           {activeVibe.tagline}
         </p>
 
-        {/* App cards — key per card includes animKey so all cards remount on vibe switch */}
+        <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 'var(--space-3)' }}>
+          <HScrollControls targetRef={scrollRef} ariaLabel="Scroll app cards" />
+        </div>
+
+        {/* App cards — horizontal scroll strip so the section stays inside one viewport */}
         <div
+          ref={scrollRef}
+          className="hscroll"
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(min(260px, 100%), 1fr))',
-            gap: 'var(--space-4)',
-            marginBottom: 'var(--space-8)',
+            marginBottom: 'var(--space-5)',
           }}
         >
           {visibleApps.map((app, i) => (
             <TiltCard
               key={`${animKey}-${app.id}`}
-              className="card-deal"
+              className="card-deal hscroll-item"
               style={{
                 '--stagger-i': i,
                 borderRadius: 'var(--radius-xl)',
                 overflow: 'hidden',
+                width: 'clamp(240px, 24vw, 300px)',
               }}
             >
             <Link
@@ -179,7 +185,7 @@ export default function AppGalleryTeaser({ apps }) {
                 height: '100%',
               }}
             >
-              <div style={{ position: 'relative', height: 140 }}>
+              <div style={{ position: 'relative', height: 'clamp(96px, 14vh, 140px)' }}>
                 <Image
                   src={activeVibe.image.src}
                   alt={activeVibe.image.alt}
@@ -230,72 +236,40 @@ export default function AppGalleryTeaser({ apps }) {
           ))}
         </div>
 
-        {/* None-of-these tail — invites the "bring your own idea" path */}
+        {/* Tail — compact single row combining moodboard + see-all + own-idea */}
         <div
           style={{
-            textAlign: 'center',
-            marginBottom: 'var(--space-8)',
-            maxWidth: '620px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: 'var(--space-4)',
+            justifyContent: 'center',
+            alignItems: 'center',
+            fontSize: 'var(--text-body-sm)',
+            color: 'var(--color-text-secondary)',
           }}
         >
-          <p
-            style={{
-              fontSize: 'var(--text-body-lg)',
-              lineHeight: 1.6,
-              color: 'var(--color-text-secondary)',
-              marginBottom: 'var(--space-3)',
-            }}
+          <Link
+            href="/moodboard"
+            className="link-underline"
+            style={{ color: 'var(--color-accent)', fontWeight: 600 }}
+            data-moodboard-cta="gallery-teaser"
           >
-            Not sure which fits?{' '}
-            <Link
-              href="/moodboard"
-              className="link-underline"
-              style={{ color: 'var(--color-accent)', fontWeight: 600 }}
-              data-moodboard-cta="gallery-teaser"
-            >
-              Build your moodboard →
-            </Link>
-          </p>
-          <p
-            style={{
-              fontSize: 'var(--text-body-sm)',
-              lineHeight: 1.6,
-              color: 'var(--color-text-muted)',
-              marginTop: 'var(--space-2)',
-            }}
-          >
-            Or{' '}
-            <ContactLink
-              className="link-underline"
-              style={{ color: 'var(--color-text-muted)', fontWeight: 600 }}
-            >
-              tell us your own idea
-            </ContactLink>
-            .
-          </p>
-        </div>
-
-        {/* See all link */}
-        <div style={{ textAlign: 'center' }}>
+            Build your moodboard →
+          </Link>
+          <span aria-hidden="true" style={{ color: 'var(--color-border-strong)' }}>·</span>
           <Link
             href="/apps"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 'var(--space-1)',
-              fontWeight: 600,
-              fontSize: 'var(--text-body)',
-              color: 'var(--color-text-primary)',
-              textDecoration: 'none',
-              borderBottom: '2px solid var(--color-border-strong)',
-              paddingBottom: '3px',
-              transition: 'border-color var(--duration-fast) var(--ease-out)',
-            }}
+            style={{ color: 'var(--color-text-primary)', fontWeight: 600, textDecoration: 'none', borderBottom: '2px solid var(--color-border-strong)', paddingBottom: 2 }}
           >
             See all {apps.length} app examples →
           </Link>
+          <span aria-hidden="true" style={{ color: 'var(--color-border-strong)' }}>·</span>
+          <ContactLink
+            className="link-underline"
+            style={{ color: 'var(--color-text-muted)', fontWeight: 600 }}
+          >
+            Tell us your own idea
+          </ContactLink>
         </div>
 
       </Container>

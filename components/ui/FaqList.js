@@ -28,13 +28,14 @@ export default function FaqList({
   jsonLd = true,
   narrow = true,
   footer,
+  fitViewport = false,
 }) {
   if (!items || items.length === 0) return null
 
   return (
-    <section className="section-py" style={{ background }}>
+    <section className={fitViewport ? 'section-screen' : 'section-py'} style={{ background }}>
       <Container narrow={narrow}>
-        <div style={{ textAlign: 'center', marginBottom: 'var(--space-10)' }}>
+        <div style={{ textAlign: 'center', marginBottom: fitViewport ? 'var(--space-5)' : 'var(--space-10)' }}>
           {eyebrow && (
             <p
               style={{
@@ -84,6 +85,7 @@ export default function FaqList({
             listStyle: 'none',
             padding: 0,
             margin: 0,
+            ...(fitViewport ? { maxHeight: '58dvh', overflowY: 'auto' } : {}),
           }}
         >
           {items.map(({ q, a }, i) => (

@@ -3,7 +3,7 @@ import Container from '@/components/layout/Container'
 export default function PaperReframe() {
   return (
     <section
-      className="section-py"
+      className="section-screen"
       style={{
         background: 'var(--color-bg-subtle)',
         borderTop: '1px solid var(--color-border)',
@@ -30,7 +30,7 @@ export default function PaperReframe() {
         </p>
         <h2
           style={{
-            fontSize: 'var(--text-h2)',
+            fontSize: 'var(--text-h2-fit)',
             fontWeight: 700,
             letterSpacing: '-0.02em',
             lineHeight: 1.15,

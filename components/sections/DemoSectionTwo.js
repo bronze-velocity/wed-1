@@ -10,7 +10,7 @@ export default function DemoSectionTwo() {
 
   return (
     <section
-      className="section-py"
+      className="section-screen"
       style={{
         background: 'var(--color-bg)',
       }}
@@ -19,7 +19,7 @@ export default function DemoSectionTwo() {
         <div
           ref={headingRef}
           className="reveal"
-          style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}
+          style={{ textAlign: 'center', marginBottom: 'var(--space-6)' }}
         >
           <p
             style={{
@@ -41,12 +41,12 @@ export default function DemoSectionTwo() {
           </p>
           <h2
             style={{
-              fontSize: 'var(--text-h2)',
+              fontSize: 'var(--text-h2-fit)',
               fontWeight: 700,
               letterSpacing: '-0.02em',
               lineHeight: 1.15,
               color: 'var(--color-text-primary)',
-              marginBottom: 'var(--space-5)',
+              marginBottom: 'var(--space-3)',
             }}
           >
             Guess the sender. The whole room is about to be wrong.
@@ -71,7 +71,7 @@ export default function DemoSectionTwo() {
               flexWrap: 'wrap',
               gap: 'var(--space-2)',
               justifyContent: 'center',
-              marginTop: 'var(--space-6)',
+              marginTop: 'var(--space-4)',
             }}
           >
             {[
@@ -105,7 +105,7 @@ export default function DemoSectionTwo() {
             lineHeight: 1.6,
             color: 'var(--color-text-muted)',
             maxWidth: '640px',
-            margin: 'var(--space-8) auto 0',
+            margin: 'var(--space-4) auto 0',
             textAlign: 'center',
           }}
         >

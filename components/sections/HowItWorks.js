@@ -59,11 +59,11 @@ export default function HowItWorks() {
 
   return (
     <section
-      className="section-py"
+      className="section-screen"
       style={{ background: 'var(--color-bg-subtle)' }}
     >
       <Container>
-        <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
+        <div style={{ textAlign: 'center', marginBottom: 'var(--space-6)' }}>
           <p
             style={{
               fontSize: 'var(--text-label)',
@@ -78,7 +78,7 @@ export default function HowItWorks() {
           </p>
           <h2
             style={{
-              fontSize: 'var(--text-h2)',
+              fontSize: 'var(--text-h2-fit)',
               fontWeight: 700,
               letterSpacing: '-0.02em',
               lineHeight: 1.15,
@@ -116,7 +116,7 @@ export default function HowItWorks() {
                   zIndex: 1,
                 }}
               />
-              <div style={{ position: 'relative', height: 160 }}>
+              <div style={{ position: 'relative', height: 'clamp(96px, 16vh, 160px)' }}>
                 <Image
                   src={step.image.src}
                   alt={step.image.alt}
@@ -144,7 +144,7 @@ export default function HowItWorks() {
                   {step.number}
                 </span>
               </div>
-              <div style={{ padding: 'var(--space-8)' }}>
+              <div style={{ padding: 'var(--space-5) var(--space-6)' }}>
                 <h3
                   style={{
                     fontSize: 'var(--text-h3)',
@@ -152,15 +152,15 @@ export default function HowItWorks() {
                     letterSpacing: '-0.015em',
                     lineHeight: 1.2,
                     color: 'var(--color-text-primary)',
-                    marginBottom: 'var(--space-4)',
+                    marginBottom: 'var(--space-2)',
                   }}
                 >
                   {step.heading}
                 </h3>
                 <p
                   style={{
-                    fontSize: 'var(--text-body)',
-                    lineHeight: 1.6,
+                    fontSize: 'var(--text-body-sm)',
+                    lineHeight: 1.5,
                     color: 'var(--color-text-secondary)',
                   }}
                 >
@@ -173,9 +173,9 @@ export default function HowItWorks() {
 
         <p
           style={{
-            marginTop: 'var(--space-10)',
+            marginTop: 'var(--space-6)',
             textAlign: 'center',
-            fontSize: 'var(--text-body)',
+            fontSize: 'var(--text-body-sm)',
             color: 'var(--color-text-secondary)',
           }}
         >

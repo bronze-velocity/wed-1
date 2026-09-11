@@ -32,8 +32,8 @@ export default function HomePage() {
   return (
     <main>
       <HomeHero />
-      <StoryBeat1 />
       <DemoSection />
+      <StoryBeat1 />
       <DemoSectionTwo />
       <AppGalleryTeaser apps={apps} />
       <MoodboardInvite />

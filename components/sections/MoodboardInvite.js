@@ -31,7 +31,7 @@ export default function MoodboardInvite() {
   }, [])
 
   return (
-    <section className="section-py" style={{ background: 'var(--color-bg-subtle)' }}>
+    <section className="section-screen" style={{ background: 'var(--color-bg-subtle)' }}>
       <Container>
         <div
           ref={rootRef}
@@ -39,7 +39,7 @@ export default function MoodboardInvite() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: 'var(--space-12)',
+            gap: 'var(--space-8)',
             alignItems: 'center',
           }}
         >
@@ -60,12 +60,12 @@ export default function MoodboardInvite() {
 
             <h2
               style={{
-                fontSize: 'var(--text-h2)',
+                fontSize: 'var(--text-h2-fit)',
                 fontWeight: 700,
                 lineHeight: 1.15,
                 letterSpacing: '-0.02em',
                 color: 'var(--color-text-primary)',
-                marginBottom: 'var(--space-5)',
+                marginBottom: 'var(--space-4)',
               }}
             >
               Tell us who you two actually are.
@@ -76,7 +76,7 @@ export default function MoodboardInvite() {
                 fontSize: 'var(--text-body-lg)',
                 lineHeight: 1.6,
                 color: 'var(--color-text-secondary)',
-                marginBottom: 'var(--space-8)',
+                marginBottom: 'var(--space-5)',
               }}
             >
               Six prompts about your couple and your guest list. You get a shareable brief,

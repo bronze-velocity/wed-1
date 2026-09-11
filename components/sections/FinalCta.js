@@ -9,7 +9,7 @@ export default function FinalCta() {
   return (
     <section
       id="contact"
-      className="py-24 md:py-28 lg:py-32"
+      className="section-screen"
       style={{
         position: 'relative',
         overflow: 'hidden',
@@ -34,10 +34,10 @@ export default function FinalCta() {
       >
         <h2
           style={{
-            fontSize: 'var(--text-h1)',
+            fontSize: 'var(--text-h1-fit)',
             fontWeight: 700,
             color: 'var(--color-text-inverse)',
-            marginBottom: 'var(--space-6)',
+            marginBottom: 'var(--space-4)',
             lineHeight: 1.1,
           }}
         >
@@ -47,13 +47,13 @@ export default function FinalCta() {
           style={{
             fontSize: 'var(--text-body-lg)',
             color: 'var(--color-text-inverse-secondary)',
-            marginBottom: 'var(--space-10)',
-            lineHeight: 1.6,
+            marginBottom: 'var(--space-5)',
+            lineHeight: 1.5,
           }}
         >
           Three minutes, no signup — see what your night could feel like.
         </p>
-        <MagneticButton style={{ marginBottom: 'var(--space-10)' }}>
+        <MagneticButton style={{ marginBottom: 'var(--space-6)' }}>
           <Link
             href="/moodboard"
             className="btn btn-lg btn-primary cta-breathe"
@@ -69,8 +69,8 @@ export default function FinalCta() {
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
             fontWeight: 600,
-            marginTop: 'var(--space-12)',
-            marginBottom: 'var(--space-6)',
+            marginTop: 'var(--space-6)',
+            marginBottom: 'var(--space-4)',
           }}
         >
           Or write to us directly

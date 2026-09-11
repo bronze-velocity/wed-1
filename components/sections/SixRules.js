@@ -59,11 +59,11 @@ export default function SixRules() {
 
   return (
     <section
-      className="section-py"
+      className="section-screen"
       style={{ background: 'var(--color-bg)' }}
     >
       <Container>
-        <div style={{ textAlign: 'center', marginBottom: 'var(--space-10)' }}>
+        <div style={{ textAlign: 'center', marginBottom: 'var(--space-6)' }}>
           <p
             style={{
               fontSize: 'var(--text-label)',
@@ -78,7 +78,7 @@ export default function SixRules() {
           </p>
           <h2
             style={{
-              fontSize: 'var(--text-h2)',
+              fontSize: 'var(--text-h2-fit)',
               fontWeight: 700,
               letterSpacing: '-0.02em',
               lineHeight: 1.15,
@@ -103,10 +103,10 @@ export default function SixRules() {
                 background: 'var(--color-bg-subtle)',
                 border: '1px solid var(--color-border)',
                 borderRadius: 'var(--radius-xl)',
-                padding: 'var(--space-8)',
+                padding: 'var(--space-5)',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: 'var(--space-3)',
+                gap: 'var(--space-2)',
               }}
             >
               <span
@@ -132,8 +132,8 @@ export default function SixRules() {
               </h3>
               <p
                 style={{
-                  fontSize: 'var(--text-body)',
-                  lineHeight: 1.6,
+                  fontSize: 'var(--text-body-sm)',
+                  lineHeight: 1.5,
                   color: 'var(--color-text-secondary)',
                 }}
               >

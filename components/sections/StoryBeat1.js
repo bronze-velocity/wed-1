@@ -29,13 +29,11 @@ export default function StoryBeat1() {
   return (
     <section
       ref={sectionRef}
+      className="section-screen"
       style={{
         position: 'relative',
         overflow: 'hidden',
-        minHeight: '80vh',
-        display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center',
       }}
     >
       <PhotoBackdrop
@@ -51,29 +49,29 @@ export default function StoryBeat1() {
         style={{ maxWidth: '840px', textAlign: 'center', position: 'relative', zIndex: 1 }}
       >
         <p
-          style={{
-            fontSize: 'var(--text-label)',
-            fontWeight: 600,
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
-            color: 'var(--color-accent-light)',
-            marginBottom: 'var(--space-4)',
-          }}
+          className="eyebrow"
+          style={{ color: 'rgba(251,247,239,0.75)', marginBottom: 'var(--space-4)' }}
         >
           Live trivia · the whole room plays at once
         </p>
 
         <h2
-          className="display-italic"
+          className="display-serif"
           style={{
-            fontSize: 'var(--text-display)',
-            lineHeight: 1.08,
-            color: 'var(--color-text-inverse)',
+            fontWeight: 500,
+            letterSpacing: '-0.02em',
+            lineHeight: 1.05,
+            fontSize: 'var(--text-display-fit)',
+            color: 'rgba(251,247,239,0.98)',
             margin: 0,
+            textShadow: '0 1px 24px rgba(31,29,27,0.35)',
           }}
         >
-          Fifteen questions in, the whole room is shouting at the same answer — and grandma
-          is beating the college roommates.
+          How well do your guests{' '}
+          <span className="display-italic" style={{ fontWeight: 400 }}>
+            actually
+          </span>{' '}
+          know you?
         </h2>
 
         <p
@@ -87,10 +85,8 @@ export default function StoryBeat1() {
             marginRight: 'auto',
           }}
         >
-          One live game, hosted from the mic: the same question hits every phone at the same
-          moment, a shared countdown moves the whole room together, and the leaderboard climbs
-          on the big screen between rounds — how you actually met, who said &ldquo;I love
-          you&rdquo; first, what she said when he proposed.
+A live trivia game everyone plays from their phone. Same question, same countdown,
+          leaderboard on the big screen — every question written about the two of you.
         </p>
 
         <Link

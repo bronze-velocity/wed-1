@@ -9,14 +9,15 @@ export default function HomeHero() {
   const appCount = apps.length
   return (
     <section
+      className="section-screen"
       style={{
         position: 'relative',
         overflow: 'hidden',
         background: 'var(--color-ink)',
-        minHeight: 'min(92vh, 900px)',
         color: 'var(--color-text-inverse)',
-        paddingTop: 'calc(var(--nav-height) + var(--space-16))',
-        paddingBottom: 'var(--space-32)',
+        paddingTop: 'calc(var(--nav-height) + var(--space-8))',
+        paddingBottom: 'var(--space-10)',
+        justifyContent: 'flex-end',
       }}
     >
       <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
@@ -43,11 +44,10 @@ export default function HomeHero() {
         style={{
           position: 'relative',
           zIndex: 1,
-          minHeight: '68vh',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-end',
-          gap: 'var(--space-10)',
+          gap: 'var(--space-6)',
         }}
       >
         <p
@@ -63,7 +63,7 @@ export default function HomeHero() {
             fontWeight: 500,
             letterSpacing: '-0.02em',
             lineHeight: 1.05,
-            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+            fontSize: 'var(--text-display-fit)',
             color: 'rgba(251,247,239,0.98)',
             margin: 0,
             maxWidth: '18ch',
@@ -138,14 +138,14 @@ export default function HomeHero() {
 
       <div
         aria-hidden="true"
-        className="hero-phone"
+        className="hidden lg:block"
         style={{
           position: 'absolute',
           top: '50%',
           right: 'clamp(var(--space-8), 6vw, var(--space-24))',
           transform: 'translateY(-50%) rotate(3deg)',
           zIndex: 1,
-          width: 280,
+          width: 'clamp(200px, 22vh, 280px)',
           pointerEvents: 'none',
           filter: 'drop-shadow(0 40px 60px rgba(0,0,0,0.5))',
         }}
@@ -156,10 +156,6 @@ export default function HomeHero() {
           to="both"
         />
       </div>
-      <style jsx>{`
-        .hero-phone { display: none; }
-        @media (min-width: 1024px) { .hero-phone { display: block; } }
-      `}</style>
     </section>
   )
 }

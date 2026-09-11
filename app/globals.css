@@ -276,18 +276,68 @@ p, li, dd, dt, blockquote, figcaption, small { font-family: var(--font-body); }
   .wepho-container { padding-left: 64px; padding-right: 64px; }
 }
 
-/* Editorial section vertical rhythm — 96 / 128 / 160.
-   Bumped from the old 64/80/96 scale: more air is the single fastest way
-   to shed the SaaS feel. Hero and final CTA still add extra beyond this. */
+/* Editorial section vertical rhythm — mobile keeps generous air; desktop
+   pulls in because every landing-page section is a section-screen (100dvh)
+   and its own flex-centering owns the vertical rhythm there. */
 .section-py {
   padding-top: var(--space-24);
   padding-bottom: var(--space-24);
 }
 @media (min-width: 768px) {
-  .section-py { padding-top: var(--space-32); padding-bottom: var(--space-32); }
+  .section-py { padding-top: var(--space-24); padding-bottom: var(--space-24); }
 }
 @media (min-width: 1024px) {
-  .section-py { padding-top: var(--space-40); padding-bottom: var(--space-40); }
+  .section-py { padding-top: var(--space-20); padding-bottom: var(--space-20); }
+}
+
+/* Landing-page constraint: every top-level section on `/` fits in one
+   desktop viewport. `.section-screen` is the enforcement layer — 100dvh
+   min-height, content flex-centered, internal padding tight enough that
+   short viewports (~720p laptops) still fit. Content that can't shrink
+   further (galleries, rules) uses .hscroll inside. */
+.section-screen {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
+  box-sizing: border-box;
+}
+@media (min-width: 1024px) {
+  .section-screen {
+    padding-top: var(--space-10);
+    padding-bottom: var(--space-10);
+  }
+}
+
+/* Horizontal scroll strip — for content that would otherwise blow the
+   vertical budget (app gallery, six rules). Snap points + hidden native
+   scrollbar; HScrollControls provides the affordance. */
+.hscroll {
+  display: flex;
+  gap: var(--space-6);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: var(--space-2);
+}
+.hscroll::-webkit-scrollbar { display: none; }
+.hscroll-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+/* Viewport-fit type — width- AND height-aware. Uses the smaller of a
+   width-derived and a height-derived clamp so headings shrink on short
+   viewports without a media query per section. */
+:root {
+  --text-h1-fit: clamp(2rem, min(4.5vw + 0.5rem, 8.5vh), 3.5rem);
+  --text-h2-fit: clamp(1.5rem, min(3vw + 0.5rem, 6vh), 2.5rem);
+  --text-display-fit: clamp(2.5rem, min(6vw, 11vh), 5rem);
 }
 
 .faq-item summary::-webkit-details-marker { display: none; }
