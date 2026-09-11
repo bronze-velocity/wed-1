@@ -19,6 +19,101 @@ function rankLabel(index, total) {
   return 'Worth a look'
 }
 
+const FIT_CHIP_STYLES = {
+  clean: {
+    background: 'color-mix(in srgb, var(--color-green) 15%, transparent)',
+    color: 'var(--color-text-primary)',
+    border: 'color-mix(in srgb, var(--color-green) 50%, transparent)',
+  },
+  tweak: {
+    background: 'color-mix(in srgb, var(--color-amber) 18%, transparent)',
+    color: 'var(--color-text-primary)',
+    border: 'color-mix(in srgb, var(--color-amber) 55%, transparent)',
+  },
+  modified: {
+    background: 'var(--color-bg-subtle)',
+    color: 'var(--color-text-primary)',
+    border: 'var(--color-border-strong)',
+  },
+}
+
+function VenueFitChip({ fit }) {
+  const [open, setOpen] = useState(false)
+  if (!fit) return null
+  const style = FIT_CHIP_STYLES[fit.tone] ?? FIT_CHIP_STYLES.clean
+  const hasNotes = fit.notes?.length > 0
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)', marginTop: 'var(--space-2)' }}>
+      <button
+        type="button"
+        onClick={() => hasNotes && setOpen((v) => !v)}
+        aria-expanded={hasNotes ? open : undefined}
+        disabled={!hasNotes}
+        style={{
+          alignSelf: 'flex-start',
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 'var(--space-2)',
+          padding: '4px 10px',
+          borderRadius: 'var(--radius-md)',
+          border: `1px solid ${style.border}`,
+          background: style.background,
+          color: style.color,
+          fontSize: 'var(--text-tiny)',
+          fontWeight: 700,
+          letterSpacing: '0.02em',
+          textTransform: 'uppercase',
+          cursor: hasNotes ? 'pointer' : 'default',
+          fontFamily: 'inherit',
+          lineHeight: 1.2,
+        }}
+      >
+        <span>{fit.label}</span>
+        {hasNotes && <span aria-hidden="true">{open ? '−' : '+'}</span>}
+      </button>
+      {open && hasNotes && (
+        <div
+          style={{
+            padding: 'var(--space-3) var(--space-4)',
+            background: style.background,
+            borderRadius: 'var(--radius-md)',
+            border: `1px solid ${style.border}`,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 'var(--space-2)',
+          }}
+        >
+          <p
+            style={{
+              margin: 0,
+              fontSize: 'var(--text-tiny)',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: '0.06em',
+              color: 'var(--color-text-secondary)',
+            }}
+          >
+            Adapted for your reception
+          </p>
+          {fit.notes.map((note, i) => (
+            <p
+              key={i}
+              style={{
+                margin: 0,
+                fontSize: 'var(--text-body-sm)',
+                lineHeight: 1.5,
+                color: 'var(--color-text-primary)',
+              }}
+            >
+              {note}
+            </p>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
 function FitMeter({ rawScore }) {
   const strong = Math.max(1, Math.min(3, Math.ceil((rawScore ?? 0) / 6)))
   return (
@@ -42,8 +137,7 @@ export default function ResultCard({ match, index, total = 3, answers, onWantThi
   const personal = personalReasonFor(match.id, answers)
   const aiRationale = match.personalReason?.trim() || null
   const hasStoryContent = Boolean(
-    (answers?.story && Object.values(answers.story).some((v) => v?.trim())) ||
-    (answers?.customEntries && Object.values(answers.customEntries).some((list) => Array.isArray(list) && list.length))
+    answers?.customEntries && Object.values(answers.customEntries).some((list) => Array.isArray(list) && list.length)
   )
   const showReceipt = Boolean(personal)
   const showEmptyPersonal = !personal && !aiRationale && !hasStoryContent
@@ -63,6 +157,7 @@ export default function ResultCard({ match, index, total = 3, answers, onWantThi
           </span>
         </div>
         <h3>{app?.title ?? match.title}</h3>
+        <VenueFitChip fit={match.venueFit} />
         {aiRationale ? (
           <p className="moodboard-result-personal">{aiRationale}</p>
         ) : personal ? (

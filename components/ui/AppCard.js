@@ -2,24 +2,6 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import { DoorOpen, Martini, Utensils, Mic, Music, Sun, Clock } from 'lucide-react'
-
-const momentIcons = {
-  'Arrival':       DoorOpen,
-  'Cocktail Hour': Martini,
-  'Dinner':        Utensils,
-  'Speeches':      Mic,
-  'Dancing':       Music,
-  'All Day':       Sun,
-}
-
-const vibeConfig = {
-  'Make them laugh':   { color: 'var(--color-amber)' },
-  'Make them cry':     { color: 'var(--color-rose)' },
-  'Get them talking':  { color: 'var(--color-teal)' },
-  'Create a keepsake': { color: 'var(--color-green)' },
-  'Stop the room':     { color: 'var(--color-accent)' },
-}
 
 const clampStyle = (lines) => ({
   display: '-webkit-box',
@@ -32,6 +14,7 @@ export default function AppCard({ app }) {
   const [hover, setHover] = useState(false)
   const vibes = app.alt1_vibe ?? []
   const moments = app.alt2_moment ?? []
+  const eyebrow = [...vibes, ...moments].slice(0, 2).join(' · ')
 
   return (
     <Link
@@ -41,122 +24,32 @@ export default function AppCard({ app }) {
       style={{
         display: 'flex',
         flexDirection: 'column',
-        background: 'var(--color-bg)',
-        border: '1px solid',
-        borderColor: hover ? 'var(--color-border-strong)' : 'var(--color-border)',
-        borderRadius: 'var(--radius-xl)',
-        padding: 'var(--space-6)',
-        boxShadow: hover ? 'var(--shadow-lg)' : 'var(--shadow-sm)',
-        transform: hover ? 'translateY(-2px)' : 'none',
-        transition:
-          'transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out)',
+        gap: 'var(--space-4)',
+        padding: 'var(--space-6) 0',
+        borderTop: '1px solid var(--color-border)',
         textDecoration: 'none',
         color: 'inherit',
         height: '100%',
+        transition: 'color var(--duration-normal) var(--ease-out)',
       }}
     >
-      <div
+      <p
+        className="eyebrow"
         style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          gap: 'var(--space-2)',
-          marginBottom: 'var(--space-4)',
+          color: app.isDemo ? 'var(--color-slate)' : 'var(--color-mist)',
         }}
       >
-        {vibes.map((v) => {
-          const vibe = vibeConfig[v]
-          if (!vibe) return null
-          return (
-            <span
-              key={`vibe-${v}`}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                background: 'var(--color-bg)',
-                color: 'var(--color-text-primary)',
-                border: '1px solid var(--color-border-strong)',
-                borderRadius: 'var(--radius-md)',
-                padding: '3px 10px 3px 8px',
-                fontSize: 'var(--text-tiny)',
-                fontWeight: 600,
-                lineHeight: 1.4,
-              }}
-            >
-              <span
-                style={{
-                  width: 6,
-                  height: 6,
-                  borderRadius: 'var(--radius-full)',
-                  background: vibe.color,
-                  display: 'inline-block',
-                }}
-              />
-              {v}
-            </span>
-          )
-        })}
-        {moments.map((m) => {
-          const Icon = momentIcons[m] ?? Clock
-          return (
-            <span
-              key={`moment-${m}`}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                background: 'var(--color-bg-subtle)',
-                color: 'var(--color-text-secondary)',
-                border: '1px solid transparent',
-                borderRadius: 'var(--radius-md)',
-                padding: '3px 10px 3px 8px',
-                fontSize: 'var(--text-tiny)',
-                fontWeight: 600,
-                lineHeight: 1.4,
-              }}
-            >
-              <Icon size={12} strokeWidth={1.75} style={{ opacity: 0.75 }} aria-hidden="true" />
-              {m}
-            </span>
-          )
-        })}
-        {app.isDemo && (
-          <span
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              background: 'var(--color-bg)',
-              color: 'var(--color-accent-dark)',
-              border: '1px solid var(--color-accent)',
-              borderRadius: 'var(--radius-md)',
-              padding: '3px 10px 3px 8px',
-              fontSize: 'var(--text-tiny)',
-              fontWeight: 600,
-              lineHeight: 1.4,
-            }}
-          >
-            <span
-              style={{
-                width: 6,
-                height: 6,
-                borderRadius: 'var(--radius-full)',
-                background: 'var(--color-accent)',
-                display: 'inline-block',
-              }}
-            />
-            Featured demo
-          </span>
-        )}
-      </div>
+        {app.isDemo ? 'Featured demo' : (eyebrow || 'Wedding app')}
+      </p>
 
       <h3
+        className="display-serif"
         style={{
-          fontSize: 'var(--text-h4)',
-          fontWeight: 700,
-          lineHeight: 1.3,
-          color: 'var(--color-text-primary)',
-          marginBottom: 'var(--space-2)',
+          fontSize: 'var(--text-h2)',
+          color: 'var(--color-ink)',
+          fontStyle: 'italic',
+          fontWeight: 400,
+          margin: 0,
           ...clampStyle(2),
         }}
       >
@@ -165,10 +58,11 @@ export default function AppCard({ app }) {
 
       <p
         style={{
-          fontSize: 'var(--text-body-sm)',
-          lineHeight: 1.6,
-          color: 'var(--color-text-secondary)',
-          marginBottom: 'var(--space-4)',
+          fontFamily: 'var(--font-body)',
+          fontSize: 'var(--text-body)',
+          lineHeight: 1.65,
+          color: 'var(--color-ink-soft)',
+          margin: 0,
           ...clampStyle(3),
         }}
       >
@@ -178,10 +72,13 @@ export default function AppCard({ app }) {
       <span
         style={{
           marginTop: 'auto',
-          fontSize: 'var(--text-body-sm)',
-          fontWeight: 600,
-          color: 'var(--color-accent)',
-          textDecoration: hover ? 'underline' : 'none',
+          fontSize: 'var(--text-eyebrow)',
+          fontWeight: 500,
+          letterSpacing: '0.18em',
+          textTransform: 'uppercase',
+          color: 'var(--color-slate)',
+          opacity: hover ? 1 : 0.75,
+          transition: 'opacity var(--duration-fast) var(--ease-out)',
         }}
       >
         See how it works →

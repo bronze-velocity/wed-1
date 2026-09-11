@@ -27,6 +27,11 @@ export default function NavBar() {
   }, [])
 
   const solid = scrolled || open
+  const darkHeroRoutes = ['/']
+  const overDarkHero = !solid && darkHeroRoutes.includes(pathname)
+  const fg = overDarkHero ? 'rgba(251,247,239,0.96)' : 'var(--color-ink)'
+  const fgAccent = overDarkHero ? 'rgba(251,247,239,0.96)' : 'var(--color-accent)'
+  const fgBorder = overDarkHero ? 'rgba(251,247,239,0.6)' : 'var(--color-accent)'
 
   if (inMoodboard) {
     return (
@@ -46,12 +51,11 @@ export default function NavBar() {
         right: 0,
         zIndex: 50,
         height: 'var(--nav-height)',
-        background: solid ? 'rgba(255,255,255,0.92)' : 'transparent',
-        backdropFilter: solid ? 'saturate(150%) blur(10px)' : 'none',
-        WebkitBackdropFilter: solid ? 'saturate(150%) blur(10px)' : 'none',
+        background: solid ? 'color-mix(in srgb, var(--color-paper) 94%, transparent)' : 'transparent',
+        backdropFilter: solid ? 'saturate(140%) blur(12px)' : 'none',
+        WebkitBackdropFilter: solid ? 'saturate(140%) blur(12px)' : 'none',
         borderBottom: solid ? '1px solid var(--color-border)' : '1px solid transparent',
-        transition: 'background 200ms ease, border-color 200ms ease, box-shadow 200ms ease',
-        boxShadow: solid ? '0 1px 12px rgba(0,0,0,0.04)' : 'none',
+        transition: 'background 240ms ease, border-color 240ms ease',
       }}
     >
       <Container
@@ -67,12 +71,14 @@ export default function NavBar() {
           href="/"
           onClick={() => setOpen(false)}
           style={{
-            fontSize: 'var(--text-h4)',
-            fontWeight: 800,
-            letterSpacing: '-0.02em',
-            color: 'var(--color-text-primary)',
+            fontFamily: 'var(--font-display-serif)',
+            fontSize: '1.625rem',
+            fontWeight: 500,
+            letterSpacing: '-0.01em',
+            color: fg,
             textDecoration: 'none',
             lineHeight: 1,
+            transition: 'color 240ms ease',
           }}
         >
           Wepho
@@ -88,10 +94,13 @@ export default function NavBar() {
               key={l.href}
               href={l.href}
               style={{
-                fontSize: 'var(--text-body-sm)',
+                fontSize: 'var(--text-eyebrow)',
                 fontWeight: 600,
-                color: 'var(--color-text-primary)',
+                letterSpacing: '0.14em',
+                textTransform: 'uppercase',
+                color: fg,
                 textDecoration: 'none',
+                transition: 'color 240ms ease',
               }}
               className="link-underline"
             >
@@ -100,10 +109,13 @@ export default function NavBar() {
           ))}
           <ContactLink
             style={{
-              fontSize: 'var(--text-body-sm)',
+              fontSize: 'var(--text-eyebrow)',
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              letterSpacing: '0.14em',
+              textTransform: 'uppercase',
+              color: fg,
               textDecoration: 'none',
+              transition: 'color 240ms ease',
             }}
             className="link-underline"
           >
@@ -111,11 +123,20 @@ export default function NavBar() {
           </ContactLink>
           <Link
             href="/moodboard"
-            className="btn btn-primary"
-            style={{ padding: '8px 16px', fontSize: 'var(--text-body-sm)' }}
+            style={{
+              fontSize: 'var(--text-eyebrow)',
+              fontWeight: 600,
+              letterSpacing: '0.14em',
+              textTransform: 'uppercase',
+              color: fgAccent,
+              textDecoration: 'none',
+              borderBottom: `1px solid ${fgBorder}`,
+              paddingBottom: 2,
+              transition: 'color 240ms ease, border-color 240ms ease',
+            }}
             data-moodboard-cta="nav"
           >
-            Start your moodboard
+            Start moodboard
           </Link>
         </nav>
 
@@ -130,8 +151,9 @@ export default function NavBar() {
             border: 'none',
             padding: 8,
             cursor: 'pointer',
-            color: 'var(--color-text-primary)',
+            color: fg,
             fontFamily: 'inherit',
+            transition: 'color 240ms ease',
           }}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">

@@ -57,17 +57,17 @@ export default function StoryBeat2() {
           A hidden-QR hunt · roam the venue at cocktail hour
         </p>
 
-        <p
+        <h2
+          className="display-italic"
           style={{
-            fontSize: 'var(--text-h1)',
-            fontWeight: 700,
-            letterSpacing: '-0.02em',
-            lineHeight: 1.3,
+            fontSize: 'var(--text-display)',
+            lineHeight: 1.08,
             color: 'var(--color-text-inverse)',
+            margin: 0,
           }}
         >
           The QR code behind the photo wall just told your cousin how you actually met.
-        </p>
+        </h2>
 
         <p
           style={{

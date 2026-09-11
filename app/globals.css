@@ -2,45 +2,79 @@
 @config "../tailwind.config.js";
 
 :root {
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* Editorial type families — free stand-ins for Agatha / Winsterday / Gill Sans.
+     Cormorant Garamond = didone-adjacent display serif.
+     Pinyon Script = restrained script for occasional single-word accents.
+     Cabin = humanist sans, close to Gill Sans Nova at body sizes. */
+  --font-body:           'Cabin', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display-serif:  'Cormorant Garamond', 'Cormorant', Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+  --font-display-script: 'Pinyon Script', 'Cormorant Garamond', Georgia, cursive;
+  --font-sans:           var(--font-body);
+  --font-serif-accent:   var(--font-display-serif);
 
-  --text-display-xl: 5rem;
-  --text-display:    4rem;
-  --text-h1:         3rem;
-  --text-h2:         2.25rem;
-  --text-h3:         1.625rem;
+  /* Editorial type scale — wider steps, larger displays, more generous body */
+  --text-display-xl: 7rem;
+  --text-display:    5rem;
+  --text-h1:         3.5rem;
+  --text-h2:         2.5rem;
+  --text-h3:         1.75rem;
   --text-h4:         1.25rem;
-  --text-body-lg:    1.125rem;
-  --text-body:       1rem;
-  --text-body-sm:    0.875rem;
+  --text-body-lg:    1.1875rem;
+  --text-body:       1.0625rem;
+  --text-body-sm:    0.9375rem;
   --text-label:      0.8125rem;
   --text-tiny:       0.75rem;
+  --text-eyebrow:    0.75rem;
 
+  /* Editorial wedding palette */
+  --color-ink:      #1F1D1B;
+  --color-ink-soft: #3A3733;
+  --color-ink-cool: #2A3340;
+  --color-mist:     #8A857E;
+  --color-bone:     #F5EFE4;
+  --color-linen:    #EBE3D3;
+  --color-paper:    #FAFAF7;
+  --color-slate:    #6E7C8A;
+  --color-dusk:     #4C5966;
+  --color-deep:     #3B5266;
+  --color-slate-wash: color-mix(in srgb, #6E7C8A 12%, #F5EFE4);
+  --color-rose:     #C79E97;
+  --color-sage:     #9AA793;
+  --color-gold:     #AD8A3E;
+  --color-gold-light: rgba(173, 138, 62, 0.12);
+  --color-bordeaux: #5A2A2E;
+
+  /* Semantic remap — legacy token names point at the new palette so every
+     component that references --color-accent / --color-bg-subtle / etc.
+     inherits the new look automatically. */
   --color-bg:             #FFFFFF;
-  --color-bg-subtle:      #F7F6F3;
-  --color-bg-dark:        #111111;
-  --color-bg-dark-subtle: #1A1A1A;
+  --color-bg-warm:        var(--color-bone);
+  --color-bg-subtle:      #F4F4F2;
+  --color-bg-tint:        #F8F7F4;
+  --color-bg-dark:        var(--color-ink);
+  --color-bg-dark-subtle: #2A2724;
 
-  --color-text-primary:           #111111;
-  --color-text-secondary:         #6B6B6B;
-  --color-text-muted:             #AAAAAA;
-  --color-text-inverse:           #FFFFFF;
-  --color-text-inverse-secondary: rgba(255, 255, 255, 0.6);
+  --color-text-primary:           var(--color-ink);
+  --color-text-secondary:         var(--color-mist);
+  --color-text-muted:             color-mix(in srgb, var(--color-mist) 60%, var(--color-bone));
+  --color-text-inverse:           #FBF7EF;
+  --color-text-inverse-secondary: rgba(251, 247, 239, 0.65);
 
-  --color-accent:       #6B5CE7;
-  --color-accent-hover: #5649D6;
-  --color-accent-light: #EDE9FF;
-  --color-accent-dark:  #3D2DB5;
+  --color-accent:       var(--color-deep);
+  --color-accent-hover: var(--color-ink-cool);
+  --color-accent-light: var(--color-slate-wash);
+  --color-accent-dark:  var(--color-ink-cool);
 
-  --color-rose:   #F24E78;
-  --color-amber:  #F8A324;
-  --color-teal:   #36C5F0;
-  --color-green:  #2EB67D;
-  --color-coral:  #F87162;
+  /* Retained utility hues (used by moodboard status states + AppCard vibe dots).
+     Kept in the muted palette so they still read as wedding-appropriate. */
+  --color-amber:  #C9A46A;
+  --color-teal:   #7E9DA6;
+  --color-green:  var(--color-sage);
+  --color-coral:  var(--color-rose);
 
-  --color-border:        #E8E8E8;
-  --color-border-strong: #D0D0D0;
-  --color-border-dark:   rgba(255, 255, 255, 0.12);
+  --color-border:        color-mix(in srgb, var(--color-ink) 12%, transparent);
+  --color-border-strong: color-mix(in srgb, var(--color-ink) 22%, transparent);
+  --color-border-dark:   rgba(251, 247, 239, 0.14);
 
   --space-1:  4px;
   --space-2:  8px;
@@ -57,62 +91,67 @@
   --space-32: 128px;
   --space-40: 160px;
 
+  /* Editorial radii — flat by default. Buttons and pills get a whisper (4px);
+     cards/panels effectively rectangular; photos fully rectangular by default.
+     Phone-frame hardware in components/demo uses its own hard-coded radii. */
   --radius-sm:   4px;
-  --radius-md:   8px;
-  --radius-lg:   12px;
-  --radius-xl:   16px;
-  --radius-2xl:  24px;
+  --radius-md:   4px;
+  --radius-lg:   4px;
+  --radius-xl:   4px;
+  --radius-2xl:  0px;
   --radius-full: 9999px;
 
-  --shadow-xs:          0 1px 2px rgba(0, 0, 0, 0.06);
-  --shadow-sm:          0 1px 3px rgba(0, 0, 0, 0.10), 0 1px 2px rgba(0, 0, 0, 0.06);
-  --shadow-md:          0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.05);
-  --shadow-lg:          0 10px 24px rgba(0, 0, 0, 0.10), 0 4px 8px rgba(0, 0, 0, 0.06);
-  --shadow-xl:          0 24px 48px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.08);
-  --shadow-glow:        0 0 0 3px var(--color-accent-light);
-  --shadow-glow-accent: 0 8px 32px rgba(107, 92, 231, 0.25);
+  /* Editorial sites don't drop-shadow. Kept as near-invisible values so any
+     component that references them still resolves — nothing gets a real shadow. */
+  --shadow-xs:          0 1px 1px rgba(31, 29, 27, 0.04);
+  --shadow-sm:          0 1px 2px rgba(31, 29, 27, 0.04);
+  --shadow-md:          0 2px 6px rgba(31, 29, 27, 0.05);
+  --shadow-lg:          0 6px 18px rgba(31, 29, 27, 0.06);
+  --shadow-xl:          0 12px 32px rgba(31, 29, 27, 0.08);
+  --shadow-glow:        0 0 0 3px var(--color-slate-wash);
+  --shadow-glow-accent: 0 6px 20px rgba(110, 124, 138, 0.16);
 
-  --gradient-hero:      linear-gradient(160deg, #F7F4FF 0%, #FFFFFF 50%, #F0F9FF 100%);
-  --gradient-hero-dark: linear-gradient(160deg, #1A1228 0%, #111111 60%);
-  --gradient-accent:    linear-gradient(135deg, #7B68EE 0%, #6B5CE7 100%);
-  --gradient-card-tint: linear-gradient(180deg, rgba(107, 92, 231, 0.04) 0%, transparent 100%);
-  --gradient-rainbow:   linear-gradient(135deg, #F24E78, #F8A324, #36C5F0, #6B5CE7);
+  /* Muted editorial gradients — no purple wash, no rainbow. */
+  --gradient-hero:      linear-gradient(180deg, var(--color-bone) 0%, var(--color-linen) 100%);
+  --gradient-hero-dark: linear-gradient(160deg, #2A2724 0%, var(--color-ink) 60%);
+  --gradient-accent:    linear-gradient(135deg, var(--color-slate) 0%, var(--color-dusk) 100%);
+  --gradient-card-tint: linear-gradient(180deg, rgba(110, 124, 138, 0.04) 0%, transparent 100%);
+  --gradient-rainbow:   linear-gradient(135deg, var(--color-rose), var(--color-gold), var(--color-sage), var(--color-slate));
 
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
   --duration-instant: 80ms;
-  --duration-fast:    150ms;
-  --duration-normal:  250ms;
-  --duration-slow:    400ms;
-  --duration-slower:  600ms;
-  --duration-slowest: 900ms;
+  --duration-fast:    180ms;
+  --duration-normal:  320ms;
+  --duration-slow:    700ms;
+  --duration-slower:  900ms;
+  --duration-slowest: 1200ms;
 
-  --container-max: 1200px;
-  --nav-height:    64px;
+  --container-max:            1280px;
+  --container-max-editorial:  960px;
+  --container-max-reading:    680px;
+  --nav-height:               64px;
 
-  --color-amber-light: rgba(248, 163, 36, 0.12);
-  --color-rose-light:  rgba(242, 78, 120, 0.12);
-  --color-teal-light:  rgba(54, 197, 240, 0.12);
-  --color-green-light: rgba(46, 182, 125, 0.12);
+  --color-amber-light: rgba(201, 164, 106, 0.14);
+  --color-rose-light:  rgba(199, 158, 151, 0.16);
+  --color-teal-light:  rgba(126, 157, 166, 0.14);
+  --color-green-light: rgba(154, 167, 147, 0.16);
 
-  --font-serif-accent: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', serif;
-  --color-gold:       #AD8A3E;
-  --color-gold-light: rgba(173, 138, 62, 0.12);
-
-  --scrim-light:  linear-gradient(180deg, rgba(17, 17, 17, 0.25) 0%, rgba(17, 17, 17, 0.45) 100%);
-  --scrim-medium: linear-gradient(180deg, rgba(17, 17, 17, 0.45) 0%, rgba(17, 17, 17, 0.65) 100%);
-  --scrim-heavy:  linear-gradient(180deg, rgba(17, 17, 17, 0.6) 0%, rgba(17, 17, 17, 0.82) 100%);
-  --scrim-wash:   linear-gradient(160deg, rgba(247, 244, 255, 0.88) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(240, 249, 255, 0.88) 100%);
+  --scrim-light:  linear-gradient(180deg, rgba(31, 29, 27, 0.20) 0%, rgba(31, 29, 27, 0.40) 100%);
+  --scrim-medium: linear-gradient(180deg, rgba(31, 29, 27, 0.35) 0%, rgba(31, 29, 27, 0.60) 100%);
+  --scrim-heavy:  linear-gradient(180deg, rgba(31, 29, 27, 0.55) 0%, rgba(31, 29, 27, 0.80) 100%);
+  --scrim-wash:   linear-gradient(180deg, rgba(245, 239, 228, 0.90) 0%, rgba(235, 227, 211, 0.85) 100%);
 }
 
 @media (max-width: 768px) {
   :root {
-    --text-display-xl: 3.25rem;
+    --text-display-xl: 3.5rem;
     --text-display:    2.75rem;
     --text-h1:         2.25rem;
     --text-h2:         1.75rem;
+    --text-h3:         1.5rem;
   }
 }
 
@@ -124,15 +163,103 @@
   }
 
   html {
-    font-family: var(--font-sans);
-    font-size: 16px;
-    line-height: 1.6;
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.7;
     color: var(--color-text-primary);
     background: var(--color-bg);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
+}
+
+/* Type defaults — display serif UPRIGHT (not italic). Restores the brand
+   character (Cormorant) without the always-italic wedding-magazine feel.
+   Italic serif is now opt-in via `.display-italic` for the few moments
+   that genuinely earn it (hero accent word, story-beat pull-quotes). */
+h1, h2, h3 {
+  font-family: var(--font-display-serif);
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: -0.015em;
+  line-height: 1.12;
+}
+h1 { font-weight: 500; letter-spacing: -0.02em; line-height: 1.05; }
+h2 { font-weight: 500; }
+h3 { font-weight: 500; }
+h4, h5, h6 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+p, li, dd, dt, blockquote, figcaption, small { font-family: var(--font-body); }
+
+.moodboard-experience h1,
+.moodboard-experience h2,
+.moodboard-experience h3,
+.moodboard-studio-canvas h1,
+.moodboard-studio-canvas h2,
+.moodboard-studio-canvas h3,
+.moodboard-results h1,
+.moodboard-results h2,
+.moodboard-results h3,
+.moodboard-protected-page h1,
+.moodboard-protected-page h2,
+.moodboard-protected-page h3 {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+/* Editorial utility classes */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-eyebrow);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-mist);
+}
+.display-serif {
+  font-family: var(--font-display-serif);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+}
+.display-italic {
+  font-family: var(--font-display-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+.display-script {
+  font-family: var(--font-display-script);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0;
+  line-height: 0.95;
+}
+
+/* Overlap Title — display serif that flows across a photo. */
+.overlap-title {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-display-serif);
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+  color: var(--color-ink);
+}
+.overlap-title--on-photo {
+  color: rgba(251, 247, 239, 0.94);
+  text-shadow: 0 1px 24px rgba(31, 29, 27, 0.35);
 }
 
 .wepho-container {
@@ -149,18 +276,18 @@
   .wepho-container { padding-left: 64px; padding-right: 64px; }
 }
 
-/* Standard section vertical rhythm — responsive, token-based.
-   Every standard content section uses this. Hero and final CTA deliberately use
-   more; thin utility bands and full-bleed story beats are intentional exceptions. */
+/* Editorial section vertical rhythm — 96 / 128 / 160.
+   Bumped from the old 64/80/96 scale: more air is the single fastest way
+   to shed the SaaS feel. Hero and final CTA still add extra beyond this. */
 .section-py {
-  padding-top: var(--space-16);
-  padding-bottom: var(--space-16);
+  padding-top: var(--space-24);
+  padding-bottom: var(--space-24);
 }
 @media (min-width: 768px) {
-  .section-py { padding-top: var(--space-20); padding-bottom: var(--space-20); }
+  .section-py { padding-top: var(--space-32); padding-bottom: var(--space-32); }
 }
 @media (min-width: 1024px) {
-  .section-py { padding-top: var(--space-24); padding-bottom: var(--space-24); }
+  .section-py { padding-top: var(--space-40); padding-bottom: var(--space-40); }
 }
 
 .faq-item summary::-webkit-details-marker { display: none; }
@@ -234,7 +361,7 @@
 
 :focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px var(--color-accent-light), 0 0 0 5px var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-bone), 0 0 0 4px var(--color-slate);
 }
 
 @keyframes slideInUp {
@@ -252,10 +379,13 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  font-family: inherit;
-  font-weight: 600;
-  padding: var(--space-3) var(--space-5);
-  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: var(--text-body-sm);
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
   border: none;
   cursor: pointer;
   text-decoration: none;
@@ -263,32 +393,29 @@
   transition:
     background var(--duration-fast) var(--ease-out),
     color var(--duration-fast) var(--ease-out),
-    border-color var(--duration-fast) var(--ease-out),
-    transform var(--duration-fast) var(--ease-out),
-    box-shadow var(--duration-fast) var(--ease-out);
+    border-color var(--duration-fast) var(--ease-out);
 }
-.btn:active { transform: scale(0.98); }
+.btn:active { opacity: 0.85; }
 
-.btn-lg { padding: 15px 32px; font-size: var(--text-body-lg); }
+.btn-lg { padding: 18px 36px; font-size: var(--text-body); }
 
 .btn-primary {
-  background: #111111;
-  color: #FFFFFF;
+  background: var(--color-ink-cool);
+  color: var(--color-text-inverse);
 }
 .btn-primary:hover {
-  background: #2A2A2A;
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  background: var(--color-deep);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--color-text-primary);
-  border: 1.5px solid var(--color-border-strong);
+  color: var(--color-ink-cool);
+  border: 1px solid var(--color-ink-cool);
 }
 .btn-secondary:hover {
-  border-color: #888888;
-  background: #F7F7F7;
+  border-color: var(--color-deep);
+  background: transparent;
+  color: var(--color-deep);
 }
 
 @keyframes petalDrift {
@@ -1221,17 +1348,9 @@ select.contact-field option {
   will-change: transform, opacity, filter;
 }
 
-/* Slow "breathing" glow on primary CTA */
-@keyframes ctaBreathe {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(107, 92, 231, 0.55), 0 6px 18px rgba(107, 92, 231, 0.20); }
-  50%      { box-shadow: 0 0 0 10px rgba(107, 92, 231, 0), 0 10px 28px rgba(107, 92, 231, 0.35); }
-}
-.cta-breathe {
-  animation: ctaBreathe 5s var(--ease-in-out) infinite;
-}
-.cta-breathe:hover {
-  animation-play-state: paused;
-}
+/* Editorial pages don't use the SaaS-y breathing glow — retired to a no-op
+   so existing className usages continue to render cleanly. */
+.cta-breathe { animation: none; box-shadow: none; }
 
 /* Card 3D-tilt (values set inline by TiltCard) */
 .tilt-card {
@@ -1253,7 +1372,8 @@ select.contact-field option {
   mix-blend-mode: soft-light;
   border-radius: inherit;
 }
-.tilt-card:hover .tilt-card__sheen { opacity: 1; }
+/* Editorial: no SaaS-y sheen on hover. */
+.tilt-card:hover .tilt-card__sheen { opacity: 0; }
 
 /* Section-entrance variety */
 
@@ -1268,18 +1388,18 @@ select.contact-field option {
   transform: scale(1);
 }
 
-/* Flip-up cards (HowItWorks) */
+/* Editorial replacement for the 3D flip: a plain rise + fade.
+   Plan retires the perspective rotate — too showy for a wedding magazine. */
 .reveal-flip > * {
   opacity: 0;
-  transform: perspective(1000px) rotateX(14deg) translateY(24px);
-  transform-origin: bottom center;
+  transform: translateY(24px);
   transition:
     opacity var(--duration-slower) var(--ease-out),
     transform var(--duration-slower) var(--ease-out);
 }
 .reveal-flip.is-visible > * {
   opacity: 1;
-  transform: perspective(1000px) rotateX(0) translateY(0);
+  transform: translateY(0);
 }
 .reveal-flip.is-visible > *:nth-child(1) { transition-delay: 0ms; }
 .reveal-flip.is-visible > *:nth-child(2) { transition-delay: 120ms; }
@@ -1305,14 +1425,15 @@ select.contact-field option {
 .reveal-scale-tl.is-visible > *:nth-child(5) { transition-delay: 280ms; }
 .reveal-scale-tl.is-visible > *:nth-child(6) { transition-delay: 350ms; }
 
-/* Deal-in from a deck (AppGalleryTeaser) */
+/* Editorial replacement for the deck-deal: a quiet fade-up.
+   Same className hook, calmer motion — plan retires the game-y original. */
 @keyframes cardDealIn {
-  from { opacity: 0; transform: translateY(-40px) rotate(-4deg) scale(0.94); }
-  to   { opacity: 1; transform: translateY(0)     rotate(0)      scale(1);    }
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 .card-deal {
-  animation: cardDealIn var(--duration-slower) var(--ease-spring) both;
-  animation-delay: calc(var(--stagger-i, 0) * 80ms);
+  animation: cardDealIn var(--duration-slower) var(--ease-out) both;
+  animation-delay: calc(var(--stagger-i, 0) * 90ms);
 }
 
 @keyframes slideInFromRight {

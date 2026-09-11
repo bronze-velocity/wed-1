@@ -1,10 +1,8 @@
 import { sendMail } from '@/lib/mailer.js'
-import { APP_DIRECTIONS, STORY_QUESTIONS, allCustomEntries } from '@/lib/moodboard/config.js'
+import { APP_DIRECTIONS, allCustomEntries } from '@/lib/moodboard/config.js'
 import { sanitizeAnswers, requestTooLarge, INPUT_LIMITS } from '@/lib/moodboard/validateAnswers.js'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-
-const STORY_LABELS = Object.fromEntries(STORY_QUESTIONS.map((question) => [question.key, question.chip]))
 
 function esc(value) {
   return String(value ?? '')
@@ -21,11 +19,6 @@ function buildBriefHtml(email, results, answers, keepBrief) {
     .map(
       (m) => `<li><strong>${APP_DIRECTIONS[m.id]?.title ?? m.id}</strong> (score ${m.score}): ${m.whyItFitsYou}</li>`
     )
-    .join('\n')
-
-  const storyRows = Object.entries(answers.story ?? {})
-    .filter(([, v]) => v?.trim())
-    .map(([k, v]) => `<tr><td>${STORY_LABELS[k] ?? k}</td><td><em>"${v}"</em></td></tr>`)
     .join('\n')
 
   const retentionBanner = keepBrief
@@ -56,7 +49,6 @@ function buildBriefHtml(email, results, answers, keepBrief) {
       ${answers.guestFreeform ? `<tr><td>Guest list</td><td><em>"${answers.guestFreeform}"</em></td></tr>` : ''}
       ${answers.directionPreferences?.saved?.length ? `<tr><td>Saved directions</td><td>${answers.directionPreferences.saved.map((id) => APP_DIRECTIONS[id]?.title ?? id).join(', ')}</td></tr>` : ''}
       ${answers.directionPreferences?.rejected?.length ? `<tr><td>Rejected directions</td><td>${answers.directionPreferences.rejected.map((id) => APP_DIRECTIONS[id]?.title ?? id).join(', ')}</td></tr>` : ''}
-      ${storyRows}
     </table>
   `
 }

@@ -17,10 +17,6 @@ const OUTPUT_LIMITS = {
 
 function computeHasOwnWords(answers) {
   if (!answers) return false
-  const story = answers.story ?? {}
-  for (const key of Object.keys(story)) {
-    if (typeof story[key] === 'string' && story[key].trim()) return true
-  }
   if (answers.guestFreeform?.trim()) return true
   const custom = answers.customEntries ?? {}
   for (const key of Object.keys(custom)) {
@@ -35,9 +31,6 @@ function computeHasOwnWords(answers) {
 function buildUserCorpus(answers) {
   const parts = []
   if (answers.guestFreeform) parts.push(answers.guestFreeform)
-  for (const v of Object.values(answers.story ?? {})) {
-    if (typeof v === 'string') parts.push(v)
-  }
   for (const list of Object.values(answers.customEntries ?? {})) {
     if (!Array.isArray(list)) continue
     for (const entry of list) if (entry?.text) parts.push(entry.text)
@@ -100,7 +93,7 @@ function checkRateLimit(ip) {
   return true
 }
 
-function fallbackResult(matches, hasOwnWords) {
+function fallbackResult(matches, hasOwnWords, hiddenByVenue) {
   return {
     threeWords: 'Warm. Shared. Yours.',
     hasOwnWords,
@@ -110,6 +103,7 @@ function fallbackResult(matches, hasOwnWords) {
       personalReason: null,
     })),
     hiddenMatches: [],
+    hiddenByVenue,
     inventedApps: [],
   }
 }
@@ -121,7 +115,7 @@ function validNarration(data, matches) {
     matches.every((match) => typeof data.rationales[match.id] === 'string')
 }
 
-function stitchResult(matches, narration, hasOwnWords, userCorpus) {
+function stitchResult(matches, narration, hasOwnWords, userCorpus, hiddenByVenue) {
   const personalReasons = narration.personalReasons ?? {}
   return {
     threeWords: cap(narration.threeWords, OUTPUT_LIMITS.threeWords),
@@ -139,6 +133,7 @@ function stitchResult(matches, narration, hasOwnWords, userCorpus) {
       }
     }),
     hiddenMatches: [],
+    hiddenByVenue,
     inventedApps: hasOwnWords ? filterInventedApps(narration.inventedApps, matches, userCorpus) : [],
   }
 }
@@ -193,9 +188,9 @@ export async function POST(request) {
     return Response.json({ error: 'Invalid request body.' }, { status: 400 })
   }
 
-  const matches = scoreMoodboardApps(answers)
+  const { matches, hiddenByVenue } = scoreMoodboardApps(answers)
   const hasOwnWords = computeHasOwnWords(answers)
-  const fallback = fallbackResult(matches, hasOwnWords)
+  const fallback = fallbackResult(matches, hasOwnWords, hiddenByVenue)
   const isDevMock = process.env.NODE_ENV !== 'production' &&
     (process.env.MOODBOARD_MOCK === '1' || !process.env.OPENROUTER_API_KEY)
 
@@ -208,7 +203,7 @@ export async function POST(request) {
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
       const narration = await callOpenRouter(systemPrompt, userPrompt)
-      if (validNarration(narration, matches)) return Response.json(stitchResult(matches, narration, hasOwnWords, userCorpus))
+      if (validNarration(narration, matches)) return Response.json(stitchResult(matches, narration, hasOwnWords, userCorpus, hiddenByVenue))
     } catch {
       // Retry once, then preserve the deterministic shortlist.
     }

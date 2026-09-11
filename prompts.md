@@ -279,4 +279,20 @@ Let's make sure that we are only using fonts which we can serve ourselves instea
 I took some screenshots, please see the 2 in the /tmp folder.
 
 Please create a redesign plan for our full design system/ website.
-###
+
+### done
+some comments about the redesign:
+- the font mixes in the hero look terrible
+- the navbar cant be seen given the dark on dark background
+- too much italic/romantic font in "Live trivia · the whole room plays at once". same for "A live advice wall · answers scroll up in real time"
+- everything is too beige, it makes it all boring and a bit too dull/romantic/unmodern, e.g. the beige and blue contrast on the /moodboard page
+- the black buttons/pills for the selection in "What kind of wedding do you want?" look off.
+- a bit too much of the italic style font in http://localhost:3003/apps, could we have a different strategy?
+- footer fonts for the links like e.g. the ones below seems unnecessary
+The apps
+How it works
+For planners
+Start your moodboard
+
+please create a plan for redesign changes and tweaks to improve. also, take own initiative to do it even better.
+- 

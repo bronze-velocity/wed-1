@@ -2,10 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Container from '@/components/layout/Container'
 import ContactLink from '@/components/ui/ContactLink'
-import MagneticButton from '@/components/ui/MagneticButton'
 import { apps } from '@/data/apps'
-
-const HEADLINE_WORDS = ['A', 'wedding', 'app', 'built', 'for', 'one', 'couple.', 'Yours.']
 
 export default function HomeHero() {
   const appCount = apps.length
@@ -14,240 +11,128 @@ export default function HomeHero() {
       style={{
         position: 'relative',
         overflow: 'hidden',
-        background: 'var(--gradient-hero)',
+        background: 'var(--color-ink)',
+        minHeight: 'min(92vh, 900px)',
+        color: 'var(--color-text-inverse)',
         paddingTop: 'calc(var(--nav-height) + var(--space-16))',
-        paddingBottom: 'var(--space-24)',
+        paddingBottom: 'var(--space-32)',
       }}
     >
-      <Container
-        className="grid grid-cols-1 lg:grid-cols-2 items-center"
-        style={{ gap: 'var(--space-16)', position: 'relative', zIndex: 1 }}
-      >
-        <div>
-          <p
-            className="card-enter"
-            style={{
-              '--stagger-i': 0,
-              fontSize: 'var(--text-label)',
-              fontWeight: 600,
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              color: 'var(--color-accent)',
-              marginBottom: 'var(--space-5)',
-            }}
-          >
-            Custom Wedding Experience Studio
-          </p>
-
-          <h1
-            className="word-reveal"
-            style={{
-              '--word-base': '120ms',
-              fontSize: 'var(--text-display)',
-              fontWeight: 800,
-              letterSpacing: '-0.03em',
-              lineHeight: 1.08,
-              color: 'var(--color-text-primary)',
-              marginBottom: 'var(--space-6)',
-            }}
-          >
-            {HEADLINE_WORDS.map((word, i) => (
-              <span key={i} style={{ '--word-i': i }}>
-                {word}
-                {i < HEADLINE_WORDS.length - 1 ? ' ' : ''}
-              </span>
-            ))}
-          </h1>
-
-          <p
-            className="card-enter"
-            style={{
-              '--stagger-i': 2,
-              fontSize: 'var(--text-body-lg)',
-              lineHeight: 1.6,
-              color: 'var(--color-text-secondary)',
-              marginBottom: 'var(--space-10)',
-              maxWidth: '520px',
-            }}
-          >
-            Bring us an idea, or pick one of ours. We build it from scratch for your wedding.
-            Grandma is in on it in seconds, and guests are back in the room before their drink
-            gets warm. Around $2,000 for something no one else has.
-          </p>
-
-          <div
-            className="card-enter"
-            style={{ '--stagger-i': 3, display: 'flex', flexWrap: 'wrap', gap: 'var(--space-4)' }}
-          >
-            <MagneticButton>
-              <Link
-                href="/moodboard"
-                className="btn btn-lg btn-primary cta-breathe"
-                data-moodboard-cta="hero"
-              >
-                Build your moodboard →
-              </Link>
-            </MagneticButton>
-            <MagneticButton>
-              <Link href="/apps" className="btn btn-lg btn-secondary">
-                See the {appCount}{' '}we&rsquo;ve built
-              </Link>
-            </MagneticButton>
-          </div>
-          <p
-            className="card-enter"
-            style={{
-              '--stagger-i': 4,
-              marginTop: 'var(--space-4)',
-              fontSize: 'var(--text-body-sm)',
-              color: 'var(--color-text-muted)',
-            }}
-          >
-            3 minutes, no signup — or{' '}
-            <ContactLink
-              className="link-underline"
-              style={{ color: 'var(--color-text-secondary)', fontWeight: 600 }}
-            >
-              talk to a human
-            </ContactLink>
-            .
-          </p>
-        </div>
-
+      <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+        <Image
+          src="/images/dancing/hero-bg-1.jpg"
+          alt="Guests dancing under string lights during the reception"
+          fill
+          priority
+          sizes="100vw"
+          style={{ objectFit: 'cover', objectPosition: 'center 40%' }}
+        />
+        <div style={{ position: 'absolute', inset: 0, background: 'var(--scrim-medium)' }} />
         <div
-          className="card-enter"
           style={{
-            '--stagger-i': 4,
-            position: 'relative',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            minHeight: 520,
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(180deg, rgba(31,29,27,0.15) 40%, rgba(31,29,27,0.85) 100%)',
+          }}
+        />
+      </div>
+
+      <Container
+        editorial
+        style={{
+          position: 'relative',
+          zIndex: 1,
+          minHeight: '68vh',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-end',
+          gap: 'var(--space-10)',
+        }}
+      >
+        <p
+          className="eyebrow"
+          style={{ color: 'rgba(251,247,239,0.75)' }}
+        >
+          Custom Wedding Experience Studio
+        </p>
+
+        <h1
+          className="display-serif"
+          style={{
+            fontWeight: 500,
+            letterSpacing: '-0.02em',
+            lineHeight: 1.05,
+            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+            color: 'rgba(251,247,239,0.98)',
+            margin: 0,
+            maxWidth: '18ch',
+            textShadow: '0 1px 24px rgba(31,29,27,0.35)',
           }}
         >
-          <div
+          A wedding app built for one couple.{' '}
+          <span className="display-italic" style={{ fontWeight: 400 }}>Yours.</span>
+        </h1>
+
+        <p
+          style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: 'var(--text-body-lg)',
+            lineHeight: 1.7,
+            color: 'rgba(251,247,239,0.85)',
+            maxWidth: '52ch',
+            margin: 0,
+          }}
+        >
+          Bring us an idea, or pick one of ours. We build it from scratch for your wedding. The phones don't distract, they add to the experience. And even grandma gets it.          $2,000 for something no one else has.
+        </p>
+
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-4)', alignItems: 'center' }}>
+          <Link
+            href="/moodboard"
+            className="btn btn-lg"
+            data-moodboard-cta="hero"
             style={{
-              position: 'absolute',
-              inset: 0,
-              borderRadius: 'var(--radius-2xl)',
-              overflow: 'hidden',
-              boxShadow: 'var(--shadow-xl)',
-              transform: 'rotate(-2deg)',
+              background: 'var(--color-bone)',
+              color: 'var(--color-ink-cool)',
             }}
           >
-            <Image
-              src="/images/dancing/hero-bg-1.jpg"
-              alt="Guests dancing under string lights during the reception"
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 600px"
-              style={{ objectFit: 'cover' }}
-            />
-          </div>
-
-          <div
+            Build your moodboard
+          </Link>
+          <Link
+            href="/apps"
             style={{
-              position: 'relative',
-              width: 280,
-              aspectRatio: '9 / 19.5',
-              background: '#1A1A1A',
-              borderRadius: 'var(--radius-2xl)',
-              border: '2px solid #2E2E2E',
-              boxShadow: 'var(--shadow-xl)',
-              userSelect: 'none',
-              transform: 'rotate(2deg)',
-              display: 'flex',
-              flexDirection: 'column',
+              fontFamily: 'var(--font-body)',
+              fontSize: 'var(--text-eyebrow)',
+              fontWeight: 500,
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              color: 'rgba(251,247,239,0.95)',
+              textDecoration: 'none',
+              borderBottom: '1px solid rgba(251,247,239,0.6)',
+              paddingBottom: 4,
             }}
           >
-            <div style={{ display: 'flex', justifyContent: 'center', paddingTop: 14, paddingBottom: 10 }}>
-              <div style={{ width: 88, height: 22, background: '#111', borderRadius: 'var(--radius-lg)' }} />
-            </div>
-
-            <div
-              style={{
-                flex: 1,
-                background: 'var(--color-bg)',
-                margin: '0 4px',
-                padding: '20px 16px',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 14,
-              }}
-            >
-              <h3
-                style={{
-                  fontSize: 'var(--text-h4)',
-                  fontWeight: 700,
-                  color: 'var(--color-text-primary)',
-                  margin: 0,
-                }}
-              >
-                Leave them a message
-              </h3>
-
-              <div>
-                <p style={{ fontSize: 'var(--text-body-sm)', fontWeight: 600, color: 'var(--color-text-secondary)', margin: '0 0 7px' }}>
-                  To:
-                </p>
-                <div style={{ display: 'flex', gap: 6 }}>
-                  {['Both', 'Her', 'Him'].map((label, i) => (
-                    <span
-                      key={label}
-                      style={{
-                        padding: '5px 13px',
-                        borderRadius: 'var(--radius-md)',
-                        border: '1.5px solid',
-                        borderColor: i === 0 ? 'var(--color-accent)' : 'var(--color-border-strong)',
-                        background: i === 0 ? 'var(--color-accent)' : 'transparent',
-                        color: i === 0 ? '#fff' : 'var(--color-text-secondary)',
-                        fontSize: 'var(--text-body-sm)',
-                        fontWeight: 600,
-                      }}
-                    >
-                      {label}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div
-                style={{
-                  padding: '10px 11px',
-                  border: '1.5px solid var(--color-border)',
-                  borderRadius: 'var(--radius-md)',
-                  background: 'var(--color-bg-subtle)',
-                  fontSize: 'var(--text-body-sm)',
-                  color: 'var(--color-text-primary)',
-                  lineHeight: 1.55,
-                  minHeight: 96,
-                  flex: 1,
-                }}
-              >
-                We stayed up till 2am the night we met, talking about everything and nothing. I knew by the time the sun came up.
-              </div>
-
-              <div
-                style={{
-                  width: '100%',
-                  padding: '11px',
-                  borderRadius: 'var(--radius-md)',
-                  background: 'var(--color-accent)',
-                  color: '#fff',
-                  fontSize: 'var(--text-body-sm)',
-                  fontWeight: 700,
-                  textAlign: 'center',
-                }}
-              >
-                Send it →
-              </div>
-            </div>
-
-            <div style={{ display: 'flex', justifyContent: 'center', padding: '10px 0 14px' }}>
-              <div style={{ width: 100, height: 4, background: '#3A3A3A', borderRadius: 'var(--radius-sm)' }} />
-            </div>
-          </div>
+            See the {appCount} we've built →
+          </Link>
         </div>
+
+        <p
+          style={{
+            marginTop: 'var(--space-2)',
+            fontSize: 'var(--text-body-sm)',
+            color: 'rgba(251,247,239,0.6)',
+            fontFamily: 'var(--font-body)',
+          }}
+        >
+          3 minutes, no signup — or{' '}
+          <ContactLink
+            className="link-underline"
+            style={{ color: 'rgba(251,247,239,0.9)', fontWeight: 500 }}
+          >
+            talk to a human
+          </ContactLink>
+          .
+        </p>
       </Container>
     </section>
   )

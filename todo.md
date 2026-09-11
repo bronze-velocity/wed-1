@@ -1,5 +1,7 @@
 # 31 aug
 - on lp: more about the couple being able to decide on anything they want (differentiation vs any other app out there) and that ours only are examples. 
+- some key tests
+- de version? /home/zxc/Documents/code/win-repos/wed-1/zz/tasks/i18n-german-strategy.md obs, would need more suitable apps/games for the german market. also, de might not be the most suitable market given app/digital hesitation 
 # 29 AUG
 - image prompts
 # 28 aug

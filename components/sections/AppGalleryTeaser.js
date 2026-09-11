@@ -111,17 +111,18 @@ export default function AppGalleryTeaser({ apps }) {
                 key={vibe.label}
                 onClick={() => selectVibe(vibe)}
                 style={{
-                  background: isActive ? 'var(--color-text-primary)' : 'var(--color-bg)',
-                  color: isActive ? 'var(--color-text-inverse)' : 'var(--color-text-primary)',
-                  border: '1.5px solid',
-                  borderColor: isActive ? 'var(--color-text-primary)' : 'var(--color-border-strong)',
+                  background: isActive ? vibe.colorLight : 'transparent',
+                  color: 'var(--color-text-primary)',
+                  border: '1px solid',
+                  borderColor: isActive ? vibe.color : 'var(--color-border)',
                   borderRadius: 'var(--radius-md)',
                   padding: '10px 18px',
                   cursor: 'pointer',
                   fontFamily: 'inherit',
-                  fontWeight: 600,
+                  fontWeight: isActive ? 600 : 500,
                   fontSize: 'var(--text-body-sm)',
                   lineHeight: 1,
+                  boxShadow: isActive ? `inset 0 0 0 1px ${vibe.color}` : 'none',
                   transition: 'all var(--duration-fast) var(--ease-out)',
                 }}
               >
@@ -140,7 +141,6 @@ export default function AppGalleryTeaser({ apps }) {
             fontSize: 'var(--text-body)',
             color: 'var(--color-text-secondary)',
             marginBottom: 'var(--space-10)',
-            fontStyle: 'italic',
           }}
         >
           {activeVibe.tagline}

@@ -6,7 +6,7 @@ import Container from '@/components/layout/Container'
 import ResultCard from './ResultCard'
 import ShareSheet from './ShareSheet'
 import { slugify } from '@/lib/moodboard/slug'
-import { VIBES, GUESTS, MOMENTS, FEELINGS, STORY_QUESTIONS } from '@/lib/moodboard/config'
+import { VIBES, GUESTS, MOMENTS, FEELINGS } from '@/lib/moodboard/config'
 
 function buildAnswerChips(answers) {
   const chips = []
@@ -338,6 +338,101 @@ function MatchedApps({ matches, answers, onWantThis }) {
   )
 }
 
+// ── Hidden by venue (filtered by the reality check) ──────────────────────────
+
+function HiddenByVenue({ hidden }) {
+  const [open, setOpen] = useState(false)
+  if (!hidden?.length) return null
+  return (
+    <section
+      className="section-py"
+      style={{ background: 'var(--color-bg)', paddingTop: 'var(--space-6)', paddingBottom: 'var(--space-8)' }}
+    >
+      <Container narrow>
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          style={{
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 'var(--space-3)',
+            padding: 'var(--space-4) var(--space-5)',
+            background: 'var(--color-bg-subtle)',
+            border: '1px dashed var(--color-border-strong)',
+            borderRadius: 'var(--radius-lg)',
+            cursor: 'pointer',
+            fontFamily: 'inherit',
+            textAlign: 'left',
+          }}
+        >
+          <span>
+            <span
+              style={{
+                display: 'block',
+                fontSize: 'var(--text-tiny)',
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+                color: 'var(--color-text-secondary)',
+                marginBottom: 2,
+              }}
+            >
+              Not a fit for your setup
+            </span>
+            <span style={{ fontSize: 'var(--text-body-sm)', color: 'var(--color-text-primary)', fontWeight: 600 }}>
+              {hidden.length} {hidden.length === 1 ? 'app we hid' : 'apps we hid'} based on your reality check
+            </span>
+          </span>
+          <span
+            aria-hidden="true"
+            style={{
+              fontSize: 18,
+              lineHeight: 1,
+              color: 'var(--color-text-secondary)',
+              fontWeight: 700,
+            }}
+          >
+            {open ? '−' : '+'}
+          </span>
+        </button>
+        {open && (
+          <ul
+            style={{
+              listStyle: 'none',
+              padding: 'var(--space-4) 0 0',
+              margin: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 'var(--space-3)',
+            }}
+          >
+            {hidden.map((item) => (
+              <li
+                key={item.id}
+                style={{
+                  padding: 'var(--space-4)',
+                  background: 'var(--color-bg-subtle)',
+                  borderRadius: 'var(--radius-md)',
+                }}
+              >
+                <p style={{ margin: 0, fontSize: 'var(--text-body-sm)', fontWeight: 700, color: 'var(--color-text-primary)' }}>
+                  {item.title}
+                </p>
+                <p style={{ margin: '4px 0 0', fontSize: 'var(--text-body-sm)', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+                  {item.reason}
+                </p>
+              </li>
+            ))}
+          </ul>
+        )}
+      </Container>
+    </section>
+  )
+}
+
 // ── Invented Apps (AI-generated when hasOwnWords) ────────────────────────────
 
 function InventedApps({ inventedApps, onWantThis }) {
@@ -545,25 +640,10 @@ function HiddenTier({ hiddenMatches, onWantThis }) {
 
 // ── Section 4 — Brief + Email Gate ───────────────────────────────────────────
 
-const STORY_LABELS = {
-  howWeMet: 'How you met',
-  insideJoke: 'Your inside joke',
-  soUs: '"That was so us"',
-  runningDebate: 'Your running debate',
-  shockGuests: "What guests don't know",
-  ritual: 'Your ritual',
-  anthem: 'What means "us"',
-  bestStoryteller: 'Your best storyteller',
-}
-
 function BriefEmailGate({ results, answers, sectionRef, onBriefSent, shared, lockedSlug, onShared, openSheet, savedShare }) {
   const [email, setEmail] = useState('')
   const [keepBrief, setKeepBrief] = useState(false)
   const [status, setStatus] = useState('idle') // idle | loading | success | error
-
-  const storyAnswers = Object.entries(answers?.story ?? {})
-    .filter(([, v]) => v?.trim())
-    .slice(0, 2)
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -638,45 +718,6 @@ function BriefEmailGate({ results, answers, sectionRef, onBriefSent, shared, loc
               </p>
             ))}
 
-            {storyAnswers.length > 0 && (
-              <>
-                <p
-                  style={{
-                    fontSize: 'var(--text-tiny)',
-                    fontWeight: 700,
-                    color: 'var(--color-text-secondary)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.08em',
-                    marginTop: 'var(--space-3)',
-                  }}
-                >
-                  From your brief
-                </p>
-                {storyAnswers.map(([key, val]) => (
-                  <div key={key}>
-                    <p
-                      style={{
-                        fontSize: 'var(--text-tiny)',
-                        color: 'var(--color-text-secondary)',
-                        marginBottom: 2,
-                      }}
-                    >
-                      {STORY_LABELS[key] ?? key}
-                    </p>
-                    <p
-                      style={{
-                        fontSize: 'var(--text-body-sm)',
-                        fontStyle: 'italic',
-                        color: 'var(--color-text-primary)',
-                        lineHeight: 1.5,
-                      }}
-                    >
-                      &ldquo;{val}&rdquo;
-                    </p>
-                  </div>
-                ))}
-              </>
-            )}
           </div>
         </div>
 
@@ -1192,6 +1233,7 @@ export default function MoodboardResults({
         rerunning={rerunning}
       />
       <MatchedApps matches={results.matches} answers={answers} onWantThis={scrollToEmail} />
+      <HiddenByVenue hidden={results.hiddenByVenue} />
       {results.hasOwnWords && (
         <InventedApps inventedApps={results.inventedApps} onWantThis={scrollToEmail} />
       )}

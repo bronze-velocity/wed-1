@@ -8,6 +8,8 @@ module.exports = {
     extend: {
       maxWidth: {
         container: 'var(--container-max)',
+        'container-editorial': 'var(--container-max-editorial)',
+        'container-reading': 'var(--container-max-reading)',
       },
       borderRadius: {
         sm: 'var(--radius-sm)',
@@ -26,7 +28,24 @@ module.exports = {
         glow: 'var(--shadow-glow)',
         'glow-accent': 'var(--shadow-glow-accent)',
       },
+      fontFamily: {
+        body:            ['var(--font-body)'],
+        'display-serif': ['var(--font-display-serif)'],
+        'display-script':['var(--font-display-script)'],
+      },
       colors: {
+        // Editorial palette
+        ink:      'var(--color-ink)',
+        'ink-soft':'var(--color-ink-soft)',
+        mist:     'var(--color-mist)',
+        bone:     'var(--color-bone)',
+        linen:    'var(--color-linen)',
+        slate:    'var(--color-slate)',
+        dusk:     'var(--color-dusk)',
+        sage:     'var(--color-sage)',
+        bordeaux: 'var(--color-bordeaux)',
+        gold:     'var(--color-gold)',
+        // Semantic aliases (kept so pre-redesign components keep resolving)
         accent:           'var(--color-accent)',
         'accent-hover':   'var(--color-accent-hover)',
         'accent-light':   'var(--color-accent-light)',

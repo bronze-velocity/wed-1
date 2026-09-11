@@ -15,6 +15,11 @@ const TONE = {
     bg: 'color-mix(in srgb, var(--color-amber) 14%, transparent)',
     color: 'var(--color-text-primary)',
   },
+  ambient: {
+    border: 'var(--color-amber)',
+    bg: 'color-mix(in srgb, var(--color-amber) 14%, transparent)',
+    color: 'var(--color-text-primary)',
+  },
   no: {
     border: 'var(--color-border-strong)',
     bg: 'var(--color-bg-subtle)',
@@ -104,7 +109,7 @@ function VenueRow({ question, value, onChange }) {
           gap: 'var(--space-2)',
         }}
       >
-        {(['yes', 'maybe', 'no']).map((key) => {
+        {question.answerKeys.map((key) => {
           const selected = value === key
           const tone = selected ? TONE[key] : null
           return (
@@ -159,16 +164,16 @@ export default function StepVenue({ onNext, onBack, initialValues, onDraftChange
   )
   const total = VENUE_QUESTIONS.length
   const summary = answered === 0
-    ? "No pressure — we'll treat blanks as 'maybe' and still get you a real shortlist."
+    ? "Skip anything you don't know yet."
     : answered < total
-    ? `${answered} of ${total} answered · we'll fill the rest in as "maybe."`
-    : "All set — we'll shape every recommendation around your real setup."
+    ? `${answered} of ${total} answered.`
+    : "All set."
 
   return (
     <StepShell
       stepLabel="Step 6 of 7 · Reality check"
-      title="A few quick questions about your room."
-      subtitle="No wrong answers — this is just so we only show you apps that will actually work at your reception."
+      title="Your room."
+      subtitle="So we only show you apps that'll actually work at your reception."
       cta={
         <div className="moodboard-cta">
           {onBack && (
@@ -182,7 +187,7 @@ export default function StepVenue({ onNext, onBack, initialValues, onDraftChange
             className="btn btn-primary"
             style={{ flex: 1 }}
           >
-            {answered === 0 ? 'Skip this →' : answered < total ? `Continue with ${answered} answered →` : 'Continue →'}
+            {answered === 0 ? 'Skip this →' : 'Continue →'}
           </button>
         </div>
       }

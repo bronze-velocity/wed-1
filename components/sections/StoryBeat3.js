@@ -57,18 +57,18 @@ export default function StoryBeat3() {
           A live advice wall · answers scroll up in real time
         </p>
 
-        <p
+        <h2
+          className="display-italic"
           style={{
-            fontSize: 'var(--text-h1)',
-            fontWeight: 700,
-            letterSpacing: '-0.02em',
-            lineHeight: 1.3,
+            fontSize: 'var(--text-display)',
+            lineHeight: 1.08,
             color: 'var(--color-text-inverse)',
+            margin: 0,
           }}
         >
           You post &ldquo;we can&rsquo;t agree on where to live — help,&rdquo; and a hundred
           people answer at once.
-        </p>
+        </h2>
 
         <p
           style={{

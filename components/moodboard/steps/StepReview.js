@@ -8,9 +8,9 @@ import {
   GUESTS,
   MOMENTS,
   FEELINGS,
-  STORY_QUESTIONS,
   customEntriesFor,
 } from '@/lib/moodboard/config'
+import { VENUE_QUESTIONS } from '@/lib/moodboard/venueConstraints'
 
 const FINAL_NOTES_MAX = 3
 const FINAL_NOTES_CAP = 200
@@ -141,16 +141,12 @@ export default function StepReview({
   const [guests, setGuests] = useState(new Set(answers.guests ?? []))
   const [moments, setMoments] = useState(new Set(answers.moments ?? []))
   const [feelings, setFeelings] = useState(new Set(answers.feelings ?? []))
-  const [story, setStory] = useState(answers.story ?? {})
 
   const [customVibes, setCustomVibes] = useState(customEntriesFor(answers, 'vibes'))
   const [customGuests, setCustomGuests] = useState(customEntriesFor(answers, 'guests'))
   const [customMoments, setCustomMoments] = useState(customEntriesFor(answers, 'moments'))
   const [customFeelings, setCustomFeelings] = useState(customEntriesFor(answers, 'feelings'))
   const [finalNotes, setFinalNotes] = useState(customEntriesFor(answers, 'finalNotes'))
-
-  const [expandedStoryKey, setExpandedStoryKey] = useState(null)
-  const [showSkippedStory, setShowSkippedStory] = useState(false)
 
   function pushDraft(patch) {
     onDraftChange?.(patch)
@@ -193,26 +189,12 @@ export default function StepReview({
     }
   }
 
-  function editStory(key, value) {
-    const next = { ...story, [key]: value }
-    setStory(next)
-    pushDraft({ story: next })
-  }
-
-  function removeStory(key) {
-    const next = { ...story }
-    delete next[key]
-    setStory(next)
-    pushDraft({ story: next })
-    if (expandedStoryKey === key) setExpandedStoryKey(null)
-  }
-
-  const answeredStory = STORY_QUESTIONS.filter((q) => story?.[q.key]?.trim())
-  const skippedStory = STORY_QUESTIONS.filter((q) => !story?.[q.key]?.trim())
+  const venue = answers.venue ?? {}
+  const answeredVenue = VENUE_QUESTIONS.filter((q) => venue[q.id])
 
   const totalSignal =
     vibes.size + guests.size + moments.size + feelings.size +
-    answeredStory.length +
+    answeredVenue.length +
     customVibes.length + customGuests.length + customMoments.length +
     customFeelings.length + finalNotes.length
 
@@ -222,7 +204,7 @@ export default function StepReview({
       guests: [...guests],
       moments: [...moments],
       feelings: [...feelings],
-      story,
+      venue,
       customEntries: {
         vibes: customVibes,
         guests: customGuests,
@@ -359,120 +341,34 @@ export default function StepReview({
         </GroupPanel>
 
         <GroupPanel
-          title="Your story"
+          title="Your room"
           stepIndex={4}
           onJumpTo={onJumpTo}
-          isEmpty={answeredStory.length === 0}
-          emptyLabel="You didn't leave any story details."
+          isEmpty={answeredVenue.length === 0}
+          emptyLabel="You skipped the reality check — we'll show every app in play."
         >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-            {answeredStory.map((q) => {
-              const value = story[q.key] ?? ''
-              const isExpanded = expandedStoryKey === q.key
-              return (
-                <div
-                  key={q.key}
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+            {answeredVenue.map((q) => (
+              <li key={q.id} style={{ display: 'flex', gap: 'var(--space-3)', alignItems: 'baseline' }}>
+                <span
                   style={{
-                    borderRadius: 'var(--radius-md)',
-                    background: 'var(--color-bg)',
-                    padding: 'var(--space-3)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: 'var(--space-2)',
+                    flexShrink: 0,
+                    minWidth: 72,
+                    fontSize: 'var(--text-tiny)',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.06em',
+                    color: 'var(--color-text-secondary)',
                   }}
                 >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', gap: 'var(--space-2)', alignItems: 'baseline' }}>
-                    <span style={{ fontSize: 'var(--text-body-sm)', fontWeight: 700 }}>{q.chip}</span>
-                    <div style={{ display: 'flex', gap: 'var(--space-2)' }}>
-                      <button
-                        type="button"
-                        onClick={() => setExpandedStoryKey(isExpanded ? null : q.key)}
-                        style={{
-                          background: 'none',
-                          border: 'none',
-                          padding: 0,
-                          fontFamily: 'inherit',
-                          fontSize: 'var(--text-tiny)',
-                          fontWeight: 700,
-                          color: 'var(--color-accent)',
-                          cursor: 'pointer',
-                        }}
-                      >
-                        {isExpanded ? 'Done' : 'Edit'}
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => removeStory(q.key)}
-                        style={{
-                          background: 'none',
-                          border: 'none',
-                          padding: 0,
-                          fontFamily: 'inherit',
-                          fontSize: 'var(--text-tiny)',
-                          fontWeight: 700,
-                          color: 'var(--color-text-muted)',
-                          cursor: 'pointer',
-                        }}
-                      >
-                        Remove
-                      </button>
-                    </div>
-                  </div>
-                  {isExpanded ? (
-                    <textarea
-                      value={value}
-                      onChange={(e) => editStory(q.key, e.target.value.slice(0, 500))}
-                      autoFocus
-                      rows={3}
-                      maxLength={500}
-                      style={{
-                        width: '100%',
-                        fontFamily: 'inherit',
-                        fontSize: 'var(--text-body-sm)',
-                        padding: 'var(--space-2)',
-                        borderRadius: 'var(--radius-md)',
-                        border: '1.5px solid var(--color-accent)',
-                        background: 'var(--color-bg-subtle)',
-                        color: 'var(--color-text-primary)',
-                        outline: 'none',
-                        resize: 'vertical',
-                      }}
-                    />
-                  ) : (
-                    <p style={{ margin: 0, fontStyle: 'italic', color: 'var(--color-text-secondary)', fontSize: 'var(--text-body-sm)' }}>
-                      &ldquo;{value}&rdquo;
-                    </p>
-                  )}
-                </div>
-              )
-            })}
-            {skippedStory.length > 0 && (
-              <button
-                type="button"
-                onClick={() => setShowSkippedStory((v) => !v)}
-                style={{
-                  alignSelf: 'flex-start',
-                  background: 'none',
-                  border: 'none',
-                  padding: 0,
-                  fontFamily: 'inherit',
-                  fontSize: 'var(--text-body-sm)',
-                  fontWeight: 600,
-                  color: 'var(--color-accent)',
-                  cursor: 'pointer',
-                }}
-              >
-                {showSkippedStory ? 'Hide' : 'Show'} {skippedStory.length} skipped story prompt{skippedStory.length === 1 ? '' : 's'}
-              </button>
-            )}
-            {showSkippedStory && skippedStory.length > 0 && (
-              <ul style={{ margin: 0, paddingLeft: 'var(--space-5)', color: 'var(--color-text-muted)', fontSize: 'var(--text-body-sm)' }}>
-                {skippedStory.map((q) => (
-                  <li key={q.key}>{q.chip}</li>
-                ))}
-              </ul>
-            )}
-          </div>
+                  {q.answers[venue[q.id]]}
+                </span>
+                <span style={{ fontSize: 'var(--text-body-sm)', color: 'var(--color-text-primary)', lineHeight: 1.4 }}>
+                  {q.label}
+                </span>
+              </li>
+            ))}
+          </ul>
         </GroupPanel>
 
         <section

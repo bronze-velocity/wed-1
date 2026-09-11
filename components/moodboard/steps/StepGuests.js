@@ -35,7 +35,7 @@ export default function StepGuests({ onNext, onBack, initialValues, onDraftChang
 
   return (
     <StepShell
-      stepLabel="Step 2 of 6"
+      stepLabel="Step 2 of 7"
       title="Which description sounds most like your guests?"
       subtitle="Pick what fits — or add your own"
       cta={

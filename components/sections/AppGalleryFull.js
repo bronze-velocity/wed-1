@@ -22,21 +22,23 @@ const MOMENTS = [
   'All Day',
 ]
 
-function pillStyle(isActive, activeBg) {
+function filterLabelStyle(isActive) {
   return {
-    background: isActive ? activeBg : 'transparent',
-    color: isActive ? 'var(--color-text-inverse)' : 'var(--color-text-secondary)',
-    border: '1px solid',
-    borderColor: isActive ? activeBg : 'var(--color-border-strong)',
-    borderRadius: 'var(--radius-md)',
-    padding: '7px 14px',
+    background: 'transparent',
+    color: isActive ? 'var(--color-ink)' : 'var(--color-mist)',
+    border: 'none',
+    padding: '6px 0',
+    marginRight: 'var(--space-6)',
     cursor: 'pointer',
-    fontFamily: 'inherit',
-    fontWeight: 600,
-    fontSize: 'var(--text-body-sm)',
+    fontFamily: 'var(--font-body)',
+    fontSize: 'var(--text-eyebrow)',
+    fontWeight: 500,
+    letterSpacing: '0.18em',
+    textTransform: 'uppercase',
     lineHeight: 1,
     whiteSpace: 'nowrap',
-    transition: 'all var(--duration-fast) var(--ease-out)',
+    borderBottom: isActive ? '1px solid var(--color-ink)' : '1px solid transparent',
+    transition: 'color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out)',
   }
 }
 
@@ -44,12 +46,9 @@ export default function AppGalleryFull({ apps }) {
   const [activeVibe, setActiveVibe] = useState('All')
   const [activeMoment, setActiveMoment] = useState('All')
   const [revealed, setRevealed] = useState(false)
-  const [entranceDone, setEntranceDone] = useState(false)
 
   useEffect(() => {
     setRevealed(true)
-    const timer = setTimeout(() => setEntranceDone(true), 1100)
-    return () => clearTimeout(timer)
   }, [])
 
   function matchesFilters(app) {
@@ -62,59 +61,46 @@ export default function AppGalleryFull({ apps }) {
 
   return (
     <div>
-      <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          gap: 'var(--space-2)',
-          marginBottom: 'var(--space-3)',
-        }}
-      >
-        {VIBES.map((vibe) => (
-          <button
-            key={vibe}
-            onClick={() => setActiveVibe(vibe)}
-            style={pillStyle(activeVibe === vibe, 'var(--color-text-primary)')}
-          >
-            {vibe}
-          </button>
-        ))}
-      </div>
-
-      <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          gap: 'var(--space-2)',
-          marginBottom: 'var(--space-6)',
-        }}
-      >
-        {MOMENTS.map((moment) => (
-          <button
-            key={moment}
-            onClick={() => setActiveMoment(moment)}
-            style={pillStyle(activeMoment === moment, 'var(--color-accent)')}
-          >
-            {moment}
-          </button>
-        ))}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)', marginBottom: 'var(--space-10)' }}>
+        <div>
+          <p className="eyebrow" style={{ color: 'var(--color-mist)', marginBottom: 'var(--space-3)' }}>
+            Filter by vibe
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', rowGap: 'var(--space-2)' }}>
+            {VIBES.map((vibe) => (
+              <button key={vibe} onClick={() => setActiveVibe(vibe)} style={filterLabelStyle(activeVibe === vibe)}>
+                {vibe}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div>
+          <p className="eyebrow" style={{ color: 'var(--color-mist)', marginBottom: 'var(--space-3)' }}>
+            Filter by moment
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', rowGap: 'var(--space-2)' }}>
+            {MOMENTS.map((moment) => (
+              <button key={moment} onClick={() => setActiveMoment(moment)} style={filterLabelStyle(activeMoment === moment)}>
+                {moment}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
       <p
-        style={{
-          fontSize: 'var(--text-body-sm)',
-          color: 'var(--color-text-muted)',
-          marginBottom: 'var(--space-8)',
-        }}
+        className="eyebrow"
+        style={{ color: 'var(--color-mist)', marginBottom: 'var(--space-8)' }}
       >
-        Showing {activeCount} of {apps.length}
+        {activeCount} of {apps.length}
       </p>
 
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(min(280px, 100%), 1fr))',
-          gap: 'var(--space-6)',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(min(320px, 100%), 1fr))',
+          columnGap: 'var(--space-10)',
+          rowGap: 'var(--space-4)',
         }}
       >
         {apps.map((app, i) => {
@@ -123,10 +109,10 @@ export default function AppGalleryFull({ apps }) {
             <div
               key={app.slug}
               style={{
-                opacity: !revealed ? 0 : active ? 1 : 0.3,
-                transform: !revealed ? 'translateY(16px)' : 'none',
-                transition: 'opacity 300ms ease-out, transform 300ms ease-out',
-                transitionDelay: entranceDone ? '0ms' : `${Math.min(i * 45, 650)}ms`,
+                opacity: !revealed ? 0 : active ? 1 : 0.25,
+                transform: !revealed ? 'translateY(12px)' : 'none',
+                transition: 'opacity 500ms ease-out, transform 500ms ease-out',
+                transitionDelay: `${Math.min(i * 40, 500)}ms`,
                 pointerEvents: active ? 'auto' : 'none',
               }}
             >

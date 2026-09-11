@@ -63,18 +63,18 @@ export default function StoryBeat1() {
           Live trivia · the whole room plays at once
         </p>
 
-        <p
+        <h2
+          className="display-italic"
           style={{
-            fontSize: 'var(--text-h1)',
-            fontWeight: 700,
-            letterSpacing: '-0.02em',
-            lineHeight: 1.3,
+            fontSize: 'var(--text-display)',
+            lineHeight: 1.08,
             color: 'var(--color-text-inverse)',
+            margin: 0,
           }}
         >
           Fifteen questions in, the whole room is shouting at the same answer — and grandma
           is beating the college roommates.
-        </p>
+        </h2>
 
         <p
           style={{
