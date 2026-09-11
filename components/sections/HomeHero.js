@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Container from '@/components/layout/Container'
 import ContactLink from '@/components/ui/ContactLink'
+import AutoPlayPhone from '@/components/demo/AutoPlayPhone'
 import { apps } from '@/data/apps'
 
 export default function HomeHero() {
@@ -134,6 +135,31 @@ export default function HomeHero() {
           .
         </p>
       </Container>
+
+      <div
+        aria-hidden="true"
+        className="hero-phone"
+        style={{
+          position: 'absolute',
+          top: '50%',
+          right: 'clamp(var(--space-8), 6vw, var(--space-24))',
+          transform: 'translateY(-50%) rotate(3deg)',
+          zIndex: 1,
+          width: 280,
+          pointerEvents: 'none',
+          filter: 'drop-shadow(0 40px 60px rgba(0,0,0,0.5))',
+        }}
+      >
+        <AutoPlayPhone
+          message={"We stayed up till 2am the night we met, talking about everything and nothing. I knew by the time the sun came up."}
+          senderName="Priya"
+          to="both"
+        />
+      </div>
+      <style jsx>{`
+        .hero-phone { display: none; }
+        @media (min-width: 1024px) { .hero-phone { display: block; } }
+      `}</style>
     </section>
   )
 }
